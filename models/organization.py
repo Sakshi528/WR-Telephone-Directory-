@@ -21,3 +21,16 @@ class Organization(db.Model):
     address = db.Column(
         db.Text
     )
+
+    parent_id = db.Column(
+        db.Integer,
+        db.ForeignKey("organizations.id", ondelete="SET NULL"),
+        nullable=True
+    )
+
+    children = db.relationship(
+        "Organization",
+        backref=db.backref("parent", remote_side="Organization.id"),
+        lazy="dynamic",
+        foreign_keys="Organization.parent_id"
+    )
