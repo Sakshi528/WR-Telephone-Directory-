@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Organizations – Admin{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-building me-2"></i>Manage Organizations</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="d-flex flex-wrap gap-2 mb-3 mt-3">
+        <form method="GET" class="d-flex gap-2 flex-grow-1">
+            <input type="text" name="keyword" class="form-control"
+                   placeholder="Search by name, region, address…"
+                   value="{{ keyword }}">
+            <button class="btn btn-primary btn-sm px-3">
+                <i class="bi bi-search me-1"></i>Search
+            </button>
+            {% if keyword %}
+            <a href="{{ url_for('admin.manage_organizations') }}" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-x-lg"></i> Clear
+            </a>
+            {% endif %}
+        </form>
+        <a href="{{ url_for('admin.add_organization') }}" class="btn btn-success">
+            <i class="bi bi-plus-lg me-1"></i>Add Organization
+        </a>
+    </div>
+
+    <p class="text-muted small mb-2">
+        Showing <strong>{{ organizations|length }}</strong> organization(s)
+        {% if keyword %}matching "<strong>{{ keyword }}</strong>"{% endif %}
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle" style="table-layout:fixed; width:100%;">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:55px">Sr No.</th>
+                    <th style="width:35%">Organization Name</th>
+                    <th style="width:110px">Region</th>
+                    <th style="width:35%">Address</th>
+                    <th class="text-center" style="width:90px">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for org in organizations %}
+                <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td class="fw-semibold" style="word-break:break-word;">{{ org.organization_name }}</td>
+                    <td>{{ org.region or '–' }}</td>
+                    <td class="small" style="word-break:break-word;">{{ org.address or '–' }}</td>
+                    <td class="text-center text-nowrap">
+                        <a href="{{ url_for('admin.edit_organization', id=org.id) }}"
+                           class="btn btn-outline-warning btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_organization', id=org.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete this organization?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center text-muted py-4">No organizations found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

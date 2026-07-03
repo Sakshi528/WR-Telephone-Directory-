@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Edit Emergency Contact – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('admin.manage_emergency_contacts') }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Edit Emergency Contact</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Employee <span class="text-danger">*</span></label>
+                        <select name="employee_id" class="form-select" required>
+                            <option value="">– Select Employee –</option>
+                            {% for emp in employees %}
+                            <option value="{{ emp.id }}"
+                                {% if emp.id == contact.employee_id %}selected{% endif %}>
+                                {{ emp.employee_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Contact Name <span class="text-danger">*</span></label>
+                        <input type="text" name="contact_name" class="form-control"
+                               value="{{ contact.contact_name }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Relation</label>
+                        <input type="text" name="relation" class="form-control"
+                               value="{{ contact.relation or '' }}"
+                               placeholder="e.g. Spouse, Parent, Sibling">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phone</label>
+                        <input type="text" name="phone" class="form-control"
+                               value="{{ contact.phone or '' }}">
+                    </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>Update Contact
+                    </button>
+                    <a href="{{ url_for('admin.manage_emergency_contacts') }}"
+                       class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

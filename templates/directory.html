@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block title %}Employee Directory – WRLDC{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-people-fill me-2"></i>Employee Directory</h2>
+        <span class="badge bg-light text-dark fs-6">Grid India – WRLDC</span>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Search form -->
+    <form method="GET" class="mb-4">
+        <div class="row g-2 align-items-end">
+
+            <div class="col-md-7">
+                <div class="autocomplete-wrapper">
+                    <input
+                        type="text"
+                        name="keyword"
+                        class="form-control"
+                        placeholder="Name, designation, phone…"
+                        value="{{ keyword }}"
+                        autocomplete="off"
+                        data-suggestions-url="{{ url_for('user.search_suggestions') }}"
+                        data-suggestion-source="employee"
+                    >
+                    <div class="autocomplete-panel"></div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100">Search</button>
+            </div>
+
+            <div class="col-md-3 d-flex gap-1">
+                <a href="{{ url_for('user.export_employees', format='xlsx', keyword=keyword) }}"
+                   class="btn btn-success btn-sm flex-fill" title="Export Excel">
+                    <i class="bi bi-file-earmark-excel me-1"></i>Excel
+                </a>
+                <a href="{{ url_for('user.export_employees', format='docx', keyword=keyword) }}"
+                   class="btn btn-secondary btn-sm flex-fill" title="Export Word">
+                    <i class="bi bi-file-earmark-word me-1"></i>Word
+                </a>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- Result count -->
+    <p class="text-muted small mb-2">
+        Showing <strong>{{ employees|length }}</strong> employee(s)
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Office No.</th>
+                    <th>Mobile No.</th>
+                    <th>Email</th>
+                    <th>Emergency Contact Person</th>
+                    <th>Relation</th>
+                    <th>Emergency Contact No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in employees %}
+                {% set ec = ec_map.get(emp.id) %}
+                <tr>
+                    <td class="text-muted">{{ loop.index }}</td>
+                    <td class="fw-semibold">{{ emp.employee_name }}</td>
+                    <td>{{ emp.designation or '–' }}</td>
+                    <td>{{ emp.office_phone or '–' }}</td>
+                    <td>{{ emp.mobile_phone or '–' }}</td>
+                    <td>
+                        {% if emp.email %}
+                            <a href="mailto:{{ emp.email }}">{{ emp.email }}</a>
+                        {% else %}–{% endif %}
+                    </td>
+                    <td>{{ ec.contact_name if ec else '–' }}</td>
+                    <td>{{ ec.relation if ec else '–' }}</td>
+                    <td>{{ ec.phone if ec else '–' }}</td>
+                    <td class="text-nowrap">
+                        <a href="{{ url_for('user.employee_details', id=emp.id) }}"
+                           class="btn btn-outline-primary btn-sm" title="View">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                        <a href="{{ url_for('admin.edit_employee', id=emp.id) }}"
+                           class="btn btn-outline-warning btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.toggle_utility_head', id=emp.id) }}"
+                              class="d-inline">
+                            <button type="submit"
+                                    class="btn btn-sm {% if emp.is_utility_head %}btn-success{% else %}btn-outline-secondary{% endif %}"
+                                    title="{% if emp.is_utility_head %}Remove Utility Head{% else %}Mark as Utility Head{% endif %}">
+                                <i class="bi bi-star{% if emp.is_utility_head %}-fill{% endif %}"></i>
+                            </button>
+                        </form>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_employee', id=emp.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete {{ emp.employee_name }}?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="11" class="text-center text-muted py-4">
+                        <i class="bi bi-search me-1"></i>No employees found
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

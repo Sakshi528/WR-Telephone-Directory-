@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Emergency Contacts{% endblock %}
+
+{% block content %}
+
+<!-- <div class="page-header">
+    <div class="container">
+        <h2><i class="bi bi-heart-pulse me-2"></i>Emergency Contacts</h2>
+    </div>
+</div> -->
+
+<div class="container mb-5">
+
+    {% if contacts %}
+    <p class="text-muted small mb-3">{{ contacts|length }} contact(s) listed</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Employee</th>
+                    <th>Contact Person</th>
+                    <th>Relation</th>
+                    <th>Phone Number</th>
+                    {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                    <th>Actions</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td class="text-muted">{{ loop.index }}</td>
+                    <td>
+                        <a href="{{ url_for('user.employee_details', id=contact.employee.id) }}"
+                           class="text-decoration-none fw-semibold">
+                            {{ contact.employee.employee_name }}
+                        </a>
+                        {% if contact.employee.designation %}
+                        <div class="text-muted small">{{ contact.employee.designation }}</div>
+                        {% endif %}
+                    </td>
+                    <td>{{ contact.contact_name }}</td>
+                    <td>{{ contact.relation or '–' }}</td>
+                    <td>{{ contact.phone or '–' }}</td>
+                    {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                    <td class="text-nowrap">
+                        <a href="{{ url_for('admin.edit_emergency_contact', id=contact.id) }}"
+                           class="btn btn-outline-primary btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_emergency_contact', id=contact.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete this contact?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <div class="alert alert-secondary mt-3">
+        <i class="bi bi-info-circle me-1"></i>
+        No emergency contacts have been added yet.
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,1565 @@
+================================================================================
+Import: 2026-07-02 14:45:30 | Mode: REPLACE
+================================================================================
+[T  0|R  2] EMPLOYEE        -> Dr. Rohit Yadav [WESTERN REGIONAL POWER COMMITTEE, MUMBAI]
+[T  0|R  3] EMPLOYEE        -> Shri Deepak Kumar [WESTERN REGIONAL POWER COMMITTEE, MUMBAI]
+[T  0|R  4] SKIP: empty row                                | 
+[T  0|R  5] SKIP: sub-heading → org='POWER GRID CORPORATION OF INDIA LIMITED' | POWER GRID CORPORATION OF INDIA LIMITED
+[T  0|R  6] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R  7] EMPLOYEE        -> R. K. Tyagi [POWER GRID CORPORATION OF INDIA LIMITED]
+[T  0|R  8] EMPLOYEE        -> Naveen Srivastava [POWER GRID CORPORATION OF INDIA LIMITED]
+[T  0|R  9] SKIP: sub-heading → org='GRID CONTROLLER OF INDIA LIMITED' | GRID CONTROLLER OF INDIA LIMITED
+[T  0|R 10] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 11] EMPLOYEE        -> S C Saxena [GRID CONTROLLER OF INDIA LIMITED]
+[T  0|R 12] EMPLOYEE        -> Paresh Ranpara [GRID CONTROLLER OF INDIA LIMITED]
+[T  0|R 13] SKIP: empty row                                | 
+[T  0|R 14] SKIP: sub-heading → org='WESTERN REGION LOAD DESPATCH CENTRE' | WESTERN REGION LOAD DESPATCH CENTRE
+[T  0|R 15] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 16] EMPLOYEE        -> Mahesh Mehendale [WESTERN REGION LOAD DESPATCH CENTRE]
+[T  0|R 17] CONTROL ROOM    -> Control Room | 9869281317 Fax No. 022- 282026 | [WESTERN REGION LOAD DESPATCH CENTRE]
+[T  0|R 18] SKIP: empty row                                | 
+[T  0|R 19] SKIP: sub-heading → org='MAHARASHTRA STATE LOAD DESPATCH CENTRE' | MAHARASHTRA STATE LOAD DESPATCH CENTRE
+[T  0|R 20] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 21] EMPLOYEE        -> Shashank Jewalikar [MAHARASHTRA STATE LOAD DESPATCH CENTRE]
+[T  0|R 22] EMPLOYEE        -> Mahesh Bhagwat [MAHARASHTRA STATE LOAD DESPATCH CENTRE]
+[T  0|R 23] EMPLOYEE        -> Girish Pantoji [MAHARASHTRA STATE LOAD DESPATCH CENTRE]
+[T  0|R 24] CONTROL ROOM    -> SLDC-Control room | 022-27601765/66, 27602936 Fax  | [MAHARASHTRA STATE LOAD DESPATCH CENTRE]
+[T  0|R 25] SKIP: sub-heading → org='GUJARAT STATE LOAD DESPATCH CENTRE' | GUJARAT STATE LOAD DESPATCH CENTRE
+[T  0|R 26] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 27] EMPLOYEE        -> A.B. Rathod [GUJARAT STATE LOAD DESPATCH CENTRE]
+[T  0|R 28] EMPLOYEE        -> D. N. Shah [GUJARAT STATE LOAD DESPATCH CENTRE]
+[T  0|R 29] CONTROL ROOM    -> Control Room | 0265 - 2352103, 6531132 Fax 02 | [GUJARAT STATE LOAD DESPATCH CENTRE]
+[T  0|R 30] SKIP: sub-heading → org='MADHYA PRADESH STATE LOAD DESPATCH CENTRE' | MADHYA PRADESH STATE LOAD DESPATCH CENTR
+[T  0|R 31] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 32] EMPLOYEE        -> S.S.Patel [MADHYA PRADESH STATE LOAD DESPATCH CENTRE]
+[T  0|R 33] EMPLOYEE        -> P Sachan [MADHYA PRADESH STATE LOAD DESPATCH CENTRE]
+[T  0|R 34] EMPLOYEE        -> Rajesh Gupta [MADHYA PRADESH STATE LOAD DESPATCH CENTRE]
+[T  0|R 35] EMPLOYEE        -> V.K.Agrawal [MADHYA PRADESH STATE LOAD DESPATCH CENTRE]
+[T  0|R 36] CONTROL ROOM    -> Control room | 0761 - 2970601/0761-2668586/27 | [MADHYA PRADESH STATE LOAD DESPATCH CENTRE]
+[T  0|R 37] SKIP: empty row                                | 
+[T  0|R 38] SKIP: sub-heading → org='CHHATTISGARH STATE LOAD DESPATCH CENTRE' | CHHATTISGARH STATE LOAD DESPATCH CENTRE
+[T  0|R 39] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 40] EMPLOYEE        -> Shri. K.S. Manothiya [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 41] EMPLOYEE        -> Smt. Sharda Sonwani [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 42] EMPLOYEE        -> Shri Girish Gupta [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 43] EMPLOYEE        -> Shri. Sanjay Chowdhary [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 44] EMPLOYEE        -> Shri. Abhishek Jain [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 45] CONTROL ROOM    -> Control Room | 0771-2574193/ 2574198 FAX – 07 | [CHHATTISGARH STATE LOAD DESPATCH CENTRE]
+[T  0|R 46] SKIP: sub-heading → org='NTPC'                 | NTPC
+[T  0|R 47] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 48] EMPLOYEE        -> Subrata Mandal [NTPC]
+[T  0|R 49] EMPLOYEE        -> Ashwini Kumar Tripathy [NTPC]
+[T  0|R 50] SKIP: empty row                                | 
+[T  0|R 51] SKIP: sub-heading → org='POWERGRID WRTS-I, Nagpur' | POWERGRID WRTS-I, Nagpur
+[T  0|R 52] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 53] EMPLOYEE        -> Alok [POWERGRID WRTS-I, Nagpur]
+[T  0|R 54] EMPLOYEE        -> Balanarayan K P [POWERGRID WRTS-I, Nagpur]
+[T  0|R 55] EMPLOYEE        -> Rajneesh Tiwari [POWERGRID WRTS-I, Nagpur]
+[T  0|R 56] EMPLOYEE        -> Arun Kumar [POWERGRID WRTS-I, Nagpur]
+[T  0|R 57] CONTROL ROOM    -> RTAMC NAGPUR | 0712-2641499 / 9422082642 | [POWERGRID WRTS-I, Nagpur]
+[T  0|R 58] SKIP: empty row                                | 
+[T  0|R 59] SKIP: sub-heading → org='POWERGRID WRTS-II, Vadodara' | POWERGRID WRTS-II, Vadodara
+[T  0|R 60] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  0|R 61] EMPLOYEE        -> Krishna Kumar T R [POWERGRID WRTS-II, Vadodara]
+[T  0|R 62] EMPLOYEE        -> Jiten Das [POWERGRID WRTS-II, Vadodara]
+[T  0|R 63] EMPLOYEE        -> S Majumdar [POWERGRID WRTS-II, Vadodara]
+[T  0|R 64] CONTROL ROOM    -> CPCC/RTAMC WR-II | 0265-2960362/2960364 / 0909991 | [POWERGRID WRTS-II, Vadodara]
+[T  1|R  1] EMPLOYEE        -> M.M. Mehandale [Western Region Load Despatch Centre]
+[T  1|R  2] EMPLOYEE        -> Narendra Kumar [Western Region Load Despatch Centre]
+[T  1|R  3] EMPLOYEE        -> Pushpa S. [Western Region Load Despatch Centre]
+[T  1|R  4] EMPLOYEE        -> R.K. Bhoi [Western Region Load Despatch Centre]
+[T  1|R  5] EMPLOYEE        -> S.K. Chandrakar [Western Region Load Despatch Centre]
+[T  1|R  6] EMPLOYEE        -> S.S. Raghuwanshi [Western Region Load Despatch Centre]
+[T  1|R  7] EMPLOYEE        -> Sunil Kumar Jaiswal [Western Region Load Despatch Centre]
+[T  1|R  8] EMPLOYEE        -> T.Muthukumar [Western Region Load Despatch Centre]
+[T  1|R  9] EMPLOYEE        -> Tushar Ranjan Mahapatra [Western Region Load Despatch Centre]
+[T  1|R 10] EMPLOYEE        -> Goodelli Madhukar [Western Region Load Despatch Centre]
+[T  1|R 11] EMPLOYEE        -> Kollabathula Suresh Kumar [Western Region Load Despatch Centre]
+[T  1|R 12] EMPLOYEE        -> Manoj Kumar Thakur [Western Region Load Despatch Centre]
+[T  1|R 13] EMPLOYEE        -> Naga Suresh Movva [Western Region Load Despatch Centre]
+[T  1|R 14] EMPLOYEE        -> Pramod Kumar Prajapati [Western Region Load Despatch Centre]
+[T  1|R 15] EMPLOYEE        -> Surendra Pratap Singh [Western Region Load Despatch Centre]
+[T  1|R 16] EMPLOYEE        -> Vijay Kr. Kodali [Western Region Load Despatch Centre]
+[T  1|R 17] EMPLOYEE        -> Absar Ahmad [Western Region Load Despatch Centre]
+[T  1|R 18] EMPLOYEE        -> Akhil Gupta [Western Region Load Despatch Centre]
+[T  1|R 19] EMPLOYEE        -> Chillimuntha Jagadeesh [Western Region Load Despatch Centre]
+[T  1|R 20] EMPLOYEE        -> Gourav Kumar Mukherjee [Western Region Load Despatch Centre]
+[T  1|R 21] EMPLOYEE        -> Himanshu Chordia [Western Region Load Despatch Centre]
+[T  1|R 22] EMPLOYEE        -> Krushna Chandra Pradhan [Western Region Load Despatch Centre]
+[T  1|R 23] EMPLOYEE        -> Madhu Kevin Uttankar [Western Region Load Despatch Centre]
+[T  1|R 24] EMPLOYEE        -> Momai Dey [Western Region Load Despatch Centre]
+[T  1|R 25] EMPLOYEE        -> Naresh Kumar Mhalas [Western Region Load Despatch Centre]
+[T  1|R 26] EMPLOYEE        -> Prashanth Kumar Kanakam [Western Region Load Despatch Centre]
+[T  1|R 27] EMPLOYEE        -> Rajesh Kumar [Western Region Load Despatch Centre]
+[T  1|R 28] EMPLOYEE        -> Sandeep Singh Thakur [Western Region Load Despatch Centre]
+[T  1|R 29] EMPLOYEE        -> Shardul Mukund Kulkarni [Western Region Load Despatch Centre]
+[T  1|R 30] EMPLOYEE        -> Srinivas Chitturi [Western Region Load Despatch Centre]
+[T  1|R 31] EMPLOYEE        -> Sunil Kamalakar Patil [Western Region Load Despatch Centre]
+[T  1|R 32] EMPLOYEE        -> Koti Naveen [Western Region Load Despatch Centre]
+[T  1|R 33] EMPLOYEE        -> Minnakuri Venkateswara Rao [Western Region Load Despatch Centre]
+[T  1|R 34] EMPLOYEE        -> Pulla Naga Sudhir [Western Region Load Despatch Centre]
+[T  1|R 35] EMPLOYEE        -> Puppala Vishal Balaram [Western Region Load Despatch Centre]
+[T  1|R 36] EMPLOYEE        -> Ram Singh [Western Region Load Despatch Centre]
+[T  1|R 37] EMPLOYEE        -> Selvamani Prabaharan M [Western Region Load Despatch Centre]
+[T  1|R 38] EMPLOYEE        -> Shaik Mastanvali [Western Region Load Despatch Centre]
+[T  1|R 39] EMPLOYEE        -> Sushrut Pramod Meshram [Western Region Load Despatch Centre]
+[T  1|R 40] EMPLOYEE        -> Akash Verma [Western Region Load Despatch Centre]
+[T  1|R 41] EMPLOYEE        -> Dheeraj Gupta [Western Region Load Despatch Centre]
+[T  1|R 42] EMPLOYEE        -> Himanshu Verma [Western Region Load Despatch Centre]
+[T  1|R 43] EMPLOYEE        -> M Ananthakrishnan [Western Region Load Despatch Centre]
+[T  1|R 44] EMPLOYEE        -> Maneesh Khandelwal [Western Region Load Despatch Centre]
+[T  1|R 45] EMPLOYEE        -> Neeta Zarapla [Western Region Load Despatch Centre]
+[T  1|R 46] EMPLOYEE        -> Nitin Sharma [Western Region Load Despatch Centre]
+[T  1|R 47] EMPLOYEE        -> Omkar Ashok Kumbhar [Western Region Load Despatch Centre]
+[T  1|R 48] EMPLOYEE        -> Pooja Bhargava [Western Region Load Despatch Centre]
+[T  1|R 49] EMPLOYEE        -> Prashant Kumar [Western Region Load Despatch Centre]
+[T  1|R 50] EMPLOYEE        -> Ramlakhan Meena [Western Region Load Despatch Centre]
+[T  1|R 51] EMPLOYEE        -> Rathod Dipak Satishbhai [Western Region Load Despatch Centre]
+[T  1|R 52] EMPLOYEE        -> Rishabh Goyal [Western Region Load Despatch Centre]
+[T  1|R 53] EMPLOYEE        -> Rishabh Jain [Western Region Load Despatch Centre]
+[T  1|R 54] EMPLOYEE        -> Rishav Kumar [Western Region Load Despatch Centre]
+[T  1|R 55] EMPLOYEE        -> Ronit Arya [Western Region Load Despatch Centre]
+[T  1|R 56] EMPLOYEE        -> Shekhar Gupta [Western Region Load Despatch Centre]
+[T  1|R 57] EMPLOYEE        -> Sravan Verma [Western Region Load Despatch Centre]
+[T  1|R 58] EMPLOYEE        -> Vikas Kumar Yadav [Western Region Load Despatch Centre]
+[T  1|R 59] EMPLOYEE        -> Akibahemad Anwar Arora [Western Region Load Despatch Centre]
+[T  1|R 60] EMPLOYEE        -> Aniket Ramlal Walke [Western Region Load Despatch Centre]
+[T  1|R 61] EMPLOYEE        -> Ashish Rajpal [Western Region Load Despatch Centre]
+[T  1|R 62] EMPLOYEE        -> Ayush Sharma [Western Region Load Despatch Centre]
+[T  1|R 63] EMPLOYEE        -> Badigenchala Raviteja [Western Region Load Despatch Centre]
+[T  1|R 64] EMPLOYEE        -> Baswa Vamsi Krishna [Western Region Load Despatch Centre]
+[T  1|R 65] EMPLOYEE        -> Deshraj Meena [Western Region Load Despatch Centre]
+[T  1|R 66] EMPLOYEE        -> Ganji Aravind [Western Region Load Despatch Centre]
+[T  1|R 67] EMPLOYEE        -> Inuganti V S S R Hemanth Kumar [Western Region Load Despatch Centre]
+[T  1|R 68] EMPLOYEE        -> Jafar Ahemad Khan [Western Region Load Despatch Centre]
+[T  1|R 69] EMPLOYEE        -> K V K Satyanarayan Gupta [Western Region Load Despatch Centre]
+[T  1|R 70] EMPLOYEE        -> Kunal Roy [Western Region Load Despatch Centre]
+[T  1|R 71] EMPLOYEE        -> Mukin Hasankhan Pathan [Western Region Load Despatch Centre]
+[T  1|R 72] EMPLOYEE        -> Nikhil Krishnarao Naygavhankar [Western Region Load Despatch Centre]
+[T  1|R 73] EMPLOYEE        -> Pavitra Malik [Western Region Load Despatch Centre]
+[T  1|R 74] EMPLOYEE        -> R.Satheesh Kumar [Western Region Load Despatch Centre]
+[T  1|R 75] EMPLOYEE        -> Raj Shailendra Mudliar [Western Region Load Despatch Centre]
+[T  1|R 76] EMPLOYEE        -> Saksham Aggarwal [Western Region Load Despatch Centre]
+[T  1|R 77] EMPLOYEE        -> Sammed Sunil Patil [Western Region Load Despatch Centre]
+[T  1|R 78] EMPLOYEE        -> Sanjay Kumar Swarnkar [Western Region Load Despatch Centre]
+[T  1|R 79] EMPLOYEE        -> Sanjeet Chaudhary [Western Region Load Despatch Centre]
+[T  1|R 80] EMPLOYEE        -> Shivam [Western Region Load Despatch Centre]
+[T  1|R 81] EMPLOYEE        -> Shivendra Yadav [Western Region Load Despatch Centre]
+[T  1|R 82] EMPLOYEE        -> Shubham Gupta [Western Region Load Despatch Centre]
+[T  1|R 83] EMPLOYEE        -> Suresh Chandra Bachkheti [Western Region Load Despatch Centre]
+[T  1|R 84] EMPLOYEE        -> Thorati Mojesh [Western Region Load Despatch Centre]
+[T  1|R 85] EMPLOYEE        -> Pooja Pandey [Western Region Load Despatch Centre]
+[T  1|R 86] EMPLOYEE        -> Shalini Agrawal [Western Region Load Despatch Centre]
+[T  1|R 87] EMPLOYEE        -> Shilpi Kumari [Western Region Load Despatch Centre]
+[T  1|R 88] EMPLOYEE        -> Vivek Kumar [Western Region Load Despatch Centre]
+[T  1|R 89] EMPLOYEE        -> Bablu Kumar [Western Region Load Despatch Centre]
+[T  1|R 90] EMPLOYEE        -> Durgesh Kumar [Western Region Load Despatch Centre]
+[T  1|R 91] EMPLOYEE        -> Pappu Kumar [Western Region Load Despatch Centre]
+[T  1|R 92] EMPLOYEE        -> Pratik Shivraj Moon [Western Region Load Despatch Centre]
+[T  1|R 93] EMPLOYEE        -> Promit Biswas [Western Region Load Despatch Centre]
+[T  1|R 94] EMPLOYEE        -> Sachendra Singh [Western Region Load Despatch Centre]
+[T  1|R 95] EMPLOYEE        -> Shubham R. Barai [Western Region Load Despatch Centre]
+[T  1|R 96] EMPLOYEE        -> K. Haridas [Western Region Load Despatch Centre]
+[T  1|R 97] EMPLOYEE        -> Dinesh M. Vhatkar [Western Region Load Despatch Centre]
+[T  2|R  2] EMPLOYEE        -> S Usha [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R  3] EMPLOYEE        -> Vivek Pandey [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R  4] EMPLOYEE        -> Aditya Prasad Das [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R  5] CONTROL ROOM    -> CONTROL ROOM | 011-26536832,26524522,32026900 | [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R  6] SKIP: junk/separator                           | Northern Regional Load Despatch Centre N
+[T  2|R  7] SKIP: sub-header row (updated map)             | SL.No. | Name (Shri/Smt) | Designation | Department | Mobile No. | Telephone No | E-mail ID
+[T  2|R  8] EMPLOYEE        -> Manoj Kumar Agrawal [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R  9] CONTROL ROOM    -> Control Room | 011-26519406, 40224601, 402246 | [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R 10] SKIP: junk/separator                           | Eastern Regional Load Despatch Centre , 
+[T  2|R 11] SKIP: sub-header row (updated map)             | SL.No. | Name (Shri/Smt) | Designation | Department | Mobile No. | Telephone No | E-mail ID
+[T  2|R 12] EMPLOYEE        -> Rajib Sutradhar [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R 13] CONTROL ROOM    -> Control Room | (+91) 33 2423-5809, (+91) 33 3 | [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R 14] SKIP: empty row                                | 
+[T  2|R 15] SKIP: junk/separator                           | Southern Regional Load Despatch Centre, 
+[T  2|R 16] SKIP: sub-header row (updated map)             | SL.No. | Name (Shri/Smt) | Designation | Department | Mobile No. | Telephone No | E-mail ID
+[T  2|R 17] EMPLOYEE        -> V Balaji [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R 18] CONTROL ROOM    -> Control Room | 080-22254525,22351146,22352850 | [POWER SYSTEM OPERATION CORPORATION LIMITED National Load Despatch Centre (NLDC), New Delhi]
+[T  2|R 19] SKIP: empty row                                | 
+[T  2|R 20] SKIP: sub-heading → org='North Eastern Regional Load Despatch Centre, Shillong' | North Eastern Regional Load Despatch Cen
+[T  2|R 21] SKIP: sub-header row (updated map)             | SL.No. | Name (Shri/Smt) | Designation | Department | Mobile No. | Telephone No | E-mail ID
+[T  2|R 22] EMPLOYEE        -> Amaresh Mallick [North Eastern Regional Load Despatch Centre, Shillong]
+[T  2|R 23] CONTROL ROOM    -> Control Room | 0364-2537470 / 2537482 / 25374 | [North Eastern Regional Load Despatch Centre, Shillong]
+[T  3|R  3] EMPLOYEE        -> Dr. Rohit Yadav [Western Regional Power Committee]
+[T  3|R  4] EMPLOYEE        -> Deepak Kumar. [Western Regional Power Committee]
+[T  3|R  5] EMPLOYEE        -> Deepak N. Gawali [Western Regional Power Committee]
+[T  3|R  6] EMPLOYEE        -> P.D. Lone [Western Regional Power Committee]
+[T  3|R  7] EMPLOYEE        -> Deepak Sharma [Western Regional Power Committee]
+[T  3|R  8] EMPLOYEE        -> Vidya Sagar P [Western Regional Power Committee]
+[T  4|R  4] EMPLOYEE        -> A K SINGH [Indira Sagar]
+[T  4|R  5] EMPLOYEE        -> AnupamJaiswal [Indira Sagar]
+[T  4|R  6] CONTROL ROOM    -> Control Room | 07323-284542/ 284719, 94253262 | [Indira Sagar]
+[T  4|R  7] SKIP: empty row                                | 
+[T  4|R  8] SKIP: sub-heading → org='Gandhi Sagar'         | 2. Gandhi Sagar
+[T  4|R  9] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 10] EMPLOYEE        -> Pursotam Gupta [Gandhi Sagar]
+[T  4|R 11] CONTROL ROOM    -> Control Room | 07427-239118/237256, 237212, 9 | [Gandhi Sagar]
+[T  4|R 12] SKIP: empty row                                | 
+[T  4|R 13] SKIP: sub-heading → org='Pench'                | 3. Pench
+[T  4|R 14] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 15] EMPLOYEE        -> K.K. Umathe [Pench]
+[T  4|R 16] EMPLOYEE        -> ArunMungole [Pench]
+[T  4|R 17] CONTROL ROOM    -> Control Room Pench | 9977507928 | [Pench]
+[T  4|R 18] CONTROL ROOM    -> Control Room Lakhnadaun S/s | 07690-291321 | [Pench]
+[T  4|R 19] SKIP: sub-heading → org='Bargi'                | 4. Bargi
+[T  4|R 20] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 21] EMPLOYEE        -> Vivek Banjhal [Bargi]
+[T  4|R 22] EMPLOYEE        -> J. Marlam [Bargi]
+[T  4|R 23] EMPLOYEE        -> S. Khan [Bargi]
+[T  4|R 24] CONTROL ROOM    -> Control Room | Ext-043-71, 0761-2905259 | [Bargi]
+[T  4|R 25] SKIP: empty row                                | 
+[T  4|R 26] SKIP: sub-heading → org='Birshingpur'          | 5. Birshingpur
+[T  4|R 27] SKIP: empty row                                | 
+[T  4|R 28] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 29] EMPLOYEE        -> A.K paharia [Birshingpur]
+[T  4|R 30] EMPLOYEE        -> Shri Murthy [Birshingpur]
+[T  4|R 31] EMPLOYEE        -> R.K beohar [Birshingpur]
+[T  4|R 32] CONTROL ROOM    -> Control Room | 07655-262428 | [Birshingpur]
+[T  4|R 33] SKIP: sub-heading → org='Omkareshwar'          | 6. Omkareshwar
+[T  4|R 34] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 35] EMPLOYEE        -> BasantGurmate [Omkareshwar]
+[T  4|R 36] CONTROL ROOM    -> Power House | 07280-280393/ 270732 / 07280-2 | [Omkareshwar]
+[T  4|R 37] SKIP: empty row                                | 
+[T  4|R 38] SKIP: sub-heading → org='Tons'                 | 7. Tons
+[T  4|R 39] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 40] EMPLOYEE        -> D.K jain [Tons]
+[T  4|R 41] EMPLOYEE        -> Atul Thakur [Tons]
+[T  4|R 42] CONTROL ROOM    -> Control Room | 7879695423 | [Tons]
+[T  4|R 43] SKIP: sub-heading → org='Manikheda'            | 8. Manikheda
+[T  4|R 44] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 45] EMPLOYEE        -> Anil Kumar chouhan [Manikheda]
+[T  4|R 46] EMPLOYEE        -> Ravi Kant Bimal [Manikheda]
+[T  4|R 47] EMPLOYEE        -> V.B. Bhadoriya [Manikheda]
+[T  4|R 48] CONTROL ROOM    -> Control Room | 9425318160 | [Manikheda]
+[T  4|R 49] SKIP: sub-heading → org='Rajghat'              | 9. Rajghat
+[T  4|R 50] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 51] EMPLOYEE        -> R.S Yadav [Rajghat]
+[T  4|R 52] EMPLOYEE        -> Hari NandanDohre [Rajghat]
+[T  4|R 53] EMPLOYEE        -> Ashish Shrivastawa [Rajghat]
+[T  4|R 54] CONTROL ROOM    -> Control Room | 7974769515 | [Rajghat]
+[T  4|R 55] SKIP: sub-heading → org='GUJARAT'              | GUJARAT
+[T  4|R 56] SKIP: empty row                                | 
+[T  4|R 57] SKIP: sub-heading → org='UKAI'                 | 10. UKAI
+[T  4|R 58] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 59] EMPLOYEE        -> Shri S D Patel [UKAI]
+[T  4|R 60] EMPLOYEE        -> Shri. B.R. Patel [UKAI]
+[T  4|R 61] EMPLOYEE        -> Shri. R. N. PATEL [UKAI]
+[T  4|R 62] EMPLOYEE        -> Shri. C.B. Patel [UKAI]
+[T  4|R 63] EMPLOYEE        -> Shri. N. M. Mistry [UKAI]
+[T  4|R 64] CONTROL ROOM    -> Ukai Thermal Control room | 9925235934 | [UKAI]
+[T  4|R 65] CONTROL ROOM    -> Hydro Control Room | 02624-233510 / 9712921574 | [UKAI]
+[T  4|R 66] CONTROL ROOM    -> Mini Hydro Control Room | 02624-233510 / 9712921698 | [UKAI]
+[T  4|R 67] SKIP: sub-heading → org='SSNNL'                | 11. SSNNL
+[T  4|R 68] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 69] EMPLOYEE        -> Shri A N Patel [SSNNL]
+[T  4|R 70] CONTROL ROOM    -> Control Room | RBPH 02640-232101/232565 / 942 | [SSNNL]
+[T  4|R 71] SKIP: sub-heading → org='Kadana'               | 12. Kadana
+[T  4|R 72] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 73] EMPLOYEE        -> Shri S B Patel [Kadana]
+[T  4|R 74] CONTROL ROOM    -> Control Room | 02675-237554/ 9925213774/99798 | [Kadana]
+[T  4|R 75] SKIP: empty row                                | 
+[T  4|R 76] SKIP: sub-heading → org='GIPCL 1 & 2'          | 13. GIPCL 1 & 2
+[T  4|R 77] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 78] EMPLOYEE        -> S.N.PUROHIT [GIPCL 1 & 2]
+[T  4|R 79] EMPLOYEE        -> P.M. Parekh [GIPCL 1 & 2]
+[T  4|R 80] EMPLOYEE        -> S. Mani [GIPCL 1 & 2]
+[T  4|R 81] CONTROL ROOM    -> Control Room | 02652230182, 02652230183 Fax N | [GIPCL 1 & 2]
+[T  4|R 82] SKIP: sub-heading → org='Dhuvaran'             | 14. Dhuvaran
+[T  4|R 83] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 84] EMPLOYEE        -> Shri J R Patel [Dhuvaran]
+[T  4|R 85] EMPLOYEE        -> Shri A B Patel [Dhuvaran]
+[T  4|R 86] CONTROL ROOM    -> Control room CCPP-1 | 9687673286 | [Dhuvaran]
+[T  4|R 87] CONTROL ROOM    -> Control room CCPP-2 | 9687672645 | [Dhuvaran]
+[T  4|R 88] CONTROL ROOM    -> Control room CCPP-3 | 7567877389 | [Dhuvaran]
+[T  4|R 89] SKIP: empty row                                | 
+[T  4|R 90] SKIP: sub-heading → org='Sugen'                | 15. Sugen
+[T  4|R 91] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 92] EMPLOYEE        -> Ronak Naik [Sugen]
+[T  4|R 93] CONTROL ROOM    -> Shift Manager Office | 02621-661663/Fax No. 02621 - 6 | [Sugen]
+[T  4|R 94] CONTROL ROOM    -> Control Room Office | 02621-661664/Fax No. 02621 - 6 | [Sugen]
+[T  4|R 95] SKIP: sub-heading → org='Mini Hydro'           | 16. Mini Hydro
+[T  4|R 96] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R 97] EMPLOYEE        -> Shri. R. N. PATEL [Mini Hydro]
+[T  4|R 98] CONTROL ROOM    -> Control Room | 02624-233510 / 9712921574 | [Mini Hydro]
+[T  4|R 99] SKIP: sub-heading → org='MAHARASHTRA 17. Khopoli & Bhivpuri' | MAHARASHTRA 17. Khopoli & Bhivpuri
+[T  4|R100] SKIP: sub-heading → org='MAHARASHTRA 17. Khopoli & Bhivpuri' | MAHARASHTRA 17. Khopoli & Bhivpuri
+[T  4|R101] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R102] EMPLOYEE        -> Pallikuth Devanand [MAHARASHTRA 17. Khopoli & Bhivpuri]
+[T  4|R103] EMPLOYEE        -> Dhurandhar Fulendra [MAHARASHTRA 17. Khopoli & Bhivpuri]
+[T  4|R104] EMPLOYEE        -> Abhijeet Patil [MAHARASHTRA 17. Khopoli & Bhivpuri]
+[T  4|R105] CONTROL ROOM    -> Control Room | 022-66687091 / 022-25543331 /  | [MAHARASHTRA 17. Khopoli & Bhivpuri]
+[T  4|R106] SKIP: empty row                                | 
+[T  4|R107] SKIP: sub-heading → org='Bhira'                | 18. Bhira
+[T  4|R108] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R109] EMPLOYEE        -> Pallikuth Devanand [Bhira]
+[T  4|R110] EMPLOYEE        -> Ajay Konnur [Bhira]
+[T  4|R111] CONTROL ROOM    -> Control Room | 022-66687091 / 022-25543331 /  | [Bhira]
+[T  4|R112] SKIP: empty row                                | 
+[T  4|R113] SKIP: sub-heading → org='Koyna, Pophali'       | 19. Koyna, Pophali
+[T  4|R114] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R115] EMPLOYEE        -> S. G. Chopade [Koyna, Pophali]
+[T  4|R116] EMPLOYEE        -> N.S.Mule [Koyna, Pophali]
+[T  4|R117] EMPLOYEE        -> R. K. Kumbhar [Koyna, Pophali]
+[T  4|R118] CONTROL ROOM    -> Control Room | 8408880569 / 02355235005 / 023 | [Koyna, Pophali]
+[T  4|R119] SKIP: empty row                                | 
+[T  4|R120] SKIP: sub-heading → org='Ghatghar'             | 20.Ghatghar
+[T  4|R121] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R122] EMPLOYEE        -> Shri Kumbhoj [Ghatghar]
+[T  4|R123] EMPLOYEE        -> P.B.Kashiv [Ghatghar]
+[T  4|R124] CONTROL ROOM    -> Control Room | 02527-235310/311 8411956540 /  | [Ghatghar]
+[T  4|R125] SKIP: sub-heading → org='Trombay'              | 21.Trombay
+[T  4|R126] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R127] EMPLOYEE        -> Pallikuth Devanand [Trombay]
+[T  4|R128] EMPLOYEE        -> Shirish Kamat [Trombay]
+[T  4|R129] CONTROL ROOM    -> Control Room | 022-66687091 / 25543331 / 6717 | [Trombay]
+[T  4|R130] SKIP: empty row                                | 
+[T  4|R131] SKIP: sub-heading → org='RGPPL'                | 22. RGPPL
+[T  4|R132] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R133] EMPLOYEE        -> Asim Kumar Samanta [RGPPL]
+[T  4|R134] CONTROL ROOM    -> Control Room | 02359-241120 / 8007060703 | [RGPPL]
+[T  4|R135] SKIP: empty row                                | 
+[T  4|R136] SKIP: sub-heading → org='Paithan'              | 23. Paithan
+[T  4|R137] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R138] EMPLOYEE        -> Umesh Sone [Paithan]
+[T  4|R139] CONTROL ROOM    -> Control Room | 02431-224699 | [Paithan]
+[T  4|R140] SKIP: sub-heading → org='Uran'                 | 24. Uran
+[T  4|R141] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R142] EMPLOYEE        -> S. G. Ingle [Uran]
+[T  4|R143] EMPLOYEE        -> S.L.Wagh [Uran]
+[T  4|R144] EMPLOYEE        -> Shift Incharge [Uran]
+[T  4|R145] EMPLOYEE        -> A.S.More [Uran]
+[T  4|R146] CONTROL ROOM    -> Control Room | 8879620047/ 48/ 49 & 022-27222 | [Uran]
+[T  4|R147] SKIP: empty row                                | 
+[T  4|R148] SKIP: sub-heading → org='CHHATTISGARH'         | CHHATTISGARH
+[T  4|R149] SKIP: sub-heading → org='Hasdeo Bango'         | 25. Hasdeo Bango
+[T  4|R150] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R151] EMPLOYEE        -> O.P.Pandey [Hasdeo Bango]
+[T  4|R152] EMPLOYEE        -> Prakash Jain [Hasdeo Bango]
+[T  4|R153] CONTROL ROOM    -> Control Room | 7647820424 | [Hasdeo Bango]
+[T  4|R154] SKIP: sub-heading → org='NTPC Blackstart Units' | NTPC Black start Units
+[T  4|R155] SKIP: sub-heading → org='Kawas'                | 26.Kawas
+[T  4|R156] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R157] EMPLOYEE        -> P Ram Prasad [Kawas]
+[T  4|R158] EMPLOYEE        -> Sanjay Mittal [Kawas]
+[T  4|R159] EMPLOYEE        -> Vibhor Mangal [Kawas]
+[T  4|R160] CONTROL ROOM    -> Control Room | 0261-2860375 FAX 0261- 2861428 | [Kawas]
+[T  4|R161] SKIP: sub-heading → org='Gandhar'              | 27. Gandhar
+[T  4|R162] SKIP: sub-header row (updated map)             | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  4|R163] EMPLOYEE        -> Neeraj Dubey [Gandhar]
+[T  4|R164] EMPLOYEE        -> Varughese Valiplackal Kurian [Gandhar]
+[T  4|R165] EMPLOYEE        -> Ravindra Sharma [Gandhar]
+[T  4|R166] CONTROL ROOM    -> Control Room | 02642- 287450 Fax 02642- 28706 | [Gandhar]
+[T  5|R  4] EMPLOYEE        -> Dinesh Waghmare [Maharashtra State Electricity Transmission Co. Ltd.]
+[T  5|R  5] EMPLOYEE        -> Sandeep Kalantri [Maharashtra State Electricity Transmission Co. Ltd.]
+[T  5|R  6] SKIP: empty row                                | 
+[T  5|R  7] SKIP: sub-heading → org='State Load Despatch Centre, MSETCL' | State Load Despatch Centre, MSETCL
+[T  5|R  8] SKIP: junk/separator                           | Kalwa, Thane-Belapur
+[T  5|R  9] SKIP: sub-header row (updated map)             | Sl No. | Name (Shri/Smt) | Designation | Office | Mobile | Email
+[T  5|R 10] EMPLOYEE        -> Shashank Jewalikar [State Load Despatch Centre, MSETCL]
+[T  5|R 11] EMPLOYEE        -> Mashesh Bhagwat [State Load Despatch Centre, MSETCL]
+[T  5|R 12] EMPLOYEE        -> Anjana Thakker [State Load Despatch Centre, MSETCL]
+[T  5|R 13] EMPLOYEE        -> Girish Pantoji [State Load Despatch Centre, MSETCL]
+[T  5|R 14] EMPLOYEE        -> Girish Pantoji [State Load Despatch Centre, MSETCL]
+[T  5|R 15] EMPLOYEE        -> Santosh Satpute (I/C) [State Load Despatch Centre, MSETCL]
+[T  5|R 16] EMPLOYEE        -> Santosh Satpute (I/C) [State Load Despatch Centre, MSETCL]
+[T  5|R 17] SKIP: sub-header row (updated map)             | Sl No. | Name (Shri/Smt) | Designation | Office | Mobile | Email
+[T  5|R 18] EMPLOYEE        -> M.B.Pande [State Load Despatch Centre, MSETCL]
+[T  5|R 19] EMPLOYEE        -> D.Z.Patil [State Load Despatch Centre, MSETCL]
+[T  5|R 20] EMPLOYEE        -> S.R.Lomate (I/C) [State Load Despatch Centre, MSETCL]
+[T  5|R 21] EMPLOYEE        -> S.R. Satpute [State Load Despatch Centre, MSETCL]
+[T  5|R 22] EMPLOYEE        -> Sachin Pakhide [State Load Despatch Centre, MSETCL]
+[T  5|R 23] EMPLOYEE        -> Bharat Waghmare [State Load Despatch Centre, MSETCL]
+[T  5|R 24] EMPLOYEE        -> Shri. Bobade [State Load Despatch Centre, MSETCL]
+[T  5|R 25] EMPLOYEE        -> S.G.Bhagat [State Load Despatch Centre, MSETCL]
+[T  5|R 26] EMPLOYEE        -> Rajesh Sadarang [State Load Despatch Centre, MSETCL]
+[T  5|R 27] EMPLOYEE        -> Mahesh Gosavi [State Load Despatch Centre, MSETCL]
+[T  5|R 28] CONTROL ROOM    -> SLDC-Control room | 022-27601765/66, 27602936 / 96 | [State Load Despatch Centre, MSETCL]
+[T  5|R 29] CONTROL ROOM    -> SLDC-Control room | Fax 022-27601769/ / 9619892010 | [State Load Despatch Centre, MSETCL]
+[T  5|R 30] SKIP: empty row                                | 
+[T  6|R  1] EMPLOYEE        -> Mrs Vaishali Pazare [Area Load Despatch Centre, MSETCL,]
+[T  6|R  2] CONTROL ROOM    -> ALDC Control Room | 07104-221242 / 8554993367, 855 | [Area Load Despatch Centre, MSETCL,]
+[T  7|R  1] EMPLOYEE        -> Vijay Singhal (IAS) [Maharashtra State Electricity Distribution Co. Ltd.]
+[T  7|R  2] EMPLOYEE        -> Dinesh Agrawal [Maharashtra State Electricity Distribution Co. Ltd.]
+[T  7|R  3] EMPLOYEE        -> Mangesh Kohat [Maharashtra State Electricity Distribution Co. Ltd.]
+[T  7|R  4] EMPLOYEE        -> Vipul Kamdar [Maharashtra State Electricity Distribution Co. Ltd.]
+[T  7|R  5] CONTROL ROOM    -> Control Room | 9106575343 | [Maharashtra State Electricity Distribution Co. Ltd.]
+[T  8|R  2] EMPLOYEE        -> Ms.Mamta Verma, IAS [Gujarat State Load Despatch Centre]
+[T  8|R  3] EMPLOYEE        -> Shri Upendra Pande [Gujarat State Load Despatch Centre]
+[T  8|R  4] EMPLOYEE        -> K. P. Jangid [Gujarat State Load Despatch Centre]
+[T  8|R  5] EMPLOYEE        -> A.B. Rathod [Gujarat State Load Despatch Centre]
+[T  8|R  6] EMPLOYEE        -> D. N. Shah [Gujarat State Load Despatch Centre]
+[T  8|R  7] EMPLOYEE        -> K. M. Chhaiya [Gujarat State Load Despatch Centre]
+[T  8|R  8] EMPLOYEE        -> P.B. Parmar [Gujarat State Load Despatch Centre]
+[T  8|R  9] SKIP: empty row                                | 
+[T  8|R 10] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  8|R 11] EMPLOYEE        -> B.M. Shah [Gujarat State Load Despatch Centre]
+[T  8|R 12] EMPLOYEE        -> N.N. Shaikh [Gujarat State Load Despatch Centre]
+[T  8|R 13] EMPLOYEE        -> P.B. Suthar [Gujarat State Load Despatch Centre]
+[T  8|R 14] EMPLOYEE        -> Shift In Charge [Gujarat State Load Despatch Centre]
+[T  8|R 15] EMPLOYEE        -> A.P. Shah [Gujarat State Load Despatch Centre]
+[T  8|R 16] EMPLOYEE        -> M.V.Patel [Gujarat State Load Despatch Centre]
+[T  8|R 17] EMPLOYEE        -> K.V.Karavadra [Gujarat State Load Despatch Centre]
+[T  8|R 18] EMPLOYEE        -> P.G. Gupta [Gujarat State Load Despatch Centre]
+[T  8|R 19] SKIP: duplicate employee                       | P.B. Suthar | eecommsldc.getco@gebmail.com
+[T  8|R 20] EMPLOYEE        -> G J Mistry [Gujarat State Load Despatch Centre]
+[T  8|R 21] CONTROL ROOM    -> Control Room | 0265 - 2352103, 6531132 Fax 02 | [Gujarat State Load Despatch Centre]
+[T  9|R  2] EMPLOYEE        -> Shri S K Dubey (IAS) [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  3] EMPLOYEE        -> Shri Sunil Tiwari [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  4] EMPLOYEE        -> S.S.Patel [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  5] EMPLOYEE        -> P Sachan [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  6] EMPLOYEE        -> Rajesh Gupta [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  7] EMPLOYEE        -> V.K.Agrawal [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  8] EMPLOYEE        -> Cinderella Felix [Madhya Pradesh State Load Despatch Centre]
+[T  9|R  9] CONTROL ROOM    -> Control room ( SLDC ) | 0761 - 2970601/0761-2668586/27 | [Madhya Pradesh State Load Despatch Centre]
+[T  9|R 10] SKIP: sub-heading → org='MP POWER MANAGEMENT CO. LTD.' | MP POWER MANAGEMENT CO. LTD.
+[T  9|R 11] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  9|R 12] EMPLOYEE        -> Firoj Kumar Meshram [MP POWER MANAGEMENT CO. LTD.]
+[T  9|R 13] EMPLOYEE        -> Praveen Kumar Jain [MP POWER MANAGEMENT CO. LTD.]
+[T  9|R 14] EMPLOYEE        -> Jaswant Singh Pasricha [MP POWER MANAGEMENT CO. LTD.]
+[T  9|R 15] CONTROL ROOM    -> Control Room | 0761-2660375 / 9425808331 | [MP POWER MANAGEMENT CO. LTD.]
+[T  9|R 16] SKIP: empty row                                | 
+[T  9|R 17] SKIP: sub-heading → org='Madhya Pradesh Power Generation Company Limited' | Madhya Pradesh Power Generation Company 
+[T  9|R 18] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T  9|R 19] EMPLOYEE        -> Manjeet Singh [Madhya Pradesh Power Generation Company Limited]
+[T  9|R 20] EMPLOYEE        -> Rajeev Shrivastava [Madhya Pradesh Power Generation Company Limited]
+[T  9|R 21] EMPLOYEE        -> Girish Kumar Dixit [Madhya Pradesh Power Generation Company Limited]
+[T  9|R 22] EMPLOYEE        -> Brijesh Maravi [Madhya Pradesh Power Generation Company Limited]
+[T 10|R  2] EMPLOYEE        -> Shri. Ankit Anand (IAS) [Chhattisgarh State Load Despatch Centre]
+[T 10|R  3] EMPLOYEE        -> Smt. Ujjwala Baghel [Chhattisgarh State Load Despatch Centre]
+[T 10|R  4] EMPLOYEE        -> Shri. K.S. Manothiya [Chhattisgarh State Load Despatch Centre]
+[T 10|R  5] EMPLOYEE        -> Smt. Sharda Sonwani [Chhattisgarh State Load Despatch Centre]
+[T 10|R  6] EMPLOYEE        -> Shri Girish Gupta [Chhattisgarh State Load Despatch Centre]
+[T 10|R  7] EMPLOYEE        -> Shri. Sanjay Chowdhary [Chhattisgarh State Load Despatch Centre]
+[T 10|R  8] EMPLOYEE        -> Shri. Abhishek Jain [Chhattisgarh State Load Despatch Centre]
+[T 10|R  9] EMPLOYEE        -> Shri. G.P. Singh [Chhattisgarh State Load Despatch Centre]
+[T 10|R 10] EMPLOYEE        -> Shri. S.Surya Prakash [Chhattisgarh State Load Despatch Centre]
+[T 10|R 11] SKIP: empty row                                | 
+[T 10|R 12] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T 10|R 13] EMPLOYEE        -> Shri. Ranjit Kujur [Chhattisgarh State Load Despatch Centre]
+[T 10|R 14] EMPLOYEE        -> Smt. Reshma Rani Khalkho [Chhattisgarh State Load Despatch Centre]
+[T 10|R 15] EMPLOYEE        -> Ms. Namita Vibha Lakra [Chhattisgarh State Load Despatch Centre]
+[T 10|R 16] EMPLOYEE        -> Shri. Pramod Kumar Bhaskar [Chhattisgarh State Load Despatch Centre]
+[T 10|R 17] EMPLOYEE        -> Shri. Manoj Kumar Rawte [Chhattisgarh State Load Despatch Centre]
+[T 10|R 18] EMPLOYEE        -> Shri. Mahendra Kumar Singh [Chhattisgarh State Load Despatch Centre]
+[T 10|R 19] EMPLOYEE        -> Shri. G.R. Navrang [Chhattisgarh State Load Despatch Centre]
+[T 10|R 20] EMPLOYEE        -> Ms. Sudeshna Pal [Chhattisgarh State Load Despatch Centre]
+[T 10|R 21] EMPLOYEE        -> Shri. Prem Kumar Dewangan [Chhattisgarh State Load Despatch Centre]
+[T 10|R 22] EMPLOYEE        -> Shri. Ketan Mishra [Chhattisgarh State Load Despatch Centre]
+[T 10|R 23] EMPLOYEE        -> Shri. Vindhyachal Gupta [Chhattisgarh State Load Despatch Centre]
+[T 10|R 24] EMPLOYEE        -> Ms. Sandeepa Dewangan [Chhattisgarh State Load Despatch Centre]
+[T 10|R 25] EMPLOYEE        -> Shri. Prem Kumar Jaiswal [Chhattisgarh State Load Despatch Centre]
+[T 10|R 26] SKIP: duplicate employee                       | Shri. Ranjit Kujur | ranjitrojmeenkujur@gmail.com
+[T 10|R 27] SKIP: duplicate employee                       | Smt. Reshma Rani Khalkho | openaccess@sldccg.com
+[T 10|R 28] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T 10|R 29] EMPLOYEE        -> Smt. Priti Gupta [Chhattisgarh State Load Despatch Centre]
+[T 10|R 30] EMPLOYEE        -> Shri. Shree Ram Kandra [Chhattisgarh State Load Despatch Centre]
+[T 10|R 31] EMPLOYEE        -> Shri. Pushkar Prasad Verma [Chhattisgarh State Load Despatch Centre]
+[T 10|R 32] EMPLOYEE        -> Smt. Rekha Sharma [Chhattisgarh State Load Despatch Centre]
+[T 10|R 33] EMPLOYEE        -> Ms. Juvena Agnes Gomes [Chhattisgarh State Load Despatch Centre]
+[T 10|R 34] CONTROL ROOM    -> Control Room | 0771-2574193/ 2574198 FAX – 07 | [Chhattisgarh State Load Despatch Centre]
+[T 11|R  1] EMPLOYEE        -> --- [O/o Superintending Engineer (Backup SLDC), CSPTCL, Khedamara, Bhilai]
+[T 11|R  2] EMPLOYEE        -> Shri. A.K. Chakraborty [O/o Superintending Engineer (Backup SLDC), CSPTCL, Khedamara, Bhilai]
+[T 12|R  2] EMPLOYEE        -> Shri Ajit Roy IAS [Goa Electricity Department]
+[T 12|R  3] EMPLOYEE        -> Stephen Fernandes [Goa Electricity Department]
+[T 12|R  4] EMPLOYEE        -> Stephen Fernandes [Goa Electricity Department]
+[T 12|R  5] EMPLOYEE        -> Suresh Naik [Goa Electricity Department]
+[T 12|R  6] EMPLOYEE        -> Ms Shilpa Priolkar [Goa Electricity Department]
+[T 12|R  7] EMPLOYEE        -> Ramesh Mendonca [Goa Electricity Department]
+[T 12|R  8] EMPLOYEE        -> Jack Fernandes [Goa Electricity Department]
+[T 12|R  9] EMPLOYEE        -> Anita Pai Raikar [Goa Electricity Department]
+[T 12|R 10] EMPLOYEE        -> Anuj Shatti [Goa Electricity Department]
+[T 12|R 11] EMPLOYEE        -> Madhur Bodke [Goa Electricity Department]
+[T 12|R 12] EMPLOYEE        -> Suhas Dessai [Goa Electricity Department]
+[T 12|R 13] EMPLOYEE        -> Nilesh Gadekar [Goa Electricity Department]
+[T 12|R 14] EMPLOYEE        -> Gaurav Naik [Goa Electricity Department]
+[T 12|R 15] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Email
+[T 12|R 16] EMPLOYEE        -> Ramesh Umrascar [Goa Electricity Department]
+[T 12|R 17] EMPLOYEE        -> Suraj Mathodkar [Goa Electricity Department]
+[T 12|R 18] EMPLOYEE        -> Uday Kudalkar [Goa Electricity Department]
+[T 12|R 19] EMPLOYEE        -> Lucas Joao [Goa Electricity Department]
+[T 12|R 20] EMPLOYEE        -> Saish Naik [Goa Electricity Department]
+[T 12|R 21] EMPLOYEE        -> Lucas Joao [Goa Electricity Department]
+[T 12|R 22] EMPLOYEE        -> Denver Mendes [Goa Electricity Department]
+[T 12|R 23] EMPLOYEE        -> Kasim Mujawar [Goa Electricity Department]
+[T 12|R 24] EMPLOYEE        -> Mario Mascarenhas [Goa Electricity Department]
+[T 12|R 25] EMPLOYEE        -> Avinash Chalwadi [Goa Electricity Department]
+[T 12|R 26] EMPLOYEE        -> Sandip Dessai [Goa Electricity Department]
+[T 12|R 27] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R) | Mobile | Sl. No.
+[T 12|R 28] EMPLOYEE        -> Satish Palekar [Goa Electricity Department]
+[T 12|R 29] EMPLOYEE        -> PGCIL Mapusa 400 kV S?S [Goa Electricity Department]
+[T 12|R 30] EMPLOYEE        -> Mahalakshmi S/S [Goa Electricity Department]
+[T 12|R 31] EMPLOYEE        -> Tillari S/S [Goa Electricity Department]
+[T 12|R 32] CONTROL ROOM    -> Ponda S/S CR | 0832-2312130 0832-2313780 (F)  | [Goa Electricity Department]
+[T 12|R 33] CONTROL ROOM    -> Amona S/S CR | 0832-2984080/8081 / 0838001513 | [Goa Electricity Department]
+[T 12|R 34] CONTROL ROOM    -> Xeldem S/S CR | 8380015312 | [Goa Electricity Department]
+[T 12|R 35] CONTROL ROOM    -> Thivim S/S CR | 8380015136/83830015142 | [Goa Electricity Department]
+[T 12|R 36] EMPLOYEE        -> Prasanjit Naik , GE, Alstom, Madgaon [Goa Electricity Department]
+[T 12|R 37] EMPLOYEE        -> Saish Naik, GE, Alstom, Madgaon [Goa Electricity Department]
+[T 12|R 38] CONTROL ROOM    -> Sankalp Velip, GE Alstom, Cuncolim (Back up Control Room) | 9637397540 | [Goa Electricity Department]
+[T 12|R 39] EMPLOYEE        -> Main SLDC, Margao [Goa Electricity Department]
+[T 13|R  2] EMPLOYEE        -> Sh. Mekala Chaitanya Prasad [Damanand Diu]
+[T 13|R  3] EMPLOYEE        -> Milind Ingle [Damanand Diu]
+[T 13|R  4] EMPLOYEE        -> Dilesh Solanki [Damanand Diu]
+[T 13|R  5] EMPLOYEE        -> Jay Solanki [Damanand Diu]
+[T 13|R  6] EMPLOYEE        -> Mitesh Patel [Damanand Diu]
+[T 13|R  7] CONTROL ROOM    -> Control Room | 9909976436 | [Damanand Diu]
+[T 14|R  2] EMPLOYEE        -> DR. ARUN T. SIR [Dadraand Nagar Haveli]
+[T 14|R  3] EMPLOYEE        -> C.A PARMAR [Dadraand Nagar Haveli]
+[T 14|R  4] EMPLOYEE        -> H. M PATEL [Dadraand Nagar Haveli]
+[T 14|R  5] EMPLOYEE        -> V.R VERMA [Dadraand Nagar Haveli]
+[T 14|R  6] EMPLOYEE        -> B. R PATEL [Dadraand Nagar Haveli]
+[T 14|R  7] CONTROL ROOM    -> SLDC DNH | 0260-2406561,562,563 / 9081995 | [Dadraand Nagar Haveli]
+[T 15|R  2] EMPLOYEE        -> Subrata Mandal [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  3] EMPLOYEE        -> D Mandal [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  4] EMPLOYEE        -> Pravat Ranjan Jena [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  5] EMPLOYEE        -> Abhay Gajendra Prasad Sahu [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  6] EMPLOYEE        -> R R Gupta [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  7] EMPLOYEE        -> Saurabh Kumar [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  8] EMPLOYEE        -> Arbind Kumar [NTPC Mumbai Head Quarter (WR-1)]
+[T 15|R  9] EMPLOYEE        -> Pushpak Satpute [NTPC Mumbai Head Quarter (WR-1)]
+[T 16|R  2] EMPLOYEE        -> Neeraj Dubey [NTPC Gandhar]
+[T 16|R  3] EMPLOYEE        -> Varughese Valiplackal Kurian [NTPC Gandhar]
+[T 16|R  4] EMPLOYEE        -> Ravindra Sharma [NTPC Gandhar]
+[T 16|R  5] CONTROL ROOM    -> Control Room | 02642- 287450 Fax 02642- 28706 | [NTPC Gandhar]
+[T 17|R  2] EMPLOYEE        -> P Ram Prasad [NTPC Kawas]
+[T 17|R  3] EMPLOYEE        -> Sanjay Mittal [NTPC Kawas]
+[T 17|R  4] EMPLOYEE        -> Vibhor Mangal [NTPC Kawas]
+[T 17|R  5] CONTROL ROOM    -> Control Room | 0261-2860375 FAX 0261- 2861428 | [NTPC Kawas]
+[T 18|R  1] EMPLOYEE        -> Apelagunta Kama Manohar [NTPC Mauda]
+[T 18|R  2] EMPLOYEE        -> Subhashish Guha [NTPC Mauda]
+[T 18|R  3] EMPLOYEE        -> A R Mohanty [NTPC Mauda]
+[T 18|R  4] EMPLOYEE        -> Sunil Singh Chauhan [NTPC Mauda]
+[T 18|R  5] CONTROL ROOM    -> Control Room | 7588184339/ 8275045123 | [NTPC Mauda]
+[T 19|R  1] EMPLOYEE        -> Vijay Goel [NTPC Solapur]
+[T 19|R  2] EMPLOYEE        -> T. K Bandyopadhyay [NTPC Solapur]
+[T 19|R  3] EMPLOYEE        -> Parimal Kumar Mishra [NTPC Solapur]
+[T 19|R  4] EMPLOYEE        -> Amitabh Kumar [NTPC Solapur]
+[T 19|R  5] CONTROL ROOM    -> Control Room | 0217-2252611/ 2461301, 2461303 | [NTPC Solapur]
+[T 20|R  2] EMPLOYEE        -> Ashwini Kumar Tripathy [NTPC Raipur Head Quarter (WR-2)]
+[T 20|R  3] EMPLOYEE        -> Piyush Saxena [NTPC Raipur Head Quarter (WR-2)]
+[T 20|R  4] EMPLOYEE        -> S.K.Srivastava [NTPC Raipur Head Quarter (WR-2)]
+[T 20|R  5] EMPLOYEE        -> Rakesh Kumar [NTPC Raipur Head Quarter (WR-2)]
+[T 21|R  2] EMPLOYEE        -> Kamlesh Soni [NTPC Gadarwara]
+[T 21|R  3] EMPLOYEE        -> Probal Mundle [NTPC Gadarwara]
+[T 21|R  4] EMPLOYEE        -> Kanchan Singh [NTPC Gadarwara]
+[T 21|R  5] EMPLOYEE        -> Aneesh Kumar K [NTPC Gadarwara]
+[T 21|R  6] EMPLOYEE        -> Sudip Ray Barman [NTPC Gadarwara]
+[T 21|R  7] CONTROL ROOM    -> Control Room | 9111022802 | [NTPC Gadarwara]
+[T 22|R  2] EMPLOYEE        -> Rajesh Kumar Kanojia [NTPC Khargone]
+[T 22|R  3] EMPLOYEE        -> Mandeep Singh Chhabra [NTPC Khargone]
+[T 22|R  4] EMPLOYEE        -> Vijay Tanwani [NTPC Khargone]
+[T 22|R  5] EMPLOYEE        -> B.K.Garg [NTPC Khargone]
+[T 22|R  6] CONTROL ROOM    -> Control Room | 07440200041 | [NTPC Khargone]
+[T 23|R  1] EMPLOYEE        -> B Ramachandra Rao [NTPC Korba]
+[T 23|R  2] EMPLOYEE        -> Madhu S [NTPC Korba]
+[T 23|R  3] EMPLOYEE        -> Lalit Ranjan Mohanty [NTPC Korba]
+[T 23|R  4] EMPLOYEE        -> Tikeshwar Prasad Sahu [NTPC Korba]
+[T 23|R  5] CONTROL ROOM    -> Control Room | 07759-237529 07759-237440/ 022 | [NTPC Korba]
+[T 24|R  1] EMPLOYEE        -> Diwakar Kaushik [NTPC Lara]
+[T 24|R  2] EMPLOYEE        -> Akhilesh Singh [NTPC Lara]
+[T 24|R  3] EMPLOYEE        -> Samrendra Kumar Roy [NTPC Lara]
+[T 24|R  4] EMPLOYEE        -> Vinay Kumar Jaiswal [NTPC Lara]
+[T 24|R  5] CONTROL ROOM    -> Control Room | 09109179793 | [NTPC Lara]
+[T 25|R  1] EMPLOYEE        -> N Srinivasa Rao [NTPC Sipat]
+[T 25|R  2] EMPLOYEE        -> Ramanath Pujari [NTPC Sipat]
+[T 25|R  3] EMPLOYEE        -> Snehesh Banerjee [NTPC Sipat]
+[T 25|R  4] EMPLOYEE        -> Ashit Sarkar [NTPC Sipat]
+[T 25|R  5] CONTROL ROOM    -> Control Room | 07752-277660/ 246545/ 246587 / | [NTPC Sipat]
+[T 26|R  1] EMPLOYEE        -> Subhash Chandra Naik [NTPC Vindhyachal]
+[T 26|R  2] EMPLOYEE        -> E Satya Phani Kumar [NTPC Vindhyachal]
+[T 26|R  3] EMPLOYEE        -> Akhaya Kumar Patra [NTPC Vindhyachal]
+[T 26|R  4] EMPLOYEE        -> Rajeev Kumar [NTPC Vindhyachal]
+[T 26|R  5] CONTROL ROOM    -> Control Room | 07805-247755 / 247916 / 957530 | [NTPC Vindhyachal]
+[T 27|R  1] EMPLOYEE        -> Shri R. Murali [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  2] EMPLOYEE        -> Shri V. Thattey [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  3] EMPLOYEE        -> Shri A. Sarmasarkar [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  4] EMPLOYEE        -> Shri C.K. Gupta [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  5] EMPLOYEE        -> Shri KVSN Murthy [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  6] EMPLOYEE        -> Shri D.P. Mahajan [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  7] EMPLOYEE        -> Shri S.K. Chaurasia [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  8] EMPLOYEE        -> Shri S. S. Deshmukh [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R  9] CONTROL ROOM    -> Control Room | 02525-244126, 02525-244128 (F) | [Tarapur Atomic Power Station Stg-1 & 2]
+[T 27|R 10] SWITCHYARD      -> Switchyard | 02525-244120, 02525-244128 (F) | [Tarapur Atomic Power Station Stg-1 & 2]
+[T 28|R  1] EMPLOYEE        -> M. Suryaprasad [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  2] EMPLOYEE        -> Randhir Kumar [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  3] EMPLOYEE        -> Nilendu Datta [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  4] EMPLOYEE        -> Rajeev Dhami [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  5] EMPLOYEE        -> Chiranjib Saha [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  6] EMPLOYEE        -> Sachin Shinde [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  7] EMPLOYEE        -> U. Biswas [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  8] EMPLOYEE        -> Nishant Dhimole [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R  9] CONTROL ROOM    -> Control Room | 02525-244511, 02525-244609 025 | [Tarapur Atomic Power Station Stg-3 & 4]
+[T 28|R 10] SWITCHYARD      -> Switchyard | 02525-244024 / 8552000187, 942 | [Tarapur Atomic Power Station Stg-3 & 4]
+[T 29|R  1] EMPLOYEE        -> S D Anand [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  2] EMPLOYEE        -> Ajay K Bhole [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  3] EMPLOYEE        -> Vivek Kumar [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  4] EMPLOYEE        -> R K Khare [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  5] EMPLOYEE        -> Sandeep Gupta [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  6] EMPLOYEE        -> Nilendu Datta [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  7] EMPLOYEE        -> Mitesh Mehta [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 29|R  8] CONTROL ROOM    -> Control Room | 07573950841 02626-234280 02626 | [Kakrapar Atomic Power Station Stg- 1 & 2]
+[T 30|R  1] EMPLOYEE        -> S K Roy [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  2] EMPLOYEE        -> A P Phadke [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  3] EMPLOYEE        -> V Shankar [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  4] EMPLOYEE        -> Malay Saha [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  5] EMPLOYEE        -> A N Thakur [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  6] EMPLOYEE        -> Navneet Sharma [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  7] EMPLOYEE        -> Ajit Kumar [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  8] EMPLOYEE        -> Upendra Parmanand [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R  9] EMPLOYEE        -> Sourav Ghosh [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 30|R 10] CONTROL ROOM    -> Control Room | 7573950843, 9409464909, 02626- | [Kakrapar Atomic Power Station Stg-3 & 4]
+[T 31|R  1] EMPLOYEE        -> Ajit Ajane [Athena Jaipur Solar Power Private Limited]
+[T 31|R  2] EMPLOYEE        -> Anshu Verma [Athena Jaipur Solar Power Private Limited]
+[T 31|R  3] EMPLOYEE        -> General Operations [Athena Jaipur Solar Power Private Limited]
+[T 31|R  4] EMPLOYEE        -> Parijat Deshmukh [Athena Jaipur Solar Power Private Limited]
+[T 31|R  5] EMPLOYEE        -> Raja [Athena Jaipur Solar Power Private Limited]
+[T 31|R  6] CONTROL ROOM    -> Control Room | 20220581 / 7067549898 | [Athena Jaipur Solar Power Private Limited]
+[T 32|R  1] EMPLOYEE        -> Bharatbhai Patel [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 32|R  2] EMPLOYEE        -> Ritesh Chauhan [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 32|R  3] EMPLOYEE        -> Yagnesh Joshi [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 32|R  4] EMPLOYEE        -> Hasmukh Prajapati [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 32|R  5] EMPLOYEE        -> Alapan Bera [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 32|R  6] CONTROL ROOM    -> Control Room | IP No 20221496 / 9316735767 | [Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL]
+[T 33|R  1] EMPLOYEE        -> GS BABU [Arinsun Clean Energy Private Limited]
+[T 33|R  2] EMPLOYEE        -> Priyam Soni [Arinsun Clean Energy Private Limited]
+[T 33|R  3] EMPLOYEE        -> Chandan Kumar [Arinsun Clean Energy Private Limited]
+[T 33|R  4] EMPLOYEE        -> Shashikala Mishra [Arinsun Clean Energy Private Limited]
+[T 33|R  5] CONTROL ROOM    -> Control Room | SCADA VOIP- 20221492 PSS VOIP  | [Arinsun Clean Energy Private Limited]
+[T 34|R  1] EMPLOYEE        -> Amit Gandhi [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 34|R  2] EMPLOYEE        -> Abhinav Jha [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 34|R  3] EMPLOYEE        -> Narpat Ram [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 34|R  4] EMPLOYEE        -> Tanmay Saha [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 34|R  5] EMPLOYEE        -> Siddharth Richhariya [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 34|R  6] CONTROL ROOM    -> Control Room | +91 124 3896711 | [Green Infra Wind Energy Limited SECI –II & SECI -II]
+[T 35|R  1] EMPLOYEE        -> Manoj Dixit [INOX Green Energy Services Limited]
+[T 35|R  2] EMPLOYEE        -> Arvind Kumar [INOX Green Energy Services Limited]
+[T 35|R  3] EMPLOYEE        -> Bapulal Labana [INOX Green Energy Services Limited]
+[T 35|R  4] EMPLOYEE        -> Sunil Sharma [INOX Green Energy Services Limited]
+[T 35|R  5] EMPLOYEE        -> Surendra Yadav [INOX Green Energy Services Limited]
+[T 35|R  6] EMPLOYEE        -> Pradeep Kumar Suthar [INOX Green Energy Services Limited]
+[T 35|R  7] EMPLOYEE        -> Rohit Sharma [INOX Green Energy Services Limited]
+[T 35|R  8] EMPLOYEE        -> Parakash Kumar [INOX Green Energy Services Limited]
+[T 35|R  9] CONTROL ROOM    -> Control Room | 6354226804 | [INOX Green Energy Services Limited]
+[T 36|R  1] EMPLOYEE        -> Saurabh Mehta [Mahindra Renewables Private Limited]
+[T 36|R  2] EMPLOYEE        -> Ramnath Khedkar [Mahindra Renewables Private Limited]
+[T 36|R  3] EMPLOYEE        -> Himanshu Chouhan [Mahindra Renewables Private Limited]
+[T 36|R  4] CONTROL ROOM    -> Control Room | 7489311988 | [Mahindra Renewables Private Limited]
+[T 37|R  1] EMPLOYEE        -> Narendra Somoshi [Ostro Kutch Wind Private Limited]
+[T 37|R  2] EMPLOYEE        -> P.Sajil [Ostro Kutch Wind Private Limited]
+[T 37|R  3] EMPLOYEE        -> Hiren pathak [Ostro Kutch Wind Private Limited]
+[T 37|R  4] EMPLOYEE        -> Rajesh Parihar [Ostro Kutch Wind Private Limited]
+[T 37|R  5] EMPLOYEE        -> Nikita Surbhi [Ostro Kutch Wind Private Limited]
+[T 37|R  6] CONTROL ROOM    -> Control Room | 8849756108 | [Ostro Kutch Wind Private Limited]
+[T 38|R  1] EMPLOYEE        -> Narendra Somoshi [ReNew Power Limite d]
+[T 38|R  2] EMPLOYEE        -> P.Sajil [ReNew Power Limite d]
+[T 38|R  3] EMPLOYEE        -> Hiren pathak [ReNew Power Limite d]
+[T 38|R  4] EMPLOYEE        -> Nitin Gohil [ReNew Power Limite d]
+[T 38|R  5] EMPLOYEE        -> Nikita Surbhi [ReNew Power Limite d]
+[T 38|R  6] CONTROL ROOM    -> Control Room | 8849756108 | [ReNew Power Limite d]
+[T 39|R  1] EMPLOYEE        -> Mohammed Irfan [Alfanar Energy Private Limited]
+[T 39|R  2] EMPLOYEE        -> Jitendra Prajapati [Alfanar Energy Private Limited]
+[T 39|R  3] EMPLOYEE        -> Kishan Venkat [Alfanar Energy Private Limited]
+[T 39|R  4] EMPLOYEE        -> Saddam Hussain [Alfanar Energy Private Limited]
+[T 39|R  5] EMPLOYEE        -> Vinod Kumar Patel [Alfanar Energy Private Limited]
+[T 39|R  6] CONTROL ROOM    -> Control Room | Hotline- 20220586 / 9687042683 | [Alfanar Energy Private Limited]
+[T 40|R  1] EMPLOYEE        -> Narendra Somoshi [ReNew Wind Energy (AP2) Private Limited]
+[T 40|R  2] EMPLOYEE        -> P.Sajil [ReNew Wind Energy (AP2) Private Limited]
+[T 40|R  3] EMPLOYEE        -> Hiren pathak [ReNew Wind Energy (AP2) Private Limited]
+[T 40|R  4] EMPLOYEE        -> Chunni Lal Legha [ReNew Wind Energy (AP2) Private Limited]
+[T 40|R  5] EMPLOYEE        -> Nikita Surbhi [ReNew Wind Energy (AP2) Private Limited]
+[T 40|R  6] CONTROL ROOM    -> Control Room | 8849756108 | [ReNew Wind Energy (AP2) Private Limited]
+[T 41|R  1] EMPLOYEE        -> Dhananjay Joshi [Continuum Power Trading Private Limited]
+[T 41|R  2] EMPLOYEE        -> Uday Ghadage [Continuum Power Trading Private Limited]
+[T 41|R  3] EMPLOYEE        -> Santosh Kairmode [Continuum Power Trading Private Limited]
+[T 41|R  4] EMPLOYEE        -> Gautam Sonmali [Continuum Power Trading Private Limited]
+[T 41|R  5] EMPLOYEE        -> Manoj Patel [Continuum Power Trading Private Limited]
+[T 41|R  6] CONTROL ROOM    -> Control Room |  | [Continuum Power Trading Private Limited]
+[T 41|R  7] SKIP: empty row                                | 
+[T 42|R  1] EMPLOYEE        -> Shri. P S Goyal [Gujarat Industries Power Company Limited]
+[T 42|R  2] EMPLOYEE        -> Shri. P M Parekh [Gujarat Industries Power Company Limited]
+[T 42|R  3] EMPLOYEE        -> Shri. K R Ghataliya [Gujarat Industries Power Company Limited]
+[T 42|R  4] EMPLOYEE        -> Shri. V S Oza [Gujarat Industries Power Company Limited]
+[T 42|R  5] EMPLOYEE        -> Shri Maulik Dave [Gujarat Industries Power Company Limited]
+[T 42|R  6] CONTROL ROOM    -> Control Room |  | [Gujarat Industries Power Company Limited]
+[T 43|R  1] EMPLOYEE        -> Shashi Madaparil [Electro Solaire Private Limited]
+[T 43|R  2] EMPLOYEE        -> Ruchita Kale [Electro Solaire Private Limited]
+[T 43|R  3] EMPLOYEE        -> Nikunj Kumar [Electro Solaire Private Limited]
+[T 43|R  4] EMPLOYEE        -> Sarang Patil [Electro Solaire Private Limited]
+[T 43|R  5] CONTROL ROOM    -> Control Room |  | [Electro Solaire Private Limited]
+[T 44|R  1] EMPLOYEE        -> Shri Amin Shahu [Tata Power Renewable Energy Ltd.]
+[T 44|R  2] EMPLOYEE        -> Shri Binoy Kalaria [Tata Power Renewable Energy Ltd.]
+[T 44|R  3] EMPLOYEE        -> Shri S V Gavadhakatla [Tata Power Renewable Energy Ltd.]
+[T 44|R  4] EMPLOYEE        -> Shri Rajesh Chawhan [Tata Power Renewable Energy Ltd.]
+[T 44|R  5] CONTROL ROOM    -> Control Room | (022)67171159 (022)67171180 | [Tata Power Renewable Energy Ltd.]
+[T 45|R  1] EMPLOYEE        -> Raksha Singh [NTPC Kawas Solar PV project]
+[T 45|R  2] EMPLOYEE        -> Paresh H Shah [NTPC Kawas Solar PV project]
+[T 45|R  3] EMPLOYEE        -> S N V Kiran Sana [NTPC Kawas Solar PV project]
+[T 45|R  4] CONTROL ROOM    -> Control Room | 0261 - 2860375 | [NTPC Kawas Solar PV project]
+[T 46|R  1] EMPLOYEE        -> Sh G L Meena [NTPC Jhanor - Gandhar Solar PV project]
+[T 46|R  2] EMPLOYEE        -> Sh Manish Meshram [NTPC Jhanor - Gandhar Solar PV project]
+[T 46|R  3] EMPLOYEE        -> Sh NISAR AHMAD MANSOOR [NTPC Jhanor - Gandhar Solar PV project]
+[T 46|R  4] CONTROL ROOM    -> Control Room | (Std Code: 02642)287450 / 9426 | [NTPC Jhanor - Gandhar Solar PV project]
+[T 47|R  1] EMPLOYEE        -> Narendra Somoshi [Ostro Energy Private Limited]
+[T 47|R  2] EMPLOYEE        -> Abhinav Saraswat [Ostro Energy Private Limited]
+[T 47|R  3] EMPLOYEE        -> Rajesh Parihar [Ostro Energy Private Limited]
+[T 47|R  4] EMPLOYEE        -> Nikita Surbhi [Ostro Energy Private Limited]
+[T 47|R  5] CONTROL ROOM    -> Control Room | 8849756108 | [Ostro Energy Private Limited]
+[T 48|R  1] EMPLOYEE        -> Bharat Patel [Adani Wind Energy Kutch Three Limited]
+[T 48|R  2] EMPLOYEE        -> Ritesh Chauhan [Adani Wind Energy Kutch Three Limited]
+[T 48|R  3] EMPLOYEE        -> Yagnesh Joshi [Adani Wind Energy Kutch Three Limited]
+[T 48|R  4] EMPLOYEE        -> Hasmukh Prajapati [Adani Wind Energy Kutch Three Limited]
+[T 48|R  5] EMPLOYEE        -> Alapan Bera [Adani Wind Energy Kutch Three Limited]
+[T 48|R  6] CONTROL ROOM    -> Control Room | IP No 20221496 / 9316735767 | [Adani Wind Energy Kutch Three Limited]
+[T 49|R  1] EMPLOYEE        -> Bharatbhai Patel [Adani Wind Energy Kutch Five Limited]
+[T 49|R  2] EMPLOYEE        -> Ritesh Chauhan [Adani Wind Energy Kutch Five Limited]
+[T 49|R  3] EMPLOYEE        -> Yagnesh Joshi [Adani Wind Energy Kutch Five Limited]
+[T 49|R  4] EMPLOYEE        -> Hasmukh Prajapati [Adani Wind Energy Kutch Five Limited]
+[T 49|R  5] EMPLOYEE        -> Alapan Bera [Adani Wind Energy Kutch Five Limited]
+[T 49|R  6] CONTROL ROOM    -> Control Room | IP No 20221496 / 09316735767 | [Adani Wind Energy Kutch Five Limited]
+[T 50|R  1] EMPLOYEE        -> Shri. A.N.Ghervara [Gujarat State Electricity Corporation Limited]
+[T 50|R  2] EMPLOYEE        -> Shri. M.J. Chaudhari [Gujarat State Electricity Corporation Limited]
+[T 50|R  3] EMPLOYEE        -> Shri. P.R. Chaudhari [Gujarat State Electricity Corporation Limited]
+[T 50|R  4] EMPLOYEE        -> Shri. R.S. Surani [Gujarat State Electricity Corporation Limited]
+[T 50|R  5] CONTROL ROOM    -> Control Room |  | [Gujarat State Electricity Corporation Limited]
+[T 51|R  1] EMPLOYEE        -> Ashwin Madhamshettiwar [Avikaran Solar India Private Limited]
+[T 51|R  2] EMPLOYEE        -> Swathy.G [Avikaran Solar India Private Limited]
+[T 51|R  3] EMPLOYEE        -> Naresh Kotha [Avikaran Solar India Private Limited]
+[T 51|R  4] EMPLOYEE        -> Santosh Kotti [Avikaran Solar India Private Limited]
+[T 51|R  5] CONTROL ROOM    -> Control Room | +91 6355 827 073 | [Avikaran Solar India Private Limited]
+[T 52|R  1] EMPLOYEE        -> S. Saravanan [Powerica Limited]
+[T 52|R  2] EMPLOYEE        -> Deepak Gupta [Powerica Limited]
+[T 52|R  3] EMPLOYEE        -> Sidharajsinh jadeja [Powerica Limited]
+[T 52|R  4] EMPLOYEE        -> Ramakrishnan. V. [Powerica Limited]
+[T 52|R  5] CONTROL ROOM    -> Control Room | IP No.20221503 / 6353450165 | [Powerica Limited]
+[T 53|R  1] EMPLOYEE        -> Amit Debnath [Sitac Kabini Renewables Private Limited]
+[T 53|R  2] EMPLOYEE        -> Shashikant Tiwari [Sitac Kabini Renewables Private Limited]
+[T 53|R  3] EMPLOYEE        -> Umesh Raichandani [Sitac Kabini Renewables Private Limited]
+[T 53|R  4] EMPLOYEE        -> Manoj Choudhary [Sitac Kabini Renewables Private Limited]
+[T 53|R  5] CONTROL ROOM    -> Control Room | 6352347189 | [Sitac Kabini Renewables Private Limited]
+[T 53|R  6] EMPLOYEE        -> Davedarshan Misra [Sitac Kabini Renewables Private Limited]
+[T 54|R  1] EMPLOYEE        -> Dhananjay Joshi [Srijan Energy Systems Private Limited]
+[T 54|R  2] EMPLOYEE        -> Uday Ghadage [Srijan Energy Systems Private Limited]
+[T 54|R  3] EMPLOYEE        -> Santosh Khairmode [Srijan Energy Systems Private Limited]
+[T 54|R  4] EMPLOYEE        -> Sivanesan S [Srijan Energy Systems Private Limited]
+[T 54|R  5] CONTROL ROOM    -> Control Room | 9106575343 | [Srijan Energy Systems Private Limited]
+[T 55|R  1] EMPLOYEE        -> Sh UVVS Srinivas Rao [Solapur Solar PV Project]
+[T 55|R  2] EMPLOYEE        -> Sh Dinesh Gupta [Solapur Solar PV Project]
+[T 55|R  3] EMPLOYEE        -> Sh Harish Bhat [Solapur Solar PV Project]
+[T 55|R  4] CONTROL ROOM    -> CCR-Control Room | 0217- 2252611;021 7-2461303 /  | [Solapur Solar PV Project]
+[T 55|R  5] CONTROL ROOM    -> Control Room |  | [Solapur Solar PV Project]
+[T 56|R  1] EMPLOYEE        -> Digvijendra Thakur [Adani Wind Energy MP One Private Limited]
+[T 56|R  2] EMPLOYEE        -> Rakesh Jagawat [Adani Wind Energy MP One Private Limited]
+[T 56|R  3] EMPLOYEE        -> Bhavinkumar Shah [Adani Wind Energy MP One Private Limited]
+[T 56|R  4] EMPLOYEE        -> Ratnakar Kharvar [Adani Wind Energy MP One Private Limited]
+[T 56|R  5] EMPLOYEE        -> Alapan Bera [Adani Wind Energy MP One Private Limited]
+[T 56|R  6] CONTROL ROOM    -> Control Room | IP No 20220531 / 7227065352 | [Adani Wind Energy MP One Private Limited]
+[T 57|R  1] EMPLOYEE        -> Ashok Hadiya [Adani Wind Energy Kutch Four Limited]
+[T 57|R  2] EMPLOYEE        -> Tejaskumar Shingala [Adani Wind Energy Kutch Four Limited]
+[T 57|R  3] EMPLOYEE        -> Lalji Kalsariya [Adani Wind Energy Kutch Four Limited]
+[T 57|R  4] EMPLOYEE        -> Panakhaniya Mohit [Adani Wind Energy Kutch Four Limited]
+[T 57|R  5] EMPLOYEE        -> Alapan Bera [Adani Wind Energy Kutch Four Limited]
+[T 57|R  6] CONTROL ROOM    -> Control Room | IP No 20220535 / 6353672066 | [Adani Wind Energy Kutch Four Limited]
+[T 58|R  1] EMPLOYEE        -> Sunil Jain [Apraava Energy Private Limited (AEPL)]
+[T 58|R  2] EMPLOYEE        -> Kajal Rout [Apraava Energy Private Limited (AEPL)]
+[T 58|R  3] EMPLOYEE        -> Kuldeep Singh Tomar [Apraava Energy Private Limited (AEPL)]
+[T 58|R  4] EMPLOYEE        -> Himanshu Patel [Apraava Energy Private Limited (AEPL)]
+[T 58|R  5] CONTROL ROOM    -> Control Room | 9157364534 9265360826 | [Apraava Energy Private Limited (AEPL)]
+[T 59|R  1] EMPLOYEE        -> Mohammed Irfan [Alfanar Netra Wind Private Limited]
+[T 59|R  2] EMPLOYEE        -> Jitendra Prajapati [Alfanar Netra Wind Private Limited]
+[T 59|R  3] EMPLOYEE        -> Kishan Venkat [Alfanar Netra Wind Private Limited]
+[T 59|R  4] EMPLOYEE        -> Akabar Alam [Alfanar Netra Wind Private Limited]
+[T 59|R  5] EMPLOYEE        -> Mithul Borisagar [Alfanar Netra Wind Private Limited]
+[T 59|R  6] CONTROL ROOM    -> Control Room | Hotline- 20220529 / 9106763679 | [Alfanar Netra Wind Private Limited]
+[T 60|R  1] EMPLOYEE        -> Shri Kalpesh Kumar []
+[T 60|R  2] EMPLOYEE        -> Shri Krishnan []
+[T 60|R  3] EMPLOYEE        -> Shri Santhosh []
+[T 60|R  4] EMPLOYEE        -> Shri Suryamani []
+[T 60|R  5] CONTROL ROOM    -> Control Room | 9369023760 | []
+[T 60|R  6] EMPLOYEE        -> Shri Rajmohan C []
+[T 60|R  7] CONTROL ROOM    -> Control Room | 20220533 | []
+[T 61|R  1] EMPLOYEE        -> Manoj Dixit [Wind One Renergy Limited]
+[T 61|R  2] EMPLOYEE        -> Arvind Kumar [Wind One Renergy Limited]
+[T 61|R  3] EMPLOYEE        -> Bapulal Labana [Wind One Renergy Limited]
+[T 61|R  4] EMPLOYEE        -> Sunil Sharma [Wind One Renergy Limited]
+[T 61|R  5] EMPLOYEE        -> Surendra Yadav [Wind One Renergy Limited]
+[T 61|R  6] EMPLOYEE        -> Pradeep Kumar Suthar [Wind One Renergy Limited]
+[T 61|R  7] EMPLOYEE        -> Rohit Sharma [Wind One Renergy Limited]
+[T 61|R  8] EMPLOYEE        -> Parakash Kumar [Wind One Renergy Limited]
+[T 61|R  9] CONTROL ROOM    -> Control Room | 6354226804 | [Wind One Renergy Limited]
+[T 62|R  1] EMPLOYEE        -> Rajesh Kadam [Wind Two Renergy Private Limited]
+[T 62|R  2] EMPLOYEE        -> Subrta Das [Wind Two Renergy Private Limited]
+[T 62|R  3] EMPLOYEE        -> Jaydeep Chudasama [Wind Two Renergy Private Limited]
+[T 62|R  4] EMPLOYEE        -> Ketul Patel [Wind Two Renergy Private Limited]
+[T 62|R  5] EMPLOYEE        -> Rajdeep Bard [Wind Two Renergy Private Limited]
+[T 62|R  6] EMPLOYEE        -> Maulik Kotecha [Wind Two Renergy Private Limited]
+[T 62|R  7] CONTROL ROOM    -> Control Room |  | [Wind Two Renergy Private Limited]
+[T 63|R  1] EMPLOYEE        -> Manoj Dixit [Wind Three Renergy Limited]
+[T 63|R  2] EMPLOYEE        -> Arvind Kumar [Wind Three Renergy Limited]
+[T 63|R  3] EMPLOYEE        -> Bapulal Labana [Wind Three Renergy Limited]
+[T 63|R  4] EMPLOYEE        -> Sunil Sharma [Wind Three Renergy Limited]
+[T 63|R  5] EMPLOYEE        -> Surendra Yadav [Wind Three Renergy Limited]
+[T 63|R  6] EMPLOYEE        -> Pradeep Kumar Suthar [Wind Three Renergy Limited]
+[T 63|R  7] EMPLOYEE        -> Rohit Sharma [Wind Three Renergy Limited]
+[T 63|R  8] EMPLOYEE        -> Parakash Kumar [Wind Three Renergy Limited]
+[T 63|R  9] CONTROL ROOM    -> Control Room | 6354226804 | [Wind Three Renergy Limited]
+[T 64|R  1] EMPLOYEE        -> Manoj Dixit [Wind Five Renergy Limited]
+[T 64|R  2] EMPLOYEE        -> Arvind Kumar [Wind Five Renergy Limited]
+[T 64|R  3] EMPLOYEE        -> Bapulal Labana [Wind Five Renergy Limited]
+[T 64|R  4] EMPLOYEE        -> Sunil Sharma [Wind Five Renergy Limited]
+[T 64|R  5] EMPLOYEE        -> Surendra Yadav [Wind Five Renergy Limited]
+[T 64|R  6] EMPLOYEE        -> Pradeep Kumar Suthar [Wind Five Renergy Limited]
+[T 64|R  7] EMPLOYEE        -> Rohit Sharma [Wind Five Renergy Limited]
+[T 64|R  8] EMPLOYEE        -> Parakash Kumar [Wind Five Renergy Limited]
+[T 64|R  9] CONTROL ROOM    -> Control Room | 6354226804 | [Wind Five Renergy Limited]
+[T 65|R  1] EMPLOYEE        -> Shri. A.N.Ghervara [Gujarat State Electricity Corporation Limited- Phase II]
+[T 65|R  2] EMPLOYEE        -> Shri. M.J. Chaudhari [Gujarat State Electricity Corporation Limited- Phase II]
+[T 65|R  3] EMPLOYEE        -> Shri. P.R. Chaudhari [Gujarat State Electricity Corporation Limited- Phase II]
+[T 65|R  4] EMPLOYEE        -> Shri. R.S. Surani [Gujarat State Electricity Corporation Limited- Phase II]
+[T 65|R  5] CONTROL ROOM    -> Control Room |  | [Gujarat State Electricity Corporation Limited- Phase II]
+[T 66|R  1] SKIP: empty row                                | 
+[T 67|R  1] SKIP: empty row                                | 
+[T 68|R  1] SKIP: empty row                                | 
+[T 69|R  1] SKIP: empty row                                | 
+[T 70|R  1] EMPLOYEE        -> Shri Binoy Kalaria [TP Saurya Limited Unit-1]
+[T 70|R  2] CONTROL ROOM    -> Station Head-RUMSL Unit-2 | 9584485555 | [TP Saurya Limited Unit-1]
+[T 70|R  3] EMPLOYEE        -> Shri S V Gavadhakatla [TP Saurya Limited Unit-1]
+[T 70|R  4] EMPLOYEE        -> Shri Vineet George [TP Saurya Limited Unit-1]
+[T 70|R  5] CONTROL ROOM    -> Forecasting & Scheduling Control Room | (022)67171159 (022)67171180 /  | [TP Saurya Limited Unit-1]
+[T 70|R  6] CONTROL ROOM    -> RUMSL Unit-1 Site Control Room | 8655972335 | [TP Saurya Limited Unit-1]
+[T 71|R  1] EMPLOYEE        -> Shri Binoy Kalaria [TP Saurya Limited Unit- 2]
+[T 71|R  2] CONTROL ROOM    -> Station Head-RUMSL Unit-2 | 9584485555 | [TP Saurya Limited Unit- 2]
+[T 71|R  3] EMPLOYEE        -> Shri S V Gavadhakatla [TP Saurya Limited Unit- 2]
+[T 71|R  4] EMPLOYEE        -> Shri Vineet George [TP Saurya Limited Unit- 2]
+[T 71|R  5] CONTROL ROOM    -> Forecasting & Scheduling Control Room | (022)67171159 (022)67171180 /  | [TP Saurya Limited Unit- 2]
+[T 71|R  6] CONTROL ROOM    -> RUMSL Unit-2 Site Control Room | 8655972334 | [TP Saurya Limited Unit- 2]
+[T 72|R  1] SKIP: empty row                                | 
+[T 73|R  1] SKIP: empty row                                | 
+[T 74|R  1] SKIP: empty row                                | 
+[T 75|R  1] SKIP: empty row                                | 
+[T 76|R  1] SKIP: empty row                                | 
+[T 77|R  1] SKIP: empty row                                | 
+[T 78|R  1] EMPLOYEE        -> Raghunandan Patidar [BEEMPOW ENERGY PRIVATE LIMITED]
+[T 78|R  2] EMPLOYEE        -> Nimish Sheth [BEEMPOW ENERGY PRIVATE LIMITED]
+[T 79|R  1] SKIP: empty row                                | 
+[T 80|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Six A Limited -PSS3]
+[T 80|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Green Energy Twenty Six A Limited -PSS3]
+[T 80|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Green Energy Twenty Six A Limited -PSS3]
+[T 80|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Six A Limited -PSS3]
+[T 80|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Green Energy Twenty Six A Limited -PSS3]
+[T 81|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Six B Limited -PSS3]
+[T 81|R  2] EMPLOYEE        -> Sourabh Gupta [Adani Green Energy Twenty Six B Limited -PSS3]
+[T 81|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069072 | [Adani Green Energy Twenty Six B Limited -PSS3]
+[T 81|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Six B Limited -PSS3]
+[T 81|R  5] CONTROL ROOM    -> Control Room | IP No. 20220538 / 7227069072 | [Adani Green Energy Twenty Six B Limited -PSS3]
+[T 82|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Five A Limited -PSS3]
+[T 82|R  2] EMPLOYEE        -> Sourabh Gupta [Adani Green Energy Twenty Five A Limited -PSS3]
+[T 82|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069072 | [Adani Green Energy Twenty Five A Limited -PSS3]
+[T 82|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Five A Limited -PSS3]
+[T 82|R  5] CONTROL ROOM    -> Control Room | IP No. 20220538 / 7227069072 | [Adani Green Energy Twenty Five A Limited -PSS3]
+[T 83|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Five B Limited -PSS3]
+[T 83|R  2] EMPLOYEE        -> Sourabh Gupta [Adani Green Energy Twenty Five B Limited -PSS3]
+[T 83|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069072 | [Adani Green Energy Twenty Five B Limited -PSS3]
+[T 83|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Five B Limited -PSS3]
+[T 83|R  5] CONTROL ROOM    -> Control Room | IP No. 20220538 / 7227069072 | [Adani Green Energy Twenty Five B Limited -PSS3]
+[T 84|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Four A Limited -PSS3]
+[T 84|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Green Energy Twenty Four A Limited -PSS3]
+[T 84|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Green Energy Twenty Four A Limited -PSS3]
+[T 84|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Four A Limited -PSS3]
+[T 84|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Green Energy Twenty Four A Limited -PSS3]
+[T 85|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Fifty Five Limited - PSS3]
+[T 85|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Renewable Energy Fifty Five Limited - PSS3]
+[T 85|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Renewable Energy Fifty Five Limited - PSS3]
+[T 85|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Fifty Five Limited - PSS3]
+[T 85|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Renewable Energy Fifty Five Limited - PSS3]
+[T 86|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Forty One Limited PSS-13]
+[T 86|R  2] EMPLOYEE        -> Pravas Nayak [Adani Renewable Energy Forty One Limited PSS-13]
+[T 86|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227036279 | [Adani Renewable Energy Forty One Limited PSS-13]
+[T 86|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Forty One Limited PSS-13]
+[T 86|R  5] CONTROL ROOM    -> Control Room | IP No. 20221526 / 7227036279 | [Adani Renewable Energy Forty One Limited PSS-13]
+[T 87|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Fifty Seven Limited PSS-13]
+[T 87|R  2] EMPLOYEE        -> Pravas Nayak [Adani Renewable Energy Fifty Seven Limited PSS-13]
+[T 87|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227036279 | [Adani Renewable Energy Fifty Seven Limited PSS-13]
+[T 87|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Fifty Seven Limited PSS-13]
+[T 87|R  5] CONTROL ROOM    -> Control Room | IP No. 20221526 / 7227036279 | [Adani Renewable Energy Fifty Seven Limited PSS-13]
+[T 88|R  1] EMPLOYEE        -> Jitendra Ranawat [Ambuja Cements Limited -PSS-4]
+[T 88|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Ambuja Cements Limited -PSS-4]
+[T 88|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Ambuja Cements Limited -PSS-4]
+[T 88|R  4] EMPLOYEE        -> Alapan Bera [Ambuja Cements Limited -PSS-4]
+[T 88|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Ambuja Cements Limited -PSS-4]
+[T 89|R  1] EMPLOYEE        -> Jitendra Ranawat [Ambuja Cements Limited-PSS - 3]
+[T 89|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Ambuja Cements Limited-PSS - 3]
+[T 89|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Ambuja Cements Limited-PSS - 3]
+[T 89|R  4] EMPLOYEE        -> Alapan Bera [Ambuja Cements Limited-PSS - 3]
+[T 89|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Ambuja Cements Limited-PSS - 3]
+[T 90|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Hazira Port Limited-PSS3]
+[T 90|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Hazira Port Limited-PSS3]
+[T 90|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Hazira Port Limited-PSS3]
+[T 90|R  4] EMPLOYEE        -> Alapan Bera [Adani Hazira Port Limited-PSS3]
+[T 90|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Hazira Port Limited-PSS3]
+[T 91|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Forty Eight Limited-PSS9]
+[T 91|R  2] EMPLOYEE        -> Sanjaykumar Asari [Adani Renewable Energy Forty Eight Limited-PSS9]
+[T 91|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227036204 | [Adani Renewable Energy Forty Eight Limited-PSS9]
+[T 91|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Forty Eight Limited-PSS9]
+[T 91|R  5] CONTROL ROOM    -> Control Room | IP No. 20221517 / 7227036204 | [Adani Renewable Energy Forty Eight Limited-PSS9]
+[T 92|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Fifty Six Limited – PSS4]
+[T 92|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Adani Renewable Energy Fifty Six Limited – PSS4]
+[T 92|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Adani Renewable Energy Fifty Six Limited – PSS4]
+[T 92|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Fifty Six Limited – PSS4]
+[T 92|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Adani Renewable Energy Fifty Six Limited – PSS4]
+[T 93|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Holding Four Limited-PSS1]
+[T 93|R  2] EMPLOYEE        -> Inderjeet Singh [Adani Renewable Energy Holding Four Limited-PSS1]
+[T 93|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227092433 | [Adani Renewable Energy Holding Four Limited-PSS1]
+[T 93|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Holding Four Limited-PSS1]
+[T 93|R  5] CONTROL ROOM    -> Control Room | IP No. 20221461 / 7227092433 | [Adani Renewable Energy Holding Four Limited-PSS1]
+[T 94|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Forty One Limited - PSS3]
+[T 94|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Renewable Energy Forty One Limited - PSS3]
+[T 94|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Renewable Energy Forty One Limited - PSS3]
+[T 94|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Forty One Limited - PSS3]
+[T 94|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Renewable Energy Forty One Limited - PSS3]
+[T 95|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Forty One Limited – PSS 4]
+[T 95|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Adani Renewable Energy Forty One Limited – PSS 4]
+[T 95|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Adani Renewable Energy Forty One Limited – PSS 4]
+[T 95|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Forty One Limited – PSS 4]
+[T 95|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Adani Renewable Energy Forty One Limited – PSS 4]
+[T 96|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Renewable Energy Fifty Six Limited – PSS 9]
+[T 96|R  2] EMPLOYEE        -> Sanjaykumar Asari [Adani Renewable Energy Fifty Six Limited – PSS 9]
+[T 96|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227036204 | [Adani Renewable Energy Fifty Six Limited – PSS 9]
+[T 96|R  4] EMPLOYEE        -> Alapan Bera [Adani Renewable Energy Fifty Six Limited – PSS 9]
+[T 96|R  5] CONTROL ROOM    -> Control Room | IP No. 20221517 / 7227036204 | [Adani Renewable Energy Fifty Six Limited – PSS 9]
+[T 97|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Solar Energy Jodhpur Six Private Limited- PSS 9]
+[T 97|R  2] EMPLOYEE        -> Sanjaykumar Asari [Adani Solar Energy Jodhpur Six Private Limited- PSS 9]
+[T 97|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227036204 | [Adani Solar Energy Jodhpur Six Private Limited- PSS 9]
+[T 97|R  4] EMPLOYEE        -> Alapan Bera [Adani Solar Energy Jodhpur Six Private Limited- PSS 9]
+[T 97|R  5] CONTROL ROOM    -> Control Room | IP No. 20221517 / 7227036204 | [Adani Solar Energy Jodhpur Six Private Limited- PSS 9]
+[T 98|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Hybrid Energy Jaisalmer Five Limited -PSS4]
+[T 98|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Adani Hybrid Energy Jaisalmer Five Limited -PSS4]
+[T 98|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Adani Hybrid Energy Jaisalmer Five Limited -PSS4]
+[T 98|R  4] EMPLOYEE        -> Alapan Bera [Adani Hybrid Energy Jaisalmer Five Limited -PSS4]
+[T 98|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Adani Hybrid Energy Jaisalmer Five Limited -PSS4]
+[T 99|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Green Energy Twenty Four Limited – PSS-4]
+[T 99|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Adani Green Energy Twenty Four Limited – PSS-4]
+[T 99|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Adani Green Energy Twenty Four Limited – PSS-4]
+[T 99|R  4] EMPLOYEE        -> Alapan Bera [Adani Green Energy Twenty Four Limited – PSS-4]
+[T 99|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Adani Green Energy Twenty Four Limited – PSS-4]
+[T100|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Portsand Special Economic Zone Limited -PSS4]
+[T100|R  2] EMPLOYEE        -> Venkata Durga Hari Prasad Morla [Adani Portsand Special Economic Zone Limited -PSS4]
+[T100|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227078943 | [Adani Portsand Special Economic Zone Limited -PSS4]
+[T100|R  4] EMPLOYEE        -> Alapan Bera [Adani Portsand Special Economic Zone Limited -PSS4]
+[T100|R  5] CONTROL ROOM    -> Control Room | IP No. 20221532 / 7227078943 | [Adani Portsand Special Economic Zone Limited -PSS4]
+[T101|R  1] EMPLOYEE        -> Jitendra Ranawat [Adani Portsand Special Economic Zone Limited -PSS3]
+[T101|R  2] EMPLOYEE        -> Gusai Dipakgar Govindgar [Adani Portsand Special Economic Zone Limited -PSS3]
+[T101|R  3] CONTROL ROOM    -> Control Room Shift Engineer | 7227069073 | [Adani Portsand Special Economic Zone Limited -PSS3]
+[T101|R  4] EMPLOYEE        -> Alapan Bera [Adani Portsand Special Economic Zone Limited -PSS3]
+[T101|R  5] CONTROL ROOM    -> Control Room | IP No. 20220542 / 7227069073 | [Adani Portsand Special Economic Zone Limited -PSS3]
+[T102|R  1] EMPLOYEE        -> Bibhu Sahoo [M/s Manikaran Analytics Limited]
+[T102|R  2] EMPLOYEE        -> Shift Incharge [M/s Manikaran Analytics Limited]
+[T102|R  3] EMPLOYEE        -> Sandeep Singh [M/s Manikaran Analytics Limited]
+[T102|R  4] EMPLOYEE        -> Manish Rawat [M/s Manikaran Analytics Limited]
+[T102|R  5] EMPLOYEE        -> Debadutta Sahoo [M/s Manikaran Analytics Limited]
+[T103|R  1] CONTROL ROOM    -> · QCA Control Room · Manish Kumar | 7227020882 6358852478 | [M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED]
+[T103|R  2] CONTROL ROOM    -> · Khavda Control Room · QCA Control Room · Sulabh Shah | 7041226638 7227020882 82382561 | [M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED]
+[T103|R  3] CONTROL ROOM    -> · QCA Control Room · Atul Kumar Jadhav | 7227020882 7227073766 | [M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED]
+[T103|R  4] EMPLOYEE        -> Ganesh Jagtap [M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED]
+[T103|R  5] EMPLOYEE        -> Alapan Bera [M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED]
+[T104|R  1] EMPLOYEE        -> Rajesh Kr. Sonkar [ACB (India) Limited]
+[T104|R  2] EMPLOYEE        -> Subhajit. Mahato [ACB (India) Limited]
+[T104|R  3] EMPLOYEE        -> Shishir Sahoo [ACB (India) Limited]
+[T104|R  4] CONTROL ROOM    -> Control Room |  | [ACB (India) Limited]
+[T104|R  5] CONTROL ROOM    -> 400/132 KV Switch yard Control Room | 400/132 KV Switch yard Control | [ACB (India) Limited]
+[T104|R  6] SKIP: sub-heading → org='Chakabura 2x30 MW Thermal Power Plant' | Chakabura 2x30 MW Thermal Power Plant
+[T104|R  7] EMPLOYEE        -> M N Biswas [Chakabura 2x30 MW Thermal Power Plant]
+[T104|R  8] CONTROL ROOM    -> 2x30 MW Control Room |  | [Chakabura 2x30 MW Thermal Power Plant]
+[T104|R  9] SKIP: sub-heading → org='SCPL (Ratija) 1x50 MW Thermal Power Plant' | SCPL (Ratija) 1x50 MW Thermal Power Plan
+[T104|R 10] EMPLOYEE        -> S P Pandey [SCPL (Ratija) 1x50 MW Thermal Power Plant]
+[T104|R 11] CONTROL ROOM    -> 50 MW Control Room |  | [SCPL (Ratija) 1x50 MW Thermal Power Plant]
+[T104|R 12] SKIP: sub-heading → org='MCCPL 1x300 MW Thermal Power Plant' | MCCPL 1x300 MW Thermal Power Plant
+[T104|R 13] EMPLOYEE        -> R.P. Vishwakarma [MCCPL 1x300 MW Thermal Power Plant]
+[T104|R 14] CONTROL ROOM    -> 1x300 MW Control Room | 6262049508 | [MCCPL 1x300 MW Thermal Power Plant]
+[T105|R  1] EMPLOYEE        -> Mayankkumar Doshi [Adani Power (Mundra) Limited]
+[T105|R  2] EMPLOYEE        -> Mula Ravi [Adani Power (Mundra) Limited]
+[T105|R  3] EMPLOYEE        -> Ketan Joshi [Adani Power (Mundra) Limited]
+[T105|R  4] EMPLOYEE        -> Kalpesh Patel [Adani Power (Mundra) Limited]
+[T105|R  5] EMPLOYEE        -> Mukeshkumar Saravta [Adani Power (Mundra) Limited]
+[T105|R  6] EMPLOYEE        -> Pramod Bihari Prasad [Adani Power (Mundra) Limited]
+[T105|R  7] EMPLOYEE        -> Milan Popat [Adani Power (Mundra) Limited]
+[T105|R  8] CONTROL ROOM    -> sichvdc.controlroom@adani.com | 02838-266414 / 9687660991 | [Adani Power (Mundra) Limited]
+[T105|R  9] SWITCHYARD      -> SWITCH YARD APL PH-1 | 02838-266411 / 9687660994 | [Adani Power (Mundra) Limited]
+[T105|R 10] SWITCHYARD      -> SWITCH YARD APL PH-2 | 02838-266412 / 9687660995 | [Adani Power (Mundra) Limited]
+[T105|R 11] SWITCHYARD      -> SWITCH YARD APL PH-3 , 4 | 02838-266413 / 9687660996 | [Adani Power (Mundra) Limited]
+[T105|R 12] CONTROL ROOM    -> APL PH-I Control Room | 02838-266401 / 9687660422 | [Adani Power (Mundra) Limited]
+[T105|R 13] CONTROL ROOM    -> APL PH-II Control Room | 02838-266402 / 9687660700 | [Adani Power (Mundra) Limited]
+[T105|R 14] CONTROL ROOM    -> APL PH-III Control Room | 02838-266403 / 9687660919 | [Adani Power (Mundra) Limited]
+[T105|R 15] CONTROL ROOM    -> APL PH-IV Control Room | 02838-266404 / 9687660990 | [Adani Power (Mundra) Limited]
+[T106|R  1] EMPLOYEE        -> Kanti Biswas [ADANI POWER LIMITED, TIRODA]
+[T106|R  2] EMPLOYEE        -> V. Bhanu Prakash Rao [ADANI POWER LIMITED, TIRODA]
+[T106|R  3] EMPLOYEE        -> Sanjay Rangnekar [ADANI POWER LIMITED, TIRODA]
+[T106|R  4] EMPLOYEE        -> Manoj Taunk [ADANI POWER LIMITED, TIRODA]
+[T106|R  5] EMPLOYEE        -> Rakesh Bhalerao [ADANI POWER LIMITED, TIRODA]
+[T106|R  6] CONTROL ROOM    -> APML Tiroda Control Room | 07198-271590 / 9764800057 | [ADANI POWER LIMITED, TIRODA]
+[T106|R  7] SWITCHYARD      -> SWITCH YARD Tiroda | 07198-271974 / 9765492721 | [ADANI POWER LIMITED, TIRODA]
+[T107|R  1] EMPLOYEE        -> Ashutosh Dwivedi [Bharat Aluminum Company Limited]
+[T107|R  2] EMPLOYEE        -> Mantosh Sinha [Bharat Aluminum Company Limited]
+[T107|R  3] EMPLOYEE        -> Mayank Shrivastava [Bharat Aluminum Company Limited]
+[T107|R  4] EMPLOYEE        -> Sangeet Sahu [Bharat Aluminum Company Limited]
+[T107|R  5] EMPLOYEE        -> Prashant Kumar [Bharat Aluminum Company Limited]
+[T107|R  6] EMPLOYEE        -> Niranjan Kumar Athisamy [Bharat Aluminum Company Limited]
+[T107|R  7] EMPLOYEE        -> Ankita Chauhan [Bharat Aluminum Company Limited]
+[T107|R  8] EMPLOYEE        -> Sayan Ghosh [Bharat Aluminum Company Limited]
+[T107|R  9] EMPLOYEE        -> Vikash Agrawal [Bharat Aluminum Company Limited]
+[T107|R 10] EMPLOYEE        -> Rajneesh Kaushal [Bharat Aluminum Company Limited]
+[T107|R 11] CONTROL ROOM    -> 400KV GIS Control room | 07759-252316 / 09179027999/ 99 | [Bharat Aluminum Company Limited]
+[T108|R  1] EMPLOYEE        -> Ranjan Vijayant [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  2] EMPLOYEE        -> Bairwa K [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  3] EMPLOYEE        -> Sahoo Sushanta [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  4] EMPLOYEE        -> Alok Uppal [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  5] EMPLOYEE        -> Kundu Sagnik [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  6] EMPLOYEE        -> Bhattacharjee Himadri [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  7] EMPLOYEE        -> Pawan Malpani [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  8] EMPLOYEE        -> Ashish Modi [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R  9] CONTROL ROOM    -> CGPL Central Control Room | 02838-661188 / 9099006477, 028 | [The Tata Power Co Limited Mundra (MTPS)]
+[T108|R 10] CONTROL ROOM    -> CGPL Central Control Room | 02838-678035 02838-661188 | [The Tata Power Co Limited Mundra (MTPS)]
+[T109|R  1] EMPLOYEE        -> Debasis Sarkar [DB Power Limited]
+[T109|R  2] EMPLOYEE        -> Naresh Punjabi [DB Power Limited]
+[T109|R  3] EMPLOYEE        -> Abhinav Prakash Trivedi [DB Power Limited]
+[T109|R  4] EMPLOYEE        -> Kapil Dubey [DB Power Limited]
+[T109|R  5] CONTROL ROOM    -> Plant Operations Control Room | 91099 50300 91099 50200 | [DB Power Limited]
+[T109|R  6] SWITCHYARD      -> 400 kV Switchyard CR | 09752366333 09522200506 | [DB Power Limited]
+[T109|R  7] EMPLOYEE        -> Scheduling Engineer [DB Power Limited]
+[T109|R  8] SKIP: sub-heading → org='Mumbai Office – Power Sale Department' | Mumbai Office – Power Sale Department
+[T109|R  9] EMPLOYEE        -> Manu Namboothiri [Mumbai Office – Power Sale Department]
+[T109|R 10] EMPLOYEE        -> Mukesh Jha [Mumbai Office – Power Sale Department]
+[T109|R 11] EMPLOYEE        -> Vibhor Dange [Mumbai Office – Power Sale Department]
+[T110|R  1] EMPLOYEE        -> Rikin Patel [DGEN Mega Power Project]
+[T110|R  2] EMPLOYEE        -> Dushyant Patel [DGEN Mega Power Project]
+[T110|R  3] EMPLOYEE        -> Ronak Naik [DGEN Mega Power Project]
+[T110|R  4] EMPLOYEE        -> Kishan Singh [DGEN Mega Power Project]
+[T110|R  5] CONTROL ROOM    -> Control Room | 02641 202503 / 09099006655 | [DGEN Mega Power Project]
+[T111|R  1] EMPLOYEE        -> Pundlik Wanwe [Dhariwal Infrastructure Limited]
+[T111|R  2] EMPLOYEE        -> Kewal Kurmi [Dhariwal Infrastructure Limited]
+[T111|R  3] EMPLOYEE        -> Sripada Saikaushik [Dhariwal Infrastructure Limited]
+[T111|R  4] EMPLOYEE        -> Aditya Bhongale [Dhariwal Infrastructure Limited]
+[T111|R  5] CONTROL ROOM    -> Control Room | 9561112098 /9307900219 | [Dhariwal Infrastructure Limited]
+[T112|R  1] EMPLOYEE        -> Arup Pal [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  2] EMPLOYEE        -> S B Patra [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  3] EMPLOYEE        -> Praveen Rathore [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  4] EMPLOYEE        -> A.Basu Mallick [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  5] EMPLOYEE        -> Ajit Kumar Rai [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  6] EMPLOYEE        -> Ansoo Bhusan Mohanty [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  7] EMPLOYEE        -> S K Mittal [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  8] EMPLOYEE        -> Deepak Goyal [Dongamouha Captive Power Plant (DCPP)]
+[T112|R  9] CONTROL ROOM    -> Control Room | 8085950137 | [Dongamouha Captive Power Plant (DCPP)]
+[T113|R  1] EMPLOYEE        -> Shri Pravat Sundaray [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  2] EMPLOYEE        -> Shri Udayamohanan Nair [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  3] EMPLOYEE        -> Shri Lalan Kishore Singh [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  4] EMPLOYEE        -> Shri Sukanta Sanyal [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  5] CONTROL ROOM    -> Switchyard Control Room (SCR) | 8966902950 / 8966902950 | [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  6] CONTROL ROOM    -> Central Control Room (CCR) | 8966902987 / 8966902987 | [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T113|R  7] EMPLOYEE        -> Shri Manoj Taunk [Mahan Energen Limited (Formally Essar Power (MP) Limited]
+[T114|R  1] EMPLOYEE        -> Dhananjay Deshpande [GMR Warora Energy Limited]
+[T114|R  2] EMPLOYEE        -> Pramod Khandelwal [GMR Warora Energy Limited]
+[T114|R  3] EMPLOYEE        -> Bharat Pinjarkar [GMR Warora Energy Limited]
+[T114|R  4] EMPLOYEE        -> Pankaj Vaidya [GMR Warora Energy Limited]
+[T114|R  5] SKIP: blank name cell                          | 5 | 07176-267070 | 8390903524 | Gwel.warora@gmrgroup.in
+[T114|R  6] CONTROL ROOM    -> Control Room | 8550991199 Fax No 07176-267222 | [GMR Warora Energy Limited]
+[T115|R  1] EMPLOYEE        -> Navin Tinguria []
+[T115|R  2] SWITCHYARD      -> Switchyard Desk (Operations) | 7389943915 | []
+[T116|R  1] EMPLOYEE        -> Anil Kumar Sharma [Jhabua Power Limited]
+[T116|R  2] EMPLOYEE        -> Somnath Chattopadhyay [Jhabua Power Limited]
+[T116|R  3] EMPLOYEE        -> Ashok Singh Yadav [Jhabua Power Limited]
+[T116|R  4] EMPLOYEE        -> Chandra V. Singh [Jhabua Power Limited]
+[T116|R  5] EMPLOYEE        -> V k Jain [Jhabua Power Limited]
+[T116|R  6] EMPLOYEE        -> Johnson Chandrakant [Jhabua Power Limited]
+[T116|R  7] EMPLOYEE        -> Dileep Singh [Jhabua Power Limited]
+[T116|R  8] CONTROL ROOM    -> Control Room | 7583804700 / 7583804700 / 7583 | [Jhabua Power Limited]
+[T117|R  1] EMPLOYEE        -> Anil Kumar Sharma [Jindal Power Limited]
+[T117|R  2] EMPLOYEE        -> Somnath Chattopadhyay [Jindal Power Limited]
+[T117|R  3] EMPLOYEE        -> Ashok Singh Yadav [Jindal Power Limited]
+[T117|R  4] EMPLOYEE        -> Chandra V. Singh [Jindal Power Limited]
+[T117|R  5] EMPLOYEE        -> V k Jain [Jindal Power Limited]
+[T117|R  6] EMPLOYEE        -> Johnson Chandrakant [Jindal Power Limited]
+[T117|R  7] EMPLOYEE        -> Dileep Singh [Jindal Power Limited]
+[T117|R  8] CONTROL ROOM    -> Control Room | 7583804700 / 7583804700 / 7583 | [Jindal Power Limited]
+[T118|R  1] EMPLOYEE        -> Chhavi nath Singh [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  2] EMPLOYEE        -> Bipin Mishra [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  3] EMPLOYEE        -> J P Panda [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  4] EMPLOYEE        -> Prabhjit Singh Samra [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  5] EMPLOYEE        -> Sushi Kumar Singh [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  6] EMPLOYEE        -> Sanjeev Pal [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  7] EMPLOYEE        -> Manohar Badugula [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  8] EMPLOYEE        -> Scheduling Team [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T118|R  9] CONTROL ROOM    -> Control Room | 7869966844, 7817284011, 998199 | [KSK Mahanadi Power Company Limited (JSW Energy)]
+[T119|R  1] EMPLOYEE        -> Anil Sharma [LANCO Amarkantak Power Limited]
+[T119|R  2] EMPLOYEE        -> S.K.Bhardwaj [LANCO Amarkantak Power Limited]
+[T119|R  3] EMPLOYEE        -> Gaurav Prasad [LANCO Amarkantak Power Limited]
+[T119|R  4] EMPLOYEE        -> Y.Dharaninder [LANCO Amarkantak Power Limited]
+[T119|R  5] EMPLOYEE        -> T.R.Sastry [LANCO Amarkantak Power Limited]
+[T119|R  6] EMPLOYEE        -> M.S Vishwakarma [LANCO Amarkantak Power Limited]
+[T119|R  7] EMPLOYEE        -> Brijesh Dwivedi [LANCO Amarkantak Power Limited]
+[T119|R  8] EMPLOYEE        -> Binod Kumar Sahoo [LANCO Amarkantak Power Limited]
+[T119|R  9] CONTROL ROOM    -> Control Room | Mob- 9090784411/ 6264794628 | [LANCO Amarkantak Power Limited]
+[T120|R  1] EMPLOYEE        -> B. K. Mishra [MB Power (MP) Limited]
+[T120|R  2] EMPLOYEE        -> Ajit Chopde [MB Power (MP) Limited]
+[T120|R  3] EMPLOYEE        -> Yashovardhanam Mishra [MB Power (MP) Limited]
+[T120|R  4] EMPLOYEE        -> Arun Mall [MB Power (MP) Limited]
+[T120|R  5] EMPLOYEE        -> Gajanan Jagtap [MB Power (MP) Limited]
+[T120|R  6] EMPLOYEE        -> Prateek Dubey [MB Power (MP) Limited]
+[T120|R  7] EMPLOYEE        -> Kuldeep Singh [MB Power (MP) Limited]
+[T120|R  8] CONTROL ROOM    -> HO control room |  | [MB Power (MP) Limited]
+[T120|R  9] CONTROL ROOM    -> Control Room | 7773011721 | [MB Power (MP) Limited]
+[T121|R  1] EMPLOYEE        -> Surjya Kanta Ray [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  2] SKIP: sub-header row (updated map)             | Sl. No. | Name (Shri/Smt) | Designation | Telephone (O) | Telephone (R ) | Mobile | Email
+[T121|R  3] EMPLOYEE        -> Bibhas Ghatak [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  4] EMPLOYEE        -> Prasant Kumar Panigrahi [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  5] EMPLOYEE        -> Vemu Jaypaul [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  6] EMPLOYEE        -> Rajaram Maity [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  7] EMPLOYEE        -> Amit Kumar [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  8] EMPLOYEE        -> Pavan Kumar Nukala [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T121|R  9] CONTROL ROOM    -> Control Room | 9425293187 /8349994050, 0788-2 | [NTPC-SAIL Power Company Private Limited (NSPCL)]
+[T122|R  1] EMPLOYEE        -> Mr. Samir Kumar Mitra [Raigarh Energy Generation Limited]
+[T122|R  2] EMPLOYEE        -> Mr. Subrata Kumar Aich [Raigarh Energy Generation Limited]
+[T122|R  3] EMPLOYEE        -> Mr. Smruti Ranjan Nayak [Raigarh Energy Generation Limited]
+[T122|R  4] CONTROL ROOM    -> Central Control Room | +91 7762 251587 / 6232005450 | [Raigarh Energy Generation Limited]
+[T122|R  5] CONTROL ROOM    -> Switchyard Control Room | 6232005449 | [Raigarh Energy Generation Limited]
+[T122|R  6] EMPLOYEE        -> Manoj Taunk [Raigarh Energy Generation Limited]
+[T122|R  7] CONTROL ROOM    -> Control Room | 7583888500 | [Raigarh Energy Generation Limited]
+[T123|R  1] EMPLOYEE        -> Rambhav Gattu []
+[T123|R  2] EMPLOYEE        -> Shrikant Vaidya []
+[T123|R  3] EMPLOYEE        -> Pradip Mohapatra []
+[T123|R  4] EMPLOYEE        -> Bhaskar Prasad []
+[T123|R  5] EMPLOYEE        -> Avinash Appalwar []
+[T123|R  6] EMPLOYEE        -> Manoj Taunk []
+[T123|R  7] CONTROL ROOM    -> Control Room | 07717163355/7747013533 | []
+[T124|R  1] EMPLOYEE        -> Sanjay Agarwal [Ratnagiri Gas & Power Private Limited]
+[T124|R  2] EMPLOYEE        -> Suresh D Kurup [Ratnagiri Gas & Power Private Limited]
+[T124|R  3] EMPLOYEE        -> Vikas Singh [Ratnagiri Gas & Power Private Limited]
+[T124|R  4] EMPLOYEE        -> Antaryami Dash [Ratnagiri Gas & Power Private Limited]
+[T124|R  5] EMPLOYEE        -> Sabari Girish N [Ratnagiri Gas & Power Private Limited]
+[T124|R  6] EMPLOYEE        -> Shaiju MR [Ratnagiri Gas & Power Private Limited]
+[T124|R  7] EMPLOYEE        -> Ziaul Haque [Ratnagiri Gas & Power Private Limited]
+[T124|R  8] EMPLOYEE        -> Yedukondalu [Ratnagiri Gas & Power Private Limited]
+[T124|R  9] CONTROL ROOM    -> Control Room | 8007060703/ 02359-241120 | [Ratnagiri Gas & Power Private Limited]
+[T125|R  1] EMPLOYEE        -> C.V.K Prasad [RKM Powergen Private Limited]
+[T125|R  2] EMPLOYEE        -> R. Saravanan [RKM Powergen Private Limited]
+[T125|R  3] EMPLOYEE        -> Vivek Bangde [RKM Powergen Private Limited]
+[T125|R  4] EMPLOYEE        -> T. Rajesh Kumar [RKM Powergen Private Limited]
+[T125|R  5] CONTROL ROOM    -> Control Room | 773013005 & 9685575988 | [RKM Powergen Private Limited]
+[T126|R  1] EMPLOYEE        -> Sachin Mohapatra [SASAN Power Limited]
+[T126|R  2] EMPLOYEE        -> Anand Deshpande [SASAN Power Limited]
+[T126|R  3] EMPLOYEE        -> P.C.Upadhyay [SASAN Power Limited]
+[T126|R  4] EMPLOYEE        -> Pranab Kumar Sandha [SASAN Power Limited]
+[T126|R  5] EMPLOYEE        -> Ragesh Kakoth [SASAN Power Limited]
+[T126|R  6] CONTROL ROOM    -> SIC Control Room | 8770890431 | [SASAN Power Limited]
+[T126|R  7] CONTROL ROOM    -> Switchyard Control Room | 7583896091 | [SASAN Power Limited]
+[T127|R  1] EMPLOYEE        -> K Rajagopal [SASAN, Business Developmentand Commercial, Reliance Centre, Santa Cruz, Mumbai]
+[T127|R  2] EMPLOYEE        -> Shrikant D Kulkarni [SASAN, Business Developmentand Commercial, Reliance Centre, Santa Cruz, Mumbai]
+[T127|R  3] EMPLOYEE        -> Manoj Pongde [SASAN, Business Developmentand Commercial, Reliance Centre, Santa Cruz, Mumbai]
+[T127|R  4] EMPLOYEE        -> Anuj Tomar [SASAN, Business Developmentand Commercial, Reliance Centre, Santa Cruz, Mumbai]
+[T128|R  1] EMPLOYEE        -> R.K. Thota [SKS Power Generation (C.G) Limited]
+[T128|R  2] EMPLOYEE        -> G Harinath Chakravaarthy [SKS Power Generation (C.G) Limited]
+[T128|R  3] EMPLOYEE        -> B.N. Choudhary [SKS Power Generation (C.G) Limited]
+[T128|R  4] EMPLOYEE        -> Power Sales [SKS Power Generation (C.G) Limited]
+[T128|R  5] CONTROL ROOM    -> Control Room | 7389939074/ 7471143902 | [SKS Power Generation (C.G) Limited]
+[T129|R  1] EMPLOYEE        -> Ms. Devjani Patra [SSP]
+[T129|R  2] EMPLOYEE        -> Hemant Pandey [SSP]
+[T129|R  3] EMPLOYEE        -> Rajesh Sharma [SSP]
+[T129|R  4] EMPLOYEE        -> Shri A.N.Patel [SSP]
+[T129|R  5] SKIP: blank name cell                          | 5 | S.E. (O&M) | 02640 -233022, Ext 24/25/28/29 | NA | semech.sshep@gebmail.com
+[T129|R  6] EMPLOYEE        -> B. J. Rathwa [SSP]
+[T129|R  7] EMPLOYEE        -> R.C. Patel [SSP]
+[T129|R  8] CONTROL ROOM    -> SCE, RBPH CONTROL ROOM | 02640- 232101/232565 +91 63599 | [SSP]
+[T129|R  9] CONTROL ROOM    -> SCE, CHPH, CONTROL ROOM | 02640-233025 +91 6359900626 | [SSP]
+[T129|R 10] CONTROL ROOM    -> EMC, Control Room, Indore | 0731-2552703, 0731-2574633, 07 | [SSP]
+[T130|R  1] EMPLOYEE        -> Prahlad Prasad [TRN Energy Private Limited]
+[T130|R  2] EMPLOYEE        -> Sathyanarayan Seshadri [TRN Energy Private Limited]
+[T130|R  3] EMPLOYEE        -> Suresh Kr. Sahoo [TRN Energy Private Limited]
+[T130|R  4] EMPLOYEE        -> D. N. Patel [TRN Energy Private Limited]
+[T130|R  5] EMPLOYEE        -> Sushanta Ku. Jena [TRN Energy Private Limited]
+[T130|R  6] SKIP: junk/separator                           | Corporate Office-Gurgaon
+[T130|R  7] EMPLOYEE        -> C.P. Malik [TRN Energy Private Limited]
+[T130|R  8] EMPLOYEE        -> H. M. Jain [TRN Energy Private Limited]
+[T130|R  9] EMPLOYEE        -> Gyanprakash Gupta [TRN Energy Private Limited]
+[T130|R 10] EMPLOYEE        -> Pooja Panghal [TRN Energy Private Limited]
+[T130|R 11] CONTROL ROOM    -> Switchyard Control Room | 6265223817 | [TRN Energy Private Limited]
+[T130|R 12] CONTROL ROOM    -> SCE, Central Control Room | 7470444273 | [TRN Energy Private Limited]
+[T131|R  1] EMPLOYEE        -> Ajit Barodia [Adani Power Limited]
+[T131|R  2] EMPLOYEE        -> Akkshay Mathhur [Adani Power Limited]
+[T131|R  3] EMPLOYEE        -> Anshul Garg [Adani Power Limited]
+[T131|R  4] EMPLOYEE        -> Manoj Taunk [Adani Power Limited]
+[T131|R  5] EMPLOYEE        -> Rakesh Bhalerao [Adani Power Limited]
+[T132|R  1] EMPLOYEE        -> Dilip Rout [AMNS ( Essar ) Power Transmission Company Limited]
+[T132|R  2] EMPLOYEE        -> Ashish Kakroo [AMNS ( Essar ) Power Transmission Company Limited]
+[T132|R  3] CONTROL ROOM    -> Control Room | 0261 7146596 / 0261 7146596 /  | [AMNS ( Essar ) Power Transmission Company Limited]
+[T133|R  1] EMPLOYEE        -> Piyush Pandya [India Grid Trust (IndiGrid)]
+[T133|R  2] EMPLOYEE        -> Lokendra Singh Ranawat [India Grid Trust (IndiGrid)]
+[T133|R  3] EMPLOYEE        -> Vivek Karthikeyan [India Grid Trust (IndiGrid)]
+[T133|R  4] EMPLOYEE        -> Prayas Gupta [India Grid Trust (IndiGrid)]
+[T134|R  1] EMPLOYEE        -> Akhilesh Jaiswal [Central Control Room, Noida]
+[T134|R  2] EMPLOYEE        -> Manvendra Singh Hada [Central Control Room, Noida]
+[T134|R  3] CONTROL ROOM    -> Central Control Room | 8959590943 | [Central Control Room, Noida]
+[T135|R  1] EMPLOYEE        -> Niraj Agrawal []
+[T135|R  2] EMPLOYEE        -> Najmal Khan []
+[T136|R  1] SKIP: duplicate employee                       | Niraj Agrawal | niraj.agrawal@indigrid.com
+[T136|R  2] SKIP: duplicate employee                       | Najmal Khan | najmal.khan@indigrid.com
+[T137|R  1] EMPLOYEE        -> Najmal Khan [Jabalpur Transmission Co. Ltd (JTCL)]
+[T138|R  1] EMPLOYEE        -> Vikas Malik [RAPP Transmission Co. Ltd (RTCL)]
+[T139|R  1] EMPLOYEE        -> Najmal Khan [Raichur Sholapur Transmission Company Private Limited (RSTCPL)]
+[T140|R  1] EMPLOYEE        -> Bibhu Behera [Odisha Generation Phase-II transmission Limited]
+[T141|R  1] EMPLOYEE        -> Niraj Agrawal [Khargone Transmission Limited (KhTL)]
+[T141|R  2] EMPLOYEE        -> Najmal Khan [Khargone Transmission Limited (KhTL)]
+[T142|R  0] SKIP: no header found in table                 | Sl. No. | Land Line 1 | Land Line 2 | Mobile 1 | Mobile 2
+[T142|R  1] SKIP: no header found in table                 | 1 | 07925557280 | 07968257280 | 6358821762 | 6358821763
+[T143|R  1] EMPLOYEE        -> Nitesh Ranjan [Sterlite Power Transmission Limited]
+[T143|R  2] EMPLOYEE        -> Mahesh Bhagat [Sterlite Power Transmission Limited]
+[T143|R  3] CONTROL ROOM    -> Sterlite Operation Control Room | VOIP- 20112552 / 0124 4562083  | [Sterlite Power Transmission Limited]
+[T144|R  1] EMPLOYEE        -> Ashish Patel [Lakadia Vadodara Transmission Project Limited]
+[T145|R  1] EMPLOYEE        -> Ashish Patel [Mumbai Urja Marg Limited]
+[T146|R  1] EMPLOYEE        -> Raghvendra Patil [Goa Tamnar Transmission Project Limited]
+[T147|R  1] SKIP: empty row                                | 
+[T148|R  1] SKIP: empty row                                | 
+[T149|R  1] SKIP: empty row                                | 
+[T150|R  1] SKIP: empty row                                | 
+[T151|R  1] SKIP: empty row                                | 
+[T152|R  1] SKIP: empty row                                | 
+[T153|R  1] EMPLOYEE        -> Vijay Kumar Trivedi [RAJGARH TRANSMISSION LIMITED]
+[T153|R  2] EMPLOYEE        -> Vivek Pratap Singh [RAJGARH TRANSMISSION LIMITED]
+[T153|R  3] CONTROL ROOM    -> Control Room a/c Pachora Substation | 6262854945 | [RAJGARH TRANSMISSION LIMITED]
+[T154|R  1] SKIP: empty row                                | 
+[T155|R  1] SKIP: empty row                                | 
+[T156|R  1] SKIP: empty row                                | 
+[T157|R  1] SKIP: empty row                                | 
+[T158|R  1] SKIP: empty row                                | 
+[T159|R  1] SKIP: empty row                                | 
+[T160|R  1] SKIP: empty row                                | 
+[T161|R  1] SKIP: empty row                                | 
+[T162|R  1] EMPLOYEE        -> Ramesh Chabhadiya [ArcelorMittal Nippon Steel India Limited]
+[T162|R  2] EMPLOYEE        -> Naresh Yadav [ArcelorMittal Nippon Steel India Limited]
+[T162|R  3] EMPLOYEE        -> Nitin Wakhare [ArcelorMittal Nippon Steel India Limited]
+[T162|R  4] EMPLOYEE        -> UdaiBir Singh [ArcelorMittal Nippon Steel India Limited]
+[T162|R  5] EMPLOYEE        -> Subir Kumar [ArcelorMittal Nippon Steel India Limited]
+[T162|R  6] EMPLOYEE        -> Ronak Shah [ArcelorMittal Nippon Steel India Limited]
+[T162|R  7] EMPLOYEE        -> Ninad Desai [ArcelorMittal Nippon Steel India Limited]
+[T162|R  8] CONTROL ROOM    -> Control Room-1 | 0261-6683609/ 6683932 / 987910 | [ArcelorMittal Nippon Steel India Limited]
+[T162|R  9] CONTROL ROOM    -> Control room -2 | 0261-6688500/ 6688043 / 990990 | [ArcelorMittal Nippon Steel India Limited]
+[T163|R  1] EMPLOYEE        -> P.H. Kshirsagar [BARC Facility]
+[T163|R  2] EMPLOYEE        -> N.K.V.Rao [BARC Facility]
+[T163|R  3] EMPLOYEE        -> Shri Raj Kumar [BARC Facility]
+[T163|R  4] EMPLOYEE        -> Office of Deputy Chief Executive [BARC Facility]
+[T163|R  5] CONTROL ROOM    -> Process Control room | 02525-265510/ 265404 | [BARC Facility]
+[T163|R  6] EMPLOYEE        -> Shri. C.V. Raman [BARC Facility]
+[T163|R  7] EMPLOYEE        -> Shri. Awinash Kumar [BARC Facility]
+[T163|R  8] EMPLOYEE        -> Shri Biplob Sahoo [BARC Facility]
+[T164|R  1] EMPLOYEE        -> B.M.Sinha [Heavy Water Board]
+[T164|R  2] EMPLOYEE        -> D.K.Singh [Heavy Water Board]
+[T165|R  1] EMPLOYEE        -> Pallikuth Devanand [TATA Power Mumbai]
+[T165|R  2] EMPLOYEE        -> Prabhakar Kale [TATA Power Mumbai]
+[T165|R  3] EMPLOYEE        -> Milind Gole [TATA Power Mumbai]
+[T165|R  4] CONTROL ROOM    -> Control Room PSCC | 9769281234, 8976863517/ | [TATA Power Mumbai]
+[T165|R  5] CONTROL ROOM    -> Control Room PSCC | 022- 25543331 / 67175377 /6717 | [TATA Power Mumbai]
+[T165|R  6] CONTROL ROOM    -> Control Room PSCC | Fax - 022-67175385 | [TATA Power Mumbai]
+[T166|R  1] EMPLOYEE        -> R.K.Arora [National High Power Test Laboratory]
+[T166|R  2] EMPLOYEE        -> Ramesh K Patel [National High Power Test Laboratory]
+[T166|R  3] EMPLOYEE        -> Narendra K [National High Power Test Laboratory]
+[T167|R  1] EMPLOYEE        -> Arvind Patle [NTPC Vidyut Vyapar Nigam Limited]
+[T167|R  2] EMPLOYEE        -> E. Srinivas Rao [NTPC Vidyut Vyapar Nigam Limited]
+[T167|R  3] EMPLOYEE        -> Lekraj Singh [NTPC Vidyut Vyapar Nigam Limited]
+[T167|R  4] EMPLOYEE        -> Arvind Sharma [NTPC Vidyut Vyapar Nigam Limited]
+[T167|R  5] EMPLOYEE        -> Vimal Chauhan [NTPC Vidyut Vyapar Nigam Limited]
+[T167|R  6] CONTROL ROOM    -> Control Room | 0120 4948584 / 2410606 | [NTPC Vidyut Vyapar Nigam Limited]
+[T168|R  0] SKIP: no header found in table                 | NTPC Stations | Other Generating Stations
+[T168|R  1] SKIP: no header found in table                 | Western Region -I | Western Region -II | Other Generating Stations
+[T168|R  2] SKIP: no header found in table                 | NTPC Gandhar | NTPC Gadarwara | CGPL
+[T168|R  3] SKIP: no header found in table                 | NTPC Kawas | NTPC Khargone | NSPCL
+[T168|R  4] SKIP: no header found in table                 | NTPC Mauda | NTPC Korba | RGPPL
+[T168|R  5] SKIP: no header found in table                 | NTPC Solapur | NTPC Lara | SASAN
+[T168|R  6] SKIP: no header found in table                 | NTPC Sipat
+[T168|R  7] SKIP: no header found in table                 | NTPC Vindhyachal
+[T169|R  1] SKIP: sub-heading → org='WRLDC'                | WRLDC
+[T169|R  2] EMPLOYEE        -> Pushpa S [WRLDC]
+[T169|R  3] EMPLOYEE        -> Mahesh Mehandale [WRLDC]
+[T169|R  4] SKIP: sub-heading → org='Chhattisgarh SLDC'    | Chhattisgarh SLDC
+[T169|R  5] EMPLOYEE        -> Shri. K S Manothiya [Chhattisgarh SLDC]
+[T169|R  6] EMPLOYEE        -> Shri. Sanjay Chowdhary [Chhattisgarh SLDC]
+[T169|R  7] SKIP: sub-heading → org='Damanand Diu'         | Daman and Diu
+[T169|R  8] EMPLOYEE        -> Milind Ingle [Damanand Diu]
+[T169|R  9] EMPLOYEE        -> Dilesh Solanki [Damanand Diu]
+[T169|R 10] SKIP: sub-heading → org='Dadraand Nagar Haveli' | Dadra and Nagar Haveli
+[T169|R 11] EMPLOYEE        -> H.M Patel [Dadraand Nagar Haveli]
+[T169|R 12] EMPLOYEE        -> V. R VERMA [Dadraand Nagar Haveli]
+[T169|R 13] SKIP: junk/separator                           | Goa
+[T169|R 14] EMPLOYEE        -> Stephen Fernandes [Dadraand Nagar Haveli]
+[T169|R 15] EMPLOYEE        -> Shailesh Burye [Dadraand Nagar Haveli]
+[T169|R 16] SKIP: sub-heading → org='Gujarat SLDC'         | Gujarat SLDC
+[T169|R 17] EMPLOYEE        -> A B Rathod [Gujarat SLDC]
+[T169|R 18] EMPLOYEE        -> D N Shah [Gujarat SLDC]
+[T169|R 19] SKIP: sub-heading → org='Madhya Pradesh SLDC'  | Madhya Pradesh SLDC
+[T169|R 20] EMPLOYEE        -> Pradeep Sachan [Madhya Pradesh SLDC]
+[T169|R 21] EMPLOYEE        -> R K Gupta [Madhya Pradesh SLDC]
+[T169|R 22] SKIP: sub-heading → org='Maharashtra SLDC'     | Maharashtra SLDC
+[T169|R 23] EMPLOYEE        -> Shashank Jewalikar [Maharashtra SLDC]
+[T169|R 24] EMPLOYEE        -> Mashesh Bhagwat [Maharashtra SLDC]
+[T170|R  0] SKIP: no header found in table                 | S. No. | Load Despatch Centre | Control Room Contact No. | Fax No./ VOIP
+[T170|R  1] SKIP: no header found in table                 | 1 | National Load Despatch Centre (NLDC), Ne | 011-26536832 / 26524522/ 32026900 | 011-26524525 /26536901
+[T170|R  2] SKIP: no header found in table                 | 2 | Northern -Regional Load Despatch Centre  | 011-26519406 /26523869 | 011-26852747 /26853082
+[T170|R  3] SKIP: no header found in table                 | 3 | Western Regional Load Despatch Centre (W | 022-28203885 /28397634 | 022-28202630 /28202693
+[T170|R  4] SKIP: no header found in table                 | 4 | Eastern Regional Load Despatch Centre (E | 033-24235875 /24235704 | 033-24235029 /24235809
+[T170|R  5] SKIP: no header found in table                 | 5 | Southern Regional Load Despatch Centre ( | 080-22254525 /22252612/22204325 | 080-22259219/ 41136043 (Incoming FAX): 
+[T170|R  6] SKIP: no header found in table                 | 6 | North-Eastern Regional Load Despatch Cen | 0364-2537427/2537482 | 0364-2537470
+[T170|R  7] SKIP: no header found in table                 | NORTHERN REGION
+[T170|R  8] SKIP: no header found in table                 | S.No. | State/UT SLDC | Control Room Contact No. | Fax No./ VOIP
+[T170|R  9] SKIP: no header found in table                 | 1 | Chandigarh | 08054104522 / 0172-2637880 | 0172-2637880
+[T170|R 10] SKIP: no header found in table                 | 2 | Delhi | 011-23221046 / 99 / 98 | 011-23221012/23221059
+[T170|R 11] SKIP: no header found in table                 | 3 | Haryana | 0180-3203968 / 69 / 2664095 / 0935415243 | 0180-2670819
+[T170|R 12] SKIP: no header found in table                 | 4 | Himachal Pradesh | 0177-2838398 | 0177-2837543
+[T170|R 13] SKIP: no header found in table                 | 5 | Jammu | 0191-2490905 (J&K) 0194-2494518/ 8491941 | 0191-2490905 (J&K) 0194-2492430 / 31 (Be
+[T170|R 14] SKIP: no header found in table                 | 6 | Punjab | 0175-2367711 / 7490 / 09646119318 | 0175-2365340
+[T170|R 15] SKIP: no header found in table                 | 7 | Rajasthan | 0141-2250079 / 5183755 / 2251255 | 0141-2250073
+[T170|R 16] SKIP: no header found in table                 | 8 | Uttar Pradesh | 0522-2287819 / 890 / 818 | 0522-2286563 / 2287818
+[T170|R 17] SKIP: no header found in table                 | 9 | Uttrakhand | 9756702727 / 0135-2645758 / 68 / 6518576 | 0135-2645758
+[T170|R 18] SKIP: no header found in table                 | WESTERN REGION
+[T170|R 19] SKIP: no header found in table                 | S.No. | State/UT SLDC | Control Room Contact No. | Fax No./ VOIP
+[T170|R 20] SKIP: no header found in table                 | 1 | Chhattisgarh | 0788-2282634 / 2282635/07898987528(M) | 0788-2282632
+[T170|R 21] SKIP: no header found in table                 | 2 | Dadar & Nagar Haveli | 0260-2642810/ 0260- 2406561,562,563/0992 | 0260-2642810
+[T170|R 22] SKIP: no header found in table                 | 3 | Daman & Diu | 0260-2230535 /09909976436(M)
+[T170|R 23] SKIP: no header found in table                 | 4 | GOA | 0832-2312130/0832- 2711813/08380015058(M | 0832-2313780
+[T170|R 24] SKIP: no header found in table                 | 5 | Madhya Pradesh | 0761-2661500/2661660/2666800/2970601/094 | 0761-2664343/2970119
+[T170|R 25] SKIP: no header found in table                 | 6 | Maharashtra | 022-27601765 /27601766 /09819892095/10(M | 022-27601769 / 27602936
+[T170|R 26] SKIP: no header found in table                 | 7 | Gujarat | 0265-2352103 / 23531132/09879200620 | 0265-2352019
+[T170|R 27] SKIP: no header found in table                 | SOUTHERN REGION
+[T170|R 28] SKIP: no header found in table                 | S.No. | State/UT SLDC | Control Room Contact No. | Fax No.
+[T170|R 29] SKIP: no header found in table                 | 1 | Andhra Pradesh | 040-27543689: Mobile: 8332988612 | 040-27546635
+[T170|R 30] SKIP: no header found in table                 | 2 | Telangana | 040-23317662, 9490153118 | 040-23393616
+[T170|R 31] SKIP: no header found in table                 | 3 | Karnataka | 080-22259719/22371024: M-9448365154 | 080-22282287/22971024
+[T170|R 32] SKIP: no header found in table                 | 4 | Kerala | 0484-2542484: Mobile: 9446008888 | 0484-2556483
+[T170|R 33] SKIP: no header found in table                 | 5 | Puducherry | 0413-2330260 / 2341148 | 0413-2341148
+[T170|R 34] SKIP: no header found in table                 | 6 | Tamil Nadu | 044-28521482/28521056 | 044-28545291
+[T170|R 35] SKIP: no header found in table                 | EASTERN REGION
+[T170|R 36] SKIP: no header found in table                 | S.No. | State/UT SLDC | Control Room Contact No. | Fax No.
+[T170|R 37] SKIP: no header found in table                 | 1 | Bihar | 0612-2504557 /9835036906/2504090 /898691 | 0612-2504557
+[T170|R 38] SKIP: no header found in table                 | 2 | DVC | 06540-252266/274837/252466 | 06540-274838
+[T170|R 39] SKIP: no header found in table                 | 3 | Jharkhand | 0651-2490090 / 9431135537/2490863 | 0651-2490486
+[T170|R 40] SKIP: no header found in table                 | 4 | Orissa | 0674-2748961/2748417 | 0674-2748218/2748509
+[T170|R 41] SKIP: no header found in table                 | 5 | Sikkim | 03592-250181/202927 | 03592-202927
+[T170|R 42] SKIP: no header found in table                 | 6 | West Bengal | 033-26887690/26887693/ 65343404 | 033-26885445/26886232
+[T170|R 43] SKIP: no header found in table                 | NORTH-EASTERN REGION
+[T170|R 44] SKIP: no header found in table                 | S.No. | State/UT SLDC | Control Room Contact No. | Fax No.
+[T170|R 45] SKIP: no header found in table                 | 1 | Arunachal Pradesh | 0360-2217438/2214359 | 0360-221435
+[T170|R 46] SKIP: no header found in table                 | 2 | Assam | 0361-2382263/2381287 | 0361-2387929
+[T170|R 47] SKIP: no header found in table                 | 3 | Manipur | 0385-2451172/2436102/103 | 0385-2450702
+[T170|R 48] SKIP: no header found in table                 | 4 | Meghalaya | 0364-2550020/2551967 | 0364-2551967
+[T170|R 49] SKIP: no header found in table                 | 5 | Mizoram | 0389-2305964 / 2305589 | 0389-2305562
+[T170|R 50] SKIP: no header found in table                 | 6 | Nagaland | 03862-230118/229600 | 03862-230118
+[T170|R 51] SKIP: no header found in table                 | 7 | Tripura | 0381-2356470/2357166 | 0381-2350795
+[T171|R  0] SKIP: no header found in table                 | WR-1 (Region) | WR-2 (Region)
+[T171|R  1] SKIP: no header found in table                 | Sr No | Station Name | Nos | Sr No | Station Name | Nos
+[T171|R  2] SKIP: no header found in table                 | 1 | ACB 400 | 20221416 | 1 | BACHHAU | 20221369
+[T171|R  3] SKIP: no header found in table                 | 2 | AURANGABAD 765 | 20221446 | 2 | BADWAR RE | 20220584
+[T171|R  4] SKIP: no header found in table                 | 3 | BALCO 400 | 20221480 | 3 | BANASKANTHA | 20220582
+[T171|R  5] SKIP: no header found in table                 | 4 | BHADRAWATI 400 | 20221380 | 4 | BARANDA RE | 20220527
+[T171|R  6] SKIP: no header found in table                 | 5 | BHATAPARA 400 | 20221458 | 5 | BARSAITADESH RE | 20221485
+[T171|R  7] SKIP: no header found in table                 | 6 | BILASPUR 765 | 20221382 | 6 | BETUL | 20221456
+[T171|R  8] SKIP: no header found in table                 | 7 | CHAMPA 765 | 20221381 | 7 | BHOPAL BDTCL | 20221404
+[T171|R  9] SKIP: no header found in table                 | 8 | CHAMPA HVDC | 20220444 | 8 | BHUJ | 20220583
+[T171|R 10] SKIP: no header found in table                 | 9 | DB POWER | 20220505 | 9 | BHUJ-II | 20220557
+[T171|R 11] SKIP: no header found in table                 | 10 | DHARAMJAIGARH 765 | 20220391 | 10 | BHUVAD RE | 20221490
+[T171|R 12] SKIP: no header found in table                 | 11 | DHARIWAL 400 | 20220504 | 11 | BINA | 20220356
+[T171|R 13] SKIP: no header found in table                 | 12 | DHULE 765 | 20221479 | 12 | BIRSINGHPUR | 27610700
+[T171|R 14] SKIP: no header found in table                 | 13 | ESSAR MAHAN 400 | 20220536 | 13 | BOISAR 400 | 20221419
+[T171|R 15] SKIP: no header found in table                 | 14 | GMR EMCO 400 | 20220503 | 14 | CGPL | 20221450
+[T171|R 16] SKIP: no header found in table                 | 15 | GMR RAIPUR 400 | 20220507 | 15 | DAMAN | 20221408
+[T171|R 17] SKIP: no header found in table                 | 16 | JPL STG I | 20220522 | 16 | DAMOH | 20221357
+[T171|R 18] SKIP: no header found in table                 | 17 | JPL STG II | 20221397 | 17 | DAYAPAR RE | 20221493
+[T171|R 19] SKIP: no header found in table                 | WR-1 (Region) | WR-2 (Region)
+[T171|R 20] SKIP: no header found in table                 | Sr No | Station Name | Nos | Sr No | Station Name | Nos
+[T171|R 21] SKIP: no header found in table                 | 18 | KOLHAPUR | 20221460 | 18 | DEHGHAM | 20221402
+[T171|R 22] SKIP: no header found in table                 | 19 | KORBA 400 | 20220384 | 19 | DGEN | 20220352
+[T171|R 23] SKIP: no header found in table                 | 20 | KOTRA 765 | 20220373 | 20 | ENGIE RE | 20221445
+[T171|R 24] SKIP: no header found in table                 | 21 | KSK MAHANADI 400 | 20221441 | 21 | ESSAR HAZIRA | Not established yet
+[T171|R 25] SKIP: no header found in table                 | 22 | KWPCL 400 | 20220506 | 22 | GADARWADA | 20221488
+[T171|R 26] SKIP: no header found in table                 | 23 | LANCO 400 | 20220509 | 23 | GADSISA RE | 20221494
+[T171|R 27] SKIP: no header found in table                 | 24 | LARA | 20221495 | 24 | GANDHAR | 20221482
+[T171|R 28] SKIP: no header found in table                 | 25 | MAPUSA 400 | 20221386 | 25 | GIPCL RE | 20221443
+[T171|R 29] SKIP: no header found in table                 | 26 | MAUDA 400 | 20221437 | 26 | GSECL-I RE | 20221504
+[T171|R 30] SKIP: no header found in table                 | 27 | NSPCL | 20221396 | 27 | GSECL-II RE | 20221505
+[T171|R 31] SKIP: no header found in table                 | 28 | PADGHE 765 | 20221455 | 28 | GWALIOR | 20220104
+[T171|R 32] SKIP: no header found in table                 | 29 | PARLI 400 | 20221377 | 29 | INDORE 765 | 20220351
+[T171|R 33] SKIP: no header found in table                 | 30 | PARLI 765 | 20221474 | 30 | ITARSI | 20221358
+[T171|R 34] SKIP: no header found in table                 | 31 | PUNE 400 | 20221375 | 31 | JABALPUR 400 KV | 20221360
+[T171|R 35] SKIP: no header found in table                 | 32 | PUNE 765 | 20221378 | 32 | JABALPUR 765 KV | 20221366
+[T171|R 36] SKIP: no header found in table                 | 33 | RAIGARH 400 | 20221453 | 33 | JAMKAMBALIYA PS | 20221501
+[T171|R 37] SKIP: no header found in table                 | 34 | RAIPUR 400 KV | 20221370 | 34 | JHABUA | 20220422
+[T171|R 38] SKIP: no header found in table                 | 35 | RAIPUR 765(DURG) | 20221394 | 35 | JP NIGREE 400 | 20220580
+[T171|R 39] SKIP: no header found in table                 | WR-1 (Region) | WR-2 (Region)
+[T171|R 40] SKIP: no header found in table                 | Sr No | Station Name | Nos | Sr No | Station Name | Nos
+[T171|R 41] SKIP: no header found in table                 | 36 | RAJNANDGAON | 20221489 | 36 | KAKARPARA 220 | 20221417
+[T171|R 42] SKIP: no header found in table                 | 37 | RGPPL 400 | 20221484 | 37 | KAKRAPARA 400 | Not established yet
+[T171|R 43] SKIP: no header found in table                 | 38 | RKM 400 | 20221481 | 38 | KALA | 20221407
+[T171|R 44] SKIP: no header found in table                 | 39 | SEONI 765 | 20221376 | 39 | KAWAS 220 | 20221418
+[T171|R 45] SKIP: no header found in table                 | 40 | SHOLAPUR 765/ 400 | 20221359 | 40 | KHANDWA | 20221361
+[T171|R 46] SKIP: no header found in table                 | 41 | SIPAT NTPC CR | 20221497 | 41 | KHANDWA 765 | 20221498
+[T171|R 47] SKIP: no header found in table                 | 42 | SKS 400 | 20220393 | 42 | KHARGONE | 20221486
+[T171|R 48] SKIP: no header found in table                 | 43 | SOLAPUR NTPC 400 | 20221449 | 43 | KOTDAMADH RE | 20220529
+[T171|R 49] SKIP: no header found in table                 | 44 | TAMNAR 765 | 20221387 | 44 | LAKADIA | 20221506
+[T171|R 50] SKIP: no header found in table                 | 45 | TARAPUR 1&2 | 20220508 | 45 | MANJA POWERICA RE | 20221503
+[T171|R 51] SKIP: no header found in table                 | 46 | TARAPUR 3&4 | 20220525 | 46 | MB POWER 400 | 20220424
+[T171|R 52] SKIP: no header found in table                 | 47 | TRN ENERGY 400 | 20221385 | 47 | MORENA | 20221483
+[T171|R 53] SKIP: no header found in table                 | 48 | WARORA 765 | 20221475 | 48 | NARANPAR RE | 20221491
+[T171|R 54] SKIP: no header found in table                 | 49 | WARDHA 765 | 20221434 | 49 | NAVSARI | 20220364
+[T171|R 55] SKIP: no header found in table                 | 50 | SPCL | 20220517 | 50 | NCA | 20221466
+[T171|R 56] SKIP: no header found in table                 | 51 | SHERISHA RE | 20220533 | 51 | OSTRO RE | 20221487
+[T171|R 57] SKIP: no header found in table                 | 52 | PIRANA | 20221465
+[T171|R 58] SKIP: no header found in table                 | 53 | RAJGARH | 20221371
+[T171|R 59] SKIP: no header found in table                 | 54 | RAMNAGAR | 20220581
+[T171|R 60] SKIP: no header found in table                 | WR-1 (Region) | WR-2 (Region)
+[T171|R 61] SKIP: no header found in table                 | Sr No | Station Name | Nos | Sr No | Station Name | Nos
+[T171|R 62] SKIP: no header found in table                 | 57 | RATADIYA RE | 20221496
+[T171|R 63] SKIP: no header found in table                 | 58 | REWA | 20221414
+[T171|R 64] SKIP: no header found in table                 | 59 | SASAN 765 | 20221420
+[T171|R 65] SKIP: no header found in table                 | 60 | SATNA | 20221352
+[T171|R 66] SKIP: no header found in table                 | 61 | SBESS RE | 20220531
+[T171|R 67] SKIP: no header found in table                 | 62 | SITAC RE | 20220554
+[T171|R 68] SKIP: no header found in table                 | 63 | SRIJAN RE | 20220207
+[T171|R 69] SKIP: no header found in table                 | 64 | SSP CHPH | 20221499
+[T171|R 70] SKIP: no header found in table                 | 65 | SSP RBPH | 20220355
+[T171|R 71] SKIP: no header found in table                 | 66 | SUGEN | 20220405
+[T171|R 72] SKIP: no header found in table                 | 67 | SUJALPUR | 20220363
+[T171|R 73] SKIP: no header found in table                 | 68 | TPREL RE | 20221444
+[T171|R 74] SKIP: no header found in table                 | 69 | VADODARA | 20221406
+[T171|R 75] SKIP: no header found in table                 | 70 | VADVA RE | 20220585
+[T171|R 76] SKIP: no header found in table                 | 71 | VAPI | 20221367
+[T171|R 77] SKIP: no header found in table                 | 72 | VINDHYACHAL POOLING | 20221423
+[T172|R  0] SKIP: no header found in table                 | NLDC | SLDC , Gujrat
+[T172|R  1] SKIP: no header found in table                 | Sr No | Name | Nos | Sr No | Region | Name | Nos
+[T172|R  2] SKIP: no header found in table                 | 1 | CMD ROOM | 20110022 | 1 | SLDC Gotri | Control room | 22651300
+[T172|R  3] SKIP: no header found in table                 | 2 | ES - CMD | 20110102 | 2 | SLDC Gotri | Control room | 22651301
+[T172|R  4] SKIP: no header found in table                 | 3 | Control room | 20110020 20110021 20110115 | 3 | SLDC Gotri | SCADA | 22651304
+[T172|R  5] SKIP: no header found in table                 | WRLDC | SLDC , Maharashtra
+[T172|R  6] SKIP: no header found in table                 | 1 | Control room | 20220011 | 1 | SLDC Kalwa | Control room | 20222002
+[T172|R  7] SKIP: no header found in table                 | 2 | Control room | 20220033 | 2 | SLDC Kalwa | Control room | 20222003
+[T172|R  8] SKIP: no header found in table                 | 3 | Control room | 20220044 | 3 | SLDC Kalwa
+[T172|R  9] SKIP: no header found in table                 | 4 | Control room | 20220055 | SLDC Kalwa
+[T172|R 10] SKIP: no header found in table                 | 5 | V.Balaji (ED) | 20220101
+[T172|R 11] SKIP: no header found in table                 | SRLDC | SLDC , Madhya Pradesh
+[T172|R 12] SKIP: no header found in table                 | 1 | Control room | 20800145 | 1 | SLDC Jabalpur | Control room | 27610011
+[T172|R 13] SKIP: no header found in table                 | 2 | Control room | 20800146 | 2 | SLDC Jabalpur | Scheduling | 27610022
+[T172|R 14] SKIP: no header found in table                 | 3 | S P Kumar (ED) | 20800112 | 3 | SLDC Jabalpur | Control room | 27610033
+[T172|R 15] SKIP: no header found in table                 | 4 | SLDC Jabalpur | SCADA | 27610044
+[T172|R 16] SKIP: no header found in table                 | NRLDC | SLDC , Chhattisgarh
+[T172|R 17] SKIP: no header found in table                 | Sr No | Region | Nos | Sr No | Region | Name | Nos
+[T172|R 18] SKIP: no header found in table                 | 1 | Control room | 20112181 20112018 | 1 | SLDC Raipur | Control room | 27711201
+[T172|R 19] SKIP: no header found in table                 | 2 | Control room | 20112152 20112014 | 2 | SLDC Raipur | Control room | 27711203
+[T172|R 20] SKIP: no header found in table                 | 3 | R K Porwal (ED) | 20112001 | SLDC Raipur
+[T172|R 21] SKIP: no header found in table                 | ERLDC | Goa
+[T172|R 22] SKIP: no header found in table                 | 1 | Control room | 20330000 | 1 | SLDC Madgaon | Control room | 28320001
+[T172|R 23] SKIP: no header found in table                 | 2 | Control room | 20330022 | 1 | SLDC Madgaon | Control room | 28320003
+[T172|R 24] SKIP: no header found in table                 | 3 | Scheduling | 20330070 | 2 | SLDC Concullim | Control room | 28322011
+[T172|R 25] SKIP: no header found in table                 | 4 | R Sutradhar (ED) | 20330011 | 2 | SLDC Concullim | Control room | 28322022
+[T172|R 26] SKIP: no header found in table                 | NERLDC | Miscellaneous
+[T172|R 27] SKIP: no header found in table                 | 1 | Control room | 23640027 | 1 | RTAMC | VARODARA | 20221428
+[T172|R 28] SKIP: no header found in table                 | 2 | Control room | 23640028 | 2 | RTAMC | NAGPUR | 20221451 20221473
+[T172|R 29] SKIP: no header found in table                 | 3 | N Roy (ED) | 23640001 | 3 | NCA | 20221446
+[T172|R 30] SKIP: no header found in table                 | DD
+[T172|R 31] SKIP: no header found in table                 | 1 | DD Control room | 22875001
+[T173|R  1] EMPLOYEE        -> Santosh Sah [GE T&D (SCADA & EMS)]
+[T173|R  2] EMPLOYEE        -> Manoj Gupta [GE T&D (SCADA & EMS)]
+[T173|R  3] EMPLOYEE        -> Milind Ghosalkar [GE T&D (SCADA & EMS)]
+[T173|R  4] EMPLOYEE        -> Adil Khan [GE T&D (SCADA & EMS)]
+[T173|R  5] EMPLOYEE        -> Raghvendra Singh Tomar [GE T&D (SCADA & EMS)]
+[T173|R  6] EMPLOYEE        -> Awadhut Bhandare [GE T&D (SCADA & EMS)]
+[T174|R  1] EMPLOYEE        -> Vishal Pandya [REConnect Energy ( REMC )]
+[T174|R  2] EMPLOYEE        -> Sufiyan Khan [REConnect Energy ( REMC )]
+[T174|R  3] EMPLOYEE        -> Srinivas Ajith [REConnect Energy ( REMC )]
+[T174|R  4] EMPLOYEE        -> Prajwal.S [REConnect Energy ( REMC )]
+[T175|R  1] EMPLOYEE        -> Pratap Ganjoo [SIEMENS (REMC)]
+[T175|R  2] EMPLOYEE        -> Prasanth Tamada [SIEMENS (REMC)]
+[T175|R  3] EMPLOYEE        -> Abhishek More [SIEMENS (REMC)]
+[T176|R  1] EMPLOYEE        -> Sudupta Guin [PricewaterhouseCoopers Private Limited]
+[T176|R  2] EMPLOYEE        -> Akash Gupta [PricewaterhouseCoopers Private Limited]
+[T176|R  3] EMPLOYEE        -> Anjali Khatri [PricewaterhouseCoopers Private Limited]
+[T177|R  1] EMPLOYEE        -> Kushal Mallik [AMC (WBES)]
+[T178|R  1] EMPLOYEE        -> R K Senthil Kumar [Real Time Systems & Smart Grid, C-DAC, Bangalore]
+[T178|R  2] EMPLOYEE        -> M.Siddharth Rao [Real Time Systems & Smart Grid, C-DAC, Bangalore]
+[T178|R  3] EMPLOYEE        -> Jagan Mohan [Real Time Systems & Smart Grid, C-DAC, Bangalore]
+[T179|R  1] EMPLOYEE        -> Bamaniya Suresh D [IT Support Engineersat WRLDC]
+[T180|R  0] SKIP: no header found in table                 | Sl. No. | Nearest Police Stations | Contact Number | Website
+[T180|R  1] SKIP: no header found in table                 | 1 | Police Control Room (Mumbai City) | 022- 22621855/ 22621983/ 22625020/ 22641 | https://mumbaipolice.co.in/
+[T180|R  2] SKIP: no header found in table                 | 2 | Andheri Police Station | 022-26831562
+[T180|R  3] SKIP: no header found in table                 | 3 | MIDC Police Station | 022-28368352
+[T180|R  4] SKIP: no header found in table                 | 4 | Powai Police Station | 022-25702690
+[T180|R  5] SKIP: no header found in table                 | 5 | Oshiwara Police Station | 022-26323861
+[T180|R  6] SKIP: no header found in table                 | 6 | Commissioner of Police, Mumbai | 22620826
+[T180|R  7] SKIP: no header found in table                 | 7 | Mumbai airport | 26156315/26716309,26156921
+[T180|R  8] SKIP: no header found in table                 | 8 | Sakinaka | 28523936/28522334/28476160/28474411
+[T180|R  9] SKIP: no header found in table                 | 9 | Women Helpline | 022- 22633333/ 22620111 (Extension-103)
+[T181|R  0] SKIP: no header found in table                 | Sl. No. | Nearest Fire Stations | Contact Number | Website
+[T181|R  1] SKIP: no header found in table                 | 1 | Central Helpline | 022-23085991/ 2/ 3/ 4 | https://www.mahafireservice.gov.in
+[T181|R  2] SKIP: no header found in table                 | 2 | Marol Fire Brigade | 022-29200940
+[T181|R  3] SKIP: no header found in table                 | 3 | Andheri Fire Station | 022-26205301
+[T181|R  4] SKIP: no header found in table                 | 4 | Vikhroli Fire Station | 022-25170730
+[T181|R  5] SKIP: no header found in table                 | 5 | Goregaon Fire Station | 022-28712869
+[T181|R  6] SKIP: no header found in table                 | 6 | Fire Brigade Control Room | 23085991/23085992/23085993/23085994/101
+[T181|R  7] SKIP: no header found in table                 | 7 | Mumbai Fire | 101 /23076111 / 23086181 / 23074923 / 23
+[T181|R  8] SKIP: no header found in table                 | 8 | Thana Fire | 101 AND 25391600
+[T181|R  9] SKIP: no header found in table                 | 9 | Vashi Fire | 101 AND 27660101
+[T181|R 10] SKIP: no header found in table                 | 10 | Marol , Andheri (E) | 29200940/1, 821 0940/41
+[T182|R  0] SKIP: no name column in header                 | Sl. No. | Name of Hospitals | Contact Number | OPD | Emergency Number | Website
+[T182|R  1] SKIP: no name column in header                 | 1 | Dr. L. H. Hiranandani Hospital, Powai | 022 2576 3500 | 022- 25763500/ 71023500 | 022- 25763322/ 71023322 / 3323 | h
+[T182|R  2] SKIP: no name column in header                 | 2 | Dr. Balabhai Nanavati Hospital, Vile Par | 022-26267500 | 022- 68360000 | 022- 26267777 | http://www.nanavatihospita
+[T182|R  3] SKIP: no name column in header                 | 3 | P. D. Hinduja Hospital and Medical Resea | 022-62529000 / 022 62529400 & 022 692480 | 022-67668181 / 022 45108181 | 
+[T182|R  4] SKIP: no name column in header                 | 4 | Fortis Hospital, Mulund | 022 4269 6969 | 022-49254925 | 022- 41114111 | https://www.fortismumbai.com/location/ho
+[T182|R  5] SKIP: no name column in header                 | 5 | Fortis Hospital, Kalyan | 8882101101 | 0251-2371 000 | 025-12983333 | https://www.fortismumbai.com/location/ho
+[T182|R  6] SKIP: no name column in header                 | 6 | S L Raheja Hospital - A Fortis Associate | 022-66529999 | 8956087400 | 022-66529888 | https://www.rahejahospital.com
+[T182|R  7] SKIP: no name column in header                 | 7 | Tata Memorial Hospital, Mumbai | 022- 24177000 /24146750- 55 | https://tmc.gov.in/tmh/index.php/en/
+[T182|R  8] SKIP: no name column in header                 | 8 | Jaslok Hospital, Lower Parel | 022-40173010 | 02240173333 | https://www.jaslokhospital.net/
+[T182|R  9] SKIP: no name column in header                 | 9 | Kokilaben Dhirubhai Ambani Hospital, Osh | 1800 3000 3333 | 022- 42696969 | 022- 42699999 | https://www.kokilabenhos
+[T182|R 10] SKIP: no name column in header                 | 10 | Criticare Hospital, Andheri (East) | 022- 6231 6666 | 022- 67756600 | 022- 62316666 | https://criticarehospital.in/
+[T182|R 11] SKIP: no name column in header                 | 11 | Criticare Hospital, Andheri (West) | 022 - 26844000 | 022- 67756600 | https://criticarehospital.in/west/
+[T182|R 12] SKIP: no name column in header                 | 12 | Asian Heart Institute, BKC, Mumbai | 022- 66986666 9930333500 | https://www.asianheartinstitute.org/
+[T182|R 13] SKIP: no name column in header                 | 13 | Fortis Vashi | 022 6285 7001 | 02239199100 | https://www.fortismumbai.com/location/ho
+[T182|R 14] SKIP: no name column in header                 | 14 | Apollo, Navi Mumbai | 022 3350 3350 | 022 6280 6280 | https://mumbai.apollohospitals.com/
+[T183|R  0] SKIP: no header found in table                 | Sl. No. | Nearest Blood Bank | Contact Number
+[T183|R  1] SKIP: no header found in table                 | 1 | Breach Candy Hospital and Research Centr | 23633651,2368 5406, 3630501,23667811 , 2
+[T183|R  2] SKIP: no header found in table                 | 2 | Hinduja National Hospital & Medical Rese | 24452222, 24451515, 24447752,4452574/75
+[T183|R  3] SKIP: no header found in table                 | 3 | Jaslok Hospital And Research Centre | 24939595,022 66573333,66573006
+[T183|R  4] SKIP: no header found in table                 | 4 | Lilavati Hospital Blood Bank | 26455891 Ext. 2223, 26568063/26568064
+[T183|R  5] SKIP: no header found in table                 | 5 | Tata Memorial Hospital Blood Bank | 24149750, 24161413, 24177000, 24127096
+[T183|R  6] SKIP: no header found in table                 | 6 | Nanavati vile parle(W) | 022-26119924,022 - 26182255, 022 - 26182
+[T183|R  7] SKIP: no header found in table                 | 7 | Bhagwati Blood Bank (Borivali) | 8932461/2/3
+[T183|R  8] SKIP: no header found in table                 | 8 | Bombay Hospital ( Marine Lines) | 2067676 / 022-22087128
+[T183|R  9] SKIP: no header found in table                 | 9 | Holy Spirit Hospital (Andheri) | 8378822 (Ext.606/116)/+91-22-28248500
+[T184|R  1] CONTROL ROOM    -> Command & Control Room | 0712 – 2556703/ 2556770 | [Forest Department]
+[T184|R  2] EMPLOYEE        -> Office of the Additional Principal Chief Conservator of Forests (Wildlife West), Borivali [Forest Department]
+[T184|R  3] EMPLOYEE        -> G. Mallikarjuna, Conservator of Forest [Forest Department]
+[T185|R  0] SKIP: no header found in table                 | Name | Phone No.
+[T185|R  1] SKIP: no header found in table                 | Mumbai Disaster Management Authority Con | 011-1078
+[T185|R  2] SKIP: no header found in table                 | MCGM Disaster Management Control Room | 108
+[T185|R  3] SKIP: no header found in table                 | Disaster Management Control Room | 022-22694725/27, 22704403,022-22664232
+[T185|R  4] SKIP: no header found in table                 | BMC – Disaster Control Room | 1916/108/ 1292 or 022-22691292/93
+[T186|R  0] SKIP: no header found in table                 | Name | Phone No.
+[T186|R  1] SKIP: no header found in table                 | Bomb Detection & Disposable Squad | 22080501
+[T186|R  2] SKIP: no header found in table                 | Bomb Detection & Disposable Squad | 22650707
+[T186|R  3] SKIP: no header found in table                 | Bomb Blast.Cell | 22620935
+[T187|R  0] SKIP: no header found in table                 | Name | Phone No.
+[T187|R  1] SKIP: no header found in table                 | CORONA (COVID 19) HELPLINE | 1075 OR 011-23978046
+[T187|R  2] SKIP: no header found in table                 | MAHARASHTRA COVID HELPLINE | 022-22027990/ 020-26127394
+
+================================================================================
+SUMMARY
+  Employees inserted    : 916
+  Control rooms inserted: 218
+  Switchyards inserted  : 8
+
+  SKIPPED BREAKDOWN:
+    empty row                               : 53
+    no header in table                      : 215
+    no name column                          : 15
+    sub-section heading                     : 105
+    blank name cell                         : 2
+    duplicate employee                      : 5
+    junk/separator                          : 6
+    TOTAL                                   : 401
+
+  Log: import_skipped.log
+================================================================================

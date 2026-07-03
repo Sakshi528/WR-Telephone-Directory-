@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Edit Employee – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('admin.manage_employees') }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">
+                <i class="bi bi-pencil-square me-2"></i>Edit Employee
+            </h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Employee Name <span class="text-danger">*</span></label>
+                        <input type="text" name="employee_name" class="form-control"
+                               value="{{ employee.employee_name }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Designation <span class="text-danger">*</span></label>
+                        <input type="text" name="designation" class="form-control"
+                               value="{{ employee.designation or '' }}" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Organization <span class="text-danger">*</span></label>
+                        <select name="organization_id" class="form-select" required>
+                            <option value="">– None –</option>
+                            {% for org in organizations %}
+                            <option value="{{ org.id }}"
+                                {% if org.id == employee.organization_id %}selected{% endif %}>
+                                {{ org.organization_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Department</label>
+                        <select name="department_id" class="form-select">
+                            <option value="">– None –</option>
+                            {% for dept in departments %}
+                            <option value="{{ dept.id }}"
+                                {% if dept.id == employee.department_id %}selected{% endif %}>
+                                {{ dept.department_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Location</label>
+                        <input type="text" name="location" class="form-control"
+                               value="{{ employee.location or '' }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Region</label>
+                        <input type="text" name="region" class="form-control"
+                               value="{{ employee.region or '' }}">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Office Phone</label>
+                        <input type="text" name="office_phone" class="form-control"
+                               value="{{ employee.office_phone or '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Residence Phone</label>
+                        <input type="text" name="residence_phone" class="form-control"
+                               value="{{ employee.residence_phone or '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Mobile Phone</label>
+                        <input type="text" name="mobile_phone" class="form-control"
+                               value="{{ employee.mobile_phone or '' }}">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control"
+                               value="{{ employee.email or '' }}">
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-end">
+                        <div class="form-check ms-1">
+                            <input type="checkbox" name="is_utility_head"
+                                   class="form-check-input" id="utilityHead" value="1"
+                                   {% if employee.is_utility_head %}checked{% endif %}>
+                            <label class="form-check-label fw-semibold" for="utilityHead">
+                                <i class="bi bi-star-fill text-success me-1"></i>Mark as Utility Head
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="col-12 mt-2">
+                        <hr class="my-1">
+                        <p class="fw-semibold text-secondary mb-2">
+                            <i class="bi bi-shield-exclamation me-1"></i>Emergency Contact
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Contact Person</label>
+                        <input type="text" name="ec_name" class="form-control"
+                               value="{{ ec.contact_name if ec else '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Relation</label>
+                        <input type="text" name="ec_relation" class="form-control"
+                               value="{{ ec.relation if ec else '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Emergency Contact No.</label>
+                        <input type="text" name="ec_phone" class="form-control"
+                               value="{{ ec.phone if ec else '' }}">
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>Update Employee
+                    </button>
+                    <a href="{{ url_for('admin.manage_employees') }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

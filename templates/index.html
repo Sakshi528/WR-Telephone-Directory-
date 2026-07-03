@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}Home – Western Region Telephone Directory{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero ──────────────────────────────────────────────────────── -->
+<section class="hero-section">
+    <div class="container text-center py-5">
+        <h1 class="hero-title">
+            <i class="bi bi-telephone-fill me-2"></i>
+            Western Region Telephone Directory
+        </h1>
+        <p class="hero-subtitle">
+            Grid India – Western Region Load Despatch Centre
+        </p>
+
+        <!-- Universal search -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-7">
+                <form action="{{ url_for('user.universal_search') }}" method="GET">
+                    <div class="autocomplete-wrapper w-100">
+                        <div class="input-group input-group-lg shadow-sm">
+                            <span class="input-group-text bg-white border-end-0">
+                                <i class="bi bi-search text-muted"></i>
+                            </span>
+                            <input
+                                type="text"
+                                name="keyword"
+                                class="form-control border-start-0"
+                                placeholder="Search employee, organization, phone number…"
+                                autocomplete="off"
+                                data-suggestions-url="{{ url_for('user.search_suggestions') }}"
+                                data-suggestion-source="all"
+                            >
+                            <button class="btn btn-primary px-4" type="submit">
+                                Search
+                            </button>
+                        </div>
+                        <div class="autocomplete-panel"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Stats bar ─────────────────────────────────────────────────── -->
+<div class="container">
+    <div class="stats-bar d-flex flex-wrap justify-content-center gap-4 py-3 mb-4">
+        <div class="stat-item text-center">
+            <div class="stat-number">{{ total_employees }}</div>
+            <div class="stat-label">Employee/KMP</div>
+        </div>
+        <div class="stat-divider d-none d-md-block"></div>
+        <div class="stat-item text-center">
+            <div class="stat-number">{{ total_organizations }}</div>
+            <div class="stat-label">Organizations</div>
+        </div>
+        <div class="stat-divider d-none d-md-block"></div>
+        <div class="stat-item text-center">
+            <div class="stat-number">{{ last_updated }}</div>
+            <div class="stat-label">Last Updated</div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Quick Access Cards ─────────────────────────────────────────── -->
+<div class="container pb-5">
+    <h5 class="text-muted text-uppercase fw-semibold mb-3" style="letter-spacing:.08em;">
+        Quick Access
+    </h5>
+    <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-3">
+            <a href="{{ url_for('user.directory') }}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm border-0 quick-card-inner">
+                    <div class="card-body text-center py-4">
+                        <div class="mb-3" style="color:#1a3a6b;">
+                            <i class="bi bi-people-fill fs-1"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Employee Directory</h5>
+                        <p class="card-text text-muted small">
+                            WRLDC &amp; Grid India staff contacts
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <a href="{{ url_for('user.telephone_directory') }}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm border-0 quick-card-inner">
+                    <div class="card-body text-center py-4">
+                        <div class="mb-3" style="color:#c0392b;">
+                            <i class="bi bi-journal-text fs-1"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Telephone Directory</h5>
+                        <p class="card-text text-muted small">
+                            All organizations &amp; control rooms
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <a href="{{ url_for('user.utility_heads') }}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm border-0 quick-card-inner">
+                    <div class="card-body text-center py-4">
+                        <div class="mb-3" style="color:#27ae60;">
+                            <i class="bi bi-person-badge fs-1"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Utility Heads</h5>
+                        <p class="card-text text-muted small">
+                            Designated heads of utility organizations
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- <div class="col-sm-6 col-lg-3">
+            <a href="{{ url_for('user.emergency_contacts') }}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm border-0 quick-card-inner">
+                    <div class="card-body text-center py-4">
+                        <div class="mb-3" style="color:#e67e22;">
+                            <i class="bi bi-heart-pulse fs-1"></i>
+                        </div>
+                        <!-- <h5 class="card-title fw-bold">Emergency Contacts</h5>
+                        <p class="card-text text-muted small">
+                            Family &amp; personal emergency contacts
+                        </p> -->
+                    </div>
+                </div>
+            </a>
+        </div> -->
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block title %}Utility Heads{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="mb-0"><i class="bi bi-person-badge me-2"></i>Utility Heads</h2>
+        <div class="d-flex gap-2">
+            <a href="{{ url_for('user.export_utility_heads', format='xlsx') }}"
+               class="btn btn-success btn-sm" title="Export Excel">
+                <i class="bi bi-file-earmark-excel me-1"></i>Excel
+            </a>
+            <a href="{{ url_for('user.export_utility_heads', format='docx') }}"
+               class="btn btn-secondary btn-sm" title="Export Word">
+                <i class="bi bi-file-earmark-word me-1"></i>Word
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Search by organization name -->
+    <form method="GET" class="mb-4" id="uhSearchForm">
+        <div class="row g-2 align-items-end">
+            <div class="col-md-6" style="position:relative;">
+                <input type="text" name="keyword" id="uhKeyword" class="form-control"
+                       placeholder="Search by organization name…"
+                       value="{{ keyword }}"
+                       autocomplete="off">
+                <ul id="uhSuggestions"
+                    class="list-group shadow-sm"
+                    style="display:none; position:absolute; z-index:1000;
+                           width:100%; top:100%; left:0; max-height:260px; overflow-y:auto;"></ul>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            {% if keyword %}
+            <div class="col-auto">
+                <a href="{{ url_for('user.utility_heads') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-x-circle me-1"></i>Clear
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </form>
+
+    <script>
+    (function () {
+        var input = document.getElementById("uhKeyword");
+        var list  = document.getElementById("uhSuggestions");
+        var form  = document.getElementById("uhSearchForm");
+        var timer;
+
+        function hideSuggestions() {
+            list.style.display = "none";
+            list.innerHTML = "";
+        }
+
+        input.addEventListener("input", function () {
+            clearTimeout(timer);
+            var q = input.value.trim();
+            if (q.length < 1) { hideSuggestions(); return; }
+            timer = setTimeout(function () {
+                fetch("/utility-heads/suggest?q=" + encodeURIComponent(q))
+                    .then(function (r) { return r.json(); })
+                    .then(function (items) {
+                        list.innerHTML = "";
+                        if (!items.length) { hideSuggestions(); return; }
+                        items.forEach(function (name) {
+                            var li = document.createElement("li");
+                            li.className = "list-group-item list-group-item-action py-2";
+                            li.style.cursor = "pointer";
+                            li.textContent = name;
+                            li.addEventListener("mousedown", function (e) {
+                                e.preventDefault();
+                                input.value = name;
+                                hideSuggestions();
+                                form.submit();
+                            });
+                            list.appendChild(li);
+                        });
+                        list.style.display = "block";
+                    });
+            }, 200);
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!list.contains(e.target) && e.target !== input) {
+                hideSuggestions();
+            }
+        });
+    }());
+    </script>
+
+    {% if heads %}
+    <p class="text-muted small mb-3">{{ heads|length }} utility head(s) listed</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:55px">Sr No.</th>
+                    <th style="width:15%">Name</th>
+                    <th style="width:14%">Designation</th>
+                    <th style="width:14%">Organization</th>
+                    <th style="width:120px">Office No.</th>
+                    <th style="width:115px">Mobile No.</th>
+                    <th style="width:14%">Email</th>
+                    <th style="min-width:150px">Address</th>
+                    <th class="text-center" style="width:110px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in heads %}
+                <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td class="fw-semibold">
+                        {{ emp.employee_name }}
+                        <span class="badge bg-success badge-utility ms-1">
+                            <i class="bi bi-star-fill"></i>
+                        </span>
+                    </td>
+                    <td>{{ emp.designation or '–' }}</td>
+                    <td>{{ emp.organization.organization_name if emp.organization else '–' }}</td>
+                    <td>{{ emp.office_phone or '–' }}</td>
+                    <td>{{ emp.mobile_phone or '–' }}</td>
+                    <td>
+                        {% if emp.email %}
+                            <a href="mailto:{{ emp.email }}">{{ emp.email }}</a>
+                        {% else %}–{% endif %}
+                    </td>
+                    <td style="white-space:normal; word-break:break-word;">
+                        {{ emp.organization.address if emp.organization and emp.organization.address else '–' }}
+                    </td>
+                    <td class="text-center text-nowrap">
+                        <a href="{{ url_for('user.employee_details', id=emp.id) }}"
+                           class="btn btn-outline-primary btn-sm" title="View">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                        <a href="{{ url_for('admin.edit_employee', id=emp.id) }}"
+                           class="btn btn-outline-warning btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.toggle_utility_head', id=emp.id) }}"
+                              class="d-inline">
+                            <button type="submit" class="btn btn-success btn-sm"
+                                    title="Remove as Utility Head"
+                                    onclick="return confirm('Remove {{ emp.employee_name }} from Utility Heads?')">
+                                <i class="bi bi-star-fill me-1"></i>Remove
+                            </button>
+                        </form>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_employee', id=emp.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete {{ emp.employee_name }}?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <div class="alert alert-secondary mt-3">
+        <i class="bi bi-info-circle me-1"></i>
+        No utility heads have been designated yet.
+        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+            <a href="{{ url_for('admin.manage_employees') }}" class="alert-link ms-1">
+                Go to Manage Employees to mark utility heads.
+            </a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

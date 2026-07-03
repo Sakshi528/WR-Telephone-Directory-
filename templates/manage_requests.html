@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block title %}Update Requests – Admin{% endblock %}
+
+{% block content %}
+{% set FIELD_LABELS = {
+    'mobile_phone':               'Mobile No.',
+    'office_phone':               'Office No.',
+    'residence_phone':            'Residence Phone',
+    'email':                      'Email',
+    'designation':                'Designation',
+    'address':                    'Address',
+    'emergency_contact_name':     'Emergency Contact Person',
+    'emergency_contact_relation': 'Emergency Contact Relation',
+    'emergency_contact_phone':    'Emergency Contact No.',
+} %}
+<div class="page-header" style="margin-bottom:0">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-inbox me-2"></i>Update Requests</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5 mt-3">
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Date</th>
+                    <th>Requested By</th>
+                    <th>Type</th>
+                    <th>Record</th>
+                    <th>Field</th>
+                    <th>New Value</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for req in requests %}
+                <tr>
+                    <td class="text-muted">{{ loop.index }}</td>
+                    <td class="text-nowrap">
+                        {{ req.request_date.strftime('%d %b %Y') if req.request_date else '–' }}
+                    </td>
+                    <td>
+                        {% if req.requested_by %}
+                            <strong>{{ req.requested_by }}</strong>
+                            {% if req.department %}
+                            <div class="text-muted small">{{ req.department }}</div>
+                            {% endif %}
+                            {% if req.contact_number %}
+                            <div class="text-muted small">
+                                <i class="bi bi-telephone me-1"></i>{{ req.contact_number }}
+                            </div>
+                            {% endif %}
+                        {% elif req.user %}
+                            {{ req.user.username }}
+                        {% else %}
+                            <span class="text-muted">Anonymous</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if req.request_type == 'directory' %}
+                            <span class="badge bg-info text-dark">Directory</span>
+                        {% else %}
+                            <span class="badge bg-primary">Employee</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if req.request_type == 'directory' %}
+                            {{ req.directory_number.name if req.directory_number else '–' }}
+                        {% else %}
+                            {{ req.employee.employee_name if req.employee else '–' }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if req.field_name %}
+                            {{ FIELD_LABELS.get(req.field_name, req.field_name) }}
+                        {% else %}
+                            {# Legacy display #}
+                            {% if req.requested_mobile %}Mobile{% endif %}
+                            {% if req.requested_office_phone %}Office{% endif %}
+                            {% if req.requested_email %}Email{% endif %}
+                            {% if req.requested_directory_number %}Phone No.{% endif %}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if req.new_value %}
+                            {{ req.new_value }}
+                        {% else %}
+                            {{ req.requested_mobile or req.requested_office_phone
+                               or req.requested_email or req.requested_directory_number or '–' }}
+                        {% endif %}
+                    </td>
+                    <td>{{ req.reason or '–' }}</td>
+                    <td>
+                        {% if req.status == 'Pending' %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% elif req.status == 'Approved' %}
+                            <span class="badge bg-success">Approved</span>
+                        {% else %}
+                            <span class="badge bg-danger">Rejected</span>
+                        {% endif %}
+                    </td>
+                    <td class="text-nowrap">
+                        {% if req.status == 'Pending' %}
+                        <a href="{{ url_for('admin.approve_request', id=req.id) }}"
+                           class="btn btn-success btn-sm">
+                            <i class="bi bi-check-lg"></i> Approve
+                        </a>
+                        <a href="{{ url_for('admin.reject_request', id=req.id) }}"
+                           class="btn btn-danger btn-sm ms-1">
+                            <i class="bi bi-x-lg"></i> Reject
+                        </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="10" class="text-center text-muted py-4">
+                        No requests yet
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

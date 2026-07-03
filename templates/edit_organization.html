@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Edit Organization – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('admin.manage_organizations') }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Edit Organization</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Organization Name <span class="text-danger">*</span></label>
+                        <input type="text" name="organization_name" class="form-control"
+                               value="{{ organization.organization_name }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Region <span class="text-danger">*</span></label>
+                        <input type="text" name="region" class="form-control"
+                               value="{{ organization.region or '' }}" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Address <span class="text-danger">*</span></label>
+                        <textarea name="address" class="form-control" rows="3" required>{{ organization.address or '' }}</textarea>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>Update Organization
+                    </button>
+                    <a href="{{ url_for('admin.manage_organizations') }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

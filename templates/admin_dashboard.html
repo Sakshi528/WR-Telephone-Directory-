@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-speedometer2 me-2"></i>Admin Dashboard</h2>
+        <a href="{{ url_for('admin.manage_requests') }}" class="btn btn-warning btn-sm">
+            <i class="bi bi-inbox me-1"></i>Update Requests
+            {% if pending_requests %}
+            <span class="badge bg-danger ms-1">{{ pending_requests }}</span>
+            {% endif %}
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <!-- Stats -->
+    <div class="row g-3 mb-4 mt-3">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card shadow-sm border-0 text-center py-3">
+                <div class="fs-1 fw-bold text-primary">{{ total_employees }}</div>
+                <div class="text-muted">Employee/KMP</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card shadow-sm border-0 text-center py-3">
+                <div class="fs-1 fw-bold text-success">{{ total_organizations }}</div>
+                <div class="text-muted">Organizations</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card shadow-sm border-0 text-center py-3">
+                <div class="fs-1 fw-bold text-info">{{ total_departments }}</div>
+                <div class="text-muted">Departments</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card shadow-sm border-0 text-center py-3">
+                <div class="fs-1 fw-bold text-warning">{{ pending_requests }}</div>
+                <div class="text-muted">Pending Requests</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Management links -->
+    <h5 class="text-muted text-uppercase fw-semibold mb-3" style="letter-spacing:.07em;">Manage</h5>
+    <div class="row g-3">
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.manage_employees') }}" class="btn btn-primary w-100 py-3">
+                <i class="bi bi-people-fill d-block fs-3 mb-1"></i>Employee/KMP
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.manage_organizations') }}" class="btn btn-success w-100 py-3">
+                <i class="bi bi-building d-block fs-3 mb-1"></i>Organizations
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.directory_numbers') }}" class="btn btn-secondary w-100 py-3">
+                <i class="bi bi-journal-text d-block fs-3 mb-1"></i>Directory Numbers
+            </a>
+        </div>
+        <!-- <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.manage_emergency_contacts') }}" class="btn btn-danger w-100 py-3">
+                <i class="bi bi-heart-pulse d-block fs-3 mb-1"></i>Emergency Contacts
+            </a>
+        </div> -->
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.manage_requests') }}" class="btn btn-warning w-100 py-3">
+                <i class="bi bi-inbox d-block fs-3 mb-1"></i>Update Requests
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

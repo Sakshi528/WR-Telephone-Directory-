@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}{{ employee.employee_name }} – Employee Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.directory') }}" class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back to Directory
+    </a>
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="mb-0 fw-bold">{{ employee.employee_name }}</h4>
+                <div class="text-white-50 small">{{ employee.designation or 'Designation not available' }}</div>
+            </div>
+            {% if employee.is_utility_head %}
+            <span class="badge bg-warning text-dark fs-6">
+                <i class="bi bi-star-fill me-1"></i>Utility Head
+            </span>
+            {% endif %}
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <!-- Organisation & Location -->
+                <div class="col-md-6">
+                    <div class="border rounded p-3 h-100">
+                        <h6 class="text-uppercase text-muted mb-3">
+                            <i class="bi bi-building me-1"></i>Organisation
+                        </h6>
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4">Organization</dt>
+                            <dd class="col-sm-8">
+                                {{ employee.organization.organization_name if employee.organization else '–' }}
+                            </dd>
+                            <dt class="col-sm-4">Department</dt>
+                            <dd class="col-sm-8">
+                                {{ employee.department.department_name if employee.department else '–' }}
+                            </dd>
+                            <dt class="col-sm-4">Region</dt>
+                            <dd class="col-sm-8">{{ employee.region or '–' }}</dd>
+                            <dt class="col-sm-4">Location</dt>
+                            <dd class="col-sm-8">{{ employee.location or '–' }}</dd>
+                            {% if employee.organization and employee.organization.address %}
+                            <dt class="col-sm-4">Address</dt>
+                            <dd class="col-sm-8">{{ employee.organization.address }}</dd>
+                            {% endif %}
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-6">
+                    <div class="border rounded p-3 h-100">
+                        <h6 class="text-uppercase text-muted mb-3">
+                            <i class="bi bi-telephone me-1"></i>Contact
+                        </h6>
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4">Office</dt>
+                            <dd class="col-sm-8">{{ employee.office_phone or '–' }}</dd>
+                            <dt class="col-sm-4">Residence</dt>
+                            <dd class="col-sm-8">{{ employee.residence_phone or '–' }}</dd>
+                            <dt class="col-sm-4">Mobile</dt>
+                            <dd class="col-sm-8">{{ employee.mobile_phone or '–' }}</dd>
+                            <dt class="col-sm-4">Email</dt>
+                            <dd class="col-sm-8">
+                                {% if employee.email %}
+                                    <a href="mailto:{{ employee.email }}">{{ employee.email }}</a>
+                                {% else %}–{% endif %}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <a href="{{ url_for('user.request_update', id=employee.id) }}"
+                   class="btn btn-warning">
+                    <i class="bi bi-pencil-square me-1"></i>Request Update
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

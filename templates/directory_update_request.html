@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Request Update – {{ number.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.directory_number_details', id=number.id) }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0">
+                <i class="bi bi-pencil-square me-2"></i>Request Directory Correction
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-light border mb-4">
+                <strong>Entry:</strong> {{ number.name }}<br>
+                <strong>Organisation:</strong> {{ number.organization or '–' }}<br>
+                <strong>Current Phone:</strong> {{ number.phone_number or '–' }}<br>
+                <strong>Category:</strong> {{ number.category or '–' }}
+            </div>
+
+            <form method="POST">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Name <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="requested_by" class="form-control" required
+                               placeholder="Full name of person submitting this request">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Department <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <input type="text" name="department" class="form-control"
+                               placeholder="e.g. Operations, IT">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Contact Number <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <input type="text" name="contact_number" class="form-control"
+                               placeholder="So admin can reach you if needed">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Field to Update <span class="text-danger">*</span>
+                        </label>
+                        <select name="field_name" class="form-select" required>
+                            <option value="">– Select field –</option>
+                            <option value="phone_number">Phone Number</option>
+                            <option value="email">Email</option>
+                            <option value="name">Name</option>
+                            <option value="organization">Organisation</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">
+                            Correct Information <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="new_value" class="form-control" required
+                               placeholder="Enter the correct value">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">
+                            Reason <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <textarea name="reason" class="form-control" rows="3"
+                                  placeholder="Why is this correction needed?"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send me-1"></i>Submit Request
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

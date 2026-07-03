@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+    <div class="auth-card">
+
+        <h2 class="text-center mb-4 text-dark">
+            Admin Login
+        </h2>
+
+        <form method="POST">
+
+            <input
+                type="email"
+                name="email"
+                class="form-control mb-3"
+                placeholder="Admin Email"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                class="form-control mb-3"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                class="btn btn-primary w-100"
+            >
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

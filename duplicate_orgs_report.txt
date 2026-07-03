@@ -1,0 +1,367 @@
+Total organizations in database: 222
+======================================================================
+ID     Employees  Has Address  Name
+----------------------------------------------------------------------
+150    3          YES          ACB (India) Limited
+128    0          YES          Adani Green Energy Twenty Five A Limited -PSS3
+129    0          YES          Adani Green Energy Twenty Five B Limited -PSS3
+130    0          YES          Adani Green Energy Twenty Four A Limited -PSS3
+145    0          YES          Adani Green Energy Twenty Four Limited - PSS-4
+126    2          YES          Adani Green Energy Twenty Six A Limited -PSS3
+127    1          YES          Adani Green Energy Twenty Six B Limited -PSS3
+136    0          YES          Adani Hazira Port Limited-PSS3
+144    0          YES          Adani Hybrid Energy Jaisalmer Five Limited -PSS4
+147    0          YES          Adani Portsand Special Economic Zone Limited -PSS3
+146    0          YES          Adani Portsand Special Economic Zone Limited -PSS4
+154    7          YES          Adani Power (Mundra) Limited
+181    5          YES          Adani Power Limited
+172    5          YES          Adani Power Limited - Raipur
+155    5          no           ADANI POWER LIMITED, TIRODA
+131    0          YES          Adani Renewable Energy Fifty Five Limited - PSS3
+133    0          YES          Adani Renewable Energy Fifty Seven Limited PSS-13
+142    0          YES          Adani Renewable Energy Fifty Six Limited - PSS 9
+138    0          YES          Adani Renewable Energy Fifty Six Limited - PSS4
+137    1          YES          Adani Renewable Energy Forty Eight Limited-PSS9
+141    0          YES          Adani Renewable Energy Forty One Limited - PSS 4
+140    0          YES          Adani Renewable Energy Forty One Limited - PSS3
+132    1          YES          Adani Renewable Energy Forty One Limited PSS-13
+139    1          YES          Adani Renewable Energy Holding Four Limited-PSS1
+143    0          YES          Adani Solar Energy Jodhpur Six Private Limited- PSS 9
+95     0          YES          Adani Wind Energy Kutch Five Limited
+103    4          no           Adani Wind Energy Kutch Four Limited
+78     5          YES          Adani Wind Energy Kutch One Limited / AWEKTL / AWEKFL
+94     5          YES          Adani Wind Energy Kutch Three Limited
+102    5          YES          Adani Wind Energy MP One Private Limited
+85     5          YES          Alfanar Energy Private Limited
+105    3          YES          Alfanar Netra Wind Private Limited
+51     1          no           Ambazari, Nagpur
+135    0          YES          Ambuja Cements Limited-PSS - 3
+134    1          YES          Ambuja Cements Limited -PSS-4
+224    1          no           AMC (WBES)
+182    2          YES          AMNS ( Essar ) Power Transmission Company Limited
+104    4          YES          Apraava Energy Private Limited (AEPL)
+207    7          YES          ArcelorMittal Nippon Steel India Limited
+79     4          YES          Arinsun Clean Energy Private Limited
+183    4          no           Asset Management, Mumbai
+77     5          YES          Athena Jaipur Solar Power Private Limited
+125    0          YES          AVAADA SUNSHINE ENERGY PRIVATE LIMITED
+97     4          YES          Avikaran Solar India Private Limited
+208    7          YES          BARC Facility
+21     3          no           Bargi
+124    2          YES          BEEMPOW ENERGY PRIVATE LIMITED
+156    11         YES          Bharat Aluminum Company Limited
+36     1          no           Bhira
+22     3          no           Birshingpur
+18     2          no           Black Start Facilitated Stations
+184    2          no           Central Control Room, Noida
+151    1          no           Chakabura 2x30 MW Thermal Power Plant
+43     0          no           CHHATTISGARH
+201    0          YES          Chhattisgarh-WR Transmission Limited
+215    1          no           Chhattisgarh SLDC
+56     22         YES          Chhattisgarh State Load Despatch Centre
+8      5          no           CHHATTISGARH STATE LOAD DESPATCH CENTRE
+87     6          YES          Continuum Power Trading Private Limited
+121    0          no           Corporate Headquarters, Shakti Sadan, Shanan, Shimla, HP, 171006
+180    4          no           Corporate Office-Gurgaon
+160    3          YES          D GEN Mega Power Project
+60     8          no           Dadraand Nagar Haveli
+59     5          no           Daman and Diu
+158    5          YES          DB Power Limited
+161    4          YES          Dhariwal Infrastructure Limited
+32     2          no           Dhuvaran
+162    8          YES          Dongamouha Captive Power Plant (DCPP)
+14     1          no           Eastern Regional Load Despatch Centre , Kolkata
+89     4          no           Electro Solaire Private Limited
+227    2          no           Forest Department
+47     3          no           Gandhar
+19     1          no           Gandhi Sagar
+220    6          YES          GE T&D (SCADA & EMS)
+38     2          no           Ghatghar
+31     3          no           GIPCL 1 & 2
+164    4          YES          GMR Warora Energy Limited
+216    1          no           Goa
+58     33         YES          Goa Electricity Department
+192    1          no           Goa Tamnar Transmission Project Limited
+80     5          YES          Green Infra Wind Energy Limited SECI -II & SECI -II
+3      2          no           GRID CONTROLLER OF INDIA LIMITED
+27     0          no           GUJARAT
+88     5          YES          Gujarat Industries Power Company Limited
+217    2          no           Gujarat SLDC
+96     4          YES          Gujarat State Electricity Corporation Limited
+111    0          YES          Gujarat State Electricity Corporation Limited- Phase II
+52     15         YES          Gujarat State Load Despatch Centre
+6      2          no           GUJARAT STATE LOAD DESPATCH CENTRE
+44     2          no           Hasdeo Bango
+190    2          no           Head Office, Gurugram
+209    2          YES          Heavy Water Board
+81     8          YES          INOX Green Energy Services Limited
+226    1          no           IT Support Engineersat WRLDC
+185    0          no           Jabalpur Transmission Co. Ltd (JTCL)
+206    0          YES          Jam Khambaliya Transco Limited
+165    7          YES          Jhabua Power Limited
+166    0          YES          Jindal Power Limited
+30     1          no           Kadana
+75     7          YES          Kakrapar Atomic Power Station Stg- 1 & 2
+76     9          YES          Kakrapar Atomic Power Station Stg-3 & 4
+195    0          YES          Kallam Transmission Limited
+50     15         no           Kalwa, Thane-Belapur
+46     3          no           Kawas
+189    0          no           Khargone Transmission Limited (KhTL)
+37     3          no           Koyna, Pophali
+167    8          YES          KSK Mahanadi Power Company Limited (JSW Energy)
+203    0          YES          Lakadia Banaskantha Transco Limited
+168    8          YES          LANCO Amarkantak Power Limited
+149    1          no           M/s ADANI RENEWABLE ENERGY HOLDING FIVE LIMITED
+148    5          no           M/s Manikaran Analytics Limited
+55     4          no           Madhya Pradesh Power Generation Company Limited
+218    2          no           Madhya Pradesh SLDC
+53     4          YES          Madhya Pradesh State Load Despatch Centre
+7      4          no           MADHYA PRADESH STATE LOAD DESPATCH CENTRE
+163    5          YES          Mahan Energen Limited (Formally Essar Power (MP) Limited
+35     3          no           MAHARASHTRA 17. Khopoli & Bhivpuri
+219    1          no           Maharashtra SLDC
+228    3          YES          Maharashtra State Electricity Distribution Co. Ltd.
+48     2          YES          Maharashtra State Load Despatch Centre
+5      3          no           MAHARASHTRA STATE LOAD DESPATCH CENTRE
+82     3          YES          Mahindra Renewables Private Limited
+25     3          no           Manikheda
+118    0          YES          MASAYA SOLAR ENERGY PRIVATE LIMITED
+169    7          YES          MB Power (MP) Limited
+153    1          no           MCCPL 1x300 MW Thermal Power Plant
+34     0          no           Mini Hydro
+54     3          no           MP POWER MANAGEMENT CO. LTD.
+159    3          no           Mumbai Office - Power Sale Department
+191    1          no           Mumbai Urja Marg Limited
+211    3          YES          National High Power Test Laboratory
+12     3          no           NLDC and RLDCs
+213    0          no           Nodal Officersin Western Region
+16     1          no           North Eastern Regional Load Despatch Centre, Shillong
+13     1          no           Northern Regional Load Despatch Centre New Delhi
+9      2          YES          NTPC
+170    7          YES          NTPC-SAIL Power Company Private Limited (NSPCL)
+45     0          no           NTPC Blackstart Units
+67     5          no           NTPC Gadarwara
+62     0          YES          NTPC Gandhar
+92     3          YES          NTPC Jhanor - Gandhar Solar PV project
+63     0          YES          NTPC Kawas
+91     3          YES          NTPC Kawas Solar PV project
+68     4          no           NTPC Khargone
+69     4          YES          NTPC Korba
+70     4          no           NTPC Lara
+64     4          YES          NTPC Mauda
+61     7          no           NTPC Mumbai Head Quarter (WR-1)
+66     3          no           NTPC Raipur Head Quarter (WR-2)
+113    0          YES          NTPC Renewable Energy Limited Shajapur Unit-1
+114    0          YES          NTPC Renewable Energy Limited Shajapur Unit-2
+115    0          YES          NTPC Renewable Energy Ltd (Dayapar WEP-Ph-1)
+71     4          YES          NTPC Sipat
+65     4          YES          NTPC Solapur
+212    5          YES          NTPC Vidyut Vyapar Nigam Limited
+72     4          YES          NTPC Vindhyachal
+57     1          no           O/o Superintending Engineer (Backup SLDC), CSPTCL, Khedamara, Bhilai
+188    1          no           Odisha Generation Phase-II transmission Limited
+100    2          no           Office No. 1, Gandhi Colony, Jaora, Ratlam - 457 226, Madhya Pradesh, India
+23     1          no           Omkareshwar
+93     1          YES          Ostro Energy Private Limited
+83     5          YES          Ostro Kutch Wind Private Limited
+41     1          no           Paithan
+20     2          no           Pench
+2      2          no           POWER GRID CORPORATION OF INDIA LIMITED
+10     7          no           POWERGRID WRTS-I, Nagpur
+98     4          YES          Powerica Limited
+223    3          YES          PricewaterhouseCoopers Private Limited
+187    0          no           Raichur Sholapur Transmission Company Private Limited (RSTCPL)
+171    4          YES          Raigarh Energy Generation Limited
+205    0          YES          Raipur-Rajnandgaon-Warora Transmission Limited
+199    2          YES          RAJGARH TRANSMISSION LIMITED
+26     3          no           Rajghat
+186    1          no           RAPP Transmission Co. Ltd (RTCL)
+173    8          YES          Ratnagiri Gas & Power Private Limited
+225    3          no           Real Time Systems & Smart Grid, C-DAC, Bangalore
+221    4          YES          REConnect Energy ( REMC )
+123    0          YES          ReNew Green (MHP One) Private Limited
+84     5          YES          ReNew Power Limited
+86     5          YES          ReNew Wind Energy (AP2) Private Limited
+40     1          no           RGPPL
+174    4          YES          RKM Powergen Private Limited
+175    5          YES          SASAN Power Limited
+176    4          no           SASAN, Business Developmentand Commercial, Reliance Centre, Santa Cruz, Mumbai
+152    1          no           SCPL (Ratija) 1x50 MW Thermal Power Plant
+106    6          YES          Sherisha Raipur
+222    3          YES          SIEMENS (REMC)
+197    0          YES          Sipat Transmission Limited
+99     5          YES          Sitac Kabini Renewables Private Limited
+177    4          YES          SKS Power Generation (C.G) Limited
+101    3          no           Solapur Solar PV Project
+15     1          no           Southern Regional Load Despatch Centre, Bengaluru
+29     1          no           SSNNL
+178    6          YES          SSP
+49     0          no           State Load Despatch Centre, MSETCL
+33     1          no           Sugen
+120    0          YES          Talettutayi Solar Projects Nine Pvt Ltd
+73     9          YES          Tarapur Atomic Power Station Stg-1 & 2
+74     8          YES          Tarapur Atomic Power Station Stg-3 & 4
+210    2          no           TATA Power Mumbai
+90     4          YES          Tata Power Renewable Energy Ltd.
+112    0          YES          TEQ Green Power XI Private Limited
+157    8          YES          The Tata Power Co Limited Mundra (MTPS)
+24     2          no           Tons
+119    0          YES          Torrent Power Limited
+117    0          YES          TP Saurya Limited Unit- 2
+116    2          YES          TP Saurya Limited Unit-1
+179    5          YES          TRN Energy Private Limited
+39     2          no           Trombay
+28     5          no           UKAI
+42     4          no           Uran
+11     97         YES          Western Region Load Despatch Centre
+4      4          no           WESTERN REGION LOAD DESPATCH CENTRE
+17     6          YES          Western Regional Power Committee
+193    0          YES          Western Transco Power Limited
+204    0          YES          Western Transmission Gujarat Limited
+110    0          YES          Wind Five Renergy Limited
+107    0          YES          Wind One Renergy Limited
+109    0          YES          Wind Three Renergy Limited
+108    6          YES          Wind Two Renergy Private Limited
+214    2          no           WRLDC
+198    0          YES          WRSS XXI(A) Transco Limited
+
+======================================================================
+POTENTIAL DUPLICATES (one name is a substring of another):
+======================================================================
+
+  KEEP   [172] Adani Power Limited - Raipur  (employees: 5, address: YES)
+  REMOVE [181] Adani Power Limited  (employees: 5, address: YES)
+
+  KEEP   [155] ADANI POWER LIMITED, TIRODA  (employees: 5, address: no)
+  REMOVE [181] Adani Power Limited  (employees: 5, address: YES)
+
+  KEEP   [201] Chhattisgarh-WR Transmission Limited  (employees: 0, address: YES)
+  REMOVE [43] CHHATTISGARH  (employees: 0, address: no)
+
+  KEEP   [215] Chhattisgarh SLDC  (employees: 1, address: no)
+  REMOVE [43] CHHATTISGARH  (employees: 0, address: no)
+
+  KEEP   [56] Chhattisgarh State Load Despatch Centre  (employees: 22, address: YES)
+  REMOVE [43] CHHATTISGARH  (employees: 0, address: no)
+
+  KEEP   [8] CHHATTISGARH STATE LOAD DESPATCH CENTRE  (employees: 5, address: no)
+  REMOVE [43] CHHATTISGARH  (employees: 0, address: no)
+
+  KEEP   [56] Chhattisgarh State Load Despatch Centre  (employees: 22, address: YES)
+  REMOVE [8] CHHATTISGARH STATE LOAD DESPATCH CENTRE  (employees: 5, address: no)
+
+  KEEP   [62] NTPC Gandhar  (employees: 0, address: YES)
+  REMOVE [47] Gandhar  (employees: 3, address: no)
+
+  KEEP   [92] NTPC Jhanor - Gandhar Solar PV project  (employees: 3, address: YES)
+  REMOVE [47] Gandhar  (employees: 3, address: no)
+
+  KEEP   [88] Gujarat Industries Power Company Limited  (employees: 5, address: YES)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [217] Gujarat SLDC  (employees: 2, address: no)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [96] Gujarat State Electricity Corporation Limited  (employees: 4, address: YES)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [111] Gujarat State Electricity Corporation Limited- Phase II  (employees: 0, address: YES)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [52] Gujarat State Load Despatch Centre  (employees: 15, address: YES)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [6] GUJARAT STATE LOAD DESPATCH CENTRE  (employees: 2, address: no)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [204] Western Transmission Gujarat Limited  (employees: 0, address: YES)
+  REMOVE [27] GUJARAT  (employees: 0, address: no)
+
+  KEEP   [111] Gujarat State Electricity Corporation Limited- Phase II  (employees: 0, address: YES)
+  REMOVE [96] Gujarat State Electricity Corporation Limited  (employees: 4, address: YES)
+
+  KEEP   [52] Gujarat State Load Despatch Centre  (employees: 15, address: YES)
+  REMOVE [6] GUJARAT STATE LOAD DESPATCH CENTRE  (employees: 2, address: no)
+
+  KEEP   [226] IT Support Engineersat WRLDC  (employees: 1, address: no)
+  REMOVE [214] WRLDC  (employees: 2, address: no)
+
+  KEEP   [63] NTPC Kawas  (employees: 0, address: YES)
+  REMOVE [46] Kawas  (employees: 3, address: no)
+
+  KEEP   [91] NTPC Kawas Solar PV project  (employees: 3, address: YES)
+  REMOVE [46] Kawas  (employees: 3, address: no)
+
+  KEEP   [53] Madhya Pradesh State Load Despatch Centre  (employees: 4, address: YES)
+  REMOVE [7] MADHYA PRADESH STATE LOAD DESPATCH CENTRE  (employees: 4, address: no)
+
+  KEEP   [48] Maharashtra State Load Despatch Centre  (employees: 2, address: YES)
+  REMOVE [5] MAHARASHTRA STATE LOAD DESPATCH CENTRE  (employees: 3, address: no)
+
+  KEEP   [170] NTPC-SAIL Power Company Private Limited (NSPCL)  (employees: 7, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [45] NTPC Blackstart Units  (employees: 0, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [67] NTPC Gadarwara  (employees: 5, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [62] NTPC Gandhar  (employees: 0, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [92] NTPC Jhanor - Gandhar Solar PV project  (employees: 3, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [63] NTPC Kawas  (employees: 0, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [91] NTPC Kawas Solar PV project  (employees: 3, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [68] NTPC Khargone  (employees: 4, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [69] NTPC Korba  (employees: 4, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [70] NTPC Lara  (employees: 4, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [64] NTPC Mauda  (employees: 4, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [61] NTPC Mumbai Head Quarter (WR-1)  (employees: 7, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [66] NTPC Raipur Head Quarter (WR-2)  (employees: 3, address: no)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [113] NTPC Renewable Energy Limited Shajapur Unit-1  (employees: 0, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [114] NTPC Renewable Energy Limited Shajapur Unit-2  (employees: 0, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [115] NTPC Renewable Energy Ltd (Dayapar WEP-Ph-1)  (employees: 0, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [71] NTPC Sipat  (employees: 4, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [65] NTPC Solapur  (employees: 4, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [212] NTPC Vidyut Vyapar Nigam Limited  (employees: 5, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [72] NTPC Vindhyachal  (employees: 4, address: YES)
+  REMOVE [9] NTPC  (employees: 2, address: YES)
+
+  KEEP   [91] NTPC Kawas Solar PV project  (employees: 3, address: YES)
+  REMOVE [63] NTPC Kawas  (employees: 0, address: YES)
+
+  KEEP   [11] Western Region Load Despatch Centre  (employees: 97, address: YES)
+  REMOVE [4] WESTERN REGION LOAD DESPATCH CENTRE  (employees: 4, address: no)
+
+Total potential duplicate pairs found: 45

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>Telephone Directory Search</h2>
+
+    <form method="GET">
+
+        <div class="input-group mb-4 autocomplete-wrapper">
+
+            <input
+                type="text"
+                name="keyword"
+                class="form-control"
+                placeholder="Search Name, Number, Organization..."
+                value="{{ keyword }}"
+                autocomplete="off"
+                data-suggestions-url="{{ url_for('user.search_suggestions') }}"
+                data-suggestion-source="all"
+            >
+
+            <button
+                class="btn btn-primary"
+            >
+                Search
+            </button>
+
+            <div class="autocomplete-panel"></div>
+
+        </div>
+
+    </form>
+
+    <h4>Employees</h4>
+
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Office</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for employee in employees %}
+
+            <tr>
+
+                <td>{{ employee.employee_name }}</td>
+
+                <td>{{ employee.designation }}</td>
+
+                <td>{{ employee.office_phone }}</td>
+
+                <td>{{ employee.mobile_phone }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+            {% if keyword and not employees %}
+
+            <tr>
+                <td colspan="4" class="text-center text-muted py-4">
+                    No employees found
+                </td>
+            </tr>
+
+            {% endif %}
+
+        </tbody>
+
+    </table>
+
+    <h4>Directory Numbers</h4>
+
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for item in directory_numbers %}
+
+            <tr>
+
+                <td>{{ item.name }}</td>
+
+                <td>{{ item.phone_number }}</td>
+
+                <td>{{ item.category }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+            {% if keyword and not directory_numbers %}
+
+            <tr>
+                <td colspan="3" class="text-center text-muted py-4">
+                    No directory numbers found
+                </td>
+            </tr>
+
+            {% endif %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

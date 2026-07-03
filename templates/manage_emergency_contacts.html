@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Emergency Contacts – Admin{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-heart-pulse me-2"></i>Emergency Contacts</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="d-flex flex-wrap gap-2 mb-3 mt-3">
+        <form method="GET" class="d-flex gap-2 flex-grow-1">
+            <input type="text" name="keyword" class="form-control"
+                   placeholder="Search employee, contact name, relation…"
+                   value="{{ keyword }}">
+            <button class="btn btn-primary btn-sm px-3">
+                <i class="bi bi-search me-1"></i>Search
+            </button>
+            {% if keyword %}
+            <a href="{{ url_for('admin.manage_emergency_contacts') }}" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-x-lg"></i> Clear
+            </a>
+            {% endif %}
+        </form>
+        <a href="{{ url_for('admin.add_emergency_contact') }}" class="btn btn-danger btn-sm">
+            <i class="bi bi-plus-lg me-1"></i>Add Contact
+        </a>
+    </div>
+
+    <p class="text-muted small mb-2">
+        Showing <strong>{{ contacts|length }}</strong> contact(s)
+        {% if keyword %}matching "<strong>{{ keyword }}</strong>"{% endif %}
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:60px">Sr No.</th>
+                    <th>Employee</th>
+                    <th>Contact Name</th>
+                    <th style="width:130px">Relation</th>
+                    <th style="width:140px">Phone</th>
+                    <th class="text-center" style="width:100px">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td class="fw-semibold">{{ contact.employee.employee_name }}</td>
+                    <td>{{ contact.contact_name }}</td>
+                    <td>{{ contact.relation or '–' }}</td>
+                    <td>{{ contact.phone or '–' }}</td>
+                    <td class="text-center text-nowrap">
+                        <a href="{{ url_for('admin.edit_emergency_contact', id=contact.id) }}"
+                           class="btn btn-outline-warning btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_emergency_contact', id=contact.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete this contact?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" class="text-center text-muted py-4">No emergency contacts yet</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
