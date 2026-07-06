@@ -291,14 +291,25 @@ def telephone_directory():
     matched_org_names = [o.organization_name for o in matched_organizations]
     matched_org_ids   = [o.id for o in matched_organizations]
 
+    # Build subtree: matched orgs + their direct children.
+    # Used for both the employee query and the CR/switchyard FK filter.
+    subtree_ids = list(matched_org_ids)
+    child_org_objects = []
+    for org in matched_organizations:
+        children = Organization.query.filter_by(parent_id=org.id).all()
+        child_org_objects.extend(children)
+        for child in children:
+            if child.id not in subtree_ids:
+                subtree_ids.append(child.id)
+
     emp_query = (
         Employee.query.outerjoin(Organization).outerjoin(Department)
         .filter(Employee.is_kmp == True)  # noqa: E712
     )
-    if matched_org_ids:
+    if subtree_ids:
         employees = emp_query.filter(
             or_(
-                Employee.organization_id.in_(matched_org_ids),
+                Employee.organization_id.in_(subtree_ids),
                 employee_search_filter(keyword),
             )
         ).order_by(
@@ -320,9 +331,8 @@ def telephone_directory():
     ]
     if "@" in keyword:
         cr_filters.append(DirectoryNumber.email.ilike(f"%{keyword}%"))
-    for org_name in matched_org_names:
-        if org_name:
-            cr_filters.append(DirectoryNumber.organization.ilike(f"%{org_name}%"))
+    if subtree_ids:
+        cr_filters.append(DirectoryNumber.organization_id.in_(subtree_ids))
 
     all_matched_numbers = DirectoryNumber.query.filter(or_(*cr_filters)).all()
     control_rooms = [
@@ -378,19 +388,18 @@ def telephone_directory():
             }
         grouped[org_name]["switchyards"].append(sw)
 
-    # When a parent org matches the keyword, include ALL its sub-orgs (even empty),
-    # so that e.g. "Black Start" shows every Black Start sub-org with its state.
+    # When a parent org matches the keyword, include ALL its child orgs (even empty),
+    # so that e.g. "Black Start" shows every sub-org with its address.
     child_orgs = set()
-    for org in matched_organizations:
-        for child in Organization.query.filter_by(region=org.organization_name).all():
-            child_orgs.add(child.organization_name)
-            if child.organization_name not in grouped:
-                grouped[child.organization_name] = {
-                    "employees": [],
-                    "control_rooms": [],
-                    "switchyards": [],
-                    "address": child.address or child.region or "",
-                }
+    for child in child_org_objects:
+        child_orgs.add(child.organization_name)
+        if child.organization_name not in grouped:
+            grouped[child.organization_name] = {
+                "employees": [],
+                "control_rooms": [],
+                "switchyards": [],
+                "address": child.address or "",
+            }
 
     # Show orgs that have content, or that are explicitly sub-orgs of a matched parent.
     grouped_sorted = dict(sorted(

@@ -29,3 +29,15 @@ class DirectoryNumber(db.Model):
     category = db.Column(
         db.String(100)
     )
+
+    organization_id = db.Column(
+        db.Integer,
+        db.ForeignKey("organizations.id", ondelete="SET NULL"),
+        nullable=True
+    )
+
+    organization_obj = db.relationship(
+        "Organization",
+        lazy=True,
+        foreign_keys="DirectoryNumber.organization_id"
+    )

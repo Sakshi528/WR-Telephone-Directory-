@@ -23,7 +23,7 @@ from models.department import Department
 from models.directory_number import DirectoryNumber
 from models.emergency_contact import EmergencyContact
 
-EXCEL_PATH = "uploads/WR_DB_Ready (2).xlsx"
+EXCEL_PATH = "uploads/WR_DB_Ready_Final (1).xlsx"
 
 # emp_id → suborg name overrides (Excel has wrong or missing suborg_id for these)
 MANUAL_SUBORG_MAP = {
@@ -35,6 +35,14 @@ MANUAL_SUBORG_MAP = {
 }
 # emp_ids to skip entirely (junk: phone-as-name, headers, hospitals, emergency lines)
 SKIP_EMP_IDS = set(range(754, 800)) | {87, 89, 791, 793, 797}
+
+# Switchyard rows with broken org/suborg links in Excel — manually corrected.
+# For these rows the cr_label col holds the phone number and desig holds the email;
+# all standard phone/email cols are NULL.  key = Excel switchyard id (rid).
+MANUAL_SW_MAP = {
+    13: ("SASAN Power Limited", "Switchyard"),
+    14: ("SASAN Power Limited", "Corporate Office"),
+}
 
 
 def clean(v):
@@ -134,13 +142,14 @@ def run(apply: bool):
         # ── INSERT Organizations ─────────────────────────────────────────────
         name_to_org = {}
 
-        def get_or_insert_org(name, address, region):
+        def get_or_insert_org(name, address, region, parent_id=None):
             if name in name_to_org:
                 return name_to_org[name]
             o = Organization(
                 organization_name=name,
                 address=address or None,
                 region=region or None,
+                parent_id=parent_id,          # NEW: FK to parent org
             )
             db.session.add(o)
             db.session.flush()
@@ -153,6 +162,7 @@ def run(apply: bool):
             name = clean(name)
             if not name:
                 continue
+            # Parent orgs have no parent_id (top-level)
             o = get_or_insert_org(name, clean(address), clean(state))
             org_obj_by_parent_id[oid] = o
 
@@ -164,8 +174,13 @@ def run(apply: bool):
             if not name:
                 continue
             parent_name = parent_map.get(parent_oid, "")
-            o = get_or_insert_org(name, clean(address),
-                                  parent_name or clean(state))
+            parent_org  = org_obj_by_parent_id.get(parent_oid)   # NEW
+            o = get_or_insert_org(
+                name,
+                clean(address),
+                parent_name or clean(state),   # region unchanged (backward compat)
+                parent_id=parent_org.id if parent_org else None,  # NEW: set FK
+            )
             org_obj_by_suborg_id[sid] = o
             suborg_name_map[sid] = name
 
@@ -186,6 +201,19 @@ def run(apply: bool):
             else:
                 print(f"  WARN: suborg not found for manual map: {suborg_name}")
 
+        # Build sorted list of known org names (longest first) for text matching.
+        # Must be built here — before employee import — so designation-based
+        # sub-org resolution works for employees whose suborg_id is missing/wrong.
+        known_org_names = sorted(name_to_org.keys(), key=len, reverse=True)
+
+        def org_by_name_in(text):
+            """Return the longest known org name found anywhere in text."""
+            t = text.lower()
+            for known in known_org_names:
+                if known.lower() in t:
+                    return known
+            return None
+
         # ── INSERT Employees (KMP) ───────────────────────────────────────────
         emp_inserted = 0
         emp_skipped  = 0
@@ -197,11 +225,19 @@ def run(apply: bool):
                 emp_skipped += 1
                 continue
 
-            # Resolve org — manual map wins over generic org fallback
+            # Resolve org:
+            # 1. Manual override map (highest priority)
+            # 2. suborg_id FK from Excel (when the ID exists in sub_organizations)
+            # 3. Designation text — catches employees whose suborg_id is wrong/missing
+            #    but whose designation names a recognisable station (e.g. "EE Pench HPS")
+            # 4. Parent org fallback (org_id FK)
+            desig_text = clean(designation)
             if emp_id in manual_emp_map:
                 org_obj = manual_emp_map[emp_id]
             elif suborg_id and suborg_id in org_obj_by_suborg_id:
                 org_obj = org_obj_by_suborg_id[suborg_id]
+            elif desig_text and org_by_name_in(desig_text):
+                org_obj = name_to_org.get(org_by_name_in(desig_text))
             elif org_id and org_id in org_obj_by_parent_id:
                 org_obj = org_obj_by_parent_id[org_id]
             else:
@@ -227,17 +263,6 @@ def run(apply: bool):
         db.session.flush()
         print(f"  Inserted {emp_inserted} KMP employees ({emp_skipped} skipped)")
 
-        # Build sorted list of known org names (longest first) for prefix matching
-        known_org_names = sorted(name_to_org.keys(), key=len, reverse=True)
-
-        def org_by_name_in(text):
-            """Return the longest known org name found anywhere in text."""
-            t = text.lower()
-            for known in known_org_names:
-                if known.lower() in t:
-                    return known
-            return None
-
         # ── INSERT Control Rooms & Switchyards ───────────────────────────────
         def insert_directory_numbers(rows, category):
             count = 0
@@ -245,6 +270,23 @@ def run(apply: bool):
                 (rid, org_id, suborg_id, org_name, suborg_name,
                  label, desig, addr, state,
                  p1, p2, p3, p4, fax, m1, m2, e1, e2) = row
+
+                # Manual override: rows where Excel has wrong org and phone/email
+                # are stored in non-standard columns (cr_label and designation).
+                if category == "Switchyard" and rid in MANUAL_SW_MAP:
+                    sw_org_name, sw_label = MANUAL_SW_MAP[rid]
+                    dn_org_obj = name_to_org.get(sw_org_name)
+                    dn = DirectoryNumber(
+                        name            = sw_label,
+                        organization    = sw_org_name,
+                        organization_id = dn_org_obj.id if dn_org_obj else None,
+                        phone_number    = clean(label) or None,   # phone is in cr_label col
+                        email           = clean(desig) or None,   # email is in designation col
+                        category        = category,
+                    )
+                    db.session.add(dn)
+                    count += 1
+                    continue
 
                 # Resolve display org: suborg table → name-in-text match → parent org
                 if suborg_id and suborg_id in suborg_name_map:
@@ -261,12 +303,16 @@ def run(apply: bool):
                 phone = phones_joined(p1, p2, p3, p4, m1, m2, fax)
                 email = " / ".join(filter(None, [clean(e1), clean(e2)])) or None
 
+                # Resolve the org FK from the name we just determined
+                dn_org_obj = name_to_org.get(display_org)
+
                 dn = DirectoryNumber(
-                    name         = clean(label) or category,
-                    organization = display_org,
-                    phone_number = phone or None,
-                    email        = email,
-                    category     = category,
+                    name            = clean(label) or category,
+                    organization    = display_org,             # TEXT kept (backward compat)
+                    organization_id = dn_org_obj.id if dn_org_obj else None,  # NEW FK
+                    phone_number    = phone or None,
+                    email           = email,
+                    category        = category,
                 )
                 db.session.add(dn)
                 count += 1
