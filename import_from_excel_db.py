@@ -25,6 +25,9 @@ from models.emergency_contact import EmergencyContact
 
 EXCEL_PATH = "uploads/WR_DB_Ready_Final (1).xlsx"
 
+# Top-level org owned by import_employees_excel.py — never touched by this script.
+WRLDC_ORG_NAME = "Western Region Load Despatch Centre"
+
 # emp_id → suborg name overrides (Excel has wrong or missing suborg_id for these)
 MANUAL_SUBORG_MAP = {
     "State Load Despatch Centre, MSETCL": list(range(72, 87)) + [88],
@@ -129,7 +132,13 @@ def run(apply: bool):
         DirectoryNumber.query.filter(
             DirectoryNumber.category.in_(["Control Room", "Switchyard"])
         ).delete()
-        Organization.query.delete()
+
+        wrldc_org = Organization.query.filter_by(organization_name=WRLDC_ORG_NAME).first()
+        org_delete_q = Organization.query
+        if wrldc_org:
+            org_delete_q = org_delete_q.filter(Organization.id != wrldc_org.id)
+        org_delete_q.delete(synchronize_session=False)
+
         db.session.commit()
         print("  Done.")
 
@@ -188,6 +197,15 @@ def run(apply: bool):
         print(f"\n  Created {len(org_obj_by_parent_id)} parent orgs + "
               f"{len(org_obj_by_suborg_id)} sub-orgs")
 
+        # ── DEBUG TRACE: Kawas / Gandhar ─────────────────────────────────────
+        DEBUG_SUBORG_IDS = {40, 41}   # 40=NTPC Gandhar, 41=NTPC Kawas
+        DEBUG_ORG_IDS = {11}          # parent org (NTPC Mumbai HQ) that owns them
+        print("\n  [DEBUG] suborg_id -> resolved org object:")
+        for sid in DEBUG_SUBORG_IDS:
+            o = org_obj_by_suborg_id.get(sid)
+            print(f"    suborg_id={sid} -> {o.organization_name if o else None} "
+                  f"(db org_id={o.id if o else None})")
+
         # ── Build reverse lookup: suborg clean name → org obj (for manual map)
         suborg_name_to_obj = {o.organization_name: o for o in org_obj_by_suborg_id.values()}
 
@@ -218,7 +236,11 @@ def run(apply: bool):
         emp_inserted = 0
         emp_skipped  = 0
         for row in emp_rows:
-            emp_id, org_id, suborg_id, name, designation = row
+            emp_id = row[0]
+            org_id = row[1]
+            suborg_id = row[3]
+            name = row[5]
+            designation = row[6]
             name = clean(name)
 
             if emp_id in SKIP_EMP_IDS or not name:
@@ -232,17 +254,39 @@ def run(apply: bool):
             #    but whose designation names a recognisable station (e.g. "EE Pench HPS")
             # 4. Parent org fallback (org_id FK)
             desig_text = clean(designation)
+            is_traced = (
+                (org_id in DEBUG_ORG_IDS)
+                or (suborg_id in DEBUG_SUBORG_IDS)
+                or ("kawas" in desig_text.lower())
+                or ("gandhar" in desig_text.lower())
+                or ("kawas" in name.lower())
+                or ("gandhar" in name.lower())
+            )
+
+            branch = None
             if emp_id in manual_emp_map:
                 org_obj = manual_emp_map[emp_id]
+                branch = "manual_emp_map"
             elif suborg_id and suborg_id in org_obj_by_suborg_id:
                 org_obj = org_obj_by_suborg_id[suborg_id]
+                branch = "suborg_id FK"
             elif desig_text and org_by_name_in(desig_text):
                 org_obj = name_to_org.get(org_by_name_in(desig_text))
+                branch = "designation text match"
             elif org_id and org_id in org_obj_by_parent_id:
                 org_obj = org_obj_by_parent_id[org_id]
+                branch = "org_id parent fallback"
             else:
+                if is_traced:
+                    print(f"  [DEBUG] emp_id={emp_id} name={name!r} designation={desig_text!r} "
+                          f"org_id={org_id} suborg_id={suborg_id} -> SKIPPED (no branch matched)")
                 emp_skipped += 1
                 continue
+
+            if is_traced:
+                print(f"  [DEBUG] emp_id={emp_id} name={name!r} designation={desig_text!r} "
+                      f"org_id={org_id} suborg_id={suborg_id} -> branch={branch} "
+                      f"resolved_org={org_obj.organization_name!r} db_org_id={org_obj.id}")
 
             phones = emp_phones.get(emp_id, {})
             emails = emp_emails.get(emp_id, [])

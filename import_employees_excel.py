@@ -2,10 +2,11 @@
 Replaces WRLDC employees with the current list from 'uploads/employee list.xlsx'.
 
 Steps:
-  1. Deletes all employees currently in org "Western Region Load Despatch Centre" (id=11)
-     and their emergency contacts.
-  2. Imports 98 employees from the Excel file into the same org.
-  3. Creates any departments that don't already exist.
+  1. Looks up the "Western Region Load Despatch Centre" organization by name,
+     creating it as a top-level org (parent_id=NULL) if it doesn't exist yet.
+  2. Deletes all employees currently in that org and their emergency contacts.
+  3. Imports employees from the Excel file into the same org.
+  4. Creates any departments that don't already exist.
 
 Usage:
   python import_employees_excel.py          # dry run
@@ -22,7 +23,7 @@ from models.department import Department
 from models.emergency_contact import EmergencyContact
 
 EXCEL_PATH = "uploads/employee list.xlsx"
-WRLDC_ORG_ID = 5309  # WRLDC
+WRLDC_ORG_NAME = "Western Region Load Despatch Centre"
 
 
 def run(apply: bool) -> None:
@@ -34,20 +35,18 @@ def run(apply: bool) -> None:
 
     with app.app_context():
 
-        # â”€â”€ Verify org exists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        wrldc = db.session.get(Organization, WRLDC_ORG_ID)
-        if not wrldc:
-            print(f"  ERROR: Organization id={WRLDC_ORG_ID} not found. Aborting.")
-            return
-        print(f"\n  Target org: [{WRLDC_ORG_ID}] {wrldc.organization_name}")
+        wrldc = Organization.query.filter_by(organization_name=WRLDC_ORG_NAME).first()
+        if wrldc:
+            print(f"\n  Target org: [{wrldc.id}] {wrldc.organization_name}")
+            existing = Employee.query.filter_by(organization_id=wrldc.id).all()
+        else:
+            print(f"\n  Target org: '{WRLDC_ORG_NAME}' not found â€” will be created on --apply.")
+            existing = []
 
-        # â”€â”€ Count records to be deleted â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        existing = Employee.query.filter_by(organization_id=WRLDC_ORG_ID).all()
         print(f"\n  Employees to DELETE: {len(existing)}")
         for emp in existing:
             print(f"    - {emp.employee_name} | {emp.designation}")
 
-        # â”€â”€ Read Excel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         wb = openpyxl.load_workbook(EXCEL_PATH, read_only=True)
         ws = wb.active
         rows = list(ws.iter_rows(values_only=True))[1:]   # skip header
@@ -55,7 +54,6 @@ def run(apply: bool) -> None:
 
         print(f"\n  Employees to IMPORT: {len(rows)}")
 
-        # â”€â”€ Department lookup / creation plan â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         dept_names = sorted(set(str(r[4]).strip() for r in rows if r[4]))
         existing_depts = {
             d.department_name.strip().lower(): d
@@ -72,18 +70,22 @@ def run(apply: bool) -> None:
             print(sep)
             return
 
-        # â”€â”€ DELETE existing WRLDC employees â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        if wrldc is None:
+            wrldc = Organization(organization_name=WRLDC_ORG_NAME, parent_id=None)
+            db.session.add(wrldc)
+            db.session.flush()
+            print(f"\n  Created organization: [{wrldc.id}] {wrldc.organization_name}")
+
         emp_ids = [e.id for e in existing]
         if emp_ids:
             EmergencyContact.query.filter(
                 EmergencyContact.employee_id.in_(emp_ids)
             ).delete(synchronize_session=False)
-            Employee.query.filter_by(organization_id=WRLDC_ORG_ID).delete(
+            Employee.query.filter_by(organization_id=wrldc.id).delete(
                 synchronize_session=False
             )
             print(f"\n  Deleted {len(existing)} existing employees and their emergency contacts.")
 
-        # â”€â”€ Create missing departments â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         dept_map = dict(existing_depts)   # name.lower() â†’ Department obj
         for name in new_depts:
             dept = Department(department_name=name)
@@ -113,7 +115,7 @@ def run(apply: bool) -> None:
             emp = Employee(
                 employee_name   = name,
                 designation     = designation,
-                organization_id = WRLDC_ORG_ID,
+                organization_id = wrldc.id,
                 department_id   = dept_obj.id if dept_obj else None,
                 region          = region,
                 location        = location,
