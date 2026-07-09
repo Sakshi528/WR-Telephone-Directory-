@@ -1,13 +1,7 @@
-"""
-Validates the source workbook before it is fed to import_from_excel_db.py.
-
-Read-only: does not touch the database and does not import/modify any
-other script. Checks the organizations, sub_organizations, employees,
-control_rooms, and switchyards sheets for:
-
-  - duplicate primary-key IDs
-  - blank required fields
-  - orphan / invalid org_id and suborg_id references
+"""Validates the source workbook before it's fed to import_from_excel_db.py.
+Read-only. Checks organizations/sub_organizations/employees/control_rooms/
+switchyards for duplicate IDs, blank required fields, and orphan org/suborg
+references.
 
 Usage:
   python scripts/validate_workbook.py

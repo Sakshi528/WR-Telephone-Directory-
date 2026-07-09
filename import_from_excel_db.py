@@ -1,13 +1,8 @@
-"""
-Imports all organizations, employees, control rooms, and switchyards
-from 'uploads/WR_DB_Ready_Final_Verified.xlsx' into the database.
-
-Replaces all existing orgs, employees, CRs, and switchyards.
-WRLDC employees are NOT touched — run import_employees_excel.py separately.
-
-Delete + insert run inside a single database transaction: if anything fails
-partway through, the whole thing is rolled back rather than leaving the
-database with data deleted and nothing reinserted.
+"""Imports organizations, employees, control rooms, and switchyards from
+'uploads/WR_DB_Ready_Final_Verified.xlsx' into the database. Replaces all
+existing orgs/employees/CRs/switchyards; WRLDC employees are not touched
+(run import_employees_excel.py separately). Delete + insert run inside one
+transaction, rolled back whole on failure.
 
 Usage:
   python import_from_excel_db.py           # dry run
@@ -39,29 +34,14 @@ WRLDC_ORG_NAME = "Western Region Load Despatch Centre"
 MANUAL_SUBORG_MAP = {
     "State Load Despatch Centre, MSETCL": list(range(72, 87)) + [88],
     "Maharashtra State Electricity Distribution Co. Ltd.": [90, 91, 92],
-    # NTPC Gadarwara/Khargone employees have org_id=12 but suborg_id=None in Excel
     "NTPC Gadarwara": [226, 227, 228, 229, 230],
     "NTPC Khargone":  [231, 232, 233, 234],
-    # emp_id 87 (Vaishali Pazare) has suborg_id=35 in Excel (State Load Despatch
-    # Centre, MSETCL / Kalwa, Thane-Belapur), which is wrong — verified against
-    # 'uploads/Western Region Phone Directory 2025 Main_Telephone.docx', she is
-    # listed under Area Load Despatch Centre, MSETCL, Ambazari, Nagpur (suborg_id=36).
+    # emp_id 87 (Vaishali Pazare): Excel has suborg_id=35, but Word places her
+    # under Area Load Despatch Centre, MSETCL, Ambazari, Nagpur (suborg_id=36)
     "Area Load Despatch Centre, MSETCL,": [87],
 }
-# emp_ids to skip entirely (junk: phone-as-name, headers, hospitals, emergency lines)
-# emp_ids 87 and 89 were previously skipped here; verified against the Word
-# directory to be genuine employees (Vaishali Pazare, Dinesh Agrawal) and removed —
-# see MANUAL_SUBORG_MAP above for 87's suborg correction; 89's existing suborg_id
-# (37, Maharashtra State Electricity Distribution Co. Ltd.) was already correct.
+# junk emp_ids to skip entirely (phone-as-name, headers, hospitals, emergency lines)
 SKIP_EMP_IDS = set(range(754, 800)) | {791, 793, 797}
-
-# Switchyard rows with broken org/suborg links in Excel — manually corrected.
-# For these rows the cr_label col holds the phone number and desig holds the email;
-# all standard phone/email cols are NULL.  key = Excel switchyard id (rid).
-MANUAL_SW_MAP = {
-    13: ("SASAN Power Limited", "Switchyard"),
-    14: ("SASAN Power Limited", "Corporate Office"),
-}
 
 
 def clean(v):
@@ -111,7 +91,6 @@ def run(apply: bool):
     cr_rows     = sheet_rows("control_rooms")
     sw_rows     = sheet_rows("switchyards")
 
-    # ── Phone/email lookups ──────────────────────────────────────────────────
     emp_phones = defaultdict(lambda: defaultdict(list))
     for _, emp_id, ptype, number in phone_rows:
         if emp_id and ptype and number:
@@ -134,7 +113,6 @@ def run(apply: bool):
 
     with app.app_context():
         try:
-            # ── DELETE existing KMP data ─────────────────────────────────────
             logger.info("Deleting existing KMP data...")
             kmp_ids = [e.id for e in Employee.query.filter_by(is_kmp=True).all()]
             if kmp_ids:
@@ -153,13 +131,11 @@ def run(apply: bool):
             org_delete_q.delete(synchronize_session=False)
             logger.info("Existing KMP data deleted (not yet committed).")
 
-            # ── Build parent-org name map ────────────────────────────────────
             parent_map = {}
             for row in orgs_rows:
                 oid, name, address, state = row
                 parent_map[oid] = clean(name)
 
-            # ── INSERT Organizations ─────────────────────────────────────────
             name_to_org = {}
 
             def get_or_insert_org(name, address, region, parent_id=None):
@@ -210,10 +186,8 @@ def run(apply: bool):
                 len(org_obj_by_parent_id), len(org_obj_by_suborg_id),
             )
 
-            # ── Build reverse lookup: suborg clean name → org obj (for manual map)
             suborg_name_to_obj = {o.organization_name: o for o in org_obj_by_suborg_id.values()}
 
-            # ── Pre-compute manual emp_id → org_obj ─────────────────────────
             manual_emp_map = {}
             for suborg_name, emp_ids in MANUAL_SUBORG_MAP.items():
                 org_obj = suborg_name_to_obj.get(suborg_name)
@@ -223,9 +197,7 @@ def run(apply: bool):
                 else:
                     logger.warning("suborg not found for manual map: %s", suborg_name)
 
-            # Build sorted list of known org names (longest first) for text matching.
-            # Must be built here — before employee import — so designation-based
-            # sub-org resolution works for employees whose suborg_id is missing/wrong.
+            # built before employee import so designation-based resolution works below
             known_org_names = sorted(name_to_org.keys(), key=len, reverse=True)
 
             def org_by_name_in(text):
@@ -236,9 +208,28 @@ def run(apply: bool):
                         return known
                 return None
 
-            # ── INSERT Employees (KMP) ───────────────────────────────────────
+            # a blank-suborg_id row sharing a (name, designation) key with a
+            # valid-suborg_id row is a shared multi-station role (e.g. "Head of
+            # the Station" repeated across sites) -- skip rather than misattach
+            key_has_valid_suborg = defaultdict(bool)
+            key_has_blank_suborg = defaultdict(bool)
+            for _eid, _oid, _sid, _name, _desig in emp_rows:
+                _name = clean(_name)
+                if not _name:
+                    continue
+                key = (_name.lower(), clean(_desig).lower())
+                if _sid and _sid in org_obj_by_suborg_id:
+                    key_has_valid_suborg[key] = True
+                elif _sid is None:
+                    key_has_blank_suborg[key] = True
+            ambiguous_multi_station_keys = {
+                key for key in key_has_blank_suborg
+                if key_has_valid_suborg[key]
+            }
+
             emp_inserted = 0
             emp_skipped  = 0
+            emp_skipped_ambiguous = 0
             for row in emp_rows:
                 emp_id, org_id, suborg_id, name, designation = row
                 name = clean(name)
@@ -247,19 +238,22 @@ def run(apply: bool):
                     emp_skipped += 1
                     continue
 
-                # Resolve org:
-                # 1. Manual override map (highest priority)
-                # 2. suborg_id FK from Excel (when the ID exists in sub_organizations)
-                # 3. Designation text — catches employees whose suborg_id is wrong/missing
-                #    but whose designation names a recognisable station (e.g. "EE Pench HPS")
-                # 4. Parent org fallback (org_id FK)
+                # Resolve org, in priority order: valid suborg_id from Excel (a
+                # repair_workbook.py pass can fix this, so it outranks the manual
+                # map below) -> manual override map -> designation text naming a
+                # known station -> skip if ambiguous shared multi-station role ->
+                # parent org fallback.
                 desig_text = clean(designation)
-                if emp_id in manual_emp_map:
-                    org_obj = manual_emp_map[emp_id]
-                elif suborg_id and suborg_id in org_obj_by_suborg_id:
+                key = (name.lower(), desig_text.lower())
+                if suborg_id and suborg_id in org_obj_by_suborg_id:
                     org_obj = org_obj_by_suborg_id[suborg_id]
+                elif emp_id in manual_emp_map:
+                    org_obj = manual_emp_map[emp_id]
                 elif desig_text and org_by_name_in(desig_text):
                     org_obj = name_to_org.get(org_by_name_in(desig_text))
+                elif suborg_id is None and key in ambiguous_multi_station_keys:
+                    emp_skipped_ambiguous += 1
+                    continue
                 elif org_id and org_id in org_obj_by_parent_id:
                     org_obj = org_obj_by_parent_id[org_id]
                 else:
@@ -283,9 +277,16 @@ def run(apply: bool):
                 emp_inserted += 1
 
             db.session.flush()
-            logger.info("Inserted %d KMP employees (%d skipped)", emp_inserted, emp_skipped)
+            logger.info(
+                "Inserted %d KMP employees (%d skipped, %d skipped as ambiguous "
+                "shared multi-station roles)",
+                emp_inserted, emp_skipped, emp_skipped_ambiguous,
+            )
 
-            # ── INSERT Control Rooms & Switchyards ───────────────────────────
+            # detects rows where suborg_id conflicts with the row's own free-text
+            # suborg_name -- a confirmed non-constant ID-shift error in this sheet
+            suborg_id_by_name_lower = {v.lower(): k for k, v in suborg_name_map.items()}
+
             def insert_directory_numbers(rows, category):
                 count = 0
                 for row in rows:
@@ -293,25 +294,12 @@ def run(apply: bool):
                      label, desig, addr, state,
                      p1, p2, p3, p4, fax, m1, m2, e1, e2) = row
 
-                    # Manual override: rows where Excel has wrong org and phone/email
-                    # are stored in non-standard columns (cr_label and designation).
-                    if category == "Switchyard" and rid in MANUAL_SW_MAP:
-                        sw_org_name, sw_label = MANUAL_SW_MAP[rid]
-                        dn_org_obj = name_to_org.get(sw_org_name)
-                        dn = DirectoryNumber(
-                            name            = sw_label,
-                            organization    = sw_org_name,
-                            organization_id = dn_org_obj.id if dn_org_obj else None,
-                            phone_number    = clean(label) or None,   # phone is in cr_label col
-                            email           = clean(desig) or None,   # email is in designation col
-                            category        = category,
-                        )
-                        db.session.add(dn)
-                        count += 1
-                        continue
-
-                    # Resolve display org: suborg table → name-in-text match → parent org
-                    if suborg_id and suborg_id in suborg_name_map:
+                    # Resolve display org: exact text match (if it disagrees with a
+                    # present suborg_id) → suborg table → name-in-text match → parent org
+                    own_text_sid = suborg_id_by_name_lower.get(clean(suborg_name).strip().lower())
+                    if own_text_sid is not None and own_text_sid != suborg_id:
+                        display_org = suborg_name_map[own_text_sid]
+                    elif suborg_id and suborg_id in suborg_name_map:
                         display_org = suborg_name_map[suborg_id]
                     elif clean(suborg_name):
                         normalized = normalize_suborg_name(clean(suborg_name))

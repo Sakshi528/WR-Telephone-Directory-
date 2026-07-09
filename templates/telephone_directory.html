@@ -98,7 +98,7 @@
                                 <td>{{ emp.mobile_phone or '–' }}</td>
                                 <td>{{ emp.email or '–' }}</td>
                                 <td class="text-center">
-                                    {% if emp.is_utility_head %}
+                                    {% if emp.id in utility_head_ids %}
                                         <span class="badge bg-success badge-utility">
                                             <i class="bi bi-star-fill me-1"></i>Yes
                                         </span>
@@ -118,9 +118,9 @@
                                           action="{{ url_for('admin.toggle_utility_head', id=emp.id) }}"
                                           class="d-inline">
                                         <button type="submit"
-                                                class="btn btn-sm {% if emp.is_utility_head %}btn-success{% else %}btn-outline-secondary{% endif %}"
-                                                title="{% if emp.is_utility_head %}Remove Utility Head{% else %}Mark as Utility Head{% endif %}">
-                                            <i class="bi bi-star{% if emp.is_utility_head %}-fill{% endif %}"></i>
+                                                class="btn btn-sm {% if emp.id in utility_head_ids %}btn-success{% else %}btn-outline-secondary{% endif %}"
+                                                title="{% if emp.id in utility_head_ids %}Utility Head (auto-determined by designation){% else %}Not the Utility Head{% endif %}">
+                                            <i class="bi bi-star{% if emp.id in utility_head_ids %}-fill{% endif %}"></i>
                                         </button>
                                     </form>
                                     <form method="POST"

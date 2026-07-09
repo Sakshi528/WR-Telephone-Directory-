@@ -46,6 +46,12 @@ app.register_blueprint(user_bp)
 app.register_blueprint(admin_bp)
 
 
+@app.context_processor
+def inject_utility_head_ids():
+    from utils.designation_rank import compute_utility_head_ids
+    return {"utility_head_ids": compute_utility_head_ids()}
+
+
 @app.route("/count")
 def count():
     from models.employee import Employee
@@ -62,4 +68,4 @@ def count():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000, debug=False)
+    app.run(host="0.0.0.0", port=8000, debug=True)

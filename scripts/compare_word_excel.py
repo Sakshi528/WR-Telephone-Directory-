@@ -1,43 +1,6 @@
-"""
-Compares station rosters in the Word phone directory against the KMP source
-workbook and reports, per station: employees in Word, employees in Excel,
-missing employees, and missing control rooms.
-
-Read-only: does not modify the Word file, the Excel file, the database, or
-any import script. Writes reports/comparison_report.csv.
-
-Word source: uploads/Western Region Phone Directory 2025 Main_Telephone.docx
-Excel source: uploads/WR_DB_Ready_Final.xlsx
-
---- Word document structure notes (why the parsing below looks the way it does) ---
-
-Most stations follow a simple pattern: a Heading paragraph, optionally an
-address paragraph, then one table whose header row contains "Name" and
-"Designation" columns, followed by employee rows and a "Control Room" row.
-
-A few sections instead bundle MANY stations into a single large Word table,
-using embedded "<N>. Station Name" rows as sub-station markers (e.g. the
-"Black Start Facilitated Stations" table contains ~25 stations this way,
-including the only listing for stations like Indira Sagar, Bargi, UKAI,
-Kawas and Gandhar's black-start rosters). This script splits on those
-numbered marker rows within a table, not just on Word headings.
-
-Two stations (NTPC Kawas, NTPC Gandhar) appear twice in the document — once
-under their own heading, once inside the Black Start table — so Word-side
-results are grouped by resolved Excel organization identity (not by raw
-heading text) to avoid double counting.
-
-One section ("Synopsis of Important Telephone Numbers") is a front-matter
-quick-reference that duplicates people covered in full elsewhere; it doesn't
-match any real Excel organization name, so it naturally reports as a single
-unmatched row rather than corrupting real per-station counts.
-
-Known limitation: a couple of tables (e.g. the Maharashtra/MSETCL
-transmission table) group multiple sub-offices using plain repeated-text
-title blocks instead of numbered markers, and the header row itself repeats
-mid-table as a Word print-pagination artifact. Those are treated as one
-combined station rather than split further.
-"""
+"""Compares Word directory rosters against the KMP source workbook and
+reports missing employees / control rooms per station. Read-only.
+Writes reports/comparison_report.csv."""
 
 import csv
 import os
@@ -57,6 +20,13 @@ OUTPUT_CSV = "reports/comparison_report.csv"
 NUMBERED_TITLE_RE = re.compile(r"^\d+\.\s*[A-Za-z]")
 LEADING_NUMBER_RE = re.compile(r"^\d+(\.\d+)*\.?\s*")
 
+# matches both "switchyard" and "switch yard" (Word uses both spellings)
+SWITCHYARD_RE = re.compile(r"switch\s*yard", re.IGNORECASE)
+
+# content-based (not column-position) classifiers for phone/email cell values
+PHONE_RE = re.compile(r"\d{5,}")
+EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.\w+")
+
 
 def clean(v):
     return re.sub(r"\s+", " ", str(v or "").replace("\xa0", " ")).strip()
@@ -66,7 +36,51 @@ def strip_leading_number(text):
     return LEADING_NUMBER_RE.sub("", text).strip()
 
 
-# ── Excel loading ────────────────────────────────────────────────────────────
+def dedup_preserve_order(seq):
+    """Preserves first-seen order -- merged Word cells repeat their value
+    across every grid cell they span, so the same value can appear 2-4
+    times in one row's raw cell list."""
+    seen = set()
+    out = []
+    for v in seq:
+        if v not in seen:
+            seen.add(v)
+            out.append(v)
+    return out
+
+
+def classify_row_content(cells):
+    """Splits a Word row's cells into (phones, emails, others) by what each
+    value looks like, ignoring column position -- safe even when a row's
+    merged-cell layout doesn't match its table header's column order."""
+    phones, emails, others = [], [], []
+    for raw in cells:
+        v = clean(raw)
+        if not v:
+            continue
+        if EMAIL_RE.search(v):
+            emails.append(v)
+        elif PHONE_RE.search(v):
+            phones.append(v)
+        else:
+            others.append(v)
+    return dedup_preserve_order(phones), dedup_preserve_order(emails), dedup_preserve_order(others)
+
+
+def normalize_phone_set(text):
+    """Digit runs of length >= 5 extracted from a phone string, as a
+    frozenset -- tolerant of differing separators/formatting between
+    sources (e.g. Word's "07323-284542/ 284719" vs the database's joined
+    "07323-284542 / 284719")."""
+    return frozenset(PHONE_RE.findall(text or ""))
+
+
+def normalize_email_set(text):
+    """Lowercased email addresses extracted from a string, as a frozenset."""
+    return frozenset(e.lower() for e in EMAIL_RE.findall(text or ""))
+
+
+# ─── EXCEL LOADING ───────────────────────────────────────────────────────────
 
 def load_excel(path):
     wb = openpyxl.load_workbook(path, read_only=True)
@@ -126,7 +140,7 @@ def load_excel(path):
     }
 
 
-# ── Word parsing ─────────────────────────────────────────────────────────────
+# ─── WORD PARSING ────────────────────────────────────────────────────────────
 
 def iter_block_items(doc):
     for child in doc.element.body.iterchildren():
@@ -188,7 +202,7 @@ def parse_table_segments(table, fallback_name):
             continue  # roster header, or a repeated print-pagination header
 
         if not any(cells):
-            continue  # blank row
+            continue
 
         name_cell = cells[name_col] if name_col < len(cells) else ""
         desig_cell = cells[desig_col] if desig_col < len(cells) else ""
@@ -201,7 +215,7 @@ def parse_table_segments(table, fallback_name):
             continue
 
         if name_cell.lower() == desig_cell.lower():
-            continue  # repeated title-block noise row (e.g. "GUJARAT" / "GUJARAT")
+            continue  # e.g. "GUJARAT" / "GUJARAT" title-block noise row
 
         current_employees[name_cell.lower()] = name_cell
 
@@ -222,13 +236,11 @@ def parse_word_segments(path):
     return all_segments
 
 
-# ── Matching Word segments to Excel organizations ───────────────────────────
+# ─── MATCHING WORD SEGMENTS TO EXCEL ORGANIZATIONS ──────────────────────────
 
 def _best_substring_match(key_lower, name_lower_to_id):
-    """Fallback for names like 'Kawas' that should match 'NTPC Kawas'. Picks
-    the known name with the smallest length difference among those where one
-    contains the other, e.g. prefers 'ntpc kawas' over the much longer
-    'ntpc kawas solar pv project', which also contains 'kawas'."""
+    """Fallback for names like 'Kawas' that should match 'NTPC Kawas' --
+    picks the closest-length known name containing (or contained by) it."""
     if len(key_lower) < 4:
         return None
     best = None

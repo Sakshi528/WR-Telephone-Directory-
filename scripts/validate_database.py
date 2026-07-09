@@ -1,19 +1,7 @@
-"""
-Validates the current state of the PostgreSQL database.
-
-Read-only: never inserts, updates, or deletes anything.
-
-Checks:
-  - organization / sub-organization / employee / control room / switchyard counts
-  - duplicate employee IDs (primary-key integrity sanity check)
-  - duplicate employee phone numbers (data-quality warning, not treated as an error --
-    a shared office/mobile number can be legitimate)
-  - orphan foreign keys (Employee.department_id, EmergencyContact.employee_id)
-  - invalid suborg_id (Organization.parent_id referencing a non-existent organization --
-    this schema represents sub-organizations as Organization rows with parent_id set,
-    there is no separate suborganizations table)
-  - invalid org_id (Employee.organization_id / DirectoryNumber.organization_id
-    referencing a non-existent organization)
+"""Validates the current state of the PostgreSQL database. Read-only.
+Checks org/sub-org/employee/control room/switchyard counts, duplicate
+employee IDs, duplicate phone numbers (warning only), orphan foreign keys,
+and invalid org_id/suborg_id references.
 
 Usage:
   python scripts/validate_database.py
@@ -63,7 +51,7 @@ def run():
         print(f"    Control rooms     : {control_room_count}")
         print(f"    Switchyards       : {switchyard_count}")
 
-        # ── Duplicate employee IDs (PK integrity sanity check) ───────────────
+        # ─── DUPLICATE EMPLOYEE IDS ───
         dup_ids = (
             db.session.query(Employee.id, db.func.count(Employee.id))
             .group_by(Employee.id)
@@ -74,7 +62,7 @@ def run():
             issues.append(Issue("ERROR", "duplicate employee IDs",
                                  f"employee id={emp_id} appears {count} times"))
 
-        # ── Duplicate phone numbers (employee mobile_phone) ──────────────────
+        # ─── DUPLICATE PHONE NUMBERS ───
         dup_phones = (
             db.session.query(Employee.mobile_phone, db.func.count(Employee.id))
             .filter(Employee.mobile_phone.isnot(None), Employee.mobile_phone != "")
@@ -86,7 +74,7 @@ def run():
             issues.append(Issue("WARNING", "duplicate phone numbers",
                                  f"mobile_phone='{phone}' is shared by {count} employees"))
 
-        # ── Orphan foreign keys ──────────────────────────────────────────────
+        # ─── ORPHAN FOREIGN KEYS ───
         dept_ids = {d.id for d in Department.query.all()}
         for e in Employee.query.filter(Employee.department_id.isnot(None)).all():
             if e.department_id not in dept_ids:
@@ -101,7 +89,7 @@ def run():
                                      f"emergency_contact id={ec.id} references employee_id="
                                      f"{ec.employee_id} which does not exist"))
 
-        # ── Invalid suborg_id (Organization.parent_id) ───────────────────────
+        # ─── INVALID SUBORG_ID ───
         org_ids = {o.id for o in Organization.query.all()}
         for o in Organization.query.filter(Organization.parent_id.isnot(None)).all():
             if o.parent_id not in org_ids:
@@ -109,7 +97,7 @@ def run():
                                      f"organization id={o.id} name='{o.organization_name}' has "
                                      f"parent_id={o.parent_id} which does not exist"))
 
-        # ── Invalid org_id (Employee / DirectoryNumber -> organizations) ─────
+        # ─── INVALID ORG_ID ───
         for e in Employee.query.filter(Employee.organization_id.isnot(None)).all():
             if e.organization_id not in org_ids:
                 issues.append(Issue("ERROR", "invalid org_id",

@@ -1,12 +1,8 @@
-﻿"""
-Replaces WRLDC employees with the current list from 'uploads/employee list.xlsx'.
-
-Steps:
-  1. Looks up the "Western Region Load Despatch Centre" organization by name,
-     creating it as a top-level org (parent_id=NULL) if it doesn't exist yet.
-  2. Deletes all employees currently in that org and their emergency contacts.
-  3. Imports employees from the Excel file into the same org.
-  4. Creates any departments that don't already exist.
+"""Replaces WRLDC employees with the current list from 'uploads/employee
+list.xlsx'. Looks up (or creates) the WRLDC org, deletes its existing
+employees and emergency contacts, then imports the Excel rows and any new
+departments. Delete + insert run inside one transaction, rolled back whole
+on failure.
 
 Usage:
   python import_employees_excel.py          # dry run
@@ -21,38 +17,40 @@ from models.employee import Employee
 from models.organization import Organization
 from models.department import Department
 from models.emergency_contact import EmergencyContact
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 EXCEL_PATH = "uploads/employee list.xlsx"
 WRLDC_ORG_NAME = "Western Region Load Despatch Centre"
 
 
 def run(apply: bool) -> None:
-    sep = "=" * 65
-    print(sep)
-    print("  WRLDC Employee Import")
-    print("  DRY RUN" if not apply else "  APPLY MODE â€” changes will be committed")
-    print(sep)
+    logger.info("=" * 65)
+    logger.info("WRLDC Employee Import")
+    logger.info("DRY RUN" if not apply else "APPLY MODE — changes will be committed")
+    logger.info("=" * 65)
 
     with app.app_context():
 
         wrldc = Organization.query.filter_by(organization_name=WRLDC_ORG_NAME).first()
         if wrldc:
-            print(f"\n  Target org: [{wrldc.id}] {wrldc.organization_name}")
+            logger.info("Target org: [%d] %s", wrldc.id, wrldc.organization_name)
             existing = Employee.query.filter_by(organization_id=wrldc.id).all()
         else:
-            print(f"\n  Target org: '{WRLDC_ORG_NAME}' not found â€” will be created on --apply.")
+            logger.info("Target org '%s' not found — will be created on --apply.", WRLDC_ORG_NAME)
             existing = []
 
-        print(f"\n  Employees to DELETE: {len(existing)}")
+        logger.info("Employees to DELETE: %d", len(existing))
         for emp in existing:
-            print(f"    - {emp.employee_name} | {emp.designation}")
+            logger.info("  - %s | %s", emp.employee_name, emp.designation)
 
         wb = openpyxl.load_workbook(EXCEL_PATH, read_only=True)
         ws = wb.active
         rows = list(ws.iter_rows(values_only=True))[1:]   # skip header
         rows = [r for r in rows if r[1]]                  # skip blank names
 
-        print(f"\n  Employees to IMPORT: {len(rows)}")
+        logger.info("Employees to IMPORT: %d", len(rows))
 
         dept_names = sorted(set(str(r[4]).strip() for r in rows if r[4]))
         existing_depts = {
@@ -61,73 +59,81 @@ def run(apply: bool) -> None:
         }
         new_depts = [n for n in dept_names if n.lower() not in existing_depts]
         if new_depts:
-            print(f"\n  New departments to CREATE: {new_depts}")
+            logger.info("New departments to CREATE: %s", new_depts)
         else:
-            print(f"\n  All {len(dept_names)} departments already exist.")
+            logger.info("All %d departments already exist.", len(dept_names))
 
         if not apply:
-            print(f"\n  [Dry run complete â€” rerun with --apply to commit]")
-            print(sep)
+            logger.info("Dry run complete — rerun with --apply to commit")
             return
 
-        if wrldc is None:
-            wrldc = Organization(organization_name=WRLDC_ORG_NAME, parent_id=None)
-            db.session.add(wrldc)
-            db.session.flush()
-            print(f"\n  Created organization: [{wrldc.id}] {wrldc.organization_name}")
+        try:
+            if wrldc is None:
+                wrldc = Organization(organization_name=WRLDC_ORG_NAME, parent_id=None)
+                db.session.add(wrldc)
+                db.session.flush()
+                logger.info("Created organization: [%d] %s", wrldc.id, wrldc.organization_name)
 
-        emp_ids = [e.id for e in existing]
-        if emp_ids:
-            EmergencyContact.query.filter(
-                EmergencyContact.employee_id.in_(emp_ids)
-            ).delete(synchronize_session=False)
-            Employee.query.filter_by(organization_id=wrldc.id).delete(
-                synchronize_session=False
-            )
-            print(f"\n  Deleted {len(existing)} existing employees and their emergency contacts.")
+            emp_ids = [e.id for e in existing]
+            if emp_ids:
+                EmergencyContact.query.filter(
+                    EmergencyContact.employee_id.in_(emp_ids)
+                ).delete(synchronize_session=False)
+                Employee.query.filter_by(organization_id=wrldc.id).delete(
+                    synchronize_session=False
+                )
+                logger.info(
+                    "Deleted %d existing employees and their emergency contacts.",
+                    len(existing),
+                )
 
-        dept_map = dict(existing_depts)   # name.lower() â†’ Department obj
-        for name in new_depts:
-            dept = Department(department_name=name)
-            db.session.add(dept)
-            db.session.flush()
-            dept_map[name.lower()] = dept
-            print(f"  Created department: {name}")
+            dept_map = dict(existing_depts)   # name.lower() → Department obj
+            for name in new_depts:
+                dept = Department(department_name=name)
+                db.session.add(dept)
+                db.session.flush()
+                dept_map[name.lower()] = dept
+                logger.info("Created department: %s", name)
 
-        # â”€â”€ INSERT new employees â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        imported = 0
-        for row in rows:
-            empno, name, level, designation, dept_name, region, location, mobile, email = row
+            imported = 0
+            for row in rows:
+                empno, name, level, designation, dept_name, region, location, mobile, email = row
 
-            name        = str(name).strip() if name else ""
-            designation = str(designation).strip() if designation else ""
-            dept_name   = str(dept_name).strip() if dept_name else ""
-            region      = str(region).strip() if region else ""
-            location    = str(location).strip() if location else ""
-            mobile      = str(int(mobile)) if isinstance(mobile, (int, float)) else str(mobile or "").strip()
-            email       = str(email).strip() if email else ""
+                name        = str(name).strip() if name else ""
+                designation = str(designation).strip() if designation else ""
+                dept_name   = str(dept_name).strip() if dept_name else ""
+                region      = str(region).strip() if region else ""
+                location    = str(location).strip() if location else ""
+                mobile      = str(int(mobile)) if isinstance(mobile, (int, float)) else str(mobile or "").strip()
+                email       = str(email).strip() if email else ""
 
-            if not name:
-                continue
+                if not name:
+                    continue
 
-            dept_obj = dept_map.get(dept_name.lower())
+                dept_obj = dept_map.get(dept_name.lower())
 
-            emp = Employee(
-                employee_name   = name,
-                designation     = designation,
-                organization_id = wrldc.id,
-                department_id   = dept_obj.id if dept_obj else None,
-                region          = region,
-                location        = location,
-                mobile_phone    = mobile or None,
-                email           = email or None,
-            )
-            db.session.add(emp)
-            imported += 1
+                emp = Employee(
+                    employee_name   = name,
+                    designation     = designation,
+                    organization_id = wrldc.id,
+                    department_id   = dept_obj.id if dept_obj else None,
+                    region          = region,
+                    location        = location,
+                    mobile_phone    = mobile or None,
+                    email           = email or None,
+                    is_kmp          = False,   # WRLDC staff are never KMP — explicit, not relying on the model default
+                )
+                db.session.add(emp)
+                imported += 1
 
-        db.session.commit()
-        print(f"\n  Imported {imported} employees into '{wrldc.organization_name}'.")
-        print(sep)
+            db.session.commit()
+            logger.info("Imported %d employees into '%s'.", imported, wrldc.organization_name)
+            logger.info("=" * 65)
+
+        except Exception:
+            logger.exception("Import failed — rolling back all changes.")
+            db.session.rollback()
+            raise
 
 
 if __name__ == "__main__":

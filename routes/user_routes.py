@@ -15,6 +15,7 @@ from models.department import Department
 from models.directory_number import DirectoryNumber
 from models.emergency_contact import EmergencyContact
 from models.update_request import UpdateRequest
+from utils.designation_rank import resolve_utility_head, compute_utility_head_ids
 
 
 user_bp = Blueprint("user", __name__)
@@ -227,17 +228,20 @@ def telephone_directory():
         all_orgs = Organization.query.all()
         org_address = {o.organization_name: (o.address or "") for o in all_orgs}
 
+        utility_head_ids = compute_utility_head_ids()
         all_employees = (
             Employee.query
             .outerjoin(Organization)
             .filter(Employee.is_kmp == True)  # noqa: E712
             .order_by(
                 Organization.organization_name,
-                Employee.is_utility_head.desc(),
                 Employee.employee_name,
             )
             .all()
         )
+        # heads-first within each org group -- sort is stable, so the SQL
+        # order above is preserved among ties
+        all_employees.sort(key=lambda e: e.id not in utility_head_ids)
         all_numbers = (
             DirectoryNumber.query
             .filter(DirectoryNumber.organization != None)
@@ -302,6 +306,7 @@ def telephone_directory():
             if child.id not in subtree_ids:
                 subtree_ids.append(child.id)
 
+    utility_head_ids = compute_utility_head_ids()
     emp_query = (
         Employee.query.outerjoin(Organization).outerjoin(Department)
         .filter(Employee.is_kmp == True)  # noqa: E712
@@ -314,16 +319,18 @@ def telephone_directory():
             )
         ).order_by(
             Organization.organization_name,
-            Employee.is_utility_head.desc(),
             Employee.employee_name,
-        ).limit(200).all()
+        ).all()
     else:
         employees = emp_query.filter(
             employee_search_filter(keyword)
         ).order_by(
-            Employee.is_utility_head.desc(),
             Employee.employee_name,
-        ).limit(200).all()
+        ).all()
+    # heads-first within each org group -- sort is stable, so the SQL
+    # order above is preserved among ties
+    employees.sort(key=lambda e: e.id not in utility_head_ids)
+    employees = employees[:200]
 
     cr_filters = [
         DirectoryNumber.name.ilike(f"%{keyword}%"),
@@ -451,32 +458,35 @@ def universal_search():
 
 
 # ─── UTILITY HEADS ────────────────────────────────────────────────────────────
+# Auto-resolved from employee designations (utils.designation_rank) rather
+# than the manually-set Employee.is_utility_head flag -- see that module for
+# the ranking rules.
+
+def _compute_utility_heads(keyword=None):
+    org_query = Organization.query
+    if keyword:
+        org_query = org_query.filter(Organization.organization_name.ilike(f"%{keyword}%"))
+    organizations = org_query.order_by(Organization.organization_name).all()
+
+    heads = []
+    for org in organizations:
+        employees = (
+            Employee.query
+            .filter_by(organization_id=org.id)
+            .order_by(Employee.id)
+            .all()
+        )
+        head = resolve_utility_head(employees)
+        if head:
+            heads.append(head)
+    return heads
+
 
 @user_bp.route("/utility-heads")
 def utility_heads():
     keyword = request.args.get("keyword", "").strip()
-
-    query = (
-        Employee.query
-        .outerjoin(Organization)
-        .filter(Employee.is_utility_head == True)  # noqa: E712
-    )
-    if keyword:
-        query = query.filter(
-            Organization.organization_name.ilike(f"%{keyword}%")
-        )
-    heads = query.order_by(Organization.organization_name, Employee.employee_name).all()
-
-    # Deduplicate by (lowercase name + org id) to remove accidental duplicate records
-    seen = set()
-    deduped = []
-    for emp in heads:
-        key = (emp.employee_name.strip().lower(), emp.organization_id)
-        if key not in seen:
-            seen.add(key)
-            deduped.append(emp)
-
-    return render_template("utility_heads.html", heads=deduped, keyword=keyword)
+    heads = _compute_utility_heads(keyword or None)
+    return render_template("utility_heads.html", heads=heads, keyword=keyword)
 
 
 @user_bp.route("/utility-heads/suggest")
@@ -487,10 +497,7 @@ def utility_heads_suggest():
     orgs = (
         Organization.query
         .join(Employee, Organization.id == Employee.organization_id)
-        .filter(
-            Employee.is_utility_head == True,  # noqa: E712
-            Organization.organization_name.ilike(f"%{q}%"),
-        )
+        .filter(Organization.organization_name.ilike(f"%{q}%"))
         .with_entities(Organization.organization_name)
         .distinct()
         .order_by(Organization.organization_name)
@@ -670,6 +677,8 @@ def _export_employees_xlsx(employees, title="Employee Directory"):
     import openpyxl
     from openpyxl.styles import Font, PatternFill, Alignment
 
+    utility_head_ids = compute_utility_head_ids()
+
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = title[:31]
@@ -695,7 +704,7 @@ def _export_employees_xlsx(employees, title="Employee Directory"):
         ws.cell(row=row, column=5, value=emp.office_phone or "")
         ws.cell(row=row, column=6, value=emp.mobile_phone or "")
         ws.cell(row=row, column=7, value=emp.email or "")
-        ws.cell(row=row, column=8, value="Yes" if emp.is_utility_head else "")
+        ws.cell(row=row, column=8, value="Yes" if emp.id in utility_head_ids else "")
 
     for col in ws.columns:
         ws.column_dimensions[col[0].column_letter].width = 22
@@ -715,6 +724,8 @@ def _export_employees_docx(employees, title="Employee Directory"):
     from docx import Document
     from docx.shared import Pt, RGBColor
     from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+    utility_head_ids = compute_utility_head_ids()
 
     doc = Document()
     heading = doc.add_heading(title, level=1)
@@ -737,7 +748,7 @@ def _export_employees_docx(employees, title="Employee Directory"):
         row[3].text = emp.office_phone or ""
         row[4].text = emp.mobile_phone or ""
         row[5].text = emp.email or ""
-        row[6].text = "Yes" if emp.is_utility_head else ""
+        row[6].text = "Yes" if emp.id in utility_head_ids else ""
 
     buf = io.BytesIO()
     doc.save(buf)
@@ -805,13 +816,7 @@ def _export_org_docx(org_name, address, employees, control_rooms):
 @user_bp.route("/export/utility-heads")
 def export_utility_heads():
     fmt = request.args.get("format", "xlsx")
-    heads = (
-        Employee.query
-        .filter_by(is_utility_head=True)
-        .join(Organization)
-        .order_by(Organization.organization_name, Employee.employee_name)
-        .all()
-    )
+    heads = _compute_utility_heads()
     if fmt == "docx":
         return _export_utility_heads_docx(heads)
     return _export_utility_heads_xlsx(heads)

@@ -82,18 +82,18 @@
                         <form method="POST"
                               action="{{ url_for('admin.toggle_utility_head', id=emp.id) }}"
                               class="d-inline">
-                            {% if emp.is_utility_head %}
+                            {% if emp.id in utility_head_ids %}
                                 <button type="submit"
                                         class="btn btn-success btn-sm"
                                         style="width:36px; height:30px; padding:0;"
-                                        title="Utility Head – click to remove">
+                                        title="Utility Head (auto-determined by designation)">
                                     <i class="bi bi-star-fill"></i>
                                 </button>
                             {% else %}
                                 <button type="submit"
                                         class="btn btn-outline-secondary btn-sm"
                                         style="width:36px; height:30px; padding:0;"
-                                        title="Not a Utility Head – click to mark">
+                                        title="Not the Utility Head">
                                     <i class="bi bi-star"></i>
                                 </button>
                             {% endif %}
