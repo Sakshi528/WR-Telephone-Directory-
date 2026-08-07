@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Edit' if group else 'Add' }} Custom Email Group – Admin{% endblock %}
+
+{% block content %}
+
+{% set selected_org_ids = group.filters | selectattr('filter_type', 'equalto', 'ORGANIZATION') | map(attribute='organization_id') | list if group else [] %}
+{% set selected_category_ids = group.filters | selectattr('filter_type', 'equalto', 'ORGANIZATION_CATEGORY') | map(attribute='category_id') | list if group else [] %}
+{% set selected_roles = group.filters | selectattr('filter_type', 'equalto', 'ROLE') | map(attribute='role_value') | list if group else [] %}
+{% set selected_statuses = group.filters | selectattr('filter_type', 'equalto', 'STATUS') | map(attribute='status_value') | list if group else [] %}
+
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('admin.manage_email_groups') }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header {{ 'bg-primary' if group else 'bg-success' }} text-white">
+            <h5 class="mb-0">
+                <i class="bi bi-envelope-paper me-2"></i>{{ 'Edit' if group else 'Add' }} Custom Email Group
+            </h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Group Name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" class="form-control"
+                               value="{{ group.name if group else '' }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Description</label>
+                        <input type="text" name="description" class="form-control"
+                               value="{{ group.description if group else '' }}">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Organization Categories</label>
+                        <select name="category_ids" class="form-select" multiple size="6">
+                            {% for cat in categories %}
+                            <option value="{{ cat.id }}" {% if cat.id in selected_category_ids %}selected{% endif %}>
+                                {{ cat.category_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Ctrl/Cmd+click to select multiple.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Specific Organizations</label>
+                        <select name="organization_ids" class="form-select" multiple size="6">
+                            {% for org in organizations %}
+                            <option value="{{ org.id }}" {% if org.id in selected_org_ids %}selected{% endif %}>
+                                {{ org.organization_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Ctrl/Cmd+click to select multiple.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Employee Roles</label>
+                        {% for value, label in roles %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="roles" value="{{ value }}"
+                                   id="role_{{ value }}" {% if value in selected_roles %}checked{% endif %}>
+                            <label class="form-check-label" for="role_{{ value }}">{{ label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Employee Status</label>
+                        {% for status in statuses %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="statuses" value="{{ status }}"
+                                   id="status_{{ status }}" {% if status in selected_statuses %}checked{% endif %}>
+                            <label class="form-check-label" for="status_{{ status }}">{{ status }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-12">
+                        <div class="alert alert-secondary small mb-0">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Selections within a field are combined with OR (e.g. any of the
+                            selected categories); different fields are combined with AND
+                            (e.g. selected categories AND selected status). At least one
+                            filter must be selected.
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn {{ 'btn-primary' if group else 'btn-success' }}">
+                        <i class="bi bi-save me-1"></i>{{ 'Update' if group else 'Save' }} Group
+                    </button>
+                    <a href="{{ url_for('admin.manage_email_groups') }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Edit' if assistant else 'Add' }} Assistant – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.administrative_head_details', id=head.id) }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header {{ 'bg-primary' if assistant else 'bg-success' }} text-white">
+            <h5 class="mb-0">
+                <i class="bi bi-person-lines-fill me-2"></i>{{ 'Edit' if assistant else 'Add' }} Assistant
+                for {{ head.resolved_name }}
+            </h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Designation <span class="text-danger">*</span></label>
+                        <input type="text" name="designation" class="form-control"
+                               placeholder="PA / PS / Executive Assistant…"
+                               value="{{ assistant.designation if assistant else '' }}" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Link to Existing Employee</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" class="form-control"
+                                   placeholder="Search employee by name…"
+                                   autocomplete="off"
+                                   value="{{ assistant.employee.employee_name if assistant and assistant.employee_id else '' }}"
+                                   data-suggestions-url="{{ url_for('admin.employees_suggest') }}"
+                                   data-target-id-field="assistantEmployeeIdField"
+                                   data-no-autosubmit="true">
+                            <div class="autocomplete-panel"></div>
+                        </div>
+                        <input type="hidden" name="employee_id" id="assistantEmployeeIdField"
+                               value="{{ assistant.employee_id if assistant else '' }}">
+                        <div class="form-text">
+                            Optional — if the assistant is already in the Employee Directory, their
+                            contact info is read from that record automatically. Leave blank and fill
+                            in the fields below for someone not in the directory.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Name (if not linked)</label>
+                        <input type="text" name="name" class="form-control"
+                               value="{{ assistant.name if assistant else '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Office Phone</label>
+                        <input type="text" name="office_phone" class="form-control"
+                               value="{{ assistant.office_phone if assistant else '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Mobile</label>
+                        <input type="text" name="mobile" class="form-control"
+                               value="{{ assistant.mobile if assistant else '' }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control"
+                               value="{{ assistant.email if assistant else '' }}">
+                    </div>
+
+                    {% if not assistant %}
+                    <div class="col-md-6 d-flex align-items-end">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="is_primary" id="isPrimary">
+                            <label class="form-check-label" for="isPrimary">Set as Primary Contact</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn {{ 'btn-primary' if assistant else 'btn-success' }}">
+                        <i class="bi bi-save me-1"></i>{{ 'Update' if assistant else 'Save' }}
+                    </button>
+                    <a href="{{ url_for('user.administrative_head_details', id=head.id) }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

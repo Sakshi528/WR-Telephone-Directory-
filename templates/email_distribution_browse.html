@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% block title %}Address Book – Email Distribution{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="mb-0">
+            <i class="bi bi-journal-richtext me-2"></i>Address Book{% if category %} — {{ category.label }}{% endif %}
+        </h2>
+        <div class="d-flex gap-2">
+            {% if current_user.is_authenticated and current_user.role == 'admin' %}
+            <a href="{{ url_for('admin.add_employee') }}" class="btn btn-light btn-sm text-dark">
+                <i class="bi bi-person-plus me-1"></i>Add Contact
+            </a>
+            {% endif %}
+            <a href="{{ url_for('user.email_distribution_home') }}" class="btn btn-outline-light btn-sm">
+                <i class="bi bi-arrow-left me-1"></i>Back
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if not category %}
+<div class="container mb-5">
+    <div class="alert alert-warning mt-3">
+        <i class="bi bi-info-circle me-1"></i>No organization category selected. Go back and pick one from
+        <a href="{{ url_for('user.email_distribution_home') }}">Email Distribution Lists</a>.
+    </div>
+</div>
+{% else %}
+<div class="container mb-5"
+     id="edbApp"
+     data-category="{{ category.name }}"
+     data-category-id="{{ category.id or '' }}"
+     data-state-based="{{ 'true' if category.is_state_based else 'false' }}"
+     data-data-url="{{ url_for('user.email_distribution_browse_data_json') }}"
+     data-export-xlsx-url="{{ url_for('user.email_distribution_browse_export_xlsx') }}"
+     data-export-csv-url="{{ url_for('user.email_distribution_browse_export_csv') }}"
+     data-mailto-limit="{{ mailto_limit }}"
+     data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+     data-is-admin="{{ 'true' if current_user.is_authenticated and current_user.role == 'admin' else 'false' }}"
+     data-edit-url-employee="{{ url_for('admin.edit_employee', id=0) }}"
+     data-edit-url-directorynumber="{{ url_for('admin.edit_directory_number', id=0) }}"
+     data-edit-url-administrativehead="{{ url_for('admin.edit_administrative_head', id=0) }}"
+     data-delete-url-employee="{{ url_for('admin.delete_employee', id=0) }}"
+     data-delete-url-directorynumber="{{ url_for('admin.delete_directory_number', id=0) }}">
+
+    <!-- Filter bar -->
+    <div class="row g-2 align-items-end mt-3 mb-3">
+        <div class="col-md-3" id="edbStateWrap" style="display:none;">
+            <label class="form-label small text-muted mb-0">State</label>
+            <select id="edbState" class="form-select">
+                <option value="">All States</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label small text-muted mb-0">Contact Type</label>
+            <select id="edbContactType" class="form-select">
+                {% for value, label in contact_type_choices %}
+                <option value="{{ value }}" {% if value == 'all' %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label small text-muted mb-0">Search</label>
+            <input type="text" id="edbSearch" class="form-control"
+                   placeholder="Search organization, name, designation, email…">
+        </div>
+    </div>
+
+    <div id="edbPlaceholder" class="alert alert-secondary">
+        <i class="bi bi-info-circle me-1"></i>Loading…
+    </div>
+
+    <!-- Actions, with compact counts set aside on the right -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2"
+         id="edbActions" style="display:none;">
+        <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-outline-primary btn-sm" id="edbCopySelected">
+                <i class="bi bi-clipboard-check me-1"></i>Copy Selected Emails
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm" id="edbCopyAll">
+                <i class="bi bi-clipboard me-1"></i>Copy All Emails
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="edbCopyNameEmail">
+                <i class="bi bi-person-lines-fill me-1"></i>Copy Name + Email
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="edbCopyFullDetails">
+                <i class="bi bi-card-text me-1"></i>Copy Full Details
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" id="edbCompose">
+                <i class="bi bi-envelope me-1"></i>Compose Email
+            </button>
+            <a href="#" class="btn btn-success btn-sm" id="edbExportXlsx">
+                <i class="bi bi-file-earmark-excel me-1"></i>Export Excel
+            </a>
+            <a href="#" class="btn btn-secondary btn-sm" id="edbExportCsv">
+                <i class="bi bi-filetype-csv me-1"></i>Export CSV
+            </a>
+        </div>
+        <div class="text-muted small text-nowrap">
+            <span id="edbSumOrgs">0</span> Organizations &middot;
+            <span id="edbSumEmployees">0</span> Employees
+        </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="table-responsive" id="edbGridWrap" style="display:none;">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:40px">
+                        <input type="checkbox" id="edbSelectAll" title="Select all">
+                    </th>
+                    <th>Organization</th>
+                    <th>Name</th>
+                    <th>Role / Designation</th>
+                    <th>Email</th>
+                    {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                    <th class="text-center" style="width:90px">Action</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody id="edbGridBody"></tbody>
+        </table>
+    </div>
+    <div id="edbNoResults" class="alert alert-secondary" style="display:none;">
+        <i class="bi bi-info-circle me-1"></i>
+        <span id="edbNoResultsText">No contacts match the current filters.</span>
+        <button type="button" class="btn btn-link btn-sm p-0 ms-1" id="edbShowAllBtn" style="display:none;">
+            Show All Contacts instead
+        </button>
+    </div>
+
+</div>
+{% endif %}
+
+<!-- Mailto fallback modal -->
+<div class="modal fade" id="edbMailtoFallbackModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Too many recipients for a mail link</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This list has <strong id="edbFallbackCount"></strong> recipients — too many for
+                    your email client to accept as a single link. Copy the list to your clipboard
+                    and paste it into the Bcc field of a new email, or export it and use a
+                    mail-merge tool instead.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" id="edbFallbackCopyBtn">
+                    <i class="bi bi-clipboard me-1"></i>Copy Emails
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .col-md-2-4 { flex: 0 0 auto; width: 20%; }
+    @media (max-width: 767px) { .col-md-2-4 { width: 50%; } }
+</style>
+
+<script src="{{ url_for('static', filename='js/email_distribution_browse.js') }}"></script>
+{% endblock %}

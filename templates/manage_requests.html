@@ -8,7 +8,10 @@
     'residence_phone':            'Residence Phone',
     'email':                      'Email',
     'designation':                'Designation',
+    'role_title':                 'Designation',
     'address':                    'Address',
+    'office_address':             'Office Address',
+    'status':                     'Status',
     'emergency_contact_name':     'Emergency Contact Person',
     'emergency_contact_relation': 'Emergency Contact Relation',
     'emergency_contact_phone':    'Emergency Contact No.',
@@ -63,10 +66,17 @@
                         {% else %}
                             <span class="text-muted">Anonymous</span>
                         {% endif %}
+                        {% if req.ip_address %}
+                        <div class="text-muted small" title="{{ req.browser or '' }} {{ req.operating_system or '' }}">
+                            <i class="bi bi-hdd-network me-1"></i>{{ req.ip_address }}
+                        </div>
+                        {% endif %}
                     </td>
                     <td>
                         {% if req.request_type == 'directory' %}
                             <span class="badge bg-info text-dark">Directory</span>
+                        {% elif req.request_type == 'administrative_head' %}
+                            <span class="badge bg-warning text-dark">Admin Head</span>
                         {% else %}
                             <span class="badge bg-primary">Employee</span>
                         {% endif %}
@@ -74,6 +84,8 @@
                     <td>
                         {% if req.request_type == 'directory' %}
                             {{ req.directory_number.name if req.directory_number else '–' }}
+                        {% elif req.request_type == 'administrative_head' %}
+                            {{ req.administrative_head.resolved_name if req.administrative_head else '–' }}
                         {% else %}
                             {{ req.employee.employee_name if req.employee else '–' }}
                         {% endif %}

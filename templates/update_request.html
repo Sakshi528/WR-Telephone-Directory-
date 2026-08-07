@@ -23,7 +23,14 @@
                 <strong>Employee:</strong> {{ employee.employee_name }}<br>
                 <strong>Designation:</strong> {{ employee.designation or '–' }}<br>
                 <strong>Organization:</strong>
-                {{ employee.organization.organization_name if employee.organization else '–' }}
+                {{ employee.organization.organization_name if employee.organization else '–' }}<br>
+                <strong>Status:</strong> {{ employee.status or 'ACTIVE' }}
+                {% if requester_ip %}
+                <div class="text-muted small mt-2">
+                    <i class="bi bi-hdd-network me-1"></i>Submitting from IP: {{ requester_ip }}
+                    (recorded with your request)
+                </div>
+                {% endif %}
             </div>
 
             <form method="POST">
@@ -67,21 +74,33 @@
                                 <option value="email">Email</option>
                                 <option value="designation">Designation</option>
                                 <option value="address">Address</option>
+                                <option value="status">Status (e.g. Resigned / Transferred / Retired)</option>
                             </optgroup>
+                            {% if not employee.is_kmp %}
                             <optgroup label="Emergency Contact">
                                 <option value="emergency_contact_name">Emergency Contact Person</option>
                                 <option value="emergency_contact_relation">Relation</option>
                                 <option value="emergency_contact_phone">Emergency Contact No.</option>
                             </optgroup>
+                            {% endif %}
                         </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">Current Information</label>
+                        <input type="text" id="currentInfoField" class="form-control" readonly value="">
                     </div>
 
                     <div class="col-12">
                         <label class="form-label fw-semibold">
                             Correct Information <span class="text-danger">*</span>
                         </label>
-                        <input type="text" name="new_value" class="form-control" required
+                        <input type="text" name="new_value" id="newValueInput" class="form-control" required
                                placeholder="Enter the correct value">
+                        <select name="new_value" id="newValueSelect" class="form-select" required
+                                style="display:none;">
+                            <option value="">– Select status –</option>
+                        </select>
                     </div>
 
                     <div class="col-12">
@@ -106,4 +125,49 @@
     </div>
 
 </div>
+
+<script type="application/json" id="currentValuesData">{{ current_values | tojson }}</script>
+<script type="application/json" id="employeeStatusesData">{{ employee_statuses | tojson }}</script>
+<script>
+(function () {
+    var currentValues = JSON.parse(document.getElementById("currentValuesData").textContent);
+    var employeeStatuses = JSON.parse(document.getElementById("employeeStatusesData").textContent);
+    var fieldSelect = document.querySelector("select[name='field_name']");
+    var currentInfoField = document.getElementById("currentInfoField");
+    var textInput = document.getElementById("newValueInput");
+    var statusSelect = document.getElementById("newValueSelect");
+
+    employeeStatuses.forEach(function (status) {
+        var opt = document.createElement("option");
+        opt.value = status;
+        opt.textContent = status;
+        statusSelect.appendChild(opt);
+    });
+
+    fieldSelect.addEventListener("change", function () {
+        if (fieldSelect.value) {
+            var value = currentValues[fieldSelect.value];
+            currentInfoField.value = value ? value : "Not Available";
+        } else {
+            currentInfoField.value = "";
+        }
+
+        if (fieldSelect.value === "status") {
+            textInput.style.display = "none";
+            textInput.disabled = true;
+            textInput.required = false;
+            statusSelect.style.display = "";
+            statusSelect.disabled = false;
+            statusSelect.required = true;
+        } else {
+            textInput.style.display = "";
+            textInput.disabled = false;
+            textInput.required = true;
+            statusSelect.style.display = "none";
+            statusSelect.disabled = true;
+            statusSelect.required = false;
+        }
+    });
+}());
+</script>
 {% endblock %}

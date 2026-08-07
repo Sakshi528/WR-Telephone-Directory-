@@ -43,9 +43,11 @@
             <thead class="table-dark">
                 <tr>
                     <th class="text-center" style="width:55px">Sr No.</th>
-                    <th style="width:35%">Organization Name</th>
-                    <th style="width:110px">Region</th>
-                    <th style="width:35%">Address</th>
+                    <th style="width:24%">Organization Name</th>
+                    <th style="width:90px">Region</th>
+                    <th style="width:12%">Category</th>
+                    <th style="width:24%">Address</th>
+                    <th class="text-center" style="width:150px">Employees</th>
                     <th class="text-center" style="width:90px">Actions</th>
                 </tr>
             </thead>
@@ -55,7 +57,21 @@
                     <td class="text-muted text-center">{{ loop.index }}</td>
                     <td class="fw-semibold" style="word-break:break-word;">{{ org.organization_name }}</td>
                     <td>{{ org.region or '–' }}</td>
+                    <td>
+                        {% if org.category %}
+                            <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">{{ org.category.category_name }}</span>
+                        {% else %}
+                            <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">Uncategorized</span>
+                        {% endif %}
+                    </td>
                     <td class="small" style="word-break:break-word;">{{ org.address or '–' }}</td>
+                    <td class="text-center">
+                        {% set counts = status_by_org.get(org.id, {}) %}
+                        {% set total = counts.values() | sum %}
+                        <span class="badge bg-light text-dark border" title="Total employees">{{ total }}</span>
+                        <span class="badge bg-success" title="Active">{{ counts.get('ACTIVE', 0) }}</span>
+                        <span class="badge bg-secondary" title="Inactive / Transferred / Retired / Deputation / Resigned">{{ total - counts.get('ACTIVE', 0) }}</span>
+                    </td>
                     <td class="text-center text-nowrap">
                         <a href="{{ url_for('admin.edit_organization', id=org.id) }}"
                            class="btn btn-outline-warning btn-sm" title="Edit">
@@ -73,7 +89,7 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="5" class="text-center text-muted py-4">No organizations found</td>
+                    <td colspan="7" class="text-center text-muted py-4">No organizations found</td>
                 </tr>
                 {% endfor %}
             </tbody>

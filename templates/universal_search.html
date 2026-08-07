@@ -50,9 +50,16 @@
 
             {% for employee in employees %}
 
-            <tr>
+            <tr class="{% if employee.status and employee.status != 'ACTIVE' %}table-secondary{% endif %}">
 
-                <td>{{ employee.employee_name }}</td>
+                <td>
+                    {{ employee.employee_name }}
+                    {% if employee.status and employee.status != 'ACTIVE' %}
+                    <span class="badge bg-secondary ms-1" title="This employee's directory entry may be outdated">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i>{{ employee.status }}
+                    </span>
+                    {% endif %}
+                </td>
 
                 <td>{{ employee.designation }}</td>
 

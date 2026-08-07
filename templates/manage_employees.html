@@ -49,6 +49,8 @@
                     <th>Organisation</th>
                     <th style="width:140px">Office Phone</th>
                     <th>Email</th>
+                    <th class="text-center" style="width:90px">Type</th>
+                    <th class="text-center" style="width:100px">Status</th>
                     <th class="text-center" style="width:80px">Utility Head</th>
                     <th class="text-center" style="width:130px">Actions</th>
                 </tr>
@@ -76,6 +78,31 @@
                         {% if emp.email %}
                             <a href="mailto:{{ emp.email }}" class="text-decoration-none">{{ emp.email }}</a>
                         {% else %}–{% endif %}
+                    </td>
+
+                    <td class="text-center">
+                        <form method="POST"
+                              action="{{ url_for('admin.toggle_kmp', id=emp.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('{{ 'Remove' if emp.is_kmp else 'Add' }} {{ emp.employee_name }} {{ 'from' if emp.is_kmp else 'to' }} the Telephone Directory?')">
+                            <button type="submit"
+                                    class="btn btn-sm {{ 'btn-info text-white' if emp.is_kmp else 'btn-outline-secondary' }}"
+                                    title="{{ 'KMP -- shown in Telephone Directory. Click to move to Employee Directory only.' if emp.is_kmp else 'Employee Directory only. Click to also show in Telephone Directory.' }}">
+                                {{ 'KMP' if emp.is_kmp else 'Employee' }}
+                            </button>
+                        </form>
+                    </td>
+
+                    <td class="text-center">
+                        {% set status_colors = {
+                            'ACTIVE': 'success', 'INACTIVE': 'secondary', 'TRANSFERRED': 'info',
+                            'RETIRED': 'dark', 'DEPUTATION': 'primary', 'RESIGNED': 'danger'
+                        } %}
+                        <a href="{{ url_for('user.employee_details', id=emp.id) }}#status-change"
+                           class="badge bg-{{ status_colors.get(emp.status, 'secondary') }} text-decoration-none"
+                           title="Click to change status">
+                            {{ emp.status or 'ACTIVE' }}
+                        </a>
                     </td>
 
                     <td class="text-center">
@@ -122,7 +149,7 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="8" class="text-center text-muted py-5">
+                    <td colspan="10" class="text-center text-muted py-5">
                         <i class="bi bi-search me-2 fs-5"></i>
                         {% if keyword %}
                             No employees found matching "<strong>{{ keyword }}</strong>"

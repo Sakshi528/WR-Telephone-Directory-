@@ -73,6 +73,16 @@
                 <i class="bi bi-inbox d-block fs-3 mb-1"></i>Update Requests
             </a>
         </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.manage_email_groups') }}" class="btn btn-info w-100 py-3">
+                <i class="bi bi-envelope-paper d-block fs-3 mb-1"></i>Custom Email Groups
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.export_verification_workbook') }}" class="btn btn-dark w-100 py-3">
+                <i class="bi bi-file-earmark-spreadsheet d-block fs-3 mb-1"></i>Export Verification Workbook
+            </a>
+        </div>
     </div>
 
 </div>

@@ -45,6 +45,12 @@
                    class="btn btn-secondary btn-sm flex-fill" title="Export Word">
                     <i class="bi bi-file-earmark-word me-1"></i>Word
                 </a>
+                {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                <a href="{{ url_for('admin.add_employee', next='directory') }}"
+                   class="btn btn-primary btn-sm flex-fill" title="Add Employee">
+                    <i class="bi bi-person-plus me-1"></i>Add Employee
+                </a>
+                {% endif %}
             </div>
 
         </div>
@@ -65,18 +71,23 @@
                     <th>Office No.</th>
                     <th>Mobile No.</th>
                     <th>Email</th>
-                    <th>Emergency Contact Person</th>
-                    <th>Relation</th>
-                    <th>Emergency Contact No.</th>
-                    <th>Action</th>
+                    <th>Emergency Contact</th>
+                    <th class="text-center" style="min-width:150px">Action</th>
                 </tr>
             </thead>
             <tbody>
                 {% for emp in employees %}
                 {% set ec = ec_map.get(emp.id) %}
-                <tr>
+                <tr class="{% if emp.status and emp.status != 'ACTIVE' %}table-secondary{% endif %}">
                     <td class="text-muted">{{ loop.index }}</td>
-                    <td class="fw-semibold">{{ emp.employee_name }}</td>
+                    <td class="fw-semibold">
+                        {{ emp.employee_name }}
+                        {% if emp.status and emp.status != 'ACTIVE' %}
+                        <span class="badge bg-secondary ms-1" title="This employee's directory entry may be outdated">
+                            <i class="bi bi-exclamation-triangle-fill me-1"></i>{{ emp.status }}
+                        </span>
+                        {% endif %}
+                    </td>
                     <td>{{ emp.designation or '–' }}</td>
                     <td>{{ emp.office_phone or '–' }}</td>
                     <td>{{ emp.mobile_phone or '–' }}</td>
@@ -85,10 +96,13 @@
                             <a href="mailto:{{ emp.email }}">{{ emp.email }}</a>
                         {% else %}–{% endif %}
                     </td>
-                    <td>{{ ec.contact_name if ec else '–' }}</td>
-                    <td>{{ ec.relation if ec else '–' }}</td>
-                    <td>{{ ec.phone if ec else '–' }}</td>
-                    <td class="text-nowrap">
+                    <td>
+                        {% if ec %}
+                            {{ ec.contact_name }}{% if ec.relation %} ({{ ec.relation }}){% endif %}
+                            {% if ec.phone %}<br><span class="text-muted small">{{ ec.phone }}</span>{% endif %}
+                        {% else %}–{% endif %}
+                    </td>
+                    <td class="text-center text-nowrap">
                         <a href="{{ url_for('user.employee_details', id=emp.id) }}"
                            class="btn btn-outline-primary btn-sm" title="View">
                             <i class="bi bi-eye"></i>
@@ -120,7 +134,7 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="11" class="text-center text-muted py-4">
+                    <td colspan="8" class="text-center text-muted py-4">
                         <i class="bi bi-search me-1"></i>No employees found
                     </td>
                 </tr>

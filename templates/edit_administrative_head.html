@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Edit Administrative Head – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.administrative_head_details', id=head.id) }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">
+                <i class="bi bi-pencil-square me-2"></i>Edit Administrative Head — {{ head.resolved_name }}
+            </h5>
+        </div>
+        <div class="card-body">
+
+            <div class="alert alert-light border mb-4">
+                <strong>Currently shown across the app:</strong><br>
+                <strong>Name:</strong> {{ head.resolved_name or '–' }}<br>
+                <strong>Designation:</strong> {{ head.resolved_designation or '–' }}<br>
+                <strong>Organization:</strong> {{ head.organization.organization_name if head.organization else '–' }}<br>
+                <strong>Status:</strong> {{ head.status.replace('_', ' ').title() if head.status else '–' }}<br>
+                <strong>Office Phone:</strong> {{ head.resolved_office_phone or '–' }} &middot;
+                <strong>Mobile:</strong> {{ head.resolved_mobile_phone or '–' }} &middot;
+                <strong>Email:</strong> {{ head.resolved_email or '–' }}
+                {% if head.employee_id %}
+                <div class="text-muted small mt-2">
+                    <i class="bi bi-info-circle me-1"></i>
+                    This head is linked to an Employee Directory record. Contact details shown above
+                    (and everywhere else in the app) come from that linked employee, not the standalone
+                    fields below — editing Office Phone/Mobile/Email here only takes effect if the
+                    employee link is removed.
+                </div>
+                {% endif %}
+            </div>
+
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Link to Existing Employee</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" class="form-control"
+                                   placeholder="Search employee by name…"
+                                   autocomplete="off"
+                                   value="{{ head.employee.employee_name if head.employee_id else '' }}"
+                                   data-suggestions-url="{{ url_for('admin.employees_suggest') }}"
+                                   data-target-id-field="employeeIdField"
+                                   data-no-autosubmit="true">
+                            <div class="autocomplete-panel"></div>
+                        </div>
+                        <input type="hidden" name="employee_id" id="employeeIdField"
+                               value="{{ head.employee_id or '' }}">
+                        <div class="form-text">
+                            Optional — leave blank and fill in the fields below for a head who isn't
+                            in the Employee Directory.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 row g-2"
+                         data-org-cascade
+                         data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+                         data-organizations-url="{{ url_for('user.api_organizations') }}">
+                        <div class="col-12">
+                            <label class="form-label">Organization Type <span class="text-danger">*</span></label>
+                            <select name="organization_type_id" class="form-select" data-org-type-select required>
+                                <option value="">Select organization type…</option>
+                                {% for cat in categories %}
+                                <option value="{{ cat.id }}" data-state-based="{{ 'true' if cat.is_state_based else 'false' }}"
+                                        {% if head.organization and head.organization.category_id == cat.id %}selected{% endif %}>
+                                    {{ cat.category_name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-12" style="display:none">
+                            <label class="form-label">State</label>
+                            <select class="form-select" data-org-state-select
+                                    data-selected-state="{{ head.organization.state if head.organization else '' }}">
+                                <option value="">Select state…</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Organization <span class="text-danger">*</span></label>
+                            <select name="organization_id" class="form-select" data-org-select
+                                    data-selected-org-id="{{ head.organization_id or '' }}" required>
+                                <option value="">– Select an Organization Type first –</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Name (if not linked)</label>
+                        <input type="text" name="name" class="form-control" value="{{ head.name or '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Office Phone</label>
+                        <input type="text" name="office_phone" class="form-control" value="{{ head.office_phone or '' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Mobile</label>
+                        <input type="text" name="mobile_phone" class="form-control" value="{{ head.mobile_phone or '' }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" value="{{ head.email or '' }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Office Address</label>
+                        <input type="text" name="office_address" class="form-control"
+                               value="{{ head.office_address or '' }}"
+                               placeholder="Leave blank to use the organization's address">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Designation <span class="text-danger">*</span></label>
+                        <input type="text" name="role_title" class="form-control"
+                               value="{{ head.role_title }}" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Service Type</label>
+                        <select name="service_type_id" class="form-select">
+                            <option value="">— Not applicable —</option>
+                            {% for st in service_types %}
+                            <option value="{{ st.id }}" {% if head.service_type_id == st.id %}selected{% endif %}>
+                                {{ st.service_type_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Status</label>
+                        <select name="status" class="form-select">
+                            {% for s in ['ACTIVE', 'ON_LEAVE', 'VACANT', 'INACTIVE'] %}
+                            <option value="{{ s }}" {% if head.status == s %}selected{% endif %}>
+                                {{ s.replace('_', ' ').title() }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Remarks</label>
+                        <textarea name="remarks" class="form-control" rows="2">{{ head.remarks or '' }}</textarea>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>Update
+                    </button>
+                    <a href="{{ url_for('user.administrative_head_details', id=head.id) }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

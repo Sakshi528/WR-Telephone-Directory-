@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Import History{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="mb-0"><i class="bi bi-clock-history me-2"></i>Import History</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>Admin Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <p class="text-muted small mt-3">
+        Recorded going forward from each Excel/Word import run. Import runs before this feature
+        existed aren't shown here (no data was ever persisted for them) -- see
+        <code>logs/import_from_excel_db.log</code> / <code>logs/import_employees_excel.log</code>
+        for historical run output.
+    </p>
+
+    <p class="text-muted small mb-3">Showing <strong>{{ batches|length }}</strong> of <strong>{{ total }}</strong> import batch(es)</p>
+
+    {% if batches %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Import Batch</th><th>Workbook</th><th>Imported By</th><th>Import Date</th>
+                    <th>Mode</th><th>Inserted</th><th>Updated</th><th>Skipped</th><th>Status</th><th>Rollback</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in batches %}
+                <tr>
+                    <td>#{{ b.id }}</td>
+                    <td>{{ b.workbook_name }}</td>
+                    <td>{{ b.imported_by_user.username if b.imported_by_user else 'CLI (no login)' }}</td>
+                    <td>{{ b.import_date.strftime('%d-%b-%Y %H:%M') if b.import_date else '–' }}</td>
+                    <td><span class="badge bg-{{ 'success' if b.mode == 'APPLIED' else 'secondary' }}">{{ b.mode.replace('_',' ').title() }}</span></td>
+                    <td>{{ b.inserted_count }}</td>
+                    <td>{{ b.updated_count }}</td>
+                    <td>{{ b.skipped_count }}</td>
+                    <td><span class="badge bg-{{ 'success' if b.status == 'SUCCESS' else 'danger' }}">{{ b.status.title() }}</span></td>
+                    <td>
+                        {% if b.rollback_available %}
+                        <span class="badge bg-warning text-dark">Available</span>
+                        {% else %}
+                        <span class="text-muted small">Not available</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-secondary mt-3">
+        <i class="bi bi-info-circle me-1"></i>No import batches recorded yet. Run an import script
+        (<code>import_from_excel_db.py</code> or <code>import_employees_excel.py</code>) to populate this list.
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

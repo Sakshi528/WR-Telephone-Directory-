@@ -4,3 +4,4 @@ Flask-SQLAlchemy==3.1.1
 psycopg2-binary==2.9.10
 python-docx==1.1.2
 openpyxl==3.1.5
+reportlab==5.0.0

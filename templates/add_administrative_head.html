@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}Assign Administrative Head – Admin{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.administrative_heads') }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-person-badge-fill me-2"></i>Assign Administrative Head</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Link to Existing Employee</label>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" class="form-control"
+                                   placeholder="Search employee by name…"
+                                   autocomplete="off"
+                                   data-suggestions-url="{{ url_for('admin.employees_suggest') }}"
+                                   data-target-id-field="employeeIdField"
+                                   data-no-autosubmit="true">
+                            <div class="autocomplete-panel"></div>
+                        </div>
+                        <input type="hidden" name="employee_id" id="employeeIdField">
+                        <div class="form-text">
+                            Optional — if this head is already in the Employee Directory, their contact
+                            info is read from that record automatically. Leave blank and fill in the
+                            fields below for someone not in the directory (e.g. a Collector or
+                            Secretary who isn't a WRLDC/utility employee).
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 row g-2"
+                         data-org-cascade
+                         data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+                         data-organizations-url="{{ url_for('user.api_organizations') }}">
+                        <div class="col-12">
+                            <label class="form-label">Organization Type <span class="text-danger">*</span></label>
+                            <select name="organization_type_id" class="form-select" data-org-type-select required>
+                                <option value="">Select organization type…</option>
+                                {% for cat in categories %}
+                                <option value="{{ cat.id }}" data-state-based="{{ 'true' if cat.is_state_based else 'false' }}">
+                                    {{ cat.category_name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-12" style="display:none">
+                            <label class="form-label">State</label>
+                            <select class="form-select" data-org-state-select>
+                                <option value="">Select state…</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Organization <span class="text-danger">*</span></label>
+                            <select name="organization_id" class="form-select" data-org-select required>
+                                <option value="">– Select an Organization Type first –</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Name (if not linked)</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Office Phone</label>
+                        <input type="text" name="office_phone" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Mobile</label>
+                        <input type="text" name="mobile_phone" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Office Address</label>
+                        <input type="text" name="office_address" class="form-control"
+                               placeholder="Leave blank to use the organization's address">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Designation <span class="text-danger">*</span></label>
+                        <input type="text" name="role_title" class="form-control"
+                               placeholder="e.g. Energy Secretary, Collector…" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Service Type</label>
+                        <select name="service_type_id" class="form-select">
+                            <option value="">— Not applicable —</option>
+                            {% for st in service_types %}
+                            <option value="{{ st.id }}">{{ st.service_type_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Status</label>
+                        <select name="status" class="form-select">
+                            <option value="ACTIVE" selected>Active</option>
+                            <option value="ON_LEAVE">On Leave</option>
+                            <option value="VACANT">Vacant</option>
+                            <option value="INACTIVE">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Effective From</label>
+                        <input type="date" name="effective_from" class="form-control">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Remarks</label>
+                        <textarea name="remarks" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save me-1"></i>Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

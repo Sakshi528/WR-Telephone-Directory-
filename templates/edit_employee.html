@@ -30,17 +30,36 @@
                                value="{{ employee.designation or '' }}" required>
                     </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label">Organization <span class="text-danger">*</span></label>
-                        <select name="organization_id" class="form-select" required>
-                            <option value="">– None –</option>
-                            {% for org in organizations %}
-                            <option value="{{ org.id }}"
-                                {% if org.id == employee.organization_id %}selected{% endif %}>
-                                {{ org.organization_name }}
-                            </option>
-                            {% endfor %}
-                        </select>
+                    <div class="col-md-6 row g-2"
+                         data-org-cascade
+                         data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+                         data-organizations-url="{{ url_for('user.api_organizations') }}">
+                        <div class="col-12">
+                            <label class="form-label">Organization Type <span class="text-danger">*</span></label>
+                            <select name="organization_type_id" class="form-select" data-org-type-select required>
+                                <option value="">Select organization type…</option>
+                                {% for cat in categories %}
+                                <option value="{{ cat.id }}" data-state-based="{{ 'true' if cat.is_state_based else 'false' }}"
+                                        {% if employee.organization and employee.organization.category_id == cat.id %}selected{% endif %}>
+                                    {{ cat.category_name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-12" style="display:none">
+                            <label class="form-label">State</label>
+                            <select class="form-select" data-org-state-select
+                                    data-selected-state="{{ employee.organization.state if employee.organization else '' }}">
+                                <option value="">Select state…</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Organization <span class="text-danger">*</span></label>
+                            <select name="organization_id" class="form-select" data-org-select
+                                    data-selected-org-id="{{ employee.organization_id or '' }}" required>
+                                <option value="">– Select an Organization Type first –</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Department</label>
@@ -88,6 +107,21 @@
                                value="{{ employee.email or '' }}">
                     </div>
 
+                    <div class="col-md-6">
+                        <label class="form-label d-block">Directory Listing</label>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="is_kmp"
+                                   class="form-check-input" id="isKmp" value="1"
+                                   {% if employee.is_kmp %}checked{% endif %}>
+                            <label class="form-check-label" for="isKmp">
+                                <i class="bi bi-journal-text me-1"></i>Show in Telephone Directory (KMP)
+                            </label>
+                        </div>
+                        <div class="form-text">
+                            Unchecked employees only appear in the Employee Directory (WRLDC's own staff),
+                            not the region-wide Telephone Directory or Email Distribution/Address Book.
+                        </div>
+                    </div>
                     <div class="col-md-6 d-flex align-items-end">
                         <div class="form-check ms-1">
                             <input type="checkbox" name="is_utility_head"
@@ -99,7 +133,9 @@
                         </div>
                     </div>
 
-                    <!-- Emergency Contact -->
+                    {% if not employee.is_kmp %}
+                    <!-- Emergency Contact -- only relevant for WRLDC's own staff
+                         (Employee Directory), not region-wide KMP contacts. -->
                     <div class="col-12 mt-2">
                         <hr class="my-1">
                         <p class="fw-semibold text-secondary mb-2">
@@ -122,6 +158,7 @@
                         <input type="text" name="ec_phone" class="form-control"
                                value="{{ ec.phone if ec else '' }}">
                     </div>
+                    {% endif %}
 
                 </div>
 

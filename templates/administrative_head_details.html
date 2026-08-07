@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block title %}{{ head.resolved_name }} – Administrative Head{% endblock %}
+
+{% block content %}
+
+{% set status_colors = {'ACTIVE': 'success', 'ON_LEAVE': 'warning', 'VACANT': 'secondary', 'INACTIVE': 'dark'} %}
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="mb-0">
+            <i class="bi bi-person-badge-fill me-2"></i>{{ head.resolved_name }}
+            <span class="badge bg-{{ status_colors.get(head.status, 'secondary') }} fs-6 align-middle ms-2">
+                {{ head.status.replace('_', ' ').title() }}
+            </span>
+            {% if not head.employee_id %}
+            <span class="badge bg-light text-dark border fs-6 align-middle" title="Not in the Employee Directory">
+                Standalone
+            </span>
+            {% endif %}
+        </h2>
+        <a href="{{ url_for('user.administrative_heads') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>Back
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="d-flex flex-wrap gap-2 mt-3 mb-3">
+        <a href="{{ url_for('user.request_administrative_head_update', id=head.id) }}" class="btn btn-warning btn-sm">
+            <i class="bi bi-pencil-square me-1"></i>Request Update
+        </a>
+        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+        <a href="{{ url_for('admin.edit_administrative_head', id=head.id) }}" class="btn btn-outline-warning btn-sm">
+            <i class="bi bi-pencil me-1"></i>Edit
+        </a>
+        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#endRoleModal">
+            <i class="bi bi-box-arrow-right me-1"></i>End Role
+        </button>
+        <a href="{{ url_for('admin.add_administrative_head_assistant', head_id=head.id) }}" class="btn btn-success btn-sm">
+            <i class="bi bi-person-plus me-1"></i>Add Assistant
+        </a>
+        {% endif %}
+    </div>
+
+    <!-- Official Contact Information -->
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-primary text-white">
+            <i class="bi bi-briefcase me-2"></i>Official Contact Information
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6"><strong>Organization:</strong> {{ head.organization.organization_name if head.organization else '–' }}</div>
+                <div class="col-md-6"><strong>Designation:</strong> {{ head.role_title }}</div>
+                <div class="col-md-6"><strong>Service Type:</strong> {{ head.service_type.service_type_name if head.service_type else '–' }}</div>
+                <div class="col-md-6"><strong>Effective From:</strong> {{ head.effective_from }}</div>
+                <div class="col-md-6">
+                    <strong>Email:</strong>
+                    {% if head.resolved_email %}
+                        <a href="mailto:{{ head.resolved_email }}">{{ head.resolved_email }}</a>
+                    {% else %}–{% endif %}
+                </div>
+                <div class="col-md-6"><strong>Mobile:</strong> {{ head.resolved_mobile_phone or '–' }}</div>
+                <div class="col-md-6"><strong>Office Phone:</strong> {{ head.resolved_office_phone or '–' }}</div>
+                {% if head.remarks %}
+                <div class="col-12"><strong>Remarks:</strong> {{ head.remarks }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- PA/PS Contact Information -->
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-info text-white">
+            <i class="bi bi-person-lines-fill me-2"></i>PA/PS Contact Information
+        </div>
+        <div class="card-body">
+            {% if head.assistants %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Office Phone</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th class="text-center">Primary</th>
+                            {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                            <th class="text-center">Actions</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in head.assistants %}
+                        <tr>
+                            <td>{{ a.resolved_name or '–' }}</td>
+                            <td>{{ a.designation }}</td>
+                            <td>{{ a.resolved_office_phone or '–' }}</td>
+                            <td>{{ a.resolved_mobile or '–' }}</td>
+                            <td>
+                                {% if a.resolved_email %}
+                                    <a href="mailto:{{ a.resolved_email }}">{{ a.resolved_email }}</a>
+                                {% else %}–{% endif %}
+                            </td>
+                            <td class="text-center">
+                                {% if a.is_primary %}
+                                <span class="badge bg-success"><i class="bi bi-star-fill"></i> Primary</span>
+                                {% else %}
+                                    {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                                    <form method="POST"
+                                          action="{{ url_for('admin.set_primary_administrative_head_assistant', head_id=head.id, assistant_id=a.id) }}">
+                                        <button type="submit" class="btn btn-outline-secondary btn-sm">Make Primary</button>
+                                    </form>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                            {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                            <td class="text-center text-nowrap">
+                                <a href="{{ url_for('admin.edit_administrative_head_assistant', head_id=head.id, assistant_id=a.id) }}"
+                                   class="btn btn-outline-warning btn-sm" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form method="POST"
+                                      action="{{ url_for('admin.delete_administrative_head_assistant', head_id=head.id, assistant_id=a.id) }}"
+                                      class="d-inline"
+                                      onsubmit="return confirm('Remove this assistant?')">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm" title="Remove">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="text-muted mb-0">No PA/PS assistants recorded for this Administrative Head.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Office Address -->
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-secondary text-white">
+            <i class="bi bi-geo-alt me-2"></i>Office Address
+        </div>
+        <div class="card-body">
+            {{ head.resolved_office_address or 'No address on file.' }}
+            {% if head.office_address %}
+            <div class="text-muted small mt-1">Head-specific office address (overrides the organization's registered address).</div>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% if current_user.is_authenticated and current_user.role == 'admin' %}
+<div class="modal fade" id="endRoleModal" tabindex="-1">
+    <div class="modal-dialog">
+        <form method="POST" action="{{ url_for('admin.end_administrative_head', id=head.id) }}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">End Administrative Head Role</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">Reason <span class="text-danger">*</span></label>
+                    <textarea name="reason" class="form-control" rows="2" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">End Role</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

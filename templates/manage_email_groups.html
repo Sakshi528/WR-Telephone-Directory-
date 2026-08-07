@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Custom Email Groups – Admin{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-envelope-paper me-2"></i>Custom Email Groups</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="d-flex justify-content-end mb-3 mt-3">
+        <a href="{{ url_for('admin.add_email_group') }}" class="btn btn-success">
+            <i class="bi bi-plus-lg me-1"></i>Add Custom Group
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:55px">Sr No.</th>
+                    <th style="width:20%">Name</th>
+                    <th>Filters</th>
+                    <th class="text-center" style="width:150px">Members</th>
+                    <th class="text-center" style="width:110px">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in summaries %}
+                <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td class="fw-semibold">
+                        {{ s.group.name }}
+                        {% if s.group.description %}
+                        <div class="small text-muted">{{ s.group.description }}</div>
+                        {% endif %}
+                    </td>
+                    <td class="small">{{ s.filter_summary }}</td>
+                    <td class="text-center">
+                        <span class="badge bg-light text-dark border" title="Members">{{ s.member_count }}</span>
+                        <span class="badge bg-success" title="Unique emails">{{ s.email_count }}</span>
+                    </td>
+                    <td class="text-center text-nowrap">
+                        <a href="{{ url_for('admin.edit_email_group', id=s.group.id) }}"
+                           class="btn btn-outline-warning btn-sm" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <form method="POST"
+                              action="{{ url_for('admin.delete_email_group', id=s.group.id) }}"
+                              class="d-inline"
+                              onsubmit="return confirm('Delete group {{ s.group.name }}?')">
+                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center text-muted py-4">No custom groups yet</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

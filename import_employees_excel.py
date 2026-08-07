@@ -17,6 +17,7 @@ from models.employee import Employee
 from models.organization import Organization
 from models.department import Department
 from models.emergency_contact import EmergencyContact
+from models.import_batch import ImportBatch
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -130,9 +131,25 @@ def run(apply: bool) -> None:
             logger.info("Imported %d employees into '%s'.", imported, wrldc.organization_name)
             logger.info("=" * 65)
 
-        except Exception:
+            # First persisted record of this run -- Archive > Import History.
+            # This pipeline is delete-then-reinsert, not a row-level diff,
+            # so "updated" isn't a meaningful count here.
+            db.session.add(ImportBatch(
+                workbook_name=EXCEL_PATH, mode="APPLIED", status="SUCCESS",
+                inserted_count=imported, updated_count=0, skipped_count=0,
+                summary=f"Imported {imported} employees into '{wrldc.organization_name}' "
+                        f"({len(existing)} previous records deleted first).",
+            ))
+            db.session.commit()
+
+        except Exception as exc:
             logger.exception("Import failed — rolling back all changes.")
             db.session.rollback()
+            db.session.add(ImportBatch(
+                workbook_name=EXCEL_PATH, mode="APPLIED", status="FAILED",
+                summary=f"Import failed: {exc}",
+            ))
+            db.session.commit()
             raise
 
 

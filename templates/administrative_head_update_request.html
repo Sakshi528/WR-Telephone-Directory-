@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Request Update – {{ head.resolved_name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+
+    <a href="{{ url_for('user.administrative_head_details', id=head.id) }}"
+       class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="bi bi-arrow-left me-1"></i>Back
+    </a>
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0">
+                <i class="bi bi-pencil-square me-2"></i>Request Information Update
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-light border mb-4">
+                <strong>Name:</strong> {{ head.resolved_name or '–' }}<br>
+                <strong>Designation:</strong> {{ head.resolved_designation or '–' }}<br>
+                <strong>Organization:</strong>
+                {{ head.organization.organization_name if head.organization else '–' }}<br>
+                <strong>Status:</strong> {{ head.status.replace('_', ' ').title() if head.status else '–' }}
+                {% if requester_ip %}
+                <div class="text-muted small mt-2">
+                    <i class="bi bi-hdd-network me-1"></i>Submitting from IP: {{ requester_ip }}
+                    (recorded with your request)
+                </div>
+                {% endif %}
+            </div>
+
+            <form method="POST">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Name <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="requested_by" class="form-control" required
+                               placeholder="Full name of person submitting this request">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Department <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <input type="text" name="department" class="form-control"
+                               placeholder="e.g. Operations, IT, HR">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Your Contact Number <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <input type="text" name="contact_number" class="form-control"
+                               placeholder="So admin can reach you if needed">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">
+                            Field to Update <span class="text-danger">*</span>
+                        </label>
+                        <select name="field_name" class="form-select" required>
+                            <option value="">– Select field –</option>
+                            <option value="role_title">Designation</option>
+                            <option value="office_phone">Office Phone</option>
+                            <option value="mobile_phone">Mobile No.</option>
+                            <option value="email">Email</option>
+                            <option value="office_address">Office Address</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">Current Information</label>
+                        <input type="text" id="currentInfoField" class="form-control" readonly value="">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">
+                            Correct Information <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="new_value" class="form-control" required
+                               placeholder="Enter the correct value">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">
+                            Reason <span class="text-muted fw-normal">(optional)</span>
+                        </label>
+                        <textarea name="reason" class="form-control" rows="3"
+                                  placeholder="Why is this update needed?"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send me-1"></i>Submit Request
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="application/json" id="currentValuesData">{{ current_values | tojson }}</script>
+<script>
+(function () {
+    var currentValues = JSON.parse(document.getElementById("currentValuesData").textContent);
+    var fieldSelect = document.querySelector("select[name='field_name']");
+    var currentInfoField = document.getElementById("currentInfoField");
+
+    fieldSelect.addEventListener("change", function () {
+        if (fieldSelect.value) {
+            var value = currentValues[fieldSelect.value];
+            currentInfoField.value = value ? value : "Not Available";
+        } else {
+            currentInfoField.value = "";
+        }
+    });
+}());
+</script>
+{% endblock %}

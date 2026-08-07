@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ employee.employee_name }} – Status History{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-clock-history me-2"></i>Status History</h2>
+        <a href="{{ url_for('user.employee_details', id=employee.id) }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>Back to Profile
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <p class="text-muted mt-4 mb-3">
+        <strong>{{ employee.employee_name }}</strong>
+        {% if employee.designation %} – {{ employee.designation }}{% endif %}
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-sm align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:50px">Sr No.</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Reason</th>
+                    <th>Changed By</th>
+                    <th style="width:170px">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in history %}
+                <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td>{{ h.old_status or '–' }}</td>
+                    <td class="fw-semibold">{{ h.new_status }}</td>
+                    <td>{{ h.reason or '–' }}</td>
+                    <td>{{ h.changed_by_user.username if h.changed_by_user else '–' }}</td>
+                    <td>{{ h.changed_at.strftime('%d-%b-%Y %H:%M') if h.changed_at else '–' }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" class="text-center text-muted py-5">
+                        No status changes recorded yet.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

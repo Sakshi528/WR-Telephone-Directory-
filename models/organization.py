@@ -18,6 +18,14 @@ class Organization(db.Model):
         db.String(255)
     )
 
+    # Indian state, distinct from `region` above (which holds the parent
+    # import-grouping label, e.g. "Nuclear Power Stations in Western
+    # Region"). Drives the State level of the Type -> State -> Organization
+    # cascading dropdowns for state-based Organization Types.
+    state = db.Column(
+        db.String(100)
+    )
+
     address = db.Column(
         db.Text
     )
@@ -25,6 +33,12 @@ class Organization(db.Model):
     parent_id = db.Column(
         db.Integer,
         db.ForeignKey("organizations.id", ondelete="SET NULL"),
+        nullable=True
+    )
+
+    category_id = db.Column(
+        db.Integer,
+        db.ForeignKey("organization_categories.id", ondelete="SET NULL"),
         nullable=True
     )
 

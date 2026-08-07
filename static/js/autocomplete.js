@@ -16,6 +16,16 @@
             return;
         }
 
+        // Opt-in: forms that pick an id into a hidden field (e.g. an
+        // employee picker embedded in a larger Add/Edit form) set these so
+        // picking a suggestion doesn't blow away the rest of the form by
+        // submitting immediately -- existing plain search boxes are
+        // unaffected since neither attribute is set on them.
+        var targetIdField = input.dataset.targetIdField
+            ? document.getElementById(input.dataset.targetIdField)
+            : null;
+        var noAutosubmit = input.dataset.noAutosubmit === "true";
+
         suggestions.forEach(function (suggestion) {
             var button = document.createElement("button");
             button.type = "button";
@@ -27,9 +37,10 @@
                     "</small>";
 
             button.addEventListener("click", function () {
-                input.value = suggestion.value;
+                input.value = targetIdField ? suggestion.label : suggestion.value;
+                if (targetIdField) targetIdField.value = suggestion.value;
                 closePanels();
-                input.form.submit();
+                if (!noAutosubmit) input.form.submit();
             });
 
             panel.appendChild(button);

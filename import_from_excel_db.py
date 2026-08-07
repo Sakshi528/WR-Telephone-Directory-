@@ -1,5 +1,5 @@
 """Imports organizations, employees, control rooms, and switchyards from
-'uploads/WR_DB_Ready_Final_Verified.xlsx' into the database. Replaces all
+'WR_DB_Ready_Final_Verified_v3.xlsx' into the database. Replaces all
 existing orgs/employees/CRs/switchyards; WRLDC employees are not touched
 (run import_employees_excel.py separately). Delete + insert run inside one
 transaction, rolled back whole on failure.
@@ -21,11 +21,18 @@ from models.employee import Employee
 from models.department import Department
 from models.directory_number import DirectoryNumber
 from models.emergency_contact import EmergencyContact
+from models.import_batch import ImportBatch
+from models.organization_category import OrganizationCategory
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
-EXCEL_PATH = "uploads/WR_DB_Ready_Final_Verified.xlsx"
+# Was 'uploads/WR_DB_Ready_Final_Verified.xlsx' -- that file no longer
+# exists (superseded by the validation/correction/normalization pipeline
+# that produced v3; see scripts/generate_validation_report.py,
+# apply_corrections.py, normalize_formatting.py). Running with the old
+# path raised FileNotFoundError on every invocation.
+EXCEL_PATH = "WR_DB_Ready_Final_Verified_v3.xlsx"
 
 # Top-level org owned by import_employees_excel.py — never touched by this script.
 WRLDC_ORG_NAME = "Western Region Load Despatch Centre"
@@ -91,14 +98,23 @@ def run(apply: bool):
     cr_rows     = sheet_rows("control_rooms")
     sw_rows     = sheet_rows("switchyards")
 
+    # phone_numbers/email_addresses now carry a reference_type column (added
+    # for the wider correction pipeline, which also stores control_room/kmp/
+    # hospital/utility_head/switchyard numbers here) -- was a plain (id, emp_id,
+    # type, number) tuple when this script was first written, so unpacking
+    # broke (ValueError: too many values to unpack) and, if merely re-padded
+    # without filtering, would have silently cross-merged unrelated entities'
+    # phones/emails whenever their reference_id happened to collide with an
+    # employee_id. This script only ever joins onto the `employees` sheet, so
+    # only 'employee'-typed rows are relevant here.
     emp_phones = defaultdict(lambda: defaultdict(list))
-    for _, emp_id, ptype, number in phone_rows:
-        if emp_id and ptype and number:
+    for _, ref_type, emp_id, ptype, number in phone_rows:
+        if ref_type == "employee" and emp_id and ptype and number:
             emp_phones[emp_id][clean(ptype)].append(clean(number))
 
     emp_emails = defaultdict(list)
-    for _, emp_id, email in email_rows:
-        if emp_id and email:
+    for _, ref_type, emp_id, email in email_rows:
+        if ref_type == "employee" and emp_id and email:
             emp_emails[emp_id].append(clean(email))
 
     logger.info(
@@ -131,21 +147,48 @@ def run(apply: bool):
             org_delete_q.delete(synchronize_session=False)
             logger.info("Existing KMP data deleted (not yet committed).")
 
+            # organizations.category_id is NOT NULL (added after this script was
+            # first written, for the Organization Type feature) -- this script
+            # has no source of Type data, so newly (re)inserted orgs default to
+            # the catch-all 'Others' category, same fallback
+            # admin_routes._default_category_id() uses for the manual Add
+            # Organization form. Re-run scripts/reclassify_organization_types.py
+            # afterward to restore real classifications -- this import alone
+            # cannot know them.
+            others_category = OrganizationCategory.query.filter_by(category_name="Others").first()
+            if not others_category:
+                raise RuntimeError(
+                    "organization_categories has no 'Others' row -- run "
+                    "migrations 009-012 before importing."
+                )
+
             parent_map = {}
             for row in orgs_rows:
                 oid, name, address, state = row
                 parent_map[oid] = clean(name)
 
             name_to_org = {}
+            # The workbook's own organizations sheet includes an entry named
+            # WRLDC_ORG_NAME (org_id 25) -- the preserved live WRLDC row above
+            # was excluded from deletion, but nothing stopped this loop from
+            # then trying to INSERT a second row with the same name, violating
+            # organizations.organization_name's unique constraint. Seed
+            # name_to_org with the preserved row so get_or_insert_org reuses
+            # it instead, matching the docstring's own stated intent that this
+            # script never touches WRLDC.
+            if wrldc_org:
+                name_to_org[WRLDC_ORG_NAME] = wrldc_org
 
-            def get_or_insert_org(name, address, region, parent_id=None):
+            def get_or_insert_org(name, address, region, parent_id=None, state=None):
                 if name in name_to_org:
                     return name_to_org[name]
                 o = Organization(
                     organization_name=name,
                     address=address or None,
                     region=region or None,
+                    state=state or None,
                     parent_id=parent_id,
+                    category_id=others_category.id,
                 )
                 db.session.add(o)
                 db.session.flush()
@@ -159,7 +202,7 @@ def run(apply: bool):
                 if not name:
                     continue
                 # Parent orgs have no parent_id (top-level)
-                o = get_or_insert_org(name, clean(address), clean(state))
+                o = get_or_insert_org(name, clean(address), clean(state), state=clean(state))
                 org_obj_by_parent_id[oid] = o
 
             org_obj_by_suborg_id = {}
@@ -176,6 +219,7 @@ def run(apply: bool):
                     clean(address),
                     parent_name or clean(state),   # region unchanged (backward compat)
                     parent_id=parent_org.id if parent_org else None,
+                    state=clean(state),
                 )
                 org_obj_by_suborg_id[sid] = o
                 suborg_name_map[sid] = name
@@ -213,7 +257,7 @@ def run(apply: bool):
             # the Station" repeated across sites) -- skip rather than misattach
             key_has_valid_suborg = defaultdict(bool)
             key_has_blank_suborg = defaultdict(bool)
-            for _eid, _oid, _sid, _name, _desig in emp_rows:
+            for _eid, _oid, _sid, _dept, _name, _desig in emp_rows:
                 _name = clean(_name)
                 if not _name:
                     continue
@@ -231,7 +275,7 @@ def run(apply: bool):
             emp_skipped  = 0
             emp_skipped_ambiguous = 0
             for row in emp_rows:
-                emp_id, org_id, suborg_id, name, designation = row
+                emp_id, org_id, suborg_id, _department, name, designation = row
                 name = clean(name)
 
                 if emp_id in SKIP_EMP_IDS or not name:
@@ -288,11 +332,20 @@ def run(apply: bool):
             suborg_id_by_name_lower = {v.lower(): k for k, v in suborg_name_map.items()}
 
             def insert_directory_numbers(rows, category):
+                # control_rooms (12 cols) carries a designation + a second
+                # phone/mobile slot; switchyards (9 cols) doesn't -- was
+                # unpacked as one 18-column shape for both, which no longer
+                # matches either sheet (ValueError: not enough values to
+                # unpack on every row).
                 count = 0
                 for row in rows:
-                    (rid, org_id, suborg_id, org_name, suborg_name,
-                     label, desig, addr, state,
-                     p1, p2, p3, p4, fax, m1, m2, e1, e2) = row
+                    if category == "Control Room":
+                        (rid, org_id, suborg_id, org_name, suborg_name,
+                         label, desig, p1, p2, m1, m2, e1) = row
+                    else:
+                        (rid, org_id, suborg_id, org_name, suborg_name,
+                         label, p1, m1, e1) = row
+                        p2 = m2 = None
 
                     # Resolve display org: exact text match (if it disagrees with a
                     # present suborg_id) → suborg table → name-in-text match → parent org
@@ -310,8 +363,8 @@ def run(apply: bool):
                         matched = org_by_name_in(clean(label)) if label else None
                         display_org = matched if matched else clean(org_name)
 
-                    phone = phones_joined(p1, p2, p3, p4, m1, m2, fax)
-                    email = " / ".join(filter(None, [clean(e1), clean(e2)])) or None
+                    phone = phones_joined(p1, p2, m1, m2)
+                    email = clean(e1) or None
 
                     # Resolve the org FK from the name we just determined
                     dn_org_obj = name_to_org.get(display_org)
@@ -341,9 +394,29 @@ def run(apply: bool):
             )
             logger.info("=" * 70)
 
-        except Exception:
+            # First persisted record of this run -- Archive > Import History.
+            # This whole pipeline is delete-then-reinsert, not a row-level
+            # diff, so "updated" isn't a meaningful count here.
+            db.session.add(ImportBatch(
+                workbook_name=EXCEL_PATH, mode="APPLIED", status="SUCCESS",
+                inserted_count=len(name_to_org) + emp_inserted + cr_count + sw_count,
+                updated_count=0, skipped_count=emp_skipped + emp_skipped_ambiguous,
+                summary=(
+                    f"Orgs: {len(name_to_org)}, KMP employees: {emp_inserted} "
+                    f"({emp_skipped} skipped, {emp_skipped_ambiguous} ambiguous), "
+                    f"Control Rooms: {cr_count}, Switchyards: {sw_count}"
+                ),
+            ))
+            db.session.commit()
+
+        except Exception as exc:
             logger.exception("Import failed — rolling back all changes.")
             db.session.rollback()
+            db.session.add(ImportBatch(
+                workbook_name=EXCEL_PATH, mode="APPLIED", status="FAILED",
+                summary=f"Import failed: {exc}",
+            ))
+            db.session.commit()
             raise
 
 

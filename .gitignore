@@ -6,3 +6,5 @@ debug.txt
 import.log
 pemhttpd.exe
 edb_pgbouncer.exe
+node_modules
+storage/

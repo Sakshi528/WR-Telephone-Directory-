@@ -1,0 +1,4 @@
+2026-07-31 13:26:14 [INFO] services.directory_version_service: GENERATE directory version 2026.07 (776 employees, 207 organizations)
+2026-07-31 13:29:51 [INFO] services.directory_version_service: REGENERATE directory version 2026.07.2 (776 employees, 207 organizations)
+2026-07-31 13:32:24 [INFO] services.directory_version_service: GENERATE directory version 2026.01 (776 employees, 207 organizations)
+2026-08-03 15:06:02 [INFO] services.directory_version_service: GENERATE directory version 2026.08 (934 employees, 220 organizations)

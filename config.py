@@ -17,6 +17,8 @@ class Config:
 
     UPLOAD_FOLDER = os.path.join(os.getcwd(), "uploads")
 
+    DIRECTORY_VERSIONS_STORAGE = os.path.join(os.getcwd(), "storage", "directory_versions")
+
     # Session expires after 20 minutes of inactivity
     PERMANENT_SESSION_LIFETIME = timedelta(minutes=20)
 

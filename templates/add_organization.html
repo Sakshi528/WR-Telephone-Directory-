@@ -24,6 +24,15 @@
                         <label class="form-label">Region <span class="text-danger">*</span></label>
                         <input type="text" name="region" class="form-control" required>
                     </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Category</label>
+                        <select name="category_id" class="form-select">
+                            <option value="">— Uncategorized —</option>
+                            {% for cat in categories %}
+                            <option value="{{ cat.id }}">{{ cat.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                     <div class="col-12">
                         <label class="form-label">Address <span class="text-danger">*</span></label>
                         <textarea name="address" class="form-control" rows="3" required></textarea>

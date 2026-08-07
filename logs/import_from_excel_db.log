@@ -1,0 +1,550 @@
+2026-07-08 14:51:28 [INFO] __main__: ======================================================================
+2026-07-08 14:51:28 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-08 14:51:28 [INFO] __main__: DRY RUN
+2026-07-08 14:51:28 [INFO] __main__: ======================================================================
+2026-07-08 14:51:28 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-08 14:51:28 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-08 15:02:09 [INFO] __main__: ======================================================================
+2026-07-08 15:02:09 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-08 15:02:09 [INFO] __main__: DRY RUN
+2026-07-08 15:02:09 [INFO] __main__: ======================================================================
+2026-07-08 15:02:09 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-08 15:02:09 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-08 15:04:18 [INFO] __main__: ======================================================================
+2026-07-08 15:04:18 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-08 15:04:18 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-08 15:04:18 [INFO] __main__: ======================================================================
+2026-07-08 15:04:18 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-08 15:04:18 [INFO] __main__: Deleting existing KMP data...
+2026-07-08 15:04:19 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-08 15:04:19 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-08 15:04:19 [INFO] __main__: Inserted 721 KMP employees (1 skipped)
+2026-07-08 15:04:19 [INFO] __main__: Inserted 199 control rooms, 14 switchyards
+2026-07-08 15:04:19 [INFO] __main__: ======================================================================
+2026-07-08 15:04:19 [INFO] __main__: DONE — Orgs: 206, KMP employees: 721, Control Rooms: 199, Switchyards: 14
+2026-07-08 15:04:19 [INFO] __main__: ======================================================================
+2026-07-08 15:54:29 [INFO] __main__: ======================================================================
+2026-07-08 15:54:29 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-08 15:54:29 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-08 15:54:29 [INFO] __main__: ======================================================================
+2026-07-08 15:54:29 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-08 15:54:29 [INFO] __main__: Deleting existing KMP data...
+2026-07-08 15:54:29 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-08 15:54:30 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-08 15:54:30 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-08 15:54:30 [INFO] __main__: Inserted 199 control rooms, 14 switchyards
+2026-07-08 15:54:30 [INFO] __main__: ======================================================================
+2026-07-08 15:54:30 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 199, Switchyards: 14
+2026-07-08 15:54:30 [INFO] __main__: ======================================================================
+2026-07-08 16:11:29 [INFO] __main__: ======================================================================
+2026-07-08 16:11:29 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-08 16:11:29 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-08 16:11:29 [INFO] __main__: ======================================================================
+2026-07-08 16:11:29 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-08 16:11:29 [INFO] __main__: Deleting existing KMP data...
+2026-07-08 16:11:29 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-08 16:11:30 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-08 16:11:30 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-08 16:11:30 [INFO] __main__: Inserted 199 control rooms, 14 switchyards
+2026-07-08 16:11:30 [INFO] __main__: ======================================================================
+2026-07-08 16:11:30 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 199, Switchyards: 14
+2026-07-08 16:11:30 [INFO] __main__: ======================================================================
+2026-07-09 10:27:06 [INFO] __main__: ======================================================================
+2026-07-09 10:27:06 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:27:06 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:27:06 [INFO] __main__: ======================================================================
+2026-07-09 10:27:07 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-09 10:27:07 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:27:07 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:27:07 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:27:07 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:27:07 [INFO] __main__: Inserted 199 control rooms, 14 switchyards
+2026-07-09 10:27:07 [INFO] __main__: ======================================================================
+2026-07-09 10:27:07 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 199, Switchyards: 14
+2026-07-09 10:27:07 [INFO] __main__: ======================================================================
+2026-07-09 10:29:14 [INFO] __main__: ======================================================================
+2026-07-09 10:29:14 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:29:14 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:29:14 [INFO] __main__: ======================================================================
+2026-07-09 10:29:14 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 199 control rooms, 14 switchyards
+2026-07-09 10:29:14 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:29:14 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:29:14 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:29:14 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:29:14 [INFO] __main__: Inserted 199 control rooms, 14 switchyards
+2026-07-09 10:29:14 [INFO] __main__: ======================================================================
+2026-07-09 10:29:14 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 199, Switchyards: 14
+2026-07-09 10:29:14 [INFO] __main__: ======================================================================
+2026-07-09 10:33:54 [INFO] __main__: ======================================================================
+2026-07-09 10:33:54 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:33:54 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:33:54 [INFO] __main__: ======================================================================
+2026-07-09 10:33:54 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 293 control rooms, 14 switchyards
+2026-07-09 10:33:54 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:33:55 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:33:55 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:33:55 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:33:55 [INFO] __main__: Inserted 293 control rooms, 14 switchyards
+2026-07-09 10:33:55 [INFO] __main__: ======================================================================
+2026-07-09 10:33:55 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 293, Switchyards: 14
+2026-07-09 10:33:55 [INFO] __main__: ======================================================================
+2026-07-09 10:35:24 [INFO] __main__: ======================================================================
+2026-07-09 10:35:24 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:35:24 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:35:24 [INFO] __main__: ======================================================================
+2026-07-09 10:35:24 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 295 control rooms, 14 switchyards
+2026-07-09 10:35:24 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:35:25 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:35:25 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:35:25 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:35:25 [INFO] __main__: Inserted 295 control rooms, 14 switchyards
+2026-07-09 10:35:25 [INFO] __main__: ======================================================================
+2026-07-09 10:35:25 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 295, Switchyards: 14
+2026-07-09 10:35:25 [INFO] __main__: ======================================================================
+2026-07-09 10:37:22 [INFO] __main__: ======================================================================
+2026-07-09 10:37:22 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:37:22 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:37:22 [INFO] __main__: ======================================================================
+2026-07-09 10:37:22 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 295 control rooms, 14 switchyards
+2026-07-09 10:37:22 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:37:22 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:37:22 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:37:22 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:37:22 [INFO] __main__: Inserted 295 control rooms, 14 switchyards
+2026-07-09 10:37:23 [INFO] __main__: ======================================================================
+2026-07-09 10:37:23 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 295, Switchyards: 14
+2026-07-09 10:37:23 [INFO] __main__: ======================================================================
+2026-07-09 10:40:15 [INFO] __main__: ======================================================================
+2026-07-09 10:40:15 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 10:40:15 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 10:40:15 [INFO] __main__: ======================================================================
+2026-07-09 10:40:16 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 10:40:16 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 10:40:16 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 10:40:16 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 10:40:16 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 10:40:16 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 10:40:16 [INFO] __main__: ======================================================================
+2026-07-09 10:40:16 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 10:40:16 [INFO] __main__: ======================================================================
+2026-07-09 11:21:14 [INFO] __main__: ======================================================================
+2026-07-09 11:21:14 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 11:21:14 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 11:21:14 [INFO] __main__: ======================================================================
+2026-07-09 11:21:14 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 11:21:14 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 11:21:15 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 11:21:15 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 11:21:15 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 11:21:15 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 11:21:15 [INFO] __main__: ======================================================================
+2026-07-09 11:21:15 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 11:21:15 [INFO] __main__: ======================================================================
+2026-07-09 11:30:53 [INFO] __main__: ======================================================================
+2026-07-09 11:30:53 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 11:30:53 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 11:30:53 [INFO] __main__: ======================================================================
+2026-07-09 11:30:54 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 11:30:54 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 11:30:54 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 11:30:54 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 11:30:54 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 11:30:54 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 11:30:54 [INFO] __main__: ======================================================================
+2026-07-09 11:30:54 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 11:30:54 [INFO] __main__: ======================================================================
+2026-07-09 11:37:37 [INFO] __main__: ======================================================================
+2026-07-09 11:37:37 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 11:37:37 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 11:37:37 [INFO] __main__: ======================================================================
+2026-07-09 11:37:37 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 11:37:37 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 11:37:37 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 11:37:38 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 11:37:38 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 11:37:38 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 11:37:38 [INFO] __main__: ======================================================================
+2026-07-09 11:37:38 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 11:37:38 [INFO] __main__: ======================================================================
+2026-07-09 14:50:24 [INFO] __main__: ======================================================================
+2026-07-09 14:50:24 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 14:50:24 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 14:50:24 [INFO] __main__: ======================================================================
+2026-07-09 14:50:24 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 14:50:24 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 14:50:24 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 14:50:25 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 14:50:25 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 14:50:25 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 14:50:25 [INFO] __main__: ======================================================================
+2026-07-09 14:50:25 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 14:50:25 [INFO] __main__: ======================================================================
+2026-07-09 15:33:18 [INFO] __main__: ======================================================================
+2026-07-09 15:33:18 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 15:33:18 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 15:33:18 [INFO] __main__: ======================================================================
+2026-07-09 15:33:19 [INFO] __main__: Source data: 19 organizations, 188 sub-organizations, 722 employees, 304 control rooms, 14 switchyards
+2026-07-09 15:33:19 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 15:33:19 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 15:33:19 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 15:33:19 [INFO] __main__: Inserted 677 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 15:33:19 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 15:33:19 [INFO] __main__: ======================================================================
+2026-07-09 15:33:19 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 15:33:19 [INFO] __main__: ======================================================================
+2026-07-09 16:19:26 [INFO] __main__: ======================================================================
+2026-07-09 16:19:26 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 16:19:26 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 16:19:26 [INFO] __main__: ======================================================================
+2026-07-09 16:19:27 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-09 16:19:27 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 16:19:27 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 16:19:27 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 16:19:27 [INFO] __main__: Inserted 678 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 16:19:27 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 16:19:27 [INFO] __main__: ======================================================================
+2026-07-09 16:19:27 [INFO] __main__: DONE — Orgs: 206, KMP employees: 678, Control Rooms: 304, Switchyards: 14
+2026-07-09 16:19:27 [INFO] __main__: ======================================================================
+2026-07-09 16:25:30 [INFO] __main__: ======================================================================
+2026-07-09 16:25:30 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 16:25:30 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 16:25:30 [INFO] __main__: ======================================================================
+2026-07-09 16:25:30 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-09 16:25:30 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 16:25:30 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 16:25:31 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 16:25:31 [INFO] __main__: Inserted 678 KMP employees (1 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 16:25:31 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 16:25:31 [INFO] __main__: ======================================================================
+2026-07-09 16:25:31 [INFO] __main__: DONE — Orgs: 206, KMP employees: 678, Control Rooms: 304, Switchyards: 14
+2026-07-09 16:25:31 [INFO] __main__: ======================================================================
+2026-07-09 16:26:17 [INFO] __main__: ======================================================================
+2026-07-09 16:26:17 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 16:26:17 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 16:26:17 [INFO] __main__: ======================================================================
+2026-07-09 16:26:17 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-09 16:26:17 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 16:26:17 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 16:26:17 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 16:26:17 [INFO] __main__: Inserted 678 KMP employees (2 skipped, 43 skipped as ambiguous shared multi-station roles)
+2026-07-09 16:26:17 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 16:26:17 [INFO] __main__: ======================================================================
+2026-07-09 16:26:17 [INFO] __main__: DONE — Orgs: 206, KMP employees: 678, Control Rooms: 304, Switchyards: 14
+2026-07-09 16:26:17 [INFO] __main__: ======================================================================
+2026-07-09 16:28:00 [INFO] __main__: ======================================================================
+2026-07-09 16:28:00 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-09 16:28:00 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-09 16:28:00 [INFO] __main__: ======================================================================
+2026-07-09 16:28:00 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-09 16:28:00 [INFO] __main__: Deleting existing KMP data...
+2026-07-09 16:28:00 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-09 16:28:00 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-09 16:28:00 [INFO] __main__: Inserted 677 KMP employees (2 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-09 16:28:00 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-09 16:28:00 [INFO] __main__: ======================================================================
+2026-07-09 16:28:00 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-09 16:28:00 [INFO] __main__: ======================================================================
+2026-07-10 09:32:47 [INFO] __main__: ======================================================================
+2026-07-10 09:32:47 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-10 09:32:47 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-10 09:32:47 [INFO] __main__: ======================================================================
+2026-07-10 09:32:47 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-10 09:32:47 [INFO] __main__: Deleting existing KMP data...
+2026-07-10 09:32:47 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-10 09:32:48 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-10 09:32:48 [INFO] __main__: Inserted 677 KMP employees (2 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-10 09:32:48 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-10 09:32:48 [INFO] __main__: ======================================================================
+2026-07-10 09:32:48 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-10 09:32:48 [INFO] __main__: ======================================================================
+2026-07-10 09:35:01 [INFO] __main__: ======================================================================
+2026-07-10 09:35:01 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-10 09:35:01 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-10 09:35:01 [INFO] __main__: ======================================================================
+2026-07-10 09:35:01 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 723 employees, 304 control rooms, 14 switchyards
+2026-07-10 09:35:01 [INFO] __main__: Deleting existing KMP data...
+2026-07-10 09:35:02 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-10 09:35:02 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-10 09:35:02 [INFO] __main__: Inserted 677 KMP employees (2 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-10 09:35:02 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-10 09:35:02 [INFO] __main__: ======================================================================
+2026-07-10 09:35:02 [INFO] __main__: DONE — Orgs: 206, KMP employees: 677, Control Rooms: 304, Switchyards: 14
+2026-07-10 09:35:02 [INFO] __main__: ======================================================================
+2026-07-10 09:49:22 [INFO] __main__: ======================================================================
+2026-07-10 09:49:22 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-10 09:49:22 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-10 09:49:22 [INFO] __main__: ======================================================================
+2026-07-10 09:49:22 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 724 employees, 304 control rooms, 14 switchyards
+2026-07-10 09:49:22 [INFO] __main__: Deleting existing KMP data...
+2026-07-10 09:49:23 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-10 09:49:23 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-10 09:49:23 [INFO] __main__: Inserted 678 KMP employees (2 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-10 09:49:23 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-10 09:49:23 [INFO] __main__: ======================================================================
+2026-07-10 09:49:23 [INFO] __main__: DONE — Orgs: 206, KMP employees: 678, Control Rooms: 304, Switchyards: 14
+2026-07-10 09:49:23 [INFO] __main__: ======================================================================
+2026-07-10 09:53:20 [INFO] __main__: ======================================================================
+2026-07-10 09:53:20 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-10 09:53:20 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-10 09:53:20 [INFO] __main__: ======================================================================
+2026-07-10 09:53:20 [INFO] __main__: Source data: 19 organizations, 190 sub-organizations, 724 employees, 304 control rooms, 14 switchyards
+2026-07-10 09:53:20 [INFO] __main__: Deleting existing KMP data...
+2026-07-10 09:53:20 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-10 09:53:20 [INFO] __main__: Created 19 parent orgs + 188 sub-orgs
+2026-07-10 09:53:21 [INFO] __main__: Inserted 678 KMP employees (2 skipped, 44 skipped as ambiguous shared multi-station roles)
+2026-07-10 09:53:21 [INFO] __main__: Inserted 304 control rooms, 14 switchyards
+2026-07-10 09:53:21 [INFO] __main__: ======================================================================
+2026-07-10 09:53:21 [INFO] __main__: DONE — Orgs: 206, KMP employees: 678, Control Rooms: 304, Switchyards: 14
+2026-07-10 09:53:21 [INFO] __main__: ======================================================================
+2026-07-31 13:34:31 [INFO] __main__: ======================================================================
+2026-07-31 13:34:31 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 13:34:31 [INFO] __main__: DRY RUN
+2026-07-31 13:34:31 [INFO] __main__: ======================================================================
+2026-07-31 13:34:40 [INFO] __main__: ======================================================================
+2026-07-31 13:34:40 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 13:34:40 [INFO] __main__: DRY RUN
+2026-07-31 13:34:40 [INFO] __main__: ======================================================================
+2026-07-31 15:39:56 [INFO] __main__: ======================================================================
+2026-07-31 15:39:56 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 15:39:56 [INFO] __main__: DRY RUN
+2026-07-31 15:39:56 [INFO] __main__: ======================================================================
+2026-07-31 15:40:38 [INFO] __main__: ======================================================================
+2026-07-31 15:40:38 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 15:40:38 [INFO] __main__: DRY RUN
+2026-07-31 15:40:38 [INFO] __main__: ======================================================================
+2026-07-31 15:40:38 [INFO] __main__: Source data: 25 organizations, 212 sub-organizations, 984 employees, 338 control rooms, 14 switchyards
+2026-07-31 15:40:38 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-31 15:40:49 [INFO] __main__: ======================================================================
+2026-07-31 15:40:49 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 15:40:49 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-31 15:40:49 [INFO] __main__: ======================================================================
+2026-07-31 15:40:50 [INFO] __main__: Source data: 25 organizations, 212 sub-organizations, 984 employees, 338 control rooms, 14 switchyards
+2026-07-31 15:40:50 [INFO] __main__: Deleting existing KMP data...
+2026-07-31 15:40:50 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-07-31 15:40:50 [ERROR] __main__: Import failed — rolling back all changes.
+Traceback (most recent call last):
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "category_id" of relation "organizations" violates not-null constraint
+DETAIL:  Failing row contains (5360, NLDC And RLDCs, null, Grid Controller of India Ltd, B-9, Qutab Institutional Area, Kat..., null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\so.a\Telephone_Directory\import_from_excel_db.py", line 177, in run
+    o = get_or_insert_org(name, clean(address), clean(state))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\import_from_excel_db.py", line 166, in get_or_insert_org
+    db.session.flush()
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 923, in flush
+    return self._proxied.flush(objects=objects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "category_id" of relation "organizations" violates not-null constraint
+DETAIL:  Failing row contains (5360, NLDC And RLDCs, null, Grid Controller of India Ltd, B-9, Qutab Institutional Area, Kat..., null, null, null).
+
+[SQL: INSERT INTO organizations (organization_name, region, state, address, parent_id, category_id) VALUES (%(organization_name)s, %(region)s, %(state)s, %(address)s, %(parent_id)s, %(category_id)s) RETURNING organizations.id]
+[parameters: {'organization_name': 'NLDC And RLDCs', 'region': None, 'state': None, 'address': 'Grid Controller of India Ltd, B-9, Qutab Institutional Area, Katwaria Sarai, New Delhi - 110016', 'parent_id': None, 'category_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-31 15:43:45 [INFO] __main__: ======================================================================
+2026-07-31 15:43:45 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 15:43:45 [INFO] __main__: DRY RUN
+2026-07-31 15:43:45 [INFO] __main__: ======================================================================
+2026-07-31 15:43:45 [INFO] __main__: Source data: 25 organizations, 212 sub-organizations, 984 employees, 338 control rooms, 14 switchyards
+2026-07-31 15:43:45 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-31 16:07:44 [INFO] __main__: ======================================================================
+2026-07-31 16:07:44 [INFO] __main__: WR_DB_Ready Excel Import
+2026-07-31 16:07:44 [INFO] __main__: DRY RUN
+2026-07-31 16:07:44 [INFO] __main__: ======================================================================
+2026-07-31 16:07:44 [INFO] __main__: Source data: 25 organizations, 212 sub-organizations, 984 employees, 320 control rooms, 14 switchyards
+2026-07-31 16:07:44 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-31 16:08:07 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:08:07 [INFO] import_from_excel_db: WR_DB_Ready Excel Import
+2026-07-31 16:08:07 [INFO] import_from_excel_db: APPLY MODE — changes will be committed
+2026-07-31 16:08:07 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:08:07 [INFO] import_from_excel_db: Source data: 25 organizations, 212 sub-organizations, 984 employees, 320 control rooms, 14 switchyards
+2026-07-31 16:08:07 [INFO] import_from_excel_db: Deleting existing KMP data...
+2026-07-31 16:08:08 [INFO] import_from_excel_db: Existing KMP data deleted (not yet committed).
+2026-07-31 16:08:08 [ERROR] import_from_excel_db: Import failed — rolling back all changes.
+Traceback (most recent call last):
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "organizations_organization_name_key"
+DETAIL:  Key (organization_name)=(Western Region Load Despatch Centre) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\so.a\Telephone_Directory\import_from_excel_db.py", line 195, in run
+    o = get_or_insert_org(name, clean(address), clean(state), state=clean(state))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\import_from_excel_db.py", line 184, in get_or_insert_org
+    db.session.flush()
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 923, in flush
+    return self._proxied.flush(objects=objects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\so.a\Telephone_Directory\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "organizations_organization_name_key"
+DETAIL:  Key (organization_name)=(Western Region Load Despatch Centre) already exists.
+
+[SQL: INSERT INTO organizations (organization_name, region, state, address, parent_id, category_id) VALUES (%(organization_name)s, %(region)s, %(state)s, %(address)s, %(parent_id)s, %(category_id)s) RETURNING organizations.id]
+[parameters: {'organization_name': 'Western Region Load Despatch Centre', 'region': None, 'state': None, 'address': None, 'parent_id': None, 'category_id': 17}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-31 16:09:11 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:09:11 [INFO] import_from_excel_db: WR_DB_Ready Excel Import
+2026-07-31 16:09:11 [INFO] import_from_excel_db: APPLY MODE — changes will be committed
+2026-07-31 16:09:11 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:09:11 [INFO] import_from_excel_db: Source data: 25 organizations, 212 sub-organizations, 984 employees, 320 control rooms, 14 switchyards
+2026-07-31 16:09:11 [INFO] import_from_excel_db: Deleting existing KMP data...
+2026-07-31 16:09:11 [INFO] import_from_excel_db: Existing KMP data deleted (not yet committed).
+2026-07-31 16:09:12 [INFO] import_from_excel_db: Created 25 parent orgs + 212 sub-orgs
+2026-07-31 16:09:12 [ERROR] import_from_excel_db: Import failed — rolling back all changes.
+Traceback (most recent call last):
+  File "C:\Users\so.a\Telephone_Directory\import_from_excel_db.py", line 260, in run
+    for _eid, _oid, _sid, _name, _desig in emp_rows:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 5)
+2026-07-31 16:09:44 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:09:44 [INFO] import_from_excel_db: WR_DB_Ready Excel Import
+2026-07-31 16:09:44 [INFO] import_from_excel_db: APPLY MODE — changes will be committed
+2026-07-31 16:09:44 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Source data: 25 organizations, 212 sub-organizations, 984 employees, 320 control rooms, 14 switchyards
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Deleting existing KMP data...
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Existing KMP data deleted (not yet committed).
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Created 25 parent orgs + 212 sub-orgs
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Inserted 881 KMP employees (46 skipped, 57 skipped as ambiguous shared multi-station roles)
+2026-07-31 16:09:45 [INFO] import_from_excel_db: Inserted 320 control rooms, 14 switchyards
+2026-07-31 16:09:45 [INFO] import_from_excel_db: ======================================================================
+2026-07-31 16:09:45 [INFO] import_from_excel_db: DONE — Orgs: 234, KMP employees: 881, Control Rooms: 320, Switchyards: 14
+2026-07-31 16:09:45 [INFO] import_from_excel_db: ======================================================================
+2026-08-03 14:36:05 [INFO] __main__: ======================================================================
+2026-08-03 14:36:05 [INFO] __main__: WR_DB_Ready Excel Import
+2026-08-03 14:36:05 [INFO] __main__: DRY RUN
+2026-08-03 14:36:05 [INFO] __main__: ======================================================================
+2026-08-03 14:36:05 [INFO] __main__: Source data: 25 organizations, 196 sub-organizations, 993 employees, 211 control rooms, 14 switchyards
+2026-08-03 14:36:05 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-08-03 14:36:11 [INFO] __main__: ======================================================================
+2026-08-03 14:36:11 [INFO] __main__: WR_DB_Ready Excel Import
+2026-08-03 14:36:11 [INFO] __main__: APPLY MODE — changes will be committed
+2026-08-03 14:36:11 [INFO] __main__: ======================================================================
+2026-08-03 14:36:11 [INFO] __main__: Source data: 25 organizations, 196 sub-organizations, 993 employees, 211 control rooms, 14 switchyards
+2026-08-03 14:36:11 [INFO] __main__: Deleting existing KMP data...
+2026-08-03 14:36:12 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-08-03 14:36:12 [INFO] __main__: Created 25 parent orgs + 196 sub-orgs
+2026-08-03 14:36:12 [INFO] __main__: Inserted 890 KMP employees (46 skipped, 57 skipped as ambiguous shared multi-station roles)
+2026-08-03 14:36:12 [INFO] __main__: Inserted 211 control rooms, 14 switchyards
+2026-08-03 14:36:12 [INFO] __main__: ======================================================================
+2026-08-03 14:36:12 [INFO] __main__: DONE — Orgs: 220, KMP employees: 890, Control Rooms: 211, Switchyards: 14
+2026-08-03 14:36:12 [INFO] __main__: ======================================================================
+2026-08-03 14:44:48 [INFO] __main__: ======================================================================
+2026-08-03 14:44:48 [INFO] __main__: WR_DB_Ready Excel Import
+2026-08-03 14:44:48 [INFO] __main__: DRY RUN
+2026-08-03 14:44:48 [INFO] __main__: ======================================================================
+2026-08-03 14:44:49 [INFO] __main__: Source data: 25 organizations, 196 sub-organizations, 939 employees, 211 control rooms, 14 switchyards
+2026-08-03 14:44:49 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-08-03 14:44:55 [INFO] __main__: ======================================================================
+2026-08-03 14:44:55 [INFO] __main__: WR_DB_Ready Excel Import
+2026-08-03 14:44:55 [INFO] __main__: APPLY MODE — changes will be committed
+2026-08-03 14:44:55 [INFO] __main__: ======================================================================
+2026-08-03 14:44:56 [INFO] __main__: Source data: 25 organizations, 196 sub-organizations, 939 employees, 211 control rooms, 14 switchyards
+2026-08-03 14:44:56 [INFO] __main__: Deleting existing KMP data...
+2026-08-03 14:44:56 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-08-03 14:44:56 [INFO] __main__: Created 25 parent orgs + 196 sub-orgs
+2026-08-03 14:44:56 [INFO] __main__: Inserted 836 KMP employees (46 skipped, 57 skipped as ambiguous shared multi-station roles)
+2026-08-03 14:44:56 [INFO] __main__: Inserted 211 control rooms, 14 switchyards
+2026-08-03 14:44:56 [INFO] __main__: ======================================================================
+2026-08-03 14:44:56 [INFO] __main__: DONE — Orgs: 220, KMP employees: 836, Control Rooms: 211, Switchyards: 14
+2026-08-03 14:44:56 [INFO] __main__: ======================================================================
+2026-08-03 14:52:55 [INFO] __main__: ======================================================================
+2026-08-03 14:52:55 [INFO] __main__: WR_DB_Ready Excel Import
+2026-08-03 14:52:55 [INFO] __main__: APPLY MODE — changes will be committed
+2026-08-03 14:52:55 [INFO] __main__: ======================================================================
+2026-08-03 14:52:55 [INFO] __main__: Source data: 25 organizations, 196 sub-organizations, 882 employees, 211 control rooms, 14 switchyards
+2026-08-03 14:52:55 [INFO] __main__: Deleting existing KMP data...
+2026-08-03 14:52:56 [INFO] __main__: Existing KMP data deleted (not yet committed).
+2026-08-03 14:52:56 [INFO] __main__: Created 25 parent orgs + 196 sub-orgs
+2026-08-03 14:52:56 [INFO] __main__: Inserted 836 KMP employees (46 skipped, 0 skipped as ambiguous shared multi-station roles)
+2026-08-03 14:52:56 [INFO] __main__: Inserted 211 control rooms, 14 switchyards
+2026-08-03 14:52:56 [INFO] __main__: ======================================================================
+2026-08-03 14:52:56 [INFO] __main__: DONE — Orgs: 220, KMP employees: 836, Control Rooms: 211, Switchyards: 14
+2026-08-03 14:52:56 [INFO] __main__: ======================================================================

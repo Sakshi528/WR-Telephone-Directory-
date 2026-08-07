@@ -25,6 +25,11 @@ class UpdateRequest(db.Model):
         db.ForeignKey("directory_numbers.id")
     )
 
+    administrative_head_id = db.Column(
+        db.Integer,
+        db.ForeignKey("administrative_heads.id")
+    )
+
     requested_mobile = db.Column(
         db.String(50)
     )
@@ -65,9 +70,33 @@ class UpdateRequest(db.Model):
         server_default=db.func.now()
     )
 
+    reviewed_by = db.Column(
+        db.Integer,
+        db.ForeignKey("users.id"),
+        nullable=True
+    )
+
+    reviewed_at = db.Column(
+        db.DateTime
+    )
+
+    admin_comment = db.Column(db.Text)
+
+    ip_address = db.Column(db.String(64))
+
+    browser = db.Column(db.String(100))
+
+    operating_system = db.Column(db.String(100))
+
     user = db.relationship(
         "User",
-        back_populates="update_requests"
+        back_populates="update_requests",
+        foreign_keys=[user_id]
+    )
+
+    reviewer = db.relationship(
+        "User",
+        foreign_keys=[reviewed_by]
     )
 
     employee = db.relationship(
@@ -76,4 +105,8 @@ class UpdateRequest(db.Model):
 
     directory_number = db.relationship(
         "DirectoryNumber"
+    )
+
+    administrative_head = db.relationship(
+        "AdministrativeHead"
     )

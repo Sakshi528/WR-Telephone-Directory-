@@ -11,7 +11,8 @@
 
 <div class="container mb-5">
 
-    <!-- Search -->
+    <!-- Search: available on every view, including the landing/category-cards page,
+         so users aren't forced to open a category before they can search. -->
     <form method="GET" class="mb-4">
         <div class="row g-2">
             <div class="col-md-9">
@@ -40,20 +41,79 @@
         </div>
     </form>
 
+    {% if current_category or keyword %}
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <a href="{{ url_for('user.telephone_directory') }}" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>All Categories
+        </a>
+        {% if current_category %}
+        <span class="text-muted">
+            Showing <strong>{{ current_category.category_name }}</strong> organizations
+        </span>
+        {% elif keyword %}
+        <span class="text-muted">
+            Showing results for <strong>"{{ keyword }}"</strong>
+        </span>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {# ── CATEGORY CARDS (LANDING PAGE) ── #}
+    {% if landing %}
+    <p class="text-muted mb-4">Choose a category to browse its organizations, contacts, and control rooms.</p>
+    <div class="row g-3 mb-2">
+        {% for cat in categories %}
+        <div class="col-md-4 col-lg-3">
+            <a href="{{ url_for('user.telephone_directory', category_id=cat.id) }}"
+               class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="card-title fw-semibold mb-2">{{ cat.name }}</h6>
+                        {% if cat.description %}
+                        <p class="small text-muted mb-3">{{ cat.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between small text-muted mb-3">
+                            <span><i class="bi bi-building me-1"></i>{{ cat.organization_count }} organization(s)</span>
+                            <span><i class="bi bi-person-lines-fill me-1"></i>{{ cat.contact_count }} contact(s)</span>
+                        </div>
+                        <div class="btn btn-primary btn-sm mt-auto w-100">
+                            <i class="bi bi-journal-text me-1"></i>View Directory
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     {# ── NO RESULTS ── #}
     {% if keyword and not grouped and not other_numbers %}
     <div class="alert alert-warning">
         No results found for <strong>{{ keyword }}</strong>. Try a broader search term.
     </div>
     {% endif %}
+    {% if current_category and not grouped and not other_numbers %}
+    <div class="alert alert-warning">
+        No organizations found in <strong>{{ current_category.category_name }}</strong>.
+    </div>
+    {% endif %}
 
-    {# ── GROUPED ORG CARDS ── #}
+    {# ── GROUPED ORG CARDS ──
+         Organization headers are click-to-expand, one at a time (Bootstrap
+         accordion via data-bs-parent), so a category with many organizations
+         (e.g. RE Generators) doesn't dump every table onto the page at once.
+         The single result of a narrow search/category expands automatically. #}
     {% if grouped %}
-    <div class="mt-2">
+    <div class="mt-2" id="groupedOrgAccordion">
         {% for org_name, data in grouped.items() %}
-        <div class="card mb-4 shadow-sm border-0">
+        {% set org_collapse_id = "orgCollapse" ~ loop.index %}
+        {% set auto_expand = grouped|length == 1 %}
+        <div class="card mb-3 shadow-sm border-0">
 
-            <div class="card-header org-card-header text-white d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div class="card-header org-card-header text-white d-flex justify-content-between align-items-start flex-wrap gap-2"
+                 role="button" data-bs-toggle="collapse" data-bs-target="#{{ org_collapse_id }}"
+                 aria-expanded="{{ 'true' if auto_expand else 'false' }}">
                 <div>
                     <h5 class="mb-0">
                         <i class="bi bi-building me-2"></i>{{ org_name }}
@@ -65,11 +125,14 @@
                     {% endif %}
                 </div>
                 <a href="{{ url_for('user.export_org_word', org_name=org_name) }}"
-                   class="btn btn-light btn-sm text-dark" title="Export this organisation as Word">
+                   class="btn btn-light btn-sm text-dark" title="Export this organisation as Word"
+                   onclick="event.stopPropagation()">
                     <i class="bi bi-file-earmark-word me-1"></i>Export Word
                 </a>
             </div>
 
+            <div class="collapse{{ ' show' if auto_expand else '' }}" id="{{ org_collapse_id }}"
+                 data-bs-parent="#groupedOrgAccordion">
             <div class="card-body p-0">
 
                 {# Employees + control rooms + switchyards in same table #}
@@ -90,9 +153,16 @@
                         </thead>
                         <tbody>
                             {% for emp in data.employees %}
-                            <tr>
+                            <tr class="{% if emp.status and emp.status != 'ACTIVE' %}table-secondary{% endif %}">
                                 <td class="text-muted">{{ loop.index }}</td>
-                                <td class="fw-semibold">{{ emp.employee_name }}</td>
+                                <td class="fw-semibold">
+                                    {{ emp.employee_name }}
+                                    {% if emp.status and emp.status != 'ACTIVE' %}
+                                    <span class="badge bg-secondary ms-1" title="This employee's directory entry may be outdated">
+                                        <i class="bi bi-exclamation-triangle-fill me-1"></i>{{ emp.status }}
+                                    </span>
+                                    {% endif %}
+                                </td>
                                 <td>{{ emp.designation or '–' }}</td>
                                 <td>{{ emp.office_phone or '–' }}</td>
                                 <td>{{ emp.mobile_phone or '–' }}</td>
@@ -246,13 +316,6 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    {% endif %}
-
-    {% if not keyword %}
-    <div class="alert alert-secondary mt-3">
-        <i class="bi bi-info-circle me-1"></i>
-        Enter an organisation name, employee name, or phone number to search.
     </div>
     {% endif %}
 

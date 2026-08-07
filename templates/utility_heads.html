@@ -4,48 +4,83 @@
 {% block content %}
 
 <div class="page-header">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <div class="container">
         <h2 class="mb-0"><i class="bi bi-person-badge me-2"></i>Utility Heads</h2>
-        <div class="d-flex gap-2">
-            <a href="{{ url_for('user.export_utility_heads', format='xlsx') }}"
-               class="btn btn-success btn-sm" title="Export Excel">
-                <i class="bi bi-file-earmark-excel me-1"></i>Excel
-            </a>
-            <a href="{{ url_for('user.export_utility_heads', format='docx') }}"
-               class="btn btn-secondary btn-sm" title="Export Word">
-                <i class="bi bi-file-earmark-word me-1"></i>Word
-            </a>
-        </div>
     </div>
 </div>
 
 <div class="container mb-5">
 
-    <!-- Search by organization name -->
-    <form method="GET" class="mb-4" id="uhSearchForm">
-        <div class="row g-2 align-items-end">
-            <div class="col-md-6" style="position:relative;">
-                <input type="text" name="keyword" id="uhKeyword" class="form-control"
-                       placeholder="Search by organization name…"
-                       value="{{ keyword }}"
-                       autocomplete="off">
-                <ul id="uhSuggestions"
-                    class="list-group shadow-sm"
-                    style="display:none; position:absolute; z-index:1000;
-                           width:100%; top:100%; left:0; max-height:260px; overflow-y:auto;"></ul>
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-primary">Search</button>
-            </div>
-            {% if keyword %}
-            <div class="col-auto">
-                <a href="{{ url_for('user.utility_heads') }}" class="btn btn-outline-secondary">
-                    <i class="bi bi-x-circle me-1"></i>Clear
-                </a>
-            </div>
-            {% endif %}
+    <!-- Filters -->
+    <form method="GET" id="uhSearchForm" class="row g-2 align-items-end mt-3 mb-3"
+          data-org-cascade
+          data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+          data-organizations-url="{{ url_for('user.api_organizations') }}">
+        <div class="col-md-2">
+            <label class="form-label small text-muted mb-0">Organization Type</label>
+            <select name="category_id" class="form-select form-select-sm" data-org-type-select>
+                <option value="">All Types</option>
+                {% for cat in categories %}
+                <option value="{{ cat.id }}" data-state-based="{{ 'true' if cat.is_state_based else 'false' }}"
+                        {% if cat.id == category_id %}selected{% endif %}>
+                    {{ cat.category_name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-2" style="display:none">
+            <label class="form-label small text-muted mb-0">State</label>
+            <select name="state" class="form-select form-select-sm" data-org-state-select
+                    data-selected-state="{{ state }}">
+                <option value="">All States</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small text-muted mb-0">Organization</label>
+            <select name="organization_id" class="form-select form-select-sm" data-org-select
+                    data-selected-org-id="{{ organization_id or '' }}">
+                <option value="">– Select an Organization Type first –</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small text-muted mb-0">Designation</label>
+            <input type="text" name="designation" class="form-control form-control-sm"
+                   value="{{ designation }}" placeholder="e.g. CEO, MD">
+        </div>
+        <div class="col-md-4" style="position:relative;">
+            <label class="form-label small text-muted mb-0">Search</label>
+            <input type="text" name="keyword" id="uhKeyword" class="form-control form-control-sm"
+                   placeholder="Organization, name, or designation…"
+                   value="{{ keyword }}"
+                   autocomplete="off">
+            <ul id="uhSuggestions"
+                class="list-group shadow-sm"
+                style="display:none; position:absolute; z-index:1000;
+                       width:100%; top:100%; left:0; max-height:260px; overflow-y:auto;"></ul>
         </div>
     </form>
+
+    <!-- Actions -->
+    <div class="d-flex flex-wrap gap-2 mb-3">
+        <button type="submit" form="uhSearchForm" class="btn btn-primary btn-sm">Apply Filters</button>
+        <button type="button" class="btn btn-outline-primary btn-sm" id="uhCopyBtn">
+            <i class="bi bi-clipboard me-1"></i>Copy Emails
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" id="uhComposeBtn">
+            <i class="bi bi-envelope me-1"></i>Compose Email
+        </button>
+        <a href="{{ url_for('user.export_utility_heads', format='xlsx') }}" class="btn btn-success btn-sm">
+            <i class="bi bi-file-earmark-excel me-1"></i>Export Excel
+        </a>
+        <a href="{{ url_for('user.export_utility_heads', format='docx') }}" class="btn btn-secondary btn-sm">
+            <i class="bi bi-file-earmark-word me-1"></i>Export Word
+        </a>
+        {% if keyword or category_id or state or organization_id or designation %}
+        <a href="{{ url_for('user.utility_heads') }}" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-x-lg"></i> Clear
+        </a>
+        {% endif %}
+    </div>
 
     <script>
     (function () {
@@ -96,27 +131,29 @@
     </script>
 
     {% if heads %}
-    <p class="text-muted small mb-3">{{ heads|length }} utility head(s) listed</p>
+    <p class="text-muted small mb-3">
+        {{ heads|length }} Utility Head{{ '' if heads|length == 1 else 's' }} listed
+    </p>
 
     <div class="table-responsive">
         <table class="table table-bordered table-hover align-middle">
             <thead class="table-dark">
                 <tr>
                     <th class="text-center" style="width:55px">Sr No.</th>
-                    <th style="width:15%">Name</th>
-                    <th style="width:14%">Designation</th>
-                    <th style="width:14%">Organization</th>
-                    <th style="width:120px">Office No.</th>
-                    <th style="width:115px">Mobile No.</th>
-                    <th style="width:14%">Email</th>
-                    <th style="min-width:150px">Address</th>
-                    <th class="text-center" style="width:110px">Action</th>
+                    <th>Organization</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Office Phone</th>
+                    <th class="text-center" style="min-width:170px">Action</th>
                 </tr>
             </thead>
             <tbody>
                 {% for emp in heads %}
                 <tr>
                     <td class="text-muted text-center">{{ loop.index }}</td>
+                    <td>{{ emp.organization.organization_name if emp.organization else '–' }}</td>
                     <td class="fw-semibold">
                         {{ emp.employee_name }}
                         <span class="badge bg-success badge-utility ms-1">
@@ -124,17 +161,13 @@
                         </span>
                     </td>
                     <td>{{ emp.designation or '–' }}</td>
-                    <td>{{ emp.organization.organization_name if emp.organization else '–' }}</td>
-                    <td>{{ emp.office_phone or '–' }}</td>
-                    <td>{{ emp.mobile_phone or '–' }}</td>
                     <td>
                         {% if emp.email %}
                             <a href="mailto:{{ emp.email }}">{{ emp.email }}</a>
                         {% else %}–{% endif %}
                     </td>
-                    <td style="white-space:normal; word-break:break-word;">
-                        {{ emp.organization.address if emp.organization and emp.organization.address else '–' }}
-                    </td>
+                    <td>{{ emp.mobile_phone or '–' }}</td>
+                    <td>{{ emp.office_phone or '–' }}</td>
                     <td class="text-center text-nowrap">
                         <a href="{{ url_for('user.employee_details', id=emp.id) }}"
                            class="btn btn-outline-primary btn-sm" title="View">
@@ -151,7 +184,7 @@
                             <button type="submit" class="btn btn-success btn-sm"
                                     title="Remove as Utility Head"
                                     onclick="return confirm('Remove {{ emp.employee_name }} from Utility Heads?')">
-                                <i class="bi bi-star-fill me-1"></i>Remove
+                                <i class="bi bi-star-fill"></i>
                             </button>
                         </form>
                         <form method="POST"
@@ -183,4 +216,28 @@
     {% endif %}
 
 </div>
+
+<script type="application/json" id="uhEmailsData">{{ emails | tojson }}</script>
+<script>
+(function () {
+    var emails = JSON.parse(document.getElementById("uhEmailsData").textContent);
+
+    document.getElementById("uhCopyBtn").addEventListener("click", function (e) {
+        navigator.clipboard.writeText(emails.join(";\n")).then(function () {
+            var btn = e.currentTarget, original = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-check2 me-1"></i>Copied!';
+            setTimeout(function () { btn.innerHTML = original; }, 1500);
+        });
+    });
+
+    document.getElementById("uhComposeBtn").addEventListener("click", function () {
+        var mailto = "mailto:" + encodeURIComponent(emails.join(","));
+        if (mailto.length <= {{ mailto_limit }}) {
+            window.location.href = mailto;
+        } else {
+            alert("Too many recipients (" + emails.length + ") for a mail link — use Copy Emails or Export instead.");
+        }
+    });
+}());
+</script>
 {% endblock %}

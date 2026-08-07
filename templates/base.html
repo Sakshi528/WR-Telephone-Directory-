@@ -44,10 +44,28 @@
                             Utility Heads
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.administrative_heads') }}">
+                            Administrative Heads
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.email_distribution_home') }}">
+                            Email Lists
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('user.directory_versions_list') }}">
+                            <i class="bi bi-file-earmark-text me-1"></i>Directory Versions
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="d-flex gap-2">
                     {% if current_user.is_authenticated and current_user.role == "admin" %}
+                        <a href="{{ url_for('admin.import_history') }}" class="btn btn-sm btn-outline-light">
+                            <i class="bi bi-clock-history me-1"></i>Import History
+                        </a>
                         <a href="{{ url_for('admin.dashboard') }}" class="btn btn-sm btn-outline-light">
                             Admin
                         </a>
@@ -91,6 +109,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/org_type_cascade.js') }}"></script>
 
     <script>
     (function () {

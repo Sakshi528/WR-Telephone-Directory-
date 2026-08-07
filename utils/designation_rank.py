@@ -95,7 +95,8 @@ def compute_utility_head_ids():
     from models.employee import Employee
 
     by_org = defaultdict(list)
-    for e in Employee.query.order_by(Employee.id).all():
+    # Non-ACTIVE employees are never eligible to resolve as a Utility Head.
+    for e in Employee.query.filter(Employee.status == "ACTIVE").order_by(Employee.id).all():
         if e.organization_id is not None:
             by_org[e.organization_id].append(e)
 

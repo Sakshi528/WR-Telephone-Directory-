@@ -1,0 +1,223 @@
+org_id,organization_name,old_category,new_type,derived_state,needs_review
+619,Western Region Load Despatch Centre,RLDC,RLDC,,
+6290,NLDC And RLDCs,RLDC,Others,,YES
+6291,Western Regional Power Committee,Regional Power Committee,Others,,YES
+6292,Black Start Facilitated Stations,Others,Others,,YES
+6293,Maharashtra State Load Despatch Centre,State SLDC,Others,Maharashtra,YES
+6294,Gujarat State Load Despatch Centre,State SLDC,Others,Gujarat,YES
+6295,Madhya Pradesh State Load Despatch Centre,State SLDC,Others,Madhya Pradesh,YES
+6296,Chhattisgarh State Load Despatch Centre,State SLDC,Others,Chhattisgarh,YES
+6297,Goa Electricity Department,State SLDC,Others,Goa,YES
+6298,Daman And Diu,State SLDC,Others,Daman and Diu,YES
+6299,Dadra And Nagar Haveli,State SLDC,Others,Dadra and Nagar Haveli,YES
+6300,NTPC Mumbai Head Quarter (WR-1),Thermal,Others,Maharashtra,YES
+6301,NTPC Raipur Head Quarter (WR-2),Thermal,Others,Chhattisgarh,YES
+6302,Nuclear Power Stations In Western Region,Nuclear,Others,,YES
+6303,ISTS Connected RE Generators In Western Region,RE Generators,Others,,YES
+6304,Qualified Coordinating Agency,Others,Others,,YES
+6305,Other Generating Stations In Western Region,Others,Others,,YES
+6306,Other Transmission Licensees In Western Region,Transmission Utility,Others,,YES
+6307,Other Buyers In Western Region,Others,Others,,YES
+6308,Other Users In Western Region,Others,Others,,YES
+6309,Power Grid Corporation Of India Limited,Transmission Utility,Others,,YES
+6310,Grid Controller Of India Limited,RLDC,Others,,YES
+6311,NTPC,Thermal,Others,,YES
+6312,"POWERGRID WRTS-I, Nagpur",Transmission Utility,Others,,YES
+6313,"POWERGRID WRTS-II, Vadodara",Transmission Utility,Others,,YES
+6314,"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Others,Others,Delhi,YES
+6315,Northern Regional Load Despatch Centre New Delhi,RLDC,RLDC,Delhi,
+6316,"Eastern Regional Load Despatch Centre , Kolkata",RLDC,RLDC,West Bengal,
+6317,"Southern Regional Load Despatch Centre, Bengaluru",RLDC,RLDC,Karnataka,
+6318,"North Eastern Regional Load Despatch Centre, Shillong",RLDC,RLDC,Meghalaya,
+6319,Indira Sagar,Hydel,Hydel,Madhya Pradesh,
+6320,Gandhi Sagar,Generation Company,Generation Company,Madhya Pradesh,
+6321,Pench,Hydel,Hydel,Madhya Pradesh,
+6322,Bargi,Hydel,Hydel,Madhya Pradesh,
+6323,Birshingpur,Hydel,Hydel,Madhya Pradesh,
+6324,Omkareshwar,Hydel,Hydel,Madhya Pradesh,
+6325,Tons,Hydel,Hydel,Madhya Pradesh,
+6326,Manikheda,Hydel,Hydel,Madhya Pradesh,
+6327,Rajghat,Hydel,Hydel,Madhya Pradesh,
+6328,UKAI,Generation Company,Generation Company,Gujarat,
+6329,Kadana,Hydel,Hydel,Gujarat,
+6330,GIPCL 1 & 2,Others,Generation Company,Gujarat,
+6331,Dhuvaran,Thermal,Thermal,Gujarat,
+6332,Sugen,Thermal,Thermal,Gujarat,
+6333,Mini Hydro,Hydel,Hydel,Gujarat,
+6334,Khopoli & Bhivpuri,Hydel,Hydel,Maharashtra,
+6335,Bhira,Hydel,Hydel,Maharashtra,
+6336,"Koyna, Pophali",Hydel,Hydel,Maharashtra,
+6337,Ghatghar,Hydel,Hydel,Maharashtra,
+6338,Trombay,Thermal,Thermal,Maharashtra,
+6339,RGPPL,Thermal,Thermal,Maharashtra,
+6340,Paithan,Hydel,Hydel,Maharashtra,
+6341,Uran,Thermal,Thermal,Maharashtra,
+6342,Hasdeo Bango,Hydel,Hydel,Chhattisgarh,
+6343,Maharashtra State Electricity Transmission Co. Ltd.,Transmission Utility,Transmission Utility,Maharashtra,
+6344,"State Load Despatch Centre, MSETCL",Others,Others,Maharashtra,YES
+6345,"Area Load Despatch Centre, MSETCL,",Others,Others,Maharashtra,YES
+6346,Maharashtra State Electricity Distribution Co. Ltd.,Others,Others,Maharashtra,YES
+6347,MP Power Management CO. LTD.,Others,Others,Madhya Pradesh,YES
+6348,Madhya Pradesh Power Generation Company Limited,Generation Company,Generation Company,Madhya Pradesh,
+6349,NTPC Gandhar,Others,Others,Maharashtra,YES
+6350,NTPC Kawas,Others,Others,Maharashtra,YES
+6351,NTPC Mauda,Thermal,Thermal,Maharashtra,
+6352,NTPC Solapur,Others,Others,Maharashtra,YES
+6353,NTPC Gadarwara,Thermal,Thermal,Madhya Pradesh,
+6354,NTPC Khargone,Thermal,Thermal,Madhya Pradesh,
+6355,NTPC Korba,Thermal,Thermal,Chhattisgarh,
+6356,NTPC Lara,Thermal,Thermal,Chhattisgarh,
+6357,NTPC Sipat,Thermal,Thermal,Chhattisgarh,
+6358,NTPC Vindhyachal,Thermal,Thermal,Madhya Pradesh,
+6359,Tarapur Atomic Power Station Stg-1 & 2,Others,Others,Maharashtra,YES
+6360,Tarapur Atomic Power Station Stg-3 & 4,Others,Others,Maharashtra,YES
+6361,Kakrapar Atomic Power Station Stg-1 & 2,Others,Others,Gujarat,YES
+6362,Kakrapar Atomic Power Station Stg-3 & 4,Others,Others,Gujarat,YES
+6363,Athena Jaipur Solar Power Private Limited,Others,Others,Rajasthan,YES
+6364,Adani Wind Energy Kutch One Limited/ AWEKTL/ AWEKFL,Others,Others,Gujarat,YES
+6365,Arinsun Clean Energy Private Limited,Others,Others,,YES
+6366,Green Infra Wind Energy Limited SECI –II & SECI -II,Others,Others,,YES
+6367,INOX Green Energy Services Limited,Others,Others,,YES
+6368,Mahindra Renewables Private Limited,Others,Others,,YES
+6369,Ostro Kutch Wind Private Limited,Others,Others,Gujarat,YES
+6370,Renew Power Limited,Others,Others,,YES
+6371,Alfanar Energy Private Limited,Others,Others,,YES
+6372,Renew Wind Energy (AP2) Private Limited,Others,Others,,YES
+6373,Continuum Power Trading Private Limited,Others,Others,,YES
+6374,Gujarat Industries Power Company Limited,Others,Others,Gujarat,YES
+6375,Electro Solaire Private Limited,Others,Others,,YES
+6376,Tata Power Renewable Energy Ltd.,RE Generators,RE Generators,,
+6377,NTPC Kawas Solar PV Project,Others,Others,Gujarat,YES
+6378,NTPC Jhanor - Gandhar Solar PV Project,Others,Others,Gujarat,YES
+6379,Ostro Energy Private Limited,Others,Others,,YES
+6380,Adani Wind Energy Kutch Three Limited,Others,Others,Gujarat,YES
+6381,Adani Wind Energy Kutch Five Limited,Others,Others,Gujarat,YES
+6382,Gujarat State Electricity Corporation Limited,Others,Others,Gujarat,YES
+6383,Avikaran Solar India Private Limited,Others,Others,,YES
+6384,Powerica Limited,Others,Others,,YES
+6385,Sitac Kabini Renewables Private Limited,Others,Others,,YES
+6386,Srijan Energy Systems Private Limited,Others,Others,,YES
+6387,Solapur Solar PV Project,Others,Others,Maharashtra,YES
+6388,Adani Wind Energy MP One Private Limited,Others,Others,,YES
+6389,Adani Wind Energy Kutch Four Limited,Others,Others,Gujarat,YES
+6390,Apraava Energy Private Limited (AEPL),Others,Others,,YES
+6391,Alfanar Netra Wind Private Limited,Others,Others,,YES
+6392,Sherisha Raipur,Others,Others,Chhattisgarh,YES
+6393,Wind One Renergy Limited,Others,Others,,YES
+6394,Wind Two Renergy Private Limited,Others,Others,,YES
+6395,Wind Three Renergy Limited,Others,Others,,YES
+6396,Wind Five Renergy Limited,Others,Others,,YES
+6397,Gujarat State Electricity Corporation Limited- Phase II,Others,Others,Gujarat,YES
+6398,TEQ Green Power XI Private Limited,Others,Others,,YES
+6399,NTPC Renewable Energy Limited Shajapur Unit-1,RE Generators,RE Generators,,
+6400,NTPC Renewable Energy Limited Shajapur Unit-2,RE Generators,RE Generators,,
+6401,NTPC Renewable Energy Ltd (Dayapar WEP-Ph-1),RE Generators,RE Generators,,
+6402,TP Saurya Limited Unit-1,Others,Others,,YES
+6403,TP Saurya Limited Unit-2,Others,Others,,YES
+6404,MASAYA Solar Energy Private Limited,Others,Others,,YES
+6405,Torrent Power Limited,Others,Others,,YES
+6406,Talettutayi Solar Projects Nine Pvt Ltd,Others,Others,,YES
+6407,SJVN Green Energy Limited,Others,Others,,YES
+6408,Renew Green (MHS One) Private Limited,Others,Others,,YES
+6409,Renew Green (MHP One) Private Limited,Others,Others,,YES
+6410,Beempow Energy Private Limited,Others,Others,,YES
+6411,AVAADA Sunshine Energy Private Limited,Others,Others,,YES
+6412,Adani Green Energy Twenty Six A Limited -PSS3,Others,Others,,YES
+6413,Adani Green Energy Twenty Six B Limited -PSS3,Others,Others,,YES
+6414,Adani Green Energy Twenty Five A Limited -PSS3,Others,Others,,YES
+6415,Adani Green Energy Twenty Five B Limited -PSS3,Others,Others,,YES
+6416,Adani Green Energy Twenty Four A Limited -PSS3,Others,Others,,YES
+6417,Adani Renewable Energy Fifty Five Limited - PSS3,RE Generators,RE Generators,,
+6418,Adani Renewable Energy Forty One Limited PSS-13,RE Generators,RE Generators,,
+6419,Adani Renewable Energy Fifty Seven Limited PSS-13,RE Generators,RE Generators,,
+6420,Ambuja Cements Limited -PSS-4,Others,Others,,YES
+6421,Ambuja Cements Limited-PSS-3,Others,Others,,YES
+6422,Adani Hazira Port Limited-PSS3,Others,Others,Gujarat,YES
+6423,Adani Renewable Energy Forty Eight Limited-PSS9,RE Generators,RE Generators,,
+6424,Adani Renewable Energy Fifty Six Limited – PSS4,RE Generators,RE Generators,,
+6425,Adani Renewable Energy Holding Four Limited-PSS1,RE Generators,RE Generators,,
+6426,Adani Renewable Energy Forty One Limited - PSS3,RE Generators,RE Generators,,
+6427,Adani Renewable Energy Forty One Limited – PSS4,RE Generators,RE Generators,,
+6428,Adani Renewable Energy Fifty Six Limited – PSS9,RE Generators,RE Generators,,
+6429,Adani Solar Energy Jodhpur Six Private Limited- PSS9,Others,Others,Rajasthan,YES
+6430,Adani Hybrid Energy Jaisalmer Five Limited -PSS4,Others,Others,,YES
+6431,Adani Green Energy Twenty Four Limited – PSS-4,Others,Others,,YES
+6432,Adani Ports And Special Economic Zone Limited -PSS4,Others,Others,,YES
+6433,Adani Ports And Special Economic Zone Limited -PSS3,Others,Others,,YES
+6434,QCA For Bhuj-I ISTS Pooling Station,Others,Others,,YES
+6435,M/S Manikaran Analytics Limited,Others,Others,,YES
+6436,QCA For Regss Of PSS1 & PSS2 At 765/400 kV KPS-1 ISTS Pooling Station,Others,Others,,YES
+6437,M/S Adani Renewable Energy Holding Five Limited,RE Generators,RE Generators,,
+6438,ACB (India) Limited,Others,Others,,YES
+6439,Chakabura 2X30 MW Thermal Power Plant,Thermal,Thermal,,
+6440,SCPL (Ratija) 1X50 MW Thermal Power Plant,Thermal,Thermal,,
+6441,MCCPL 1X300 MW Thermal Power Plant,Thermal,Thermal,,
+6442,Adani Power (Mundra) Limited,Others,Others,Gujarat,YES
+6443,"Adani Power Limited, Tiroda",Others,Others,,YES
+6444,Bharat Aluminum Company Limited,Others,Others,,YES
+6445,The Tata Power Co Limited Mundra (MTPS),Others,Others,Gujarat,YES
+6446,DB Power Limited,Others,Others,,YES
+6447,DGEN Mega Power Project,Others,Others,,YES
+6448,Dhariwal Infrastructure Limited,Others,Others,,YES
+6449,Dongamouha Captive Power Plant (DCPP),Others,Others,,YES
+6450,Mahan Energen Limited (Formally Essar Power (MP) Limited,Others,Others,,YES
+6451,GMR Warora Energy Limited,Others,Others,Maharashtra,YES
+6452,Jaypee Nigrie STPP,Thermal,Thermal,,
+6453,Jhabua Power Limited,Others,Others,,YES
+6454,Jindal Power Limited,Others,Others,,YES
+6455,KSK Mahanadi Power Company Limited (JSW Energy),Others,Others,,YES
+6456,LANCO Amarkantak Power Limited,Others,Others,,YES
+6457,MB Power (MP) Limited,Others,Others,,YES
+6458,NTPC-SAIL Power Company Private Limited (NSPCL),Others,Others,,YES
+6459,Raigarh Energy Generation Limited,Others,Others,Chhattisgarh,YES
+6460,Adani Power Limited - Raipur,Others,Others,Chhattisgarh,YES
+6461,Ratnagiri Gas & Power Private Limited,Thermal,Thermal,Maharashtra,
+6462,RKM Powergen Private Limited,Others,Others,,YES
+6463,SASAN Power Limited,Others,Others,Madhya Pradesh,YES
+6464,SKS Power Generation (C.G) Limited,Generation Company,Generation Company,,
+6465,TRN Energy Private Limited,Others,Others,,YES
+6466,Adani Power Limited,Others,Others,,YES
+6467,AMNS (Essar) Power Transmission Company Limited,Others,Others,,YES
+6468,India Grid Trust (Indigrid),Others,Others,,YES
+6469,"Bhopal - Dhule Transmission Co. Ltd (BDTCL), 765/400 kV Bhopal Sub Station",Others,Others,Madhya Pradesh,YES
+6470,Jabalpur Transmission Co. Ltd (JTCL),Others,Others,Madhya Pradesh,YES
+6471,RAPP Transmission Co. Ltd (RTCL),Others,Others,,YES
+6472,Raichur Sholapur Transmission Company Private Limited (RSTCPL),Others,Others,,YES
+6473,Odisha Generation Phase-II Transmission Limited,Others,Others,,YES
+6474,Khargone Transmission Limited (Khtl),Others,Others,Madhya Pradesh,YES
+6475,Central Operations Control Room ENOC (Energy Network Operations Centre),Others,Others,,YES
+6476,Sterlite Power Transmission Limited,Others,Others,,YES
+6477,Lakadia Vadodara Transmission Project Limited,Others,Others,Gujarat,YES
+6478,Mumbai Urja Marg Limited,Others,Others,Maharashtra,YES
+6479,Goa Tamnar Transmission Project Limited,Others,Others,Goa,YES
+6480,Western Transco Power Limited,Others,Others,,YES
+6481,Warora Kurnool Transmission Limited,Others,Others,Maharashtra,YES
+6482,Kallam Transmission Limited,Others,Others,,YES
+6483,KHAVDA II-A Transmission Limited,Others,Others,,YES
+6484,Sipat Transmission Limited,Others,Others,Chhattisgarh,YES
+6485,WRSS XXI(A) Transco Limited,Others,Others,,YES
+6486,Rajgarh Transmission Limited,Others,Others,,YES
+6487,KPS1 Transmission Ltd,Others,Others,,YES
+6488,Chhattisgarh-WR Transmission Limited,Others,Others,Chhattisgarh,YES
+6489,Khavda-Bhuj Transmission Ltd,Others,Others,,YES
+6490,Lakadia Banaskantha Transco Limited,Others,Others,,YES
+6491,Western Transmission Gujarat Limited,Others,Others,Gujarat,YES
+6492,Raipur-Rajnandgaon-Warora Transmission Limited,Others,Others,Maharashtra,YES
+6493,Jam Khambaliya Transco Limited,Others,Others,,YES
+6494,Arcelormittal Nippon Steel India Limited,Others,Others,,YES
+6495,BARC Facility,Others,Others,,YES
+6496,Heavy Water Board,Others,Others,,YES
+6497,Tata Power Mumbai,Others,Others,Maharashtra,YES
+6498,National High Power Test Laboratory,Others,Others,,YES
+6499,NTPC Vidyut Vyapar Nigam Limited,Others,Others,,YES
+6500,SSNL,Generation Company,Generation Company,,
+6501,Gandhar,Generation Company,Generation Company,,
+6502,"Kalwa, Thane-Belapur",Others,Others,,YES
+6503,Office: Executive Director (Transmission),Others,Others,,YES
+6504,"Office: The Chief Engineer (Sub-Station) CSPTCL, Raipur",Others,Others,,YES
+6505,"Address: Vidhut Siva Bhavan 5th Floor CSEB, Power Company Campus, Dangania",Others,Others,,YES
+6506,"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Others,Others,,YES
+6507,Avaada Gjlakadiya Private Limited,Others,Others,,YES
+6508,SSP,Others,Others,,YES
+6509,Ukai Thermal Power Station,Thermal,Thermal,,
+6510,Ukai Hydro Power Station,Hydel,Hydel,,

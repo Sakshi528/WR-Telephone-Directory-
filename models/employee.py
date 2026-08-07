@@ -1,5 +1,10 @@
 from models import db
 
+EMPLOYEE_STATUSES = [
+    "ACTIVE", "INACTIVE", "TRANSFERRED", "RETIRED", "DEPUTATION", "RESIGNED",
+    "CONTRACT_ENDED", "DECEASED",
+]
+
 
 class Employee(db.Model):
     __tablename__ = "employees"
@@ -61,6 +66,16 @@ class Employee(db.Model):
         db.Boolean,
         nullable=False,
         default=False
+    )
+
+    status = db.Column(
+        db.String(20),
+        nullable=False,
+        default="ACTIVE"
+    )
+
+    status_changed_at = db.Column(
+        db.DateTime
     )
 
     organization = db.relationship(

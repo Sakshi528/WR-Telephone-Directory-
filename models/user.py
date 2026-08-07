@@ -49,5 +49,6 @@ class User(UserMixin, db.Model):
     update_requests = db.relationship(
         "UpdateRequest",
         back_populates="user",
+        foreign_keys="UpdateRequest.user_id",
         lazy=True
     )

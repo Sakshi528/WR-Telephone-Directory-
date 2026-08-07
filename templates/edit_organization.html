@@ -26,6 +26,18 @@
                         <input type="text" name="region" class="form-control"
                                value="{{ organization.region or '' }}" required>
                     </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Category</label>
+                        <select name="category_id" class="form-select">
+                            <option value="">— Uncategorized —</option>
+                            {% for cat in categories %}
+                            <option value="{{ cat.id }}"
+                                {% if organization.category_id == cat.id %}selected{% endif %}>
+                                {{ cat.category_name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
                     <div class="col-12">
                         <label class="form-label">Address <span class="text-danger">*</span></label>
                         <textarea name="address" class="form-control" rows="3" required>{{ organization.address or '' }}</textarea>

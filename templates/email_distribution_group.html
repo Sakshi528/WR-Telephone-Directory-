@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}{{ group.name }} – Email Distribution{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="mb-0"><i class="bi bi-envelope-paper-fill me-2"></i>{{ group.name }}</h2>
+        <a href="{{ url_for('user.email_distribution_home') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>Back
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    {% if group.contact_type_filter %}
+    <form method="GET" class="row g-2 align-items-end mb-3 mt-3">
+        <div class="col-auto">
+            <label class="form-label small text-muted mb-0">Show</label>
+            <select name="contact_type" class="form-select form-select-sm" onchange="this.form.submit()">
+                {% for value, label in contact_type_choices %}
+                <option value="{{ value }}" {% if value == contact_type %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+    {% endif %}
+
+    <!-- Actions, with compact counts set aside on the right -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
+         id="edGroupActions"
+         data-rows="{{ contact_rows|tojson|forceescape }}"
+         data-emails-url="{{ url_for('user.email_distribution_emails_json', slug=group.slug, contact_type=contact_type) }}"
+         data-mailto-limit="{{ mailto_limit }}">
+        <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-outline-primary btn-sm" id="edCopySelected">
+                <i class="bi bi-clipboard-check me-1"></i>Copy Selected Emails
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm" id="edCopyBtn">
+                <i class="bi bi-clipboard me-1"></i>Copy All Emails
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="edCopyNameEmail">
+                <i class="bi bi-person-lines-fill me-1"></i>Copy Name + Email
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="edCopyFullDetails">
+                <i class="bi bi-card-text me-1"></i>Copy Full Details
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" id="edComposeBtn">
+                <i class="bi bi-envelope me-1"></i>Compose Email
+            </button>
+            <a href="{{ url_for('user.email_distribution_export_xlsx', slug=group.slug, contact_type=contact_type) }}"
+               class="btn btn-success btn-sm">
+                <i class="bi bi-file-earmark-excel me-1"></i>Export Excel
+            </a>
+            <a href="{{ url_for('user.email_distribution_export_csv', slug=group.slug, contact_type=contact_type) }}"
+               class="btn btn-secondary btn-sm">
+                <i class="bi bi-filetype-csv me-1"></i>Export CSV
+            </a>
+        </div>
+        <div class="text-muted small text-nowrap">
+            {{ summary.organizations }} Organizations &middot; {{ summary.employees }} Members
+        </div>
+    </div>
+
+    {% if contact_rows %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width:40px">
+                        <input type="checkbox" id="edSelectAll" title="Select all">
+                    </th>
+                    <th>Organization</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                </tr>
+            </thead>
+            <tbody id="edGridBody">
+                {% for row in contact_rows %}
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="ed-row-check" data-idx="{{ loop.index0 }}"></td>
+                    <td>{{ row.organization }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.designation }}</td>
+                    <td>{% if row.email %}<a href="mailto:{{ row.email }}">{{ row.email }}</a>{% else %}–{% endif %}</td>
+                    <td>{{ row.mobile or "–" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-secondary mt-3">
+        <i class="bi bi-info-circle me-1"></i>
+        No members found for this group yet.
+    </div>
+    {% endif %}
+
+</div>
+
+<!-- Mailto fallback modal (list too large for a mailto: link) -->
+<div class="modal fade" id="edMailtoFallbackModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Too many recipients for a mail link</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This list has <strong id="edFallbackCount"></strong> recipients — too many for
+                    your email client to accept as a single link. Copy the list to your clipboard
+                    and paste it into the Bcc field of a new email, or export it and use a
+                    mail-merge tool instead.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" id="edFallbackCopyBtn">
+                    <i class="bi bi-clipboard me-1"></i>Copy Emails
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .col-md-2-4 { flex: 0 0 auto; width: 20%; }
+    @media (max-width: 767px) { .col-md-2-4 { width: 50%; } }
+</style>
+
+<script src="{{ url_for('static', filename='js/email_distribution.js') }}"></script>
+{% endblock %}

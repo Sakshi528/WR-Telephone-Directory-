@@ -47,7 +47,7 @@ from models.organization import Organization
 from models.employee import Employee
 from models.directory_number import DirectoryNumber
 
-WORD_PATH = "uploads/Western Region Phone Directory 2025 Main_Telephone.docx"
+WORD_PATH = "uploads/Western Region Phone Directory 2026 Main_TD.docx"
 OUTPUT_CSV = "reports/directory_reconciliation_report.csv"
 PERFECT_STATIONS_CSV = "reports/perfect_stations.csv"
 

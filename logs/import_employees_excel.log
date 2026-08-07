@@ -1,0 +1,439 @@
+2026-07-08 14:51:29 [INFO] __main__: =================================================================
+2026-07-08 14:51:29 [INFO] __main__: WRLDC Employee Import
+2026-07-08 14:51:29 [INFO] __main__: DRY RUN
+2026-07-08 14:51:29 [INFO] __main__: =================================================================
+2026-07-08 14:51:29 [INFO] __main__: Target org: [619] Western Region Load Despatch Centre
+2026-07-08 14:51:29 [INFO] __main__: Employees to DELETE: 98
+2026-07-08 14:51:29 [INFO] __main__:   - Akash Verma | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Akhil Gupta | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Akib ahemad Anwar Arora | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Aniket Ramlal Walke | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Ashish Rajpal | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Ayush Sharma | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Bablu Kumar | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Badigenchala Raviteja | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Baswa Vamsi Krishna | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Chillimuntha Jagadeesh | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Deshraj Meena | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Dheeraj Gupta | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Dhruv Pandey | EET
+2026-07-08 14:51:29 [INFO] __main__:   - Dinesh M. Vhatkar | Asstt Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Durgesh Kumar | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Ganji Aravind | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Goodelli Madhukar | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Gourav Kumar Mukherjee | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Himanshu Chordia | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Himanshu Verma | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Inuganti V S S R Hemanth Kumar | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Jafar Ahemad Khan | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - K. Haridas | Sr Steno SG-I
+2026-07-08 14:51:29 [INFO] __main__:   - Ketan Chaudhary | EET
+2026-07-08 14:51:29 [INFO] __main__:   - Kollabathula Suresh Kumar | DGM
+2026-07-08 14:51:29 [INFO] __main__:   - Koti Naveen | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Krushna Chandra Pradhan | Ch Mgr (HR)
+2026-07-08 14:51:29 [INFO] __main__:   - Kunal Roy | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Kurapati V K Satyanarayan | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - L Sharath Chand | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - M Ananthakrishnan | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - M.K. Ramesh | ED
+2026-07-08 14:51:29 [INFO] __main__:   - Madhu Kevin Uttankar | DGM (F&A)
+2026-07-08 14:51:29 [INFO] __main__:   - Mahesh Madhukar Mehendale | ED
+2026-07-08 14:51:29 [INFO] __main__:   - Maneesh Khandelwal | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Manoj Kumar Thakur | DGM
+2026-07-08 14:51:29 [INFO] __main__:   - Momai Dey | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Mukin Hasankhan Pathan | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Naga Suresh Movva | DGM
+2026-07-08 14:51:29 [INFO] __main__:   - Narendra Kumar | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Naresh Kumar Mhalas | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Nikhil Krishnarao Naygavhankar | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Omkar Ashok Kumbhar | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Pappu Kumar | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Pavitra Malik | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Pawan Kumar | EET
+2026-07-08 14:51:29 [INFO] __main__:   - Pooja Bhargava | Dy Mgr (F&A)
+2026-07-08 14:51:29 [INFO] __main__:   - Pooja Pandey | Officer (HR)
+2026-07-08 14:51:29 [INFO] __main__:   - Pramod Kumar Prajapati | DGM
+2026-07-08 14:51:29 [INFO] __main__:   - Pramod Singh | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Pranjal Singhaniya | EET
+2026-07-08 14:51:29 [INFO] __main__:   - Prashant Kumar | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Prashanth Kumar Kanakam | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Pratik Shivraj Moon | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Promit Biswas | Jr Officer (HR) Gr.II
+2026-07-08 14:51:29 [INFO] __main__:   - Puppala Vishal Balaram | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Raj Shailendra Mudliar | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Rajesh Kumar | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Ram Singh | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Ramesh Kumar Bhoi | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Ramlakhan Meena | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Rathod Dipak Satishbhai | Mgr (F&A)
+2026-07-08 14:51:29 [INFO] __main__:   - Rishabh Goyal | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Rishabh Jain | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Rishav Kumar | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Ronit Arya | Mgr (F&A)
+2026-07-08 14:51:29 [INFO] __main__:   - S P Barnwal | CGM
+2026-07-08 14:51:29 [INFO] __main__:   - Sachendra Singh | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Saksham Aggarwal | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sammed Sunil Patil | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sandeep Singh Thakur | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sanjay Kumar Swarnkar | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sanjeet Chaudhary | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sanjeev Kumar Chandrakar | CGM
+2026-07-08 14:51:29 [INFO] __main__:   - Satheesh Kumar. R | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Satyendra Singh Raghuwanshi | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Sayed Abbas Haider Abidi | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Selvamani Prabaharan M | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shaik Mastanvali | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shailendra Kumar Verma | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Shalini Agrawal | Asstt Mgr (PR)
+2026-07-08 14:51:29 [INFO] __main__:   - Shardul Mukund Kulkarni | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shekhar Gupta | Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shilpi Kumari | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shivendra Yadav | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shubham Gupta | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Shubham R. Barai | JE Gr-II
+2026-07-08 14:51:29 [INFO] __main__:   - Sravan Verma | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sunil Kamalakar Patil | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sunil Kumar Jaiswal | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Suresh Chandra Bachkheti | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Sushrut Pramod Meshram | Ch Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - T.Muthukumar | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Thorati Mojesh | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Tushar Ranjan Mohapatra | GM
+2026-07-08 14:51:29 [INFO] __main__:   - Vijay Kr. Kodali | DGM
+2026-07-08 14:51:29 [INFO] __main__:   - Vikas Kumar Yadav | Dy Mgr
+2026-07-08 14:51:29 [INFO] __main__:   - Vivek Kumar | Asstt Mgr
+2026-07-08 14:51:29 [INFO] __main__: Employees to IMPORT: 98
+2026-07-08 14:51:29 [INFO] __main__: All 13 departments already exist.
+2026-07-08 14:51:29 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-07-08 15:04:45 [INFO] __main__: =================================================================
+2026-07-08 15:04:45 [INFO] __main__: WRLDC Employee Import
+2026-07-08 15:04:45 [INFO] __main__: APPLY MODE — changes will be committed
+2026-07-08 15:04:45 [INFO] __main__: =================================================================
+2026-07-08 15:04:45 [INFO] __main__: Target org: [619] Western Region Load Despatch Centre
+2026-07-08 15:04:45 [INFO] __main__: Employees to DELETE: 98
+2026-07-08 15:04:45 [INFO] __main__:   - Akash Verma | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Akhil Gupta | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Akib ahemad Anwar Arora | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Aniket Ramlal Walke | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Ashish Rajpal | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Ayush Sharma | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Bablu Kumar | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Badigenchala Raviteja | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Baswa Vamsi Krishna | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Chillimuntha Jagadeesh | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Deshraj Meena | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Dheeraj Gupta | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Dhruv Pandey | EET
+2026-07-08 15:04:45 [INFO] __main__:   - Dinesh M. Vhatkar | Asstt Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Durgesh Kumar | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Ganji Aravind | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Goodelli Madhukar | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Gourav Kumar Mukherjee | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Himanshu Chordia | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Himanshu Verma | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Inuganti V S S R Hemanth Kumar | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Jafar Ahemad Khan | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - K. Haridas | Sr Steno SG-I
+2026-07-08 15:04:45 [INFO] __main__:   - Ketan Chaudhary | EET
+2026-07-08 15:04:45 [INFO] __main__:   - Kollabathula Suresh Kumar | DGM
+2026-07-08 15:04:45 [INFO] __main__:   - Koti Naveen | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Krushna Chandra Pradhan | Ch Mgr (HR)
+2026-07-08 15:04:45 [INFO] __main__:   - Kunal Roy | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Kurapati V K Satyanarayan | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - L Sharath Chand | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - M Ananthakrishnan | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - M.K. Ramesh | ED
+2026-07-08 15:04:45 [INFO] __main__:   - Madhu Kevin Uttankar | DGM (F&A)
+2026-07-08 15:04:45 [INFO] __main__:   - Mahesh Madhukar Mehendale | ED
+2026-07-08 15:04:45 [INFO] __main__:   - Maneesh Khandelwal | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Manoj Kumar Thakur | DGM
+2026-07-08 15:04:45 [INFO] __main__:   - Momai Dey | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Mukin Hasankhan Pathan | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Naga Suresh Movva | DGM
+2026-07-08 15:04:45 [INFO] __main__:   - Narendra Kumar | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Naresh Kumar Mhalas | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Nikhil Krishnarao Naygavhankar | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Omkar Ashok Kumbhar | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Pappu Kumar | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Pavitra Malik | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Pawan Kumar | EET
+2026-07-08 15:04:45 [INFO] __main__:   - Pooja Bhargava | Dy Mgr (F&A)
+2026-07-08 15:04:45 [INFO] __main__:   - Pooja Pandey | Officer (HR)
+2026-07-08 15:04:45 [INFO] __main__:   - Pramod Kumar Prajapati | DGM
+2026-07-08 15:04:45 [INFO] __main__:   - Pramod Singh | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Pranjal Singhaniya | EET
+2026-07-08 15:04:45 [INFO] __main__:   - Prashant Kumar | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Prashanth Kumar Kanakam | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Pratik Shivraj Moon | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Promit Biswas | Jr Officer (HR) Gr.II
+2026-07-08 15:04:45 [INFO] __main__:   - Puppala Vishal Balaram | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Raj Shailendra Mudliar | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Rajesh Kumar | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Ram Singh | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Ramesh Kumar Bhoi | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Ramlakhan Meena | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Rathod Dipak Satishbhai | Mgr (F&A)
+2026-07-08 15:04:45 [INFO] __main__:   - Rishabh Goyal | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Rishabh Jain | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Rishav Kumar | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Ronit Arya | Mgr (F&A)
+2026-07-08 15:04:45 [INFO] __main__:   - S P Barnwal | CGM
+2026-07-08 15:04:45 [INFO] __main__:   - Sachendra Singh | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Saksham Aggarwal | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sammed Sunil Patil | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sandeep Singh Thakur | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sanjay Kumar Swarnkar | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sanjeet Chaudhary | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sanjeev Kumar Chandrakar | CGM
+2026-07-08 15:04:45 [INFO] __main__:   - Satheesh Kumar. R | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Satyendra Singh Raghuwanshi | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Sayed Abbas Haider Abidi | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Selvamani Prabaharan M | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shaik Mastanvali | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shailendra Kumar Verma | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Shalini Agrawal | Asstt Mgr (PR)
+2026-07-08 15:04:45 [INFO] __main__:   - Shardul Mukund Kulkarni | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shekhar Gupta | Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shilpi Kumari | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shivendra Yadav | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shubham Gupta | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Shubham R. Barai | JE Gr-II
+2026-07-08 15:04:45 [INFO] __main__:   - Sravan Verma | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sunil Kamalakar Patil | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sunil Kumar Jaiswal | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Suresh Chandra Bachkheti | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Sushrut Pramod Meshram | Ch Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - T.Muthukumar | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Thorati Mojesh | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Tushar Ranjan Mohapatra | GM
+2026-07-08 15:04:45 [INFO] __main__:   - Vijay Kr. Kodali | DGM
+2026-07-08 15:04:45 [INFO] __main__:   - Vikas Kumar Yadav | Dy Mgr
+2026-07-08 15:04:45 [INFO] __main__:   - Vivek Kumar | Asstt Mgr
+2026-07-08 15:04:45 [INFO] __main__: Employees to IMPORT: 98
+2026-07-08 15:04:45 [INFO] __main__: All 13 departments already exist.
+2026-07-08 15:04:45 [INFO] __main__: Deleted 98 existing employees and their emergency contacts.
+2026-07-08 15:04:45 [INFO] __main__: Imported 98 employees into 'Western Region Load Despatch Centre'.
+2026-07-08 15:04:45 [INFO] __main__: =================================================================
+2026-07-31 13:34:10 [INFO] __main__: =================================================================
+2026-07-31 13:34:10 [INFO] __main__: WRLDC Employee Import
+2026-07-31 13:34:10 [INFO] __main__: DRY RUN
+2026-07-31 13:34:10 [INFO] __main__: =================================================================
+2026-07-31 13:34:10 [INFO] __main__: Target org: [619] Western Region Load Despatch Centre
+2026-07-31 13:34:10 [INFO] __main__: Employees to DELETE: 98
+2026-07-31 13:34:10 [INFO] __main__:   - Akash Verma | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Akhil Gupta | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Akib ahemad Anwar Arora | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Aniket Ramlal Walke | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Ashish Rajpal | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Ayush Sharma | Asstt Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Bablu Kumar | JE Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Badigenchala Raviteja | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Baswa Vamsi Krishna | Asstt Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Chillimuntha Jagadeesh | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Deshraj Meena | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Dheeraj Gupta | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Dhruv Pandey | EET
+2026-07-31 13:34:10 [INFO] __main__:   - Dinesh M. Vhatkar | Asstt Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Durgesh Kumar | JE Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Ganji Aravind | Asstt Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Goodelli Madhukar | GM
+2026-07-31 13:34:10 [INFO] __main__:   - Gourav Kumar Mukherjee | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Himanshu Chordia | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Himanshu Verma | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Inuganti V S S R Hemanth Kumar | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Jafar Ahemad Khan | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - K. Haridas | Sr Steno SG-I
+2026-07-31 13:34:10 [INFO] __main__:   - Ketan Chaudhary | EET
+2026-07-31 13:34:10 [INFO] __main__:   - Kollabathula Suresh Kumar | DGM
+2026-07-31 13:34:10 [INFO] __main__:   - Koti Naveen | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Krushna Chandra Pradhan | Ch Mgr (HR)
+2026-07-31 13:34:10 [INFO] __main__:   - Kunal Roy | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Kurapati V K Satyanarayan | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - L Sharath Chand | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - M Ananthakrishnan | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - M.K. Ramesh | ED
+2026-07-31 13:34:10 [INFO] __main__:   - Madhu Kevin Uttankar | DGM (F&A)
+2026-07-31 13:34:10 [INFO] __main__:   - Mahesh Madhukar Mehendale | ED
+2026-07-31 13:34:10 [INFO] __main__:   - Maneesh Khandelwal | Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Manoj Kumar Thakur | DGM
+2026-07-31 13:34:10 [INFO] __main__:   - Momai Dey | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Mukin Hasankhan Pathan | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Naga Suresh Movva | DGM
+2026-07-31 13:34:10 [INFO] __main__:   - Narendra Kumar | GM
+2026-07-31 13:34:10 [INFO] __main__:   - Naresh Kumar Mhalas | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Nikhil Krishnarao Naygavhankar | Asstt Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Omkar Ashok Kumbhar | Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Pappu Kumar | JE Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Pavitra Malik | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Pawan Kumar | EET
+2026-07-31 13:34:10 [INFO] __main__:   - Pooja Bhargava | Dy Mgr (F&A)
+2026-07-31 13:34:10 [INFO] __main__:   - Pooja Pandey | Officer (HR)
+2026-07-31 13:34:10 [INFO] __main__:   - Pramod Kumar Prajapati | DGM
+2026-07-31 13:34:10 [INFO] __main__:   - Pramod Singh | GM
+2026-07-31 13:34:10 [INFO] __main__:   - Pranjal Singhaniya | EET
+2026-07-31 13:34:10 [INFO] __main__:   - Prashant Kumar | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Prashanth Kumar Kanakam | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Pratik Shivraj Moon | JE Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Promit Biswas | Jr Officer (HR) Gr.II
+2026-07-31 13:34:10 [INFO] __main__:   - Puppala Vishal Balaram | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Raj Shailendra Mudliar | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Rajesh Kumar | Ch Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Ram Singh | Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Ramesh Kumar Bhoi | GM
+2026-07-31 13:34:10 [INFO] __main__:   - Ramlakhan Meena | Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Rathod Dipak Satishbhai | Mgr (F&A)
+2026-07-31 13:34:10 [INFO] __main__:   - Rishabh Goyal | Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Rishabh Jain | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Rishav Kumar | Dy Mgr
+2026-07-31 13:34:10 [INFO] __main__:   - Ronit Arya | Mgr (F&A)
+2026-07-31 13:34:10 [INFO] __main__:   - S P Barnwal | CGM
+2026-07-31 13:34:10 [INFO] __main__:   - Sachendra Singh | JE Gr-II
+2026-07-31 13:34:10 [INFO] __main__:   - Saksham Aggarwal | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sammed Sunil Patil | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sandeep Singh Thakur | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sanjay Kumar Swarnkar | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sanjeet Chaudhary | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sanjeev Kumar Chandrakar | CGM
+2026-07-31 13:34:11 [INFO] __main__:   - Satheesh Kumar. R | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Satyendra Singh Raghuwanshi | GM
+2026-07-31 13:34:11 [INFO] __main__:   - Sayed Abbas Haider Abidi | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Selvamani Prabaharan M | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shaik Mastanvali | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shailendra Kumar Verma | GM
+2026-07-31 13:34:11 [INFO] __main__:   - Shalini Agrawal | Asstt Mgr (PR)
+2026-07-31 13:34:11 [INFO] __main__:   - Shardul Mukund Kulkarni | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shekhar Gupta | Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shilpi Kumari | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shivendra Yadav | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shubham Gupta | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Shubham R. Barai | JE Gr-II
+2026-07-31 13:34:11 [INFO] __main__:   - Sravan Verma | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sunil Kamalakar Patil | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sunil Kumar Jaiswal | GM
+2026-07-31 13:34:11 [INFO] __main__:   - Suresh Chandra Bachkheti | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Sushrut Pramod Meshram | Ch Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - T.Muthukumar | GM
+2026-07-31 13:34:11 [INFO] __main__:   - Thorati Mojesh | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Tushar Ranjan Mohapatra | GM
+2026-07-31 13:34:11 [INFO] __main__:   - Vijay Kr. Kodali | DGM
+2026-07-31 13:34:11 [INFO] __main__:   - Vikas Kumar Yadav | Dy Mgr
+2026-07-31 13:34:11 [INFO] __main__:   - Vivek Kumar | Asstt Mgr
+2026-07-31 13:34:11 [INFO] __main__: Employees to IMPORT: 98
+2026-07-31 13:34:11 [INFO] __main__: All 13 departments already exist.
+2026-07-31 13:34:11 [INFO] __main__: Dry run complete — rerun with --apply to commit
+2026-08-05 15:16:02 [INFO] __main__: =================================================================
+2026-08-05 15:16:02 [INFO] __main__: WRLDC Employee Import
+2026-08-05 15:16:02 [INFO] __main__: DRY RUN
+2026-08-05 15:16:02 [INFO] __main__: =================================================================
+2026-08-05 15:16:02 [INFO] __main__: Target org: [619] Western Region Load Despatch Centre
+2026-08-05 15:16:02 [INFO] __main__: Employees to DELETE: 107
+2026-08-05 15:16:02 [INFO] __main__:   - S.P. Barnwal | CGM
+2026-08-05 15:16:02 [INFO] __main__:   - S.K. Chandrakar | CGM
+2026-08-05 15:16:02 [INFO] __main__:   - R.K. Bhoi | GM
+2026-08-05 15:16:02 [INFO] __main__:   - S.S. Raghuwanshi | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Tushar Ranjan Mahapatra | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Akibahemad Anwar Arora | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - K V K Satyanarayan Gupta | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - R.Satheesh Kumar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Syed Abbas Haider Abidi | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Akash Verma | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Akhil Gupta | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Akib ahemad Anwar Arora | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Aniket Ramlal Walke | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Ashish Rajpal | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Ayush Sharma | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Bablu Kumar | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Badigenchala Raviteja | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Baswa Vamsi Krishna | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Chillimuntha Jagadeesh | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Deshraj Meena | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Dheeraj Gupta | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Dhruv Pandey | EET
+2026-08-05 15:16:02 [INFO] __main__:   - Dinesh M. Vhatkar | Asstt Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Durgesh Kumar | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Ganji Aravind | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Goodelli Madhukar | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Gourav Kumar Mukherjee | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Himanshu Chordia | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Himanshu Verma | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Inuganti V S S R Hemanth Kumar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Jafar Ahemad Khan | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - K. Haridas | Sr Steno SG-I
+2026-08-05 15:16:02 [INFO] __main__:   - Ketan Chaudhary | EET
+2026-08-05 15:16:02 [INFO] __main__:   - Kollabathula Suresh Kumar | DGM
+2026-08-05 15:16:02 [INFO] __main__:   - Koti Naveen | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Krushna Chandra Pradhan | Ch Mgr (HR)
+2026-08-05 15:16:02 [INFO] __main__:   - Kunal Roy | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Kurapati V K Satyanarayan | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - L Sharath Chand | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - M Ananthakrishnan | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - M.K. Ramesh | ED
+2026-08-05 15:16:02 [INFO] __main__:   - Madhu Kevin Uttankar | DGM (F&A)
+2026-08-05 15:16:02 [INFO] __main__:   - Mahesh Madhukar Mehendale | ED
+2026-08-05 15:16:02 [INFO] __main__:   - Maneesh Khandelwal | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Manoj Kumar Thakur | DGM
+2026-08-05 15:16:02 [INFO] __main__:   - Momai Dey | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Mukin Hasankhan Pathan | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Naga Suresh Movva | DGM
+2026-08-05 15:16:02 [INFO] __main__:   - Narendra Kumar | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Naresh Kumar Mhalas | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Nikhil Krishnarao Naygavhankar | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Omkar Ashok Kumbhar | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Pappu Kumar | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Pavitra Malik | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Pawan Kumar | EET
+2026-08-05 15:16:02 [INFO] __main__:   - Pooja Bhargava | Dy Mgr (F&A)
+2026-08-05 15:16:02 [INFO] __main__:   - Pooja Pandey | Officer (HR)
+2026-08-05 15:16:02 [INFO] __main__:   - Pramod Kumar Prajapati | DGM
+2026-08-05 15:16:02 [INFO] __main__:   - Pramod Singh | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Pranjal Singhaniya | EET
+2026-08-05 15:16:02 [INFO] __main__:   - Prashant Kumar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Prashanth Kumar Kanakam | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Pratik Shivraj Moon | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Promit Biswas | Jr Officer (HR) Gr.II
+2026-08-05 15:16:02 [INFO] __main__:   - Puppala Vishal Balaram | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Raj Shailendra Mudliar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Rajesh Kumar | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Ram Singh | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Ramesh Kumar Bhoi | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Ramlakhan Meena | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Rathod Dipak Satishbhai | Mgr (F&A)
+2026-08-05 15:16:02 [INFO] __main__:   - Rishabh Goyal | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Rishabh Jain | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Rishav Kumar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Ronit Arya | Mgr (F&A)
+2026-08-05 15:16:02 [INFO] __main__:   - S P Barnwal | CGM
+2026-08-05 15:16:02 [INFO] __main__:   - Sachendra Singh | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Saksham Aggarwal | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sammed Sunil Patil | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sandeep Singh Thakur | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sanjay Kumar Swarnkar | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sanjeet Chaudhary | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sanjeev Kumar Chandrakar | CGM
+2026-08-05 15:16:02 [INFO] __main__:   - Satheesh Kumar. R | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Satyendra Singh Raghuwanshi | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Sayed Abbas Haider Abidi | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Selvamani Prabaharan M | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shaik Mastanvali | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shailendra Kumar Verma | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Shalini Agrawal | Asstt Mgr (PR)
+2026-08-05 15:16:02 [INFO] __main__:   - Shardul Mukund Kulkarni | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shekhar Gupta | Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shilpi Kumari | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shivendra Yadav | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shubham Gupta | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Shubham R. Barai | JE Gr-II
+2026-08-05 15:16:02 [INFO] __main__:   - Sravan Verma | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sunil Kamalakar Patil | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sunil Kumar Jaiswal | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Suresh Chandra Bachkheti | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Sushrut Pramod Meshram | Ch Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - T.Muthukumar | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Thorati Mojesh | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Tushar Ranjan Mohapatra | GM
+2026-08-05 15:16:02 [INFO] __main__:   - Vijay Kr. Kodali | DGM
+2026-08-05 15:16:02 [INFO] __main__:   - Vikas Kumar Yadav | Dy Mgr
+2026-08-05 15:16:02 [INFO] __main__:   - Vivek Kumar | Asstt Mgr
+2026-08-05 15:16:02 [INFO] __main__: Employees to IMPORT: 98
+2026-08-05 15:16:02 [INFO] __main__: All 13 departments already exist.
+2026-08-05 15:16:02 [INFO] __main__: Dry run complete — rerun with --apply to commit
