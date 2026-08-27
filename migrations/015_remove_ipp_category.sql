@@ -1,0 +1,24 @@
+-- Migration: removes the unused 'IPP' organization category, seeded by
+-- 009_organization_types.sql. reclassify_organization_types.py's own
+-- docstring notes IPP was "currently unpopulated by any rule (no source
+-- signal confidently asserts *non-RE* private ownership for the remaining
+-- generator companies)" -- it stayed empty (0 organizations ever assigned
+-- to it) through every reclassification pass, so it's being dropped
+-- outright rather than left as a permanently-unused option in every
+-- Organization Type dropdown.
+--
+-- Confirmed safe before writing this migration (see
+-- reports/ipp_removal_impact.csv): 0 organizations.category_id reference
+-- it, 0 email_group_filters.category_id reference it -- so the delete
+-- touches no other row via either FK.
+--
+-- Without this migration, deleting the live row alone would NOT be
+-- durable: 009's seed insert uses `ON CONFLICT (category_name) DO NOTHING`,
+-- which only skips the insert when a row already exists -- if 'IPP' is
+-- deleted and migrations are ever replayed from scratch (fresh DB / CI
+-- setup), it would silently come back. This migration makes the removal
+-- explicit and permanent.
+--
+-- Safe to run multiple times (no-op if already deleted).
+
+DELETE FROM organization_categories WHERE category_name = 'IPP';

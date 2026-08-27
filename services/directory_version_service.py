@@ -20,6 +20,7 @@ from services.audit_service import log_audit_event
 from services.pdf_generator import generate_pdf
 from services.excel_generator import generate_excel
 from utils.designation_rank import compute_utility_head_ids
+from utils.section_order import section_sort_key
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -131,7 +132,7 @@ def build_directory_snapshot():
     )
 
     return {
-        "grouped": dict(sorted(grouped.items())),
+        "grouped": dict(sorted(grouped.items(), key=lambda kv: section_sort_key(kv[0]))),
         "other_numbers": other_numbers,
         "utility_heads": utility_heads,
         "administrative_heads": administrative_heads,

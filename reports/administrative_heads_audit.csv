@@ -1,0 +1,4 @@
+id,field,issue_type,raw_value,notes
+36,resolved_email (via Employee),missing_email,,"linked employee 19393 (Vijay Singhal (IAS)) has no email at all -- silently excluded from Copy Selected Emails (dedupe_and_sort blank-filters it), not a crash, but a real gap."
+,(table),no_data,,administrative_head_assistants has 0 rows.
+,(table),no_data,,administrative_head_history has 0 rows.

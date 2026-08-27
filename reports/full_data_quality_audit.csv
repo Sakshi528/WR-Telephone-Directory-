@@ -1,0 +1,27 @@
+id,station,category,field,issue_type(s),raw_value,matched_duplicate_id,notes
+7685,Gujarat State Load Despatch Centre,control_room,name,address_in_name,Shift In Charge (SLDC Gujarat),,address_in_name signals: long parenthetical (address-like); city/state name(s): gujarat
+7688,"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",control_room,name,address_in_name,"Sankalp Velip, GE Alstom, Cuncolim (Back Up Control Room)",,address_in_name signals: long parenthetical (address-like); 2 commas (address-list structure)
+7654,NLDC And RLDCs,control_room,name,address_in_name,NLDC (National Load Despatch Centre),,address_in_name signals: long parenthetical (address-like); org-text hint(s): load despatch centre
+7719,Gujarat Industries Power Company Limited,control_room,name,address_in_name,Gujarat Industries Power Company Limited,,address_in_name signals: city/state name(s): gujarat
+7727,Gujarat State Electricity Corporation Limited,control_room,name,address_in_name,Gujarat State Electricity Corporation Limited,,address_in_name signals: city/state name(s): gujarat
+7744,Gujarat State Electricity Corporation Limited- Phase II,control_room,name,address_in_name,Gujarat State Electricity Corporation Limited- Phase II,,address_in_name signals: city/state name(s): gujarat
+7861,India Grid Trust (Indigrid),control_room,name,address_in_name,Central Operations Control Room ENOC (Energy Network Operations Centre),,address_in_name signals: long parenthetical (address-like)
+7862,"POWERGRID WRTS-I, Nagpur",control_room,name,address_in_name,RTAMC Nagpur,,address_in_name signals: city/state name(s): nagpur
+7872,Jaypee Nigrie STPP,switch_yard,name,address_in_name,Switchyard Desk (Operations),,address_in_name signals: long parenthetical (address-like)
+7859,Chhattisgarh State Load Despatch Centre,control_room,name,address_in_name,Control Room 1 : State Load Despatch Centre Chhattisgarh,,"address_in_name signals: org-text hint(s): state load despatch centre, load despatch centre; city/state name(s): chhattisgarh"
+7860,Chhattisgarh State Load Despatch Centre,control_room,name,address_in_name,"Control Room 2 : Backup State Load Despatch Centre, Chhattisgarh (Khedamara, Bhilai)",,"address_in_name signals: long parenthetical (address-like); 2 commas (address-list structure); 'Backup'; org-text hint(s): state load despatch centre, load despatch centre; city/state name(s): chhattisgarh, bhilai; unusually long name (84 chars)"
+7655,NLDC And RLDCs,control_room,name,address_in_name,NRLDC (Northern Regional Load Despatch Centre),,address_in_name signals: long parenthetical (address-like); org-text hint(s): load despatch centre
+7656,NLDC And RLDCs,control_room,name,address_in_name,ERLDC (Eastern Regional Load Despatch Centre),,address_in_name signals: long parenthetical (address-like); org-text hint(s): load despatch centre
+7657,NLDC And RLDCs,control_room,name,address_in_name,SRLDC (Southern Regional Load Despatch Centre),,address_in_name signals: long parenthetical (address-like); org-text hint(s): load despatch centre
+7658,NLDC And RLDCs,control_room,name,address_in_name,NERLDC (North Eastern Regional Load Despatch Centre),,address_in_name signals: long parenthetical (address-like); org-text hint(s): load despatch centre
+7739,Sherisha Raipur,control_room,name,address_in_name,Sherisha Raipur,,address_in_name signals: city/state name(s): raipur
+7835,SSP,control_room,name,address_in_name,"SCE, CHPH, Control Room",,address_in_name signals: 2 commas (address-list structure)
+7836,SSP,control_room,name,address_in_name,"EMC, Control Room, Indore",,address_in_name signals: 2 commas (address-list structure); city/state name(s): indore
+7673,Khopoli & Bhivpuri,control_room,name,address_in_name,Maharashtra 17. Khopoli & Bhivpuri,,address_in_name signals: city/state name(s): maharashtra
+7681,"Kalwa, Thane-Belapur",control_room,(row),possible_duplicate_row,SLDC-Control room,7682,2 rows share this normalized name for this station+category
+7682,"Kalwa, Thane-Belapur",control_room,(row),possible_duplicate_row,SLDC-Control room,7681,2 rows share this normalized name for this station+category
+7809,The Tata Power Co Limited Mundra (MTPS),control_room,(row),possible_duplicate_row,CGPL Central Control Room,7810,2 rows share this normalized name for this station+category
+7810,The Tata Power Co Limited Mundra (MTPS),control_room,(row),possible_duplicate_row,CGPL Central Control Room,7809,2 rows share this normalized name for this station+category
+7847,Tata Power Mumbai,control_room,(row),possible_duplicate_row,Control Room PSCC,"7848, 7849",3 rows share this normalized name for this station+category
+7848,Tata Power Mumbai,control_room,(row),possible_duplicate_row,Control Room PSCC,"7847, 7849",3 rows share this normalized name for this station+category
+7849,Tata Power Mumbai,control_room,(row),possible_duplicate_row,Control Room PSCC,"7847, 7848",3 rows share this normalized name for this station+category

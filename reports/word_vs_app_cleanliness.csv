@@ -1,0 +1,132 @@
+station,app_has_issue,app_issue_types,word_has_issue,word_issue_types,likely_origin
+ACB (India) Limited,False,,True,duplicated_phone; garbled_field; numbered_prefix,word_only_not_in_app
+AMNS (Essar) Power Transmission Company Limited,False,,True,duplicated_phone,word_only_not_in_app
+AVAADA Sunshine Energy Private Limited,False,,True,garbled_field,word_only_not_in_app
+Adani Green Energy Twenty Five A Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Green Energy Twenty Five B Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Green Energy Twenty Four A Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Green Energy Twenty Four Limited – PSS-4,False,,True,duplicated_phone,word_only_not_in_app
+Adani Green Energy Twenty Six A Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Green Energy Twenty Six B Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Hazira Port Limited-PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Hybrid Energy Jaisalmer Five Limited -PSS4,False,,True,duplicated_phone,word_only_not_in_app
+Adani Ports And Special Economic Zone Limited -PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Ports And Special Economic Zone Limited -PSS4,False,,True,duplicated_phone,word_only_not_in_app
+Adani Power (Mundra) Limited,False,,True,duplicated_phone,word_only_not_in_app
+Adani Power Limited - Raipur,False,,True,duplicated_phone,word_only_not_in_app
+"Adani Power Limited, Tiroda",False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Fifty Five Limited - PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Fifty Seven Limited PSS-13,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Fifty Six Limited – PSS4,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Fifty Six Limited – PSS9,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Forty Eight Limited-PSS9,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Forty One Limited - PSS3,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Forty One Limited PSS-13,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Forty One Limited – PSS4,False,,True,duplicated_phone,word_only_not_in_app
+Adani Renewable Energy Holding Four Limited-PSS1,False,,True,duplicated_phone,word_only_not_in_app
+Adani Solar Energy Jodhpur Six Private Limited- PSS9,False,,True,duplicated_phone,word_only_not_in_app
+Adani Wind Energy Kutch Five Limited,False,,True,duplicated_phone,word_only_not_in_app
+Adani Wind Energy Kutch Four Limited,False,,True,duplicated_phone,word_only_not_in_app
+Adani Wind Energy Kutch One Limited/ AWEKTL/ AWEKFL,False,,True,duplicated_phone,word_only_not_in_app
+Adani Wind Energy Kutch Three Limited,False,,True,duplicated_phone,word_only_not_in_app
+Adani Wind Energy MP One Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Alfanar Energy Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Alfanar Netra Wind Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Ambuja Cements Limited -PSS-4,False,,True,duplicated_phone,word_only_not_in_app
+Ambuja Cements Limited-PSS-3,False,,True,duplicated_phone,word_only_not_in_app
+Arcelormittal Nippon Steel India Limited,False,,True,duplicated_phone,word_only_not_in_app
+Arinsun Clean Energy Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Athena Jaipur Solar Power Private Limited,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Avaada Gjlakadiya Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Avikaran Solar India Private Limited,False,,True,garbled_field,word_only_not_in_app
+Bargi,False,,True,duplicated_phone,word_only_not_in_app
+Beempow Energy Private Limited,False,,True,garbled_field,word_only_not_in_app
+Bharat Aluminum Company Limited,False,,True,duplicated_phone,word_only_not_in_app
+Bhira,False,,True,duplicated_phone,word_only_not_in_app
+Birshingpur,False,,True,duplicated_phone,word_only_not_in_app
+Chhattisgarh State Load Despatch Centre,True,address_in_name,True,address_in_name; duplicated_phone; garbled_field,originated_in_word
+Continuum Power Trading Private Limited,False,,True,garbled_field,word_only_not_in_app
+DB Power Limited,False,,True,duplicated_phone; numbered_prefix,word_only_not_in_app
+DGEN Mega Power Project,False,,True,duplicated_phone,word_only_not_in_app
+Daman And Diu,False,,True,duplicated_phone,word_only_not_in_app
+Dhariwal Infrastructure Limited,False,,True,duplicated_phone,word_only_not_in_app
+Dongamouha Captive Power Plant (DCPP),False,,True,duplicated_phone,word_only_not_in_app
+"Eastern Regional Load Despatch Centre , Kolkata",False,,True,duplicated_phone,word_only_not_in_app
+Electro Solaire Private Limited,False,,True,garbled_field,word_only_not_in_app
+GIPCL 1 & 2,False,,True,duplicated_phone,word_only_not_in_app
+GMR Warora Energy Limited,False,,True,duplicated_phone,word_only_not_in_app
+Gandhar,False,,True,duplicated_phone,word_only_not_in_app
+Gandhi Sagar,False,,True,duplicated_phone,word_only_not_in_app
+Ghatghar,False,,True,duplicated_phone,word_only_not_in_app
+Green Infra Wind Energy Limited SECI –II & SECI -II,False,,True,duplicated_phone,word_only_not_in_app
+Grid Controller Of India Limited,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Gujarat Industries Power Company Limited,True,address_in_name,True,garbled_field,mixed
+Gujarat State Electricity Corporation Limited,True,address_in_name,True,garbled_field,mixed
+Gujarat State Electricity Corporation Limited- Phase II,True,address_in_name,True,garbled_field,mixed
+Gujarat State Load Despatch Centre,True,address_in_name,True,address_in_name; duplicated_phone,originated_in_word
+Hasdeo Bango,False,,True,duplicated_phone,word_only_not_in_app
+India Grid Trust (Indigrid),True,address_in_name,False,,introduced_during_import
+Indira Sagar,False,,True,duplicated_phone,word_only_not_in_app
+Jaypee Nigrie STPP,True,address_in_name,True,address_in_name; duplicated_phone,originated_in_word
+Jhabua Power Limited,False,,True,duplicated_phone,word_only_not_in_app
+Jindal Power Limited,False,,True,duplicated_phone,word_only_not_in_app
+KSK Mahanadi Power Company Limited (JSW Energy),False,,True,duplicated_phone,word_only_not_in_app
+Kadana,False,,True,duplicated_phone,word_only_not_in_app
+Kakrapar Atomic Power Station Stg-1 & 2,False,,True,duplicated_phone,word_only_not_in_app
+Kakrapar Atomic Power Station Stg-3 & 4,False,,True,duplicated_phone,word_only_not_in_app
+"Kalwa, Thane-Belapur",True,possible_duplicate_row,True,duplicated_phone,mixed
+Khopoli & Bhivpuri,True,address_in_name,True,duplicated_phone,mixed
+LANCO Amarkantak Power Limited,False,,True,duplicated_phone,word_only_not_in_app
+MB Power (MP) Limited,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+MP Power Management CO. LTD.,False,,True,address_in_name,word_only_not_in_app
+Madhya Pradesh State Load Despatch Centre,False,,True,duplicated_phone,word_only_not_in_app
+Mahan Energen Limited (Formally Essar Power (MP) Limited,False,,True,duplicated_phone,word_only_not_in_app
+Maharashtra State Load Despatch Centre,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Mini Hydro,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Gandhar,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Jhanor - Gandhar Solar PV Project,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Kawas,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Kawas Solar PV Project,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Khargone,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Korba,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Lara,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Mauda,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Sipat,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Solapur,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Vidyut Vyapar Nigam Limited,False,,True,duplicated_phone,word_only_not_in_app
+NTPC Vindhyachal,False,,True,duplicated_phone,word_only_not_in_app
+NTPC-SAIL Power Company Private Limited (NSPCL),False,,True,duplicated_phone,word_only_not_in_app
+"North Eastern Regional Load Despatch Centre, Shillong",False,,True,duplicated_phone,word_only_not_in_app
+Northern Regional Load Despatch Centre New Delhi,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Omkareshwar,False,,True,duplicated_phone,word_only_not_in_app
+"POWERGRID WRTS-I, Nagpur",True,address_in_name,False,,introduced_during_import
+Pench,False,,True,duplicated_phone,word_only_not_in_app
+Power Grid Corporation Of India Limited,False,,True,duplicated_phone,word_only_not_in_app
+"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Powerica Limited,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+RGPPL,False,,True,duplicated_phone,word_only_not_in_app
+RKM Powergen Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Raigarh Energy Generation Limited,False,,True,duplicated_phone,word_only_not_in_app
+Rajghat,False,,True,address_in_name,word_only_not_in_app
+Ratnagiri Gas & Power Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Renew Power Limited,False,,True,duplicated_phone,word_only_not_in_app
+Renew Wind Energy (AP2) Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+SASAN Power Limited,False,,True,duplicated_phone,word_only_not_in_app
+SKS Power Generation (C.G) Limited,False,,True,duplicated_phone,word_only_not_in_app
+SSP,True,address_in_name,True,address_in_name; duplicated_phone,originated_in_word
+Sherisha Raipur,True,address_in_name,True,duplicated_phone,mixed
+Solapur Solar PV Project,False,,True,garbled_field,word_only_not_in_app
+"Southern Regional Load Despatch Centre, Bengaluru",False,,True,duplicated_phone,word_only_not_in_app
+Sugen,False,,True,duplicated_phone,word_only_not_in_app
+TRN Energy Private Limited,False,,True,duplicated_phone,word_only_not_in_app
+Tarapur Atomic Power Station Stg-1 & 2,False,,True,duplicated_phone,word_only_not_in_app
+Tarapur Atomic Power Station Stg-3 & 4,False,,True,duplicated_phone,word_only_not_in_app
+Tata Power Mumbai,True,possible_duplicate_row,True,duplicated_phone,mixed
+Tata Power Renewable Energy Ltd.,False,,True,duplicated_phone,word_only_not_in_app
+The Tata Power Co Limited Mundra (MTPS),True,possible_duplicate_row,True,duplicated_phone; garbled_field,mixed
+UKAI,False,,True,duplicated_phone,word_only_not_in_app
+Uran,False,,True,duplicated_phone,word_only_not_in_app
+"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",True,address_in_name,True,address_in_name; duplicated_phone,originated_in_word
+Western Region Load Despatch Centre,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Western Regional Power Committee,False,,True,duplicated_phone; garbled_field,word_only_not_in_app
+Wind Two Renergy Private Limited,False,,True,garbled_field,word_only_not_in_app

@@ -1,0 +1,9 @@
+id,station,category,raw_value,signals
+7685,Gujarat State Load Despatch Centre,control_room,Shift In Charge (SLDC Gujarat),long parenthetical (address-like); city/state name(s): gujarat
+7688,"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",control_room,"Sankalp Velip, GE Alstom, Cuncolim (Back Up Control Room)",long parenthetical (address-like); 2 commas (address-list structure)
+7835,SSP,control_room,"SCE, CHPH, Control Room",2 commas (address-list structure)
+7836,SSP,control_room,"EMC, Control Room, Indore",2 commas (address-list structure); city/state name(s): indore
+7861,India Grid Trust (Indigrid),control_room,Central Operations Control Room ENOC (Energy Network Operations Centre),long parenthetical (address-like)
+7872,Jaypee Nigrie STPP,switch_yard,Switchyard Desk (Operations),long parenthetical (address-like)
+7859,Chhattisgarh State Load Despatch Centre,control_room,Control Room 1 : State Load Despatch Centre Chhattisgarh,"org-text hint(s): state load despatch centre, load despatch centre; city/state name(s): chhattisgarh"
+7860,Chhattisgarh State Load Despatch Centre,control_room,"Control Room 2 : Backup State Load Despatch Centre, Chhattisgarh (Khedamara, Bhilai)","long parenthetical (address-like); 2 commas (address-list structure); 'Backup'; org-text hint(s): state load despatch centre, load despatch centre; city/state name(s): chhattisgarh, bhilai; unusually long name (84 chars)"

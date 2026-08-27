@@ -1,0 +1,121 @@
+id,station,category,raw_value,proposed_value,likely_origin
+7653,Western Region Load Despatch Centre,control_room,9869281317 Fax No. 022- 28202693/30 / 9869281317 Fax No. 022- 28202693/30 / 9320399988 8356846298,9869281317 Fax No. 022- 28202693 / 30 / 9320399988 8356846298,mixed
+7659,Gandhi Sagar,control_room,"07427-239118/237256, 237212, 9425805340 / 07427-239118/237256, 237212, 9425805340 / 07427-239118/237256, 237212, 9425805340",07427-239118 / 237256 / 237212 / 9425805340,mixed
+7660,Birshingpur,control_room,07655-262428 / 07655-262428 / 07655-262428,07655-262428,mixed
+7666,Kadana,control_room,02675-237554/ 9925213774/9979889925 / 02675-237554/ 9925213774/9979889925 / 02675-237554/ 9925213774/9979889925,02675-237554 / 9925213774 / 9979889925,mixed
+7667,GIPCL 1 & 2,control_room,"02652230182, 02652230183 Fax No. 0265-2231822 / 02652230182, 02652230183 Fax No. 0265-2231822 / 9909035317",02652230182 / 02652230183 Fax No. 0265-2231822 / 9909035317,mixed
+7671,Sugen,control_room,02621-661664/Fax No. 02621 - 661654 / 02621-661664/Fax No. 02621 - 661654 / 02621-661664/Fax No. 02621 - 661654,02621-661664 / Fax No. 02621 - 661654,originated_in_word
+7672,Mini Hydro,control_room,02624-233510 / 02624-233510 / 9712921574,02624-233510 / 9712921574,originated_in_word
+7674,Bhira,control_room,022-66687091 / 022-25543331 / 022 - 67175377 Fax - 022-67175385 / 022-66687091 / 022-25543331 / 022 - 67175377 Fax - 022-67175385 / 022-66687091 / 022-25543331 / 022 - 67175377 Fax - 022-67175385,022-66687091 / 022-25543331 / 022 - 67175377 Fax - 022-67175385,mixed
+7676,Ghatghar,control_room,02527-235310/311 8411956540 / 8411006637/ 8411956542 / 02527-235310/311 8411956540 / 8411006637/ 8411956542 / 02527-235310/311 8411956540 / 8411006637/ 8411956542,02527-235310 / 311 8411956540 / 8411006637 / 8411956542,mixed
+7678,RGPPL,control_room,02359-241120 / 02359-241120 / 8007060703,02359-241120 / 8007060703,mixed
+7680,Uran,control_room,8879620047/ 48/ 49 & 022-27222235 / 8879620047/ 48/ 49 & 022-27222235 / 09930144837,8879620047 / 48 / 49 & 022-27222235 / 09930144837,mixed
+7686,Madhya Pradesh State Load Despatch Centre,control_room,0761 - 2970601/0761-2668586/2706800 0761-2664343/2660015 / 0761 - 2970601/0761-2668586/2706800 0761-2664343/2660015 / 9425806598,0761 - 2970601 / 0761-2668586 / 2706800 0761-2664343 / 2660015 / 9425806598,originated_in_word
+7691,Daman And Diu,control_room,9909976436 / 9909976436 / 9909976436,9909976436,originated_in_word
+7694,NTPC Kawas,control_room,0261-2860375 FAX 0261- 2861428 / 0261-2860375 FAX 0261- 2861428 / 9426810249,0261-2860375 FAX 0261- 2861428 / 9426810249,originated_in_word
+7695,NTPC Mauda,control_room,7588184339/ 8275045123 / 7588184339/ 8275045123 / 7588184339/ 8275045123,7588184339 / 8275045123,originated_in_word
+7696,NTPC Solapur,control_room,"0217-2252611/ 2461301, 2461303 Fax: 0217-2252580/ 2252280 / 0217-2252611/ 2461301, 2461303 Fax: 0217-2252580/ 2252280 / 0217-2252611/ 2461301, 2461303 Fax: 0217-2252580/ 2252280",0217-2252611 / 2461301 / 2461303 Fax: 0217-2252580 / 2252280,originated_in_word
+7699,NTPC Korba,control_room,07759-237529 07759-237440/ 022- 28306068 (F) / 07759-237529 07759-237440/ 022- 28306068 (F) / 9424141909/ 9004497000,07759-237529 07759-237440 / 022- 28306068 (F) / 9424141909 / 9004497000,originated_in_word
+7700,NTPC Lara,control_room,09109179793 / 09109179793 / 09109179793,09109179793,originated_in_word
+7701,NTPC Sipat,control_room,07752-277660/ 246545/ 246587 / 07752-277660/ 246545/ 246587 / 07752-277660/ 246545/ 246587; 9424140682,07752-277660 / 246545 / 246587 / 9424140682,originated_in_word
+7702,NTPC Vindhyachal,control_room,07805-247755 / 247916 / 07805-247755 / 247916 / 07805-247755 / 247916; 9575301341 / 9575301342,07805-247755 / 247916 / 9575301341 / 9575301342,originated_in_word
+7703,Tarapur Atomic Power Station Stg-1 & 2,control_room,"02525-244126, 02525-244128 (F) / 02525-244126, 02525-244128 (F) / 02525-244126, 02525-244128 (F)",02525-244126 / 02525-244128 (F),originated_in_word
+7704,Tarapur Atomic Power Station Stg-3 & 4,control_room,"02525-244511, 02525-244609 02525-244009, 02525-244100 / 02525-244511, 02525-244609 02525-244009, 02525-244100 / 8552000187, 9423081600; scetaps34@npcil.co.in",02525-244511 / 02525-244609 02525-244009 / 02525-244100 / 8552000187 / 9423081600 / scetaps34@npcil.co.in,originated_in_word
+7705,Kakrapar Atomic Power Station Stg-1 & 2,control_room,07573950841 02626-234280 02626-231231 / 07573950841 02626-234280 02626-231231 / 9499889101,07573950841 02626-234280 02626-231231 / 9499889101,originated_in_word
+7706,Kakrapar Atomic Power Station Stg-3 & 4,control_room,"7573950843, 9409464909, 02626-231248, 02626-242080, Fax: 02626-231501 / 7573950843, 9409464909, 02626-231248, 02626-242080, Fax: 02626-231501 / 7573950843, 9409464909, 02626-231248, 02626-242080, Fax: 02626-231501",7573950843 / 9409464909 / 02626-231248 / 02626-242080 / Fax: 02626-231501,originated_in_word
+7707,Athena Jaipur Solar Power Private Limited,control_room,20220581 / 20220581 / 7067549898,20220581 / 7067549898,originated_in_word
+7708,Adani Wind Energy Kutch One Limited/ AWEKTL/ AWEKFL,control_room,IP No 20221496 / IP No 20221496 / 9316735767,IP No 20221496 / 9316735767,originated_in_word
+7709,Arinsun Clean Energy Private Limited,control_room,SCADA VOIP- 20221492 PSS VOIP - 20221485 / SCADA VOIP- 20221492 PSS VOIP - 20221485,SCADA VOIP- 20221492 PSS VOIP - 20221485,originated_in_word
+7711,Green Infra Wind Energy Limited SECI –II & SECI -II,control_room,+91 124 3896711 / +91 124 3896711,+91 124 3896711,originated_in_word
+7716,Alfanar Energy Private Limited,control_room,Control Room; Hotline- 20220586 / Hotline- 20220586 / 9687042683,Control Room / Hotline- 20220586 / 9687042683,originated_in_word
+7721,Tata Power Renewable Energy Ltd.,control_room,(022)67171159 (022)67171180 / (022)67171159 (022)67171180 / NA,(022)67171159 (022)67171180 / NA,originated_in_word
+7722,NTPC Kawas Solar PV Project,control_room,0261 - 2860375 / 0261 - 2860375,0261 - 2860375,originated_in_word
+7723,NTPC Jhanor - Gandhar Solar PV Project,control_room,(Std Code: 02642)287450 / (Std Code: 02642)287450 / 9426811596 9099948434,(Std Code: 02642)287450 / 9426811596 9099948434,originated_in_word
+7725,Adani Wind Energy Kutch Three Limited,control_room,IP No 20221496 / IP No 20221496 / 9316735767,IP No 20221496 / 9316735767,originated_in_word
+7726,Adani Wind Energy Kutch Five Limited,control_room,IP No 20221496 / IP No 20221496 / 09316735767,IP No 20221496 / 09316735767,originated_in_word
+7728,Avikaran Solar India Private Limited,control_room,+91 6355 827 073 / +91 6355 827 073,+91 6355 827 073,mixed
+7729,Powerica Limited,control_room,Manza PSS VOIP:- 20221503 / Manza PSS VOIP:- 20221503 / +91 6353450165,Manza PSS VOIP:- 20221503 / +91 6353450165,originated_in_word
+7734,Adani Wind Energy MP One Private Limited,control_room,IP No 20220531 / IP No 20220531 / 7227065352,IP No 20220531 / 7227065352,originated_in_word
+7735,Adani Wind Energy Kutch Four Limited,control_room,IP No 20220535 / IP No 20220535 / 6353672066,IP No 20220535 / 6353672066,originated_in_word
+7737,Alfanar Netra Wind Private Limited,control_room,Hotline- 20220529 / Hotline- 20220529 / 9106763679,Hotline- 20220529 / 9106763679,originated_in_word
+7739,Sherisha Raipur,control_room,20220533 / 20220533,20220533,mixed
+7750,Avaada Gjlakadiya Private Limited,control_room,SCADA VOIP/ PSS VOIP: 22651521 / SCADA VOIP/ PSS VOIP: 22651521,SCADA VOIP / PSS VOIP: 22651521,originated_in_word
+7751,Adani Green Energy Twenty Six A Limited -PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7752,Adani Green Energy Twenty Six A Limited -PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7753,Adani Green Energy Twenty Six B Limited -PSS3,control_room,NA / NA / 7227069072,NA / 7227069072,originated_in_word
+7754,Adani Green Energy Twenty Six B Limited -PSS3,control_room,IP No. 20220538 / IP No. 20220538 / 7227069072,IP No. 20220538 / 7227069072,originated_in_word
+7755,Adani Green Energy Twenty Five A Limited -PSS3,control_room,NA / NA / 7227069072,NA / 7227069072,originated_in_word
+7756,Adani Green Energy Twenty Five A Limited -PSS3,control_room,IP No. 20220538 / IP No. 20220538 / 7227069072,IP No. 20220538 / 7227069072,originated_in_word
+7757,Adani Green Energy Twenty Five B Limited -PSS3,control_room,NA / NA / 7227069072,NA / 7227069072,originated_in_word
+7758,Adani Green Energy Twenty Five B Limited -PSS3,control_room,IP No. 20220538 / IP No. 20220538 / 7227069072,IP No. 20220538 / 7227069072,originated_in_word
+7759,Adani Green Energy Twenty Four A Limited -PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7760,Adani Green Energy Twenty Four A Limited -PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7761,Adani Renewable Energy Fifty Five Limited - PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7762,Adani Renewable Energy Fifty Five Limited - PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7763,Adani Renewable Energy Forty One Limited PSS-13,control_room,NA / NA / 7227036279,NA / 7227036279,originated_in_word
+7764,Adani Renewable Energy Forty One Limited PSS-13,control_room,IP No. 20221526 / IP No. 20221526 / 7227036279,IP No. 20221526 / 7227036279,originated_in_word
+7765,Adani Renewable Energy Fifty Seven Limited PSS-13,control_room,NA / NA / 7227036279,NA / 7227036279,originated_in_word
+7766,Adani Renewable Energy Fifty Seven Limited PSS-13,control_room,IP No. 20221526 / IP No. 20221526 / 7227036279,IP No. 20221526 / 7227036279,originated_in_word
+7767,Ambuja Cements Limited -PSS-4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7768,Ambuja Cements Limited -PSS-4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7769,Ambuja Cements Limited-PSS-3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7770,Ambuja Cements Limited-PSS-3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7771,Adani Hazira Port Limited-PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7772,Adani Hazira Port Limited-PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7773,Adani Renewable Energy Forty Eight Limited-PSS9,control_room,NA / NA / 7227036204,NA / 7227036204,originated_in_word
+7774,Adani Renewable Energy Forty Eight Limited-PSS9,control_room,IP No. 20221517 / IP No. 20221517 / 7227036204,IP No. 20221517 / 7227036204,originated_in_word
+7775,Adani Renewable Energy Fifty Six Limited – PSS4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7776,Adani Renewable Energy Fifty Six Limited – PSS4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7777,Adani Renewable Energy Holding Four Limited-PSS1,control_room,NA / NA / 7227092433,NA / 7227092433,originated_in_word
+7778,Adani Renewable Energy Holding Four Limited-PSS1,control_room,IP No. 20221461 / IP No. 20221461 / 7227092433,IP No. 20221461 / 7227092433,originated_in_word
+7779,Adani Renewable Energy Forty One Limited - PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7780,Adani Renewable Energy Forty One Limited - PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7781,Adani Renewable Energy Forty One Limited – PSS4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7782,Adani Renewable Energy Forty One Limited – PSS4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7783,Adani Renewable Energy Fifty Six Limited – PSS9,control_room,NA / NA / 7227036204,NA / 7227036204,originated_in_word
+7784,Adani Renewable Energy Fifty Six Limited – PSS9,control_room,IP No. 20221517 / IP No. 20221517 / 7227036204,IP No. 20221517 / 7227036204,originated_in_word
+7785,Adani Solar Energy Jodhpur Six Private Limited- PSS9,control_room,NA / NA / 7227036204,NA / 7227036204,originated_in_word
+7786,Adani Solar Energy Jodhpur Six Private Limited- PSS9,control_room,IP No. 20221517 / IP No. 20221517 / 7227036204,IP No. 20221517 / 7227036204,originated_in_word
+7787,Adani Hybrid Energy Jaisalmer Five Limited -PSS4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7788,Adani Hybrid Energy Jaisalmer Five Limited -PSS4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7789,Adani Green Energy Twenty Four Limited – PSS-4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7790,Adani Green Energy Twenty Four Limited – PSS-4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7791,Adani Ports And Special Economic Zone Limited -PSS4,control_room,NA / NA / 7227078943,NA / 7227078943,originated_in_word
+7792,Adani Ports And Special Economic Zone Limited -PSS4,control_room,IP No. 20221532 / IP No. 20221532 / 7227078943,IP No. 20221532 / 7227078943,originated_in_word
+7793,Adani Ports And Special Economic Zone Limited -PSS3,control_room,NA / NA / 7227069073,NA / 7227069073,originated_in_word
+7794,Adani Ports And Special Economic Zone Limited -PSS3,control_room,IP No. 20220542 / IP No. 20220542 / 7227069073,IP No. 20220542 / 7227069073,originated_in_word
+7802,ACB (India) Limited,control_room,1x300 MW Control Room; 6262049508 / 6262049508,1x300 MW Control Room / 6262049508,originated_in_word
+7803,Adani Power (Mundra) Limited,control_room,02838-266401 / 02838-266401 / 9687660422,02838-266401 / 9687660422,originated_in_word
+7804,Adani Power (Mundra) Limited,control_room,02838-266402 / 02838-266402 / 9687660700,02838-266402 / 9687660700,originated_in_word
+7805,Adani Power (Mundra) Limited,control_room,02838-266403 / 02838-266403 / 9687660919,02838-266403 / 9687660919,originated_in_word
+7806,Adani Power (Mundra) Limited,control_room,02838-266404 / 02838-266404 / 9687660990,02838-266404 / 9687660990,originated_in_word
+7807,"Adani Power Limited, Tiroda",control_room,07198-271590 / 07198-271590 / 9764800057,07198-271590 / 9764800057,originated_in_word
+7808,Bharat Aluminum Company Limited,control_room,07759-252316 / 07759-252316 / 9981995914/ 6264468552,07759-252316 / 9981995914 / 6264468552,originated_in_word
+7810,The Tata Power Co Limited Mundra (MTPS),control_room,02838-678035 02838-661188 / 02838-678035 02838-661188 / 02838-678035 02838-661188,02838-678035 02838-661188,mixed
+7813,Dhariwal Infrastructure Limited,control_room,9561112098 /9307900219 / 9561112098 /9307900219 / 9561112098 /9307900219,9561112098 / 9307900219,originated_in_word
+7816,Mahan Energen Limited (Formally Essar Power (MP) Limited,control_room,8966902987 / NA / 8966902987,8966902987 / NA,originated_in_word
+7817,GMR Warora Energy Limited,control_room,Control Room; 8550991199 Fax No 07176-267222 / 8550991199 Fax No 07176-267222 / 8550991199 Fax No 07176-267222; 8550991199,Control Room / 8550991199 Fax No 07176-267222 / 8550991199,originated_in_word
+7818,Jhabua Power Limited,control_room,7583804700 / 7583804700 / 7583804700,7583804700,originated_in_word
+7819,Jindal Power Limited,control_room,7583804700 / 7583804700 / 7583804700,7583804700,originated_in_word
+7820,KSK Mahanadi Power Company Limited (JSW Energy),control_room,"7869966844, 7817284011, 9981996983, 9630097902 / 7869966844, 7817284011, 9981996983, 9630097902 / 7869966844, 7817284011, 9981996983, 9630097902",7869966844 / 7817284011 / 9981996983 / 9630097902,originated_in_word
+7821,LANCO Amarkantak Power Limited,control_room,Mob- 9090784411/ 6264794628 / Mob- 9090784411/ 6264794628 / Mob- 9090784411/ 6264794628,Mob- 9090784411 / 6264794628,originated_in_word
+7823,MB Power (MP) Limited,control_room,7773011721 / 7773011721 / 7773011721,7773011721,originated_in_word
+7824,NTPC-SAIL Power Company Private Limited (NSPCL),control_room,"9425293187 /8349994050, 0788-2284011, 0788-2445999, 0788-2284012 / 9425293187 /8349994050, 0788-2284011, 0788-2445999, 0788-2284012 / 9425293187 /8349994050, 0788-2284011, 0788-2445999, 0788-2284012",9425293187 / 8349994050 / 0788-2284011 / 0788-2445999 / 0788-2284012,originated_in_word
+7827,Raigarh Energy Generation Limited,control_room,Control Room; 7583888500 / 7583888500 / 7583888500,Control Room / 7583888500,originated_in_word
+7828,Adani Power Limited - Raipur,control_room,Control Room; 07717163355/7747013533 / 07717163355/7747013533 / 07717163355/7747013533,Control Room / 07717163355 / 7747013533,originated_in_word
+7829,Ratnagiri Gas & Power Private Limited,control_room,Control Room; 8007060703/ 02359-241120 / 8007060703/ 02359-241120 / 8007060703/ 02359-241120,Control Room / 8007060703 / 02359-241120,originated_in_word
+7830,RKM Powergen Private Limited,control_room,773013005 & 9685575988 / 773013005 & 9685575988 / 773013005 & 9685575988,773013005 & 9685575988,originated_in_word
+7831,SASAN Power Limited,control_room,SIC Control Room; 8770890431 / 8770890431 / 8770890431,SIC Control Room / 8770890431,originated_in_word
+7833,SKS Power Generation (C.G) Limited,control_room,7389939074/ 7471143902 / 7389939074/ 7471143902 / 7389939074/ 7471143902,7389939074 / 7471143902,originated_in_word
+7834,SSP,control_room,02640- 232101/232565 +91 6359933142 / 02640- 232101/232565 +91 6359933142 / 02640- 232101/232565 +91 6359933142,02640- 232101 / 232565 +91 6359933142,originated_in_word
+7835,SSP,control_room,02640-233025 +91 6359900626 / 02640-233025 +91 6359900626 / 02640-233025 +91 6359900626,02640-233025 +91 6359900626,originated_in_word
+7836,SSP,control_room,"0731-2552703, 0731-2574633, 0731-4225058, 0731-2575766 / 0731-2552703, 0731-2574633, 0731-4225058, 0731-2575766 / 0731-2552703, 0731-2574633, 0731-4225058, 0731-2575766",0731-2552703 / 0731-2574633 / 0731-4225058 / 0731-2575766,originated_in_word
+7838,TRN Energy Private Limited,control_room,7470444273 / 7470444273 / 7470444273,7470444273,originated_in_word
+7839,AMNS (Essar) Power Transmission Company Limited,control_room,0261 7146596 / 0261 7146596 / 9909993555,0261 7146596 / 9909993555,originated_in_word
+7844,Arcelormittal Nippon Steel India Limited,control_room,0261-6683609/ 6683932 / 0261-6683609/ 6683932 / 9879103310,0261-6683609 / 6683932 / 9879103310,originated_in_word
+7845,Arcelormittal Nippon Steel India Limited,control_room,0261-6688500/ 6688043 / 0261-6688500/ 6688043 / 9909902153,0261-6688500 / 6688043 / 9909902153,originated_in_word
+7847,Tata Power Mumbai,control_room,"9769281234, 8976863517 / 9769281234, 8976863517 / 9769281234, 8976863517",9769281234 / 8976863517,mixed
+7848,Tata Power Mumbai,control_room,022- 25543331 / 67175377 /67175378 / 022- 25543331 / 67175377 /67175378 / 022- 25543331 / 67175377 /67175378,022- 25543331 / 67175377 / 67175378,mixed
+7849,Tata Power Mumbai,control_room,Fax - 022-67175385 / Fax - 022-67175385 / Fax - 022-67175385,Fax - 022-67175385,mixed
+7850,NTPC Vidyut Vyapar Nigam Limited,control_room,0120 4948584 / 2410606 / 0120 4948584 / 2410606 / 0120 4948584 / 2410606,0120 4948584 / 2410606,originated_in_word
+7864,Tarapur Atomic Power Station Stg-1 & 2,switch_yard,"02525-244120, 02525-244128 (F) / 02525-244120, 02525-244128 (F)",02525-244120 / 02525-244128 (F),originated_in_word

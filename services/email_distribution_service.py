@@ -199,7 +199,6 @@ CATEGORY_SLUGS = [
     ("rldc", "RLDC", "RLDCs"),
     ("state-sldc", "State SLDC", "State SLDCs"),
     ("cpsu", "CPSU", "CPSUs"),
-    ("ipp", "IPP", "IPPs"),
     ("re-generators", "RE Generators", "RE Generators"),
     ("discom", "DISCOM", "DISCOMs"),
     ("generation-company", "Generation Company", "Generation Companies"),

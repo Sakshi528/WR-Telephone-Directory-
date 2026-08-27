@@ -26,9 +26,19 @@ def _write_header(ws, headers):
         cell.alignment = Alignment(horizontal="center")
 
 
-def _autosize(ws, width=22):
-    for col in ws.columns:
-        ws.column_dimensions[col[0].column_letter].width = width
+def _autosize(ws, widths=None, width=22):
+    # wrap_text=True on every data cell -- without it, a long value (a
+    # duplicated-phone string, a multi-address email) with no natural
+    # word-wrap either clips at the cell boundary (if its neighbor has
+    # content) or visually spills into a blank neighbor. Not the same
+    # destructive "text drawn on top of text" failure as the docx/PDF bug
+    # (Excel never overlaps two cells' own text), but still a real
+    # readability gap worth fixing while checking for the same bug class.
+    for row in ws.iter_rows(min_row=2):
+        for cell in row:
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
+    for i, col in enumerate(ws.columns, 1):
+        ws.column_dimensions[col[0].column_letter].width = (widths or {}).get(i, width)
 
 
 def _employees_sheet(wb, title, employees):
@@ -41,7 +51,7 @@ def _employees_sheet(wb, title, employees):
         ws.cell(row=row, column=4, value=e.office_phone or "")
         ws.cell(row=row, column=5, value=e.mobile_phone or "")
         ws.cell(row=row, column=6, value=e.email or "")
-    _autosize(ws)
+    _autosize(ws, widths={1: 22, 2: 22, 3: 28, 4: 20, 5: 16, 6: 28})
 
 
 def _heads_sheet(wb, title, heads):
@@ -53,7 +63,7 @@ def _heads_sheet(wb, title, heads):
         ws.cell(row=row, column=3, value=h.organization.organization_name if h.organization else "")
         ws.cell(row=row, column=4, value=h.resolved_mobile_phone or "")
         ws.cell(row=row, column=5, value=h.resolved_email or "")
-    _autosize(ws)
+    _autosize(ws, widths={1: 22, 2: 22, 3: 28, 4: 16, 5: 28})
 
 
 def _numbers_sheet(wb, title, numbers):
@@ -64,7 +74,7 @@ def _numbers_sheet(wb, title, numbers):
         ws.cell(row=row, column=2, value=n.name or "")
         ws.cell(row=row, column=3, value=n.phone_number or "")
         ws.cell(row=row, column=4, value=n.email or "")
-    _autosize(ws)
+    _autosize(ws, widths={1: 28, 2: 22, 3: 24, 4: 28})
 
 
 def _emergency_sheet(wb, contacts):
@@ -75,7 +85,7 @@ def _emergency_sheet(wb, contacts):
         ws.cell(row=row, column=2, value=c.contact_name or "")
         ws.cell(row=row, column=3, value=c.relation or "")
         ws.cell(row=row, column=4, value=c.phone or "")
-    _autosize(ws)
+    _autosize(ws, widths={1: 22, 2: 22, 3: 16, 4: 18})
 
 
 def generate_excel(version, snapshot):

@@ -54,7 +54,29 @@ PERFECT_STATIONS_CSV = "reports/perfect_stations.csv"
 
 # ─── WORD PARSING ────────────────────────────────────────────────────────────
 
-def parse_table_segments_ext(table, fallback_name):
+def looks_like_known_org(text, org_id_by_name_lower):
+    """Guards the banner-row check below: a banner-shaped row (all cells
+    identical) immediately followed by a header row is NOT reliably a new
+    station title on its own -- confirmed by direct inspection that this
+    same shape also occurs for address-only subtitles (e.g. 'Danganiya,
+    Raipur, C.G. - 492013' as a table's first row, immediately followed by
+    a re-printed header) and decorative quotes inserted mid-table between
+    two real employees of the SAME station ('The nice thing about
+    teamwork...'). Both would otherwise silently steal every subsequent
+    row into a bogus pseudo-segment that matches no real organization,
+    permanently orphaning that station's real employees from Word's count.
+    Requiring the banner text to actually resolve to a known Organization
+    (exact or substring match, same rule the final org-matching step
+    already uses) rejects both failure modes while still accepting every
+    genuine case (Power Grid, Grid Controller, NTPC, the State SLDCs,
+    etc. are all real Organization rows)."""
+    key = strip_leading_number(text).strip().lower()
+    if key in org_id_by_name_lower:
+        return True
+    return _best_substring_match(key, org_id_by_name_lower) is not None
+
+
+def parse_table_segments_ext(table, fallback_name, org_id_by_name_lower):
     """Same segmentation as compare_word_excel.parse_table_segments, extended
     to capture actual control-room/switchyard record data (label, phones,
     emails) instead of only a boolean flag. Returns (name, employee_set,
@@ -100,7 +122,7 @@ def parse_table_segments_ext(table, fallback_name):
             return desig_cell
         return name_cell if name_cell.strip() else desig_cell
 
-    for cells in rows_cells:
+    for i, cells in enumerate(rows_cells):
         if not cells:
             continue
         first_cell = cells[0]
@@ -112,6 +134,32 @@ def parse_table_segments_ext(table, fallback_name):
             current_cr = []
             current_sw = []
             continue
+
+        # "banner" title row: every non-empty cell repeats the same text (a
+        # merged title cell spanning the full row width), no leading number
+        # -- e.g. "POWER GRID CORPORATION OF INDIA LIMITED" repeated across
+        # all 7 columns. NUMBERED_TITLE_RE alone misses this pattern
+        # entirely, which silently merged Power Grid, Grid Controller,
+        # WRLDC itself, all 4 State SLDCs, NTPC, both POWERGRID regional
+        # offices, and several RLDCs into whichever preceding
+        # numbered/outer heading's segment -- 16 organizations total,
+        # found and fixed in scripts/full_word_vs_app_field_diff.py first,
+        # ported here since this script's reconciliation report depends on
+        # the same segmentation. Confirmed via lookahead (the next row is a
+        # column-header row) rather than on sight alone, since decorative
+        # quote banners ("Talent wins games...") use the exact same
+        # all-cells-identical shape and would otherwise be misread as
+        # station titles.
+        non_empty = [c for c in cells if c]
+        if len(non_empty) >= 2 and len(set(non_empty)) == 1 and not is_header_row(cells):
+            lookahead = rows_cells[i + 1:i + 3]
+            if any(is_header_row(r) for r in lookahead if r) and looks_like_known_org(non_empty[0], org_id_by_name_lower):
+                flush()
+                current_name = strip_leading_number(non_empty[0])
+                current_employees = {}
+                current_cr = []
+                current_sw = []
+            continue  # banner row itself is never a data row either way
 
         if is_header_row(cells):
             continue
@@ -144,7 +192,7 @@ def parse_table_segments_ext(table, fallback_name):
     return segments
 
 
-def parse_word(path):
+def parse_word(path, org_id_by_name_lower):
     doc = docx.Document(path)
     current_heading = None
     all_segments = []
@@ -153,7 +201,7 @@ def parse_word(path):
             if item.style.name.startswith("Heading") and clean(item.text):
                 current_heading = strip_leading_number(clean(item.text))
             continue
-        all_segments.extend(parse_table_segments_ext(item, current_heading))
+        all_segments.extend(parse_table_segments_ext(item, current_heading, org_id_by_name_lower))
     return all_segments
 
 
@@ -331,7 +379,7 @@ def run():
     with app.app_context():
         db_data = load_db()
 
-    segments = parse_word(WORD_PATH)
+    segments = parse_word(WORD_PATH, db_data["org_id_by_name_lower"])
     all_groups = group_segments(segments, db_data)
 
     # unmatched Word sections (front-matter summaries, vendor/liaison lists)

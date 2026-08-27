@@ -1,4 +1,5 @@
 import io
+import re
 from datetime import datetime
 
 from flask import (
@@ -20,6 +21,7 @@ from models.organization_category import OrganizationCategory
 from models.service_type import ServiceType
 from models.directory_version import DirectoryVersion
 from utils.designation_rank import resolve_utility_head, compute_utility_head_ids
+from utils.section_order import section_sort_key
 from utils.user_agent import parse_user_agent
 from services import head_service
 from services import directory_version_service
@@ -105,7 +107,6 @@ TELEPHONE_DIRECTORY_CATEGORY_DESCRIPTIONS = {
     "RLDC": "Regional and National Load Despatch Centres",
     "State SLDC": "State Load Despatch Centres",
     "CPSU": "Central Public Sector Undertakings",
-    "IPP": "Independent power producers",
     "DISCOM": "State power distribution companies",
     "Generation Company": "Power generation companies and utilities",
     "Thermal": "Thermal power stations",
@@ -474,7 +475,7 @@ def telephone_directory():
         return render_template(
             "telephone_directory.html",
             landing=False,
-            grouped=dict(sorted(grouped.items())),
+            grouped=dict(sorted(grouped.items(), key=lambda kv: section_sort_key(kv[0]))),
             other_numbers=default_other,
             matched_organizations=[],
             keyword="",
@@ -933,6 +934,50 @@ def export_org_word(org_name):
 
 # ─── EXPORT HELPERS ───────────────────────────────────────────────────────────
 
+# Fixes a docx export bug: long phone/email values in a Control Room table
+# cell rendered overlapping the adjacent cell instead of wrapping. Root
+# cause (confirmed by inspecting the generated XML) -- doc.add_table()
+# leaves autofit's underlying <w:tblW type="auto" w="0"/> paired with a
+# naive equal-split <w:tblGrid> (every column gets the same width
+# regardless of what it holds), and phone/email values are long strings
+# with few or no space characters, so many renderers have no wrap point
+# inside a too-narrow column and the text overflows into the next one.
+
+_BREAK_AFTER_RE = re.compile(r"([/;,@-])")
+
+
+def _wrappable(text):
+    """Inserts a zero-width space after /, ;, ,, -, @ separators so Word always
+    has a wrap point inside a long unbroken phone/email string, regardless
+    of column width -- defense-in-depth on top of _set_column_widths below,
+    since even a generously-sized column can't wrap text with no break
+    point at all (e.g. a long duplicated-phone string or a plain email
+    address)."""
+    if not text:
+        return text
+    return _BREAK_AFTER_RE.sub("\\1\u200b", text)
+
+
+def _set_column_widths(table, widths_inches):
+    """Disables autofit-to-window and pins each column to an explicit
+    width, sized to what that column actually holds (Phone/Email columns
+    get more room than Name) -- set on both the table's column AND every
+    cell in it, since Word sometimes honors a cell's own tcW over the
+    shared tblGrid otherwise."""
+    from docx.shared import Inches
+    from docx.oxml.ns import qn
+
+    table.autofit = False
+    tblPr = table._tbl.tblPr
+    layout = tblPr.makeelement(qn("w:tblLayout"), {qn("w:type"): "fixed"})
+    tblPr.append(layout)
+
+    for col_idx, width in enumerate(widths_inches):
+        table.columns[col_idx].width = Inches(width)
+        for row in table.rows:
+            row.cells[col_idx].width = Inches(width)
+
+
 def _export_employees_xlsx(employees, title="Employee Directory"):
     import openpyxl
     from openpyxl.styles import Font, PatternFill, Alignment
@@ -1009,10 +1054,12 @@ def _export_employees_docx(employees, title="Employee Directory"):
         row[0].text = emp.employee_name or ""
         row[1].text = emp.designation or ""
         row[2].text = emp.organization.organization_name if emp.organization else ""
-        row[3].text = emp.office_phone or ""
-        row[4].text = emp.mobile_phone or ""
-        row[5].text = emp.email or ""
+        row[3].text = _wrappable(emp.office_phone or "")
+        row[4].text = _wrappable(emp.mobile_phone or "")
+        row[5].text = _wrappable(emp.email or "")
         row[6].text = "Yes" if emp.id in utility_head_ids else ""
+
+    _set_column_widths(table, [1.0, 0.9, 1.1, 0.8, 0.8, 1.2, 0.5])
 
     buf = io.BytesIO()
     doc.save(buf)
@@ -1047,9 +1094,11 @@ def _export_org_docx(org_name, address, employees, control_rooms):
             r = tbl.add_row().cells
             r[0].text = emp.employee_name or ""
             r[1].text = emp.designation or ""
-            r[2].text = emp.office_phone or ""
-            r[3].text = emp.mobile_phone or ""
-            r[4].text = emp.email or ""
+            r[2].text = _wrappable(emp.office_phone or "")
+            r[3].text = _wrappable(emp.mobile_phone or "")
+            r[4].text = _wrappable(emp.email or "")
+
+        _set_column_widths(tbl, [1.3, 1.2, 1.1, 1.1, 1.8])
 
     if control_rooms:
         doc.add_heading("Control Room", level=2)
@@ -1062,8 +1111,10 @@ def _export_org_docx(org_name, address, employees, control_rooms):
         for cr in control_rooms:
             r = tbl2.add_row().cells
             r[0].text = cr.name or ""
-            r[1].text = cr.phone_number or ""
-            r[2].text = cr.email or ""
+            r[1].text = _wrappable(cr.phone_number or "")
+            r[2].text = _wrappable(cr.email or "")
+
+        _set_column_widths(tbl2, [1.7, 2.3, 2.5])
 
     buf = io.BytesIO()
     doc.save(buf)

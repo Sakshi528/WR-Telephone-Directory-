@@ -65,7 +65,26 @@ def _styles():
     styles.add(ParagraphStyle(
         "CoverMeta", parent=styles["Normal"], fontSize=12, leading=18, alignment=1,
     ))
+    # Table cells MUST use this (via _cell below), not plain strings -- a
+    # reportlab Table only word-wraps Flowable cell content; a plain string
+    # cell is drawn with drawString and never wraps, so a long duplicated-
+    # phone value or long email overflows straight past its column into
+    # the neighboring cell (confirmed via a live Directory Version PDF
+    # screenshot showing exactly that in the Control Rooms table).
+    styles.add(ParagraphStyle(
+        "CellText", parent=styles["Normal"], fontSize=8, leading=10, wordWrap="CJK",
+    ))
     return styles
+
+
+def _cell(value, styles):
+    """Wraps one cell's text in a Paragraph so the table wrapping in
+    _section_table actually applies to it -- see the CellText comment
+    above. wordWrap='CJK' additionally allows a break inside a long
+    unbroken token (a run of digits/no-space text) that has no natural
+    space to wrap at, matching the zero-width-break approach used for the
+    docx exports in routes/user_routes.py for the same underlying problem."""
+    return Paragraph(str(value if value not in (None, "") else "-"), styles["CellText"])
 
 
 def _cover_page(version, styles):
@@ -98,20 +117,22 @@ def _month_name(month):
     return _MONTH_NAMES[month] if 1 <= month <= 12 else str(month)
 
 
-def _section_table(headers, rows, col_widths=None):
-    data = [headers] + rows
+def _section_table(headers, rows, styles, col_widths=None):
+    header_style = ParagraphStyle("CellHeader", parent=styles["CellText"], textColor=colors.white, fontName="Helvetica-Bold")
+    header_row = [Paragraph(h, header_style) for h in headers]
+    data = [header_row] + rows
     table = Table(data, colWidths=col_widths, repeatRows=1)
     table.setStyle(_HEADER_ROW_STYLE)
     return table
 
 
-def _employee_row(emp):
+def _employee_row(emp, styles):
     return [
-        emp.employee_name or "-",
-        emp.designation or "-",
-        emp.office_phone or "-",
-        emp.mobile_phone or "-",
-        emp.email or "-",
+        _cell(emp.employee_name, styles),
+        _cell(emp.designation, styles),
+        _cell(emp.office_phone, styles),
+        _cell(emp.mobile_phone, styles),
+        _cell(emp.email, styles),
     ]
 
 
@@ -122,19 +143,19 @@ def _org_section(org_name, data, styles):
     story.append(Spacer(1, 0.2 * cm))
 
     if data["employees"]:
-        rows = [_employee_row(e) for e in data["employees"]]
+        rows = [_employee_row(e, styles) for e in data["employees"]]
         story.append(_section_table(
-            ["Name", "Designation", "Office", "Mobile", "Email"], rows,
+            ["Name", "Designation", "Office", "Mobile", "Email"], rows, styles,
             col_widths=[4 * cm, 4 * cm, 3 * cm, 3 * cm, 4.5 * cm],
         ))
         story.append(Spacer(1, 0.3 * cm))
 
     for label, key in (("Control Rooms", "control_rooms"), ("Switchyards", "switchyards")):
         if data[key]:
-            rows = [[n.name or "-", n.phone_number or "-", n.email or "-"] for n in data[key]]
+            rows = [[_cell(n.name, styles), _cell(n.phone_number, styles), _cell(n.email, styles)] for n in data[key]]
             story.append(Paragraph(label, styles["Heading2"]))
             story.append(_section_table(
-                ["Name", "Phone", "Email"], rows,
+                ["Name", "Phone", "Email"], rows, styles,
                 col_widths=[6 * cm, 4 * cm, 8.5 * cm],
             ))
             story.append(Spacer(1, 0.3 * cm))
@@ -149,16 +170,16 @@ def _role_section(title, heads, styles):
     story = [Paragraph(title, styles["Heading2"])]
     rows = [
         [
-            h.resolved_name or "-",
-            getattr(h, "role_title", None) or getattr(h, "designation", None) or "-",
-            h.organization.organization_name if h.organization else "-",
-            h.resolved_mobile_phone or "-",
-            h.resolved_email or "-",
+            _cell(h.resolved_name, styles),
+            _cell(getattr(h, "role_title", None) or getattr(h, "designation", None), styles),
+            _cell(h.organization.organization_name if h.organization else None, styles),
+            _cell(h.resolved_mobile_phone, styles),
+            _cell(h.resolved_email, styles),
         ]
         for h in heads
     ]
     story.append(_section_table(
-        ["Name", "Designation", "Organization", "Mobile", "Email"], rows,
+        ["Name", "Designation", "Organization", "Mobile", "Email"], rows, styles,
         col_widths=[3.5 * cm, 3.5 * cm, 3.5 * cm, 2.5 * cm, 5.5 * cm],
     ))
     story.append(Spacer(1, 0.4 * cm))
@@ -169,9 +190,9 @@ def _employees_section(title, employees, styles):
     if not employees:
         return []
     story = [Paragraph(title, styles["Heading2"])]
-    rows = [_employee_row(e) for e in employees]
+    rows = [_employee_row(e, styles) for e in employees]
     story.append(_section_table(
-        ["Name", "Designation", "Office", "Mobile", "Email"], rows,
+        ["Name", "Designation", "Office", "Mobile", "Email"], rows, styles,
         col_widths=[4 * cm, 4 * cm, 3 * cm, 3 * cm, 4.5 * cm],
     ))
     story.append(Spacer(1, 0.4 * cm))
@@ -182,9 +203,9 @@ def _numbers_section(title, numbers, styles):
     if not numbers:
         return []
     story = [Paragraph(title, styles["Heading2"])]
-    rows = [[n.organization or "-", n.name or "-", n.phone_number or "-", n.email or "-"] for n in numbers]
+    rows = [[_cell(n.organization, styles), _cell(n.name, styles), _cell(n.phone_number, styles), _cell(n.email, styles)] for n in numbers]
     story.append(_section_table(
-        ["Organization", "Name", "Phone", "Email"], rows,
+        ["Organization", "Name", "Phone", "Email"], rows, styles,
         col_widths=[4.5 * cm, 4.5 * cm, 3 * cm, 4.5 * cm],
     ))
     story.append(Spacer(1, 0.4 * cm))
@@ -197,13 +218,13 @@ def _emergency_section(contacts, styles):
     story = [Paragraph("Emergency Contacts", styles["Heading2"])]
     rows = [
         [
-            c.employee.employee_name if c.employee else "-",
-            c.contact_name or "-", c.relation or "-", c.phone or "-",
+            _cell(c.employee.employee_name if c.employee else None, styles),
+            _cell(c.contact_name, styles), _cell(c.relation, styles), _cell(c.phone, styles),
         ]
         for c in contacts
     ]
     story.append(_section_table(
-        ["Employee", "Contact Name", "Relation", "Phone"], rows,
+        ["Employee", "Contact Name", "Relation", "Phone"], rows, styles,
         col_widths=[4.5 * cm, 4.5 * cm, 3 * cm, 4.5 * cm],
     ))
     story.append(Spacer(1, 0.4 * cm))

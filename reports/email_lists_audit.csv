@@ -1,0 +1,2 @@
+id,field,issue_type,raw_value,notes
+,(table),no_data,,"email_groups has 0 rows (and group_members / email_group_filters have 0 rows too) -- the Email Lists feature has no saved static or dynamic groups in this database yet, so there is nothing to audit for duplicate/garbled/malformed content."
