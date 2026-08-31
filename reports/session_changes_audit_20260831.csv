@@ -1,0 +1,5 @@
+table,row_id,field,old_value,new_value,reason,timestamp
+employees,19492,mobile_phone,8380015313,8380015313,"Lucas Joao, AE Cuncolim S/S -- mobile blank in app, Word has 8380015313; confirmed distinct from id 19490 (AE Xeldem S/S, mobile 8380015311) by parsing both Word segments directly.",2026-08-31
+employees,19474,office_phone,,0832-2224680,"Stephen Fernandes, Chief Electrical Engineer/HO -- office_phone blank, Word has single clean value 0832-2224680.",2026-08-31
+employees,19475,office_phone,,"0832-2222354, 0832-2312194","Stephen Fernandes, SE Circle II (N) -- office_phone blank, Word has two office lines 0832-2222354, 0832-2312194; applied as-is (dual office-line pattern, not the ambiguous-mobile pattern).",2026-08-31
+employees,19475,mobile_phone,,7719012626,"Stephen Fernandes, SE Circle II (N) -- mobile_phone blank, Word has single clean value 7719012626.",2026-08-31
