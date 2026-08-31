@@ -3,3 +3,290 @@ employees,19492,mobile_phone,8380015313,8380015313,"Lucas Joao, AE Cuncolim S/S 
 employees,19474,office_phone,,0832-2224680,"Stephen Fernandes, Chief Electrical Engineer/HO -- office_phone blank, Word has single clean value 0832-2224680.",2026-08-31
 employees,19475,office_phone,,"0832-2222354, 0832-2312194","Stephen Fernandes, SE Circle II (N) -- office_phone blank, Word has two office lines 0832-2222354, 0832-2312194; applied as-is (dual office-line pattern, not the ambiguous-mobile pattern).",2026-08-31
 employees,19475,mobile_phone,,7719012626,"Stephen Fernandes, SE Circle II (N) -- mobile_phone blank, Word has single clean value 7719012626.",2026-08-31
+employees,19986,office_phone,,0261 7146593,"batch c office_phone backfill, AMNS (Essar) Power Transmission Company Limited / Ashish Kakroo -- Word value '0261 7146593' applied as-is.",2026-08-31
+employees,19985,office_phone,,7509061522,"batch c office_phone backfill, AMNS (Essar) Power Transmission Company Limited / Dilip Rout -- Word value '7509061522' applied as-is.",2026-08-31
+employees,19875,office_phone,,02838-266074,"batch c office_phone backfill, Adani Power (Mundra) Limited / Kalpesh Patel -- Word value '02838-266074' applied as-is.",2026-08-31
+employees,19874,office_phone,,0238-266114,"batch c office_phone backfill, Adani Power (Mundra) Limited / Ketan Joshi -- Word value '0238-266114' applied as-is.",2026-08-31
+employees,19872,office_phone,,02838-266038,"batch c office_phone backfill, Adani Power (Mundra) Limited / Mayankkumar Doshi -- Word value '02838-266038' applied as-is.",2026-08-31
+employees,19878,office_phone,,02838-266059,"batch c office_phone backfill, Adani Power (Mundra) Limited / Milan Popat -- Word value '02838-266059' applied as-is.",2026-08-31
+employees,19876,office_phone,,02838-266309,"batch c office_phone backfill, Adani Power (Mundra) Limited / Mukeshkumar Saravta -- Word value '02838-266309' applied as-is.",2026-08-31
+employees,19873,office_phone,,02838-266006,"batch c office_phone backfill, Adani Power (Mundra) Limited / Mula Ravi -- Word value '02838-266006' applied as-is.",2026-08-31
+employees,19877,office_phone,,02838-266063,"batch c office_phone backfill, Adani Power (Mundra) Limited / Pramod Bihari Prasad -- Word value '02838-266063' applied as-is.",2026-08-31
+employees,19980,office_phone,,022-67675500,"batch c office_phone backfill, Adani Power Limited / Ajit Barodia -- Word value '022-67675500' applied as-is.",2026-08-31
+employees,19981,office_phone,,022-66881154,"batch c office_phone backfill, Adani Power Limited / Akkshay Mathhur -- Word value '022-66881154' applied as-is.",2026-08-31
+employees,19982,office_phone,,079-25556996,"batch c office_phone backfill, Adani Power Limited / Anshul Garg -- Word value '079-25556996' applied as-is.",2026-08-31
+employees,19983,office_phone,,079-25557662,"batch c office_phone backfill, Adani Power Limited / Manoj Taunk -- Word value '079-25557662' applied as-is.",2026-08-31
+employees,19984,office_phone,,022-66881152,"batch c office_phone backfill, Adani Power Limited / Rakesh Bhalerao -- Word value '022-66881152' applied as-is.",2026-08-31
+employees,19879,office_phone,,07198- 271101,"batch c office_phone backfill, Adani Power Limited, Tiroda / Kanti Biswas -- Word value '07198- 271101' applied as-is.",2026-08-31
+employees,19882,office_phone,,079-25557662,"batch c office_phone backfill, Adani Power Limited, Tiroda / Manoj Taunk -- Word value '079-25557662' applied as-is.",2026-08-31
+employees,19883,office_phone,,022-66881152,"batch c office_phone backfill, Adani Power Limited, Tiroda / Rakesh Bhalerao -- Word value '022-66881152' applied as-is.",2026-08-31
+employees,19881,office_phone,,07198- 271694,"batch c office_phone backfill, Adani Power Limited, Tiroda / Sanjay Rangnekar -- Word value '07198- 271694' applied as-is.",2026-08-31
+employees,19880,office_phone,,07198- 271745,"batch c office_phone backfill, Adani Power Limited, Tiroda / V. Bhanu Prakash Rao -- Word value '07198- 271745' applied as-is.",2026-08-31
+employees,19471,office_phone,,0771-2574421,"batch c office_phone backfill, Address: Vidhut Siva Bhavan 5th Floor CSEB, Power Company Campus, Dangania / ER. C.L. NETAM -- Word value '0771-2574421' applied as-is.",2026-08-31
+employees,19472,office_phone,,0771-2574430,"batch c office_phone backfill, Address: Vidhut Siva Bhavan 5th Floor CSEB, Power Company Campus, Dangania / ER. NALINEE KHANDE -- Word value '0771-2574430' applied as-is.",2026-08-31
+employees,19640,office_phone,,0124- 6257802,"batch c office_phone backfill, Alfanar Energy Private Limited / Jitendra Prajapati -- Word value '0124- 6257802' applied as-is.",2026-08-31
+employees,19639,office_phone,,0124- 6257828,"batch c office_phone backfill, Alfanar Energy Private Limited / Mohammed Irfan -- Word value '0124- 6257828' applied as-is.",2026-08-31
+employees,19726,office_phone,,0124- 6257802,"batch c office_phone backfill, Alfanar Netra Wind Private Limited / Jitendra Prajapati -- Word value '0124- 6257802' applied as-is.",2026-08-31
+employees,19725,office_phone,,0124- 6257828,"batch c office_phone backfill, Alfanar Netra Wind Private Limited / Mohammed Irfan -- Word value '0124- 6257828' applied as-is.",2026-08-31
+employees,19722,office_phone,,022 67588863,"batch c office_phone backfill, Apraava Energy Private Limited (AEPL) / Kajal Rout -- Word value '022 67588863' applied as-is.",2026-08-31
+employees,19721,office_phone,,022 66709714,"batch c office_phone backfill, Apraava Energy Private Limited (AEPL) / Sunil Jain -- Word value '022 66709714' applied as-is.",2026-08-31
+employees,20003,office_phone,,0261-6685476,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Naresh Yadav -- Word value '0261-6685476' applied as-is.",2026-08-31
+employees,20008,office_phone,,0261-2788421,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Ninad Desai -- Word value '0261-2788421' applied as-is.",2026-08-31
+employees,20004,office_phone,,0261-6683345,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Nitin Wakhare -- Word value '0261-6683345' applied as-is.",2026-08-31
+employees,20002,office_phone,,0261–6685951,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Ramesh Chabhadiya -- Word value '0261–6685951' applied as-is.",2026-08-31
+employees,20007,office_phone,,02616689100 Ext : 8338,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Ronak Shah -- Word value '02616689100 Ext : 8338' applied as-is.",2026-08-31
+employees,20006,office_phone,,02616689100 Ext : 3511,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / Subir Kumar -- Word value '02616689100 Ext : 3511' applied as-is.",2026-08-31
+employees,20005,office_phone,,0261–6685736,"batch c office_phone backfill, Arcelormittal Nippon Steel India Limited / UdaiBir Singh -- Word value '0261–6685736' applied as-is.",2026-08-31
+employees,20010,office_phone,,02525-286258,"batch c office_phone backfill, BARC Facility / N.K.V.Rao -- Word value '02525-286258' applied as-is.",2026-08-31
+employees,20012,office_phone,,02525-265113,"batch c office_phone backfill, BARC Facility / Office of Deputy Chief Executive -- Word value '02525-265113' applied as-is.",2026-08-31
+employees,20009,office_phone,,02525-290313/ 294313,"batch c office_phone backfill, BARC Facility / P.H. Kshirsagar -- Word value '02525-290313/ 294313' applied as-is.",2026-08-31
+employees,20015,office_phone,,02525-265206,"batch c office_phone backfill, BARC Facility / Shri Biplob Sahoo -- Word value '02525-265206' applied as-is.",2026-08-31
+employees,20011,office_phone,,02525-290350/ 294350,"batch c office_phone backfill, BARC Facility / Shri Raj Kumar -- Word value '02525-290350/ 294350' applied as-is.",2026-08-31
+employees,20014,office_phone,,02525-265144,"batch c office_phone backfill, BARC Facility / Shri. Awinash Kumar -- Word value '02525-265144' applied as-is.",2026-08-31
+employees,20013,office_phone,,022-25597929,"batch c office_phone backfill, BARC Facility / Shri. C.V. Raman -- Word value '022-25597929' applied as-is.",2026-08-31
+employees,19318,office_phone,,0761-2880268/ 2905259,"batch c office_phone backfill, Bargi / Vivek Banjhal -- Word value '0761-2880268/ 2905259' applied as-is.",2026-08-31
+employees,19889,office_phone,,07759-252975,"batch c office_phone backfill, Bharat Aluminum Company Limited / Ankita Chauhan -- Word value '07759-252975' applied as-is.",2026-08-31
+employees,19884,office_phone,,07759-252506,"batch c office_phone backfill, Bharat Aluminum Company Limited / Mantosh Sinha -- Word value '07759-252506' applied as-is.",2026-08-31
+employees,19885,office_phone,,07759-252480,"batch c office_phone backfill, Bharat Aluminum Company Limited / Mayank Shrivastava -- Word value '07759-252480' applied as-is.",2026-08-31
+employees,19888,office_phone,,07759-252329,"batch c office_phone backfill, Bharat Aluminum Company Limited / Niranjan Kumar Athisamy -- Word value '07759-252329' applied as-is.",2026-08-31
+employees,19887,office_phone,,07759-252492,"batch c office_phone backfill, Bharat Aluminum Company Limited / Prashant Kumar -- Word value '07759-252492' applied as-is.",2026-08-31
+employees,19892,office_phone,,07759-252492,"batch c office_phone backfill, Bharat Aluminum Company Limited / Rajneesh Kaushal -- Word value '07759-252492' applied as-is.",2026-08-31
+employees,19886,office_phone,,07759-252648,"batch c office_phone backfill, Bharat Aluminum Company Limited / Sangeet Sahu -- Word value '07759-252648' applied as-is.",2026-08-31
+employees,19890,office_phone,,07759-252492,"batch c office_phone backfill, Bharat Aluminum Company Limited / Sayan Ghosh -- Word value '07759-252492' applied as-is.",2026-08-31
+employees,19891,office_phone,,07759-252492,"batch c office_phone backfill, Bharat Aluminum Company Limited / Vikash Agrawal -- Word value '07759-252492' applied as-is.",2026-08-31
+employees,19352,office_phone,,06540278012,"batch c office_phone backfill, Bhira / Ajay Konnur -- Word value '06540278012' applied as-is.",2026-08-31
+employees,19351,office_phone,,022-67175371,"batch c office_phone backfill, Bhira / Pallikuth Devanand -- Word value '022-67175371' applied as-is.",2026-08-31
+employees,19464,office_phone,,0788-2282024 0788-2282025,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / --- -- Word value '0788-2282024 0788-2282025' applied as-is.",2026-08-31
+employees,19444,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. G.S. GIVDONDE -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19454,office_phone,,0788-2282025,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. JUVENA GOMES -- Word value '0788-2282025' applied as-is.",2026-08-31
+employees,19446,office_phone,,0771-2574189,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. KETAN MISHRA -- Word value '0771-2574189' applied as-is.",2026-08-31
+employees,19443,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. MAHENDRA KUMAR SINGH -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19441,office_phone,,0771-2574193,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. MANOJ KUMAR RAWTE -- Word value '0771-2574193' applied as-is.",2026-08-31
+employees,19445,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. NIRBHAY KULKARNI -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19452,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. OM PRAKASH SAHU -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19451,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PRAKASH SINGH -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19438,office_phone,,0788-2282025,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PRASHANT SONI -- Word value '0788-2282025' applied as-is.",2026-08-31
+employees,19447,office_phone,,0771-2574196,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PRATIBHA KHUNTE -- Word value '0771-2574196' applied as-is.",2026-08-31
+employees,19458,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PREETI GUPTA -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19463,office_phone,,0771-2574199,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PREETI SAHU -- Word value '0771-2574199' applied as-is.",2026-08-31
+employees,19440,office_phone,,0771-2574186,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PREM KUMAR DEWANGAN -- Word value '0771-2574186' applied as-is.",2026-08-31
+employees,19453,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PREM KUMAR JAISWAL -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19449,office_phone,,0771-2574193,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. PUSHKAR PRASAD VERMA -- Word value '0771-2574193' applied as-is.",2026-08-31
+employees,19457,office_phone,,0771-2574186,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. REKHA SHARMA -- Word value '0771-2574186' applied as-is.",2026-08-31
+employees,19461,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. RENUKA PANNA -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19456,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. S.GANESH -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19450,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. SANDEEP KUMAR DEWANGAN -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19455,office_phone,,0771-2574195,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. SANDEEPA DEWANGAN -- Word value '0771-2574195' applied as-is.",2026-08-31
+employees,19439,office_phone,,0771-2574204,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. SUDESHNA PAL -- Word value '0771-2574204' applied as-is.",2026-08-31
+employees,19442,office_phone,,0788-2282025,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. THALESHWARI SONWANI -- Word value '0788-2282025' applied as-is.",2026-08-31
+employees,19462,office_phone,,0771-2574198,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / ER. TUSHAR SWAMI -- Word value '0771-2574198' applied as-is.",2026-08-31
+employees,19428,office_phone,,"0771-4066899, 2574500, 2262141","batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / Shri Rajesh Kumar Shukla -- Word value '0771-4066899, 2574500, 2262141' applied as-is.",2026-08-31
+employees,19427,office_phone,,"0771-4066900 , 4066900, 4028882","batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / Shri Subodh Kumar Singh, [IAS] -- Word value '0771-4066900 , 4066900, 4028882' applied as-is.",2026-08-31
+employees,19465,office_phone,,0788-2282025,"batch c office_phone backfill, Chhattisgarh State Load Despatch Centre / Shri. A.K. Chakraborty -- Word value '0788-2282025' applied as-is.",2026-08-31
+employees,19907,office_phone,,02641 202534,"batch c office_phone backfill, DGEN Mega Power Project / Dushyant Patel -- Word value '02641 202534' applied as-is.",2026-08-31
+employees,19909,office_phone,,02621-261171/ 02621-261175,"batch c office_phone backfill, DGEN Mega Power Project / Kishan Singh -- Word value '02621-261171/ 02621-261175' applied as-is.",2026-08-31
+employees,19906,office_phone,,02641 202527,"batch c office_phone backfill, DGEN Mega Power Project / Rikin Patel -- Word value '02641 202527' applied as-is.",2026-08-31
+employees,19908,office_phone,,02621 261138,"batch c office_phone backfill, DGEN Mega Power Project / Ronak Naik -- Word value '02621 261138' applied as-is.",2026-08-31
+employees,19517,office_phone,,"0260-2406561,562,563","batch c office_phone backfill, Dadra And Nagar Haveli / B. R PATEL -- Word value '0260-2406561,562,563' applied as-is.",2026-08-31
+employees,19514,office_phone,,0260-2406558,"batch c office_phone backfill, Dadra And Nagar Haveli / C.A PARMAR -- Word value '0260-2406558' applied as-is.",2026-08-31
+employees,19515,office_phone,,0260-2406539 Fax : 0260-2642338,"batch c office_phone backfill, Dadra And Nagar Haveli / H. M PATEL -- Word value '0260-2406539 Fax : 0260-2642338' applied as-is.",2026-08-31
+employees,19516,office_phone,,0260-2406509,"batch c office_phone backfill, Dadra And Nagar Haveli / V.R VERMA -- Word value '0260-2406509' applied as-is.",2026-08-31
+employees,19510,office_phone,,0260-2408816,"batch c office_phone backfill, Daman And Diu / Dilesh Solanki -- Word value '0260-2408816' applied as-is.",2026-08-31
+employees,19511,office_phone,,0260-2408804,"batch c office_phone backfill, Daman And Diu / Jay Solanki -- Word value '0260-2408804' applied as-is.",2026-08-31
+employees,19509,office_phone,,0260-2408800,"batch c office_phone backfill, Daman And Diu / Milind Ingle -- Word value '0260-2408800' applied as-is.",2026-08-31
+employees,19512,office_phone,,0260-2408805,"batch c office_phone backfill, Daman And Diu / Mitesh Patel -- Word value '0260-2408805' applied as-is.",2026-08-31
+employees,19508,office_phone,,0260-2240190,"batch c office_phone backfill, Daman And Diu / Sh. Mekala Chaitanya Prasad -- Word value '0260-2240190' applied as-is.",2026-08-31
+employees,19913,office_phone,,9307900309,"batch c office_phone backfill, Dhariwal Infrastructure Limited / Aditya Bhongale -- Word value '9307900309' applied as-is.",2026-08-31
+employees,19911,office_phone,,9561112077,"batch c office_phone backfill, Dhariwal Infrastructure Limited / Kewal Kurmi -- Word value '9561112077' applied as-is.",2026-08-31
+employees,19910,office_phone,,9561112008,"batch c office_phone backfill, Dhariwal Infrastructure Limited / Pundlik Wanwe -- Word value '9561112008' applied as-is.",2026-08-31
+employees,19912,office_phone,,9307900289,"batch c office_phone backfill, Dhariwal Infrastructure Limited / Sripada Saikaushik -- Word value '9307900289' applied as-is.",2026-08-31
+employees,19343,office_phone,,(+91)-(2698)-(242618),"batch c office_phone backfill, Dhuvaran / Shri J R Patel -- Word value '(+91)-(2698)-(242618)' applied as-is.",2026-08-31
+employees,19341,office_phone,,0265-2230182,"batch c office_phone backfill, GIPCL 1 & 2 / P.M. Parekh -- Word value '0265-2230182' applied as-is.",2026-08-31
+employees,19342,office_phone,,0265-2230183,"batch c office_phone backfill, GIPCL 1 & 2 / S. Mani -- Word value '0265-2230183' applied as-is.",2026-08-31
+employees,19340,office_phone,,0265-2230185,"batch c office_phone backfill, GIPCL 1 & 2 / S.N.PUROHIT -- Word value '0265-2230185' applied as-is.",2026-08-31
+employees,19929,office_phone,,8390903659,"batch c office_phone backfill, GMR Warora Energy Limited / Bharat Pinjarkar -- Word value '8390903659' applied as-is.",2026-08-31
+employees,19927,office_phone,,7507001133,"batch c office_phone backfill, GMR Warora Energy Limited / Dhananjay Deshpande -- Word value '7507001133' applied as-is.",2026-08-31
+employees,19930,office_phone,,8451041564,"batch c office_phone backfill, GMR Warora Energy Limited / Pankaj Vaidya -- Word value '8451041564' applied as-is.",2026-08-31
+employees,19928,office_phone,,8390903524,"batch c office_phone backfill, GMR Warora Energy Limited / Pramod Khandelwal -- Word value '8390903524' applied as-is.",2026-08-31
+employees,19370,office_phone,,02642- 2876104,"batch c office_phone backfill, Gandhar / Neeraj Dubey -- Word value '02642- 2876104' applied as-is.",2026-08-31
+employees,19372,office_phone,,02642287449,"batch c office_phone backfill, Gandhar / Ravindra Sharma -- Word value '02642287449' applied as-is.",2026-08-31
+employees,19371,office_phone,,02642- 2876105,"batch c office_phone backfill, Gandhar / Varughese Valiplackal Kurian -- Word value '02642- 2876105' applied as-is.",2026-08-31
+employees,19315,office_phone,,"07427-237212 Fax- 07427-237256,237212","batch c office_phone backfill, Gandhi Sagar / Pursotam Gupta -- Word value '07427-237212 Fax- 07427-237256,237212' applied as-is.",2026-08-31
+employees,19356,office_phone,,02527-235308/,"batch c office_phone backfill, Ghatghar / Shri Kumbhoj -- Word value '02527-235308/' applied as-is.",2026-08-31
+employees,19656,office_phone,,02652234415,"batch c office_phone backfill, Gujarat Industries Power Company Limited / Shri. K R Ghataliya -- Word value '02652234415' applied as-is.",2026-08-31
+employees,19655,office_phone,,02652234348,"batch c office_phone backfill, Gujarat Industries Power Company Limited / Shri. P M Parekh -- Word value '02652234348' applied as-is.",2026-08-31
+employees,19654,office_phone,,02652234411,"batch c office_phone backfill, Gujarat Industries Power Company Limited / Shri. P S Goyal -- Word value '02652234411' applied as-is.",2026-08-31
+employees,19687,office_phone,,0265- 6612332,"batch c office_phone backfill, Gujarat State Electricity Corporation Limited / Shri. A.N.Ghervara -- Word value '0265- 6612332' applied as-is.",2026-08-31
+employees,19765,office_phone,,0265- 6612332,"batch c office_phone backfill, Gujarat State Electricity Corporation Limited- Phase II / Shri. A.N.Ghervara -- Word value '0265- 6612332' applied as-is.",2026-08-31
+employees,19400,office_phone,,0265-2352103,"batch c office_phone backfill, Gujarat State Load Despatch Centre / A.B. Rathod -- Word value '0265-2352103' applied as-is.",2026-08-31
+employees,19404,office_phone,,0265-2352103,"batch c office_phone backfill, Gujarat State Load Despatch Centre / B.M. Shah -- Word value '0265-2352103' applied as-is.",2026-08-31
+employees,19399,office_phone,,0265 - 2334751 Fax 0265 – 2344543,"batch c office_phone backfill, Gujarat State Load Despatch Centre / K. P. Jangid -- Word value '0265 - 2334751 Fax 0265 – 2344543' applied as-is.",2026-08-31
+employees,19410,office_phone,,02823-223277,"batch c office_phone backfill, Gujarat State Load Despatch Centre / K.V.Karavadra -- Word value '02823-223277' applied as-is.",2026-08-31
+employees,19409,office_phone,,079-23216598,"batch c office_phone backfill, Gujarat State Load Despatch Centre / M.V.Patel -- Word value '079-23216598' applied as-is.",2026-08-31
+employees,19405,office_phone,,0265-2352103,"batch c office_phone backfill, Gujarat State Load Despatch Centre / N.N. Shaikh -- Word value '0265-2352103' applied as-is.",2026-08-31
+employees,19406,office_phone,,0265-2352103,"batch c office_phone backfill, Gujarat State Load Despatch Centre / P.B. Suthar -- Word value '0265-2352103' applied as-is.",2026-08-31
+employees,19411,office_phone,,0265-2643775,"batch c office_phone backfill, Gujarat State Load Despatch Centre / P.G. Gupta -- Word value '0265-2643775' applied as-is.",2026-08-31
+employees,19407,office_phone,,0265-2352103,"batch c office_phone backfill, Gujarat State Load Despatch Centre / Shift In Charge -- Word value '0265-2352103' applied as-is.",2026-08-31
+employees,19398,office_phone,,"0265-2353085, 2338152, 2337918","batch c office_phone backfill, Gujarat State Load Despatch Centre / Shri Ajay Prakash, IAS -- Word value '0265-2353085, 2338152, 2337918' applied as-is.",2026-08-31
+employees,19397,office_phone,,079 - 23250772,"batch c office_phone backfill, Gujarat State Load Despatch Centre / Shri. Ashwini Kumar ,IAS -- Word value '079 - 23250772' applied as-is.",2026-08-31
+employees,20016,office_phone,,"022-25486539, 2556 3222","batch c office_phone backfill, Heavy Water Board / B.M.Sinha -- Word value '022-25486539, 2556 3222' applied as-is.",2026-08-31
+employees,20017,office_phone,,"022-25487509, 25482475","batch c office_phone backfill, Heavy Water Board / D.K.Singh -- Word value '022-25487509, 25482475' applied as-is.",2026-08-31
+employees,19932,office_phone,,9650994311,"batch c office_phone backfill, Jhabua Power Limited / Anil Kumar Sharma -- Word value '9650994311' applied as-is.",2026-08-31
+employees,19934,office_phone,,7773007734,"batch c office_phone backfill, Jhabua Power Limited / Ashok Singh Yadav -- Word value '7773007734' applied as-is.",2026-08-31
+employees,19935,office_phone,,9111775998,"batch c office_phone backfill, Jhabua Power Limited / Chandra V. Singh -- Word value '9111775998' applied as-is.",2026-08-31
+employees,19938,office_phone,,9713063449,"batch c office_phone backfill, Jhabua Power Limited / Dileep Singh -- Word value '9713063449' applied as-is.",2026-08-31
+employees,19937,office_phone,,9669050888,"batch c office_phone backfill, Jhabua Power Limited / Johnson Chandrakant -- Word value '9669050888' applied as-is.",2026-08-31
+employees,19933,office_phone,,9650992631,"batch c office_phone backfill, Jhabua Power Limited / Somnath Chattopadhyay -- Word value '9650992631' applied as-is.",2026-08-31
+employees,19936,office_phone,,9650991726,"batch c office_phone backfill, Jhabua Power Limited / V k Jain -- Word value '9650991726' applied as-is.",2026-08-31
+employees,19939,office_phone,,9650994311,"batch c office_phone backfill, Jindal Power Limited / Anil Kumar Sharma -- Word value '9650994311' applied as-is.",2026-08-31
+employees,19941,office_phone,,7773007734,"batch c office_phone backfill, Jindal Power Limited / Ashok Singh Yadav -- Word value '7773007734' applied as-is.",2026-08-31
+employees,19942,office_phone,,9111775998,"batch c office_phone backfill, Jindal Power Limited / Chandra V. Singh -- Word value '9111775998' applied as-is.",2026-08-31
+employees,19945,office_phone,,9713063449,"batch c office_phone backfill, Jindal Power Limited / Dileep Singh -- Word value '9713063449' applied as-is.",2026-08-31
+employees,19944,office_phone,,9669050888,"batch c office_phone backfill, Jindal Power Limited / Johnson Chandrakant -- Word value '9669050888' applied as-is.",2026-08-31
+employees,19940,office_phone,,9650992631,"batch c office_phone backfill, Jindal Power Limited / Somnath Chattopadhyay -- Word value '9650992631' applied as-is.",2026-08-31
+employees,19943,office_phone,,9650991726,"batch c office_phone backfill, Jindal Power Limited / V k Jain -- Word value '9650991726' applied as-is.",2026-08-31
+employees,19339,office_phone,,Fax 02675-237816,"batch c office_phone backfill, Kadana / Shri S B Patel -- Word value 'Fax 02675-237816' applied as-is.",2026-08-31
+employees,19580,office_phone,,02626-231494,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / Ajay K Bhole -- Word value '02626-231494' applied as-is.",2026-08-31
+employees,19585,office_phone,,02626-230484,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / Mitesh Mehta -- Word value '02626-230484' applied as-is.",2026-08-31
+employees,19584,office_phone,,02626-242013,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / Nilendu Datta -- Word value '02626-242013' applied as-is.",2026-08-31
+employees,19582,office_phone,,02626-242005,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / R K Khare -- Word value '02626-242005' applied as-is.",2026-08-31
+employees,19579,office_phone,,02626-231202,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / S D Anand -- Word value '02626-231202' applied as-is.",2026-08-31
+employees,19583,office_phone,,02626-242004,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / Sandeep Gupta -- Word value '02626-242004' applied as-is.",2026-08-31
+employees,19581,office_phone,,02626-242002,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-1 & 2 / Vivek Kumar -- Word value '02626-242002' applied as-is.",2026-08-31
+employees,19590,office_phone,,02626-242054,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / A N Thakur -- Word value '02626-242054' applied as-is.",2026-08-31
+employees,19587,office_phone,,02626-231498,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / A P Phadke -- Word value '02626-231498' applied as-is.",2026-08-31
+employees,19592,office_phone,,02626-231239,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / Ajit Kumar -- Word value '02626-231239' applied as-is.",2026-08-31
+employees,19589,office_phone,,02626-242039,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / Malay Saha -- Word value '02626-242039' applied as-is.",2026-08-31
+employees,19591,office_phone,,02626-242055,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / Navneet Sharma -- Word value '02626-242055' applied as-is.",2026-08-31
+employees,19586,office_phone,,02626-242001,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / S K Roy -- Word value '02626-242001' applied as-is.",2026-08-31
+employees,19588,office_phone,,02626-242057,"batch c office_phone backfill, Kakrapar Atomic Power Station Stg-3 & 4 / V Shankar -- Word value '02626-242057' applied as-is.",2026-08-31
+employees,19379,office_phone,,022- 27601761(P) 27601931/2937(O),"batch c office_phone backfill, Kalwa, Thane-Belapur / Anjana Thakker -- Word value '022- 27601761(P) 27601931/2937(O)' applied as-is.",2026-08-31
+employees,19387,office_phone,,022-27601765/66 Extn.2003,"batch c office_phone backfill, Kalwa, Thane-Belapur / Bharat Waghmare -- Word value '022-27601765/66 Extn.2003' applied as-is.",2026-08-31
+employees,19383,office_phone,,27601931/2937 (O) Extn.2002,"batch c office_phone backfill, Kalwa, Thane-Belapur / D.Z.Patil -- Word value '27601931/2937 (O) Extn.2002' applied as-is.",2026-08-31
+employees,19380,office_phone,,022-27601931 Extn.1004,"batch c office_phone backfill, Kalwa, Thane-Belapur / Girish Pantoji -- Word value '022-27601931 Extn.1004' applied as-is.",2026-08-31
+employees,19382,office_phone,,"022- 27601765 (P), 27601931/2937 (O) Extn.2001","batch c office_phone backfill, Kalwa, Thane-Belapur / M.B.Pande -- Word value '022- 27601765 (P), 27601931/2937 (O) Extn.2001' applied as-is.",2026-08-31
+employees,19391,office_phone,,022-27601765/66 Extn.2003,"batch c office_phone backfill, Kalwa, Thane-Belapur / Mahesh Gosavi -- Word value '022-27601765/66 Extn.2003' applied as-is.",2026-08-31
+employees,19378,office_phone,,022-27601931/61 (O) FAX 022- 27601769,"batch c office_phone backfill, Kalwa, Thane-Belapur / Mashesh Bhagwat -- Word value '022-27601931/61 (O) FAX 022- 27601769' applied as-is.",2026-08-31
+employees,19390,office_phone,,022-27601765/66 Extn.2003,"batch c office_phone backfill, Kalwa, Thane-Belapur / Rajesh Sadarang -- Word value '022-27601765/66 Extn.2003' applied as-is.",2026-08-31
+employees,19389,office_phone,,022-27601765/66 Extn.2003,"batch c office_phone backfill, Kalwa, Thane-Belapur / S.G.Bhagat -- Word value '022-27601765/66 Extn.2003' applied as-is.",2026-08-31
+employees,19385,office_phone,,022-27601931 Extn. 3001,"batch c office_phone backfill, Kalwa, Thane-Belapur / S.R. Satpute -- Word value '022-27601931 Extn. 3001' applied as-is.",2026-08-31
+employees,19384,office_phone,,022-27602157/2020 Extn. 2019,"batch c office_phone backfill, Kalwa, Thane-Belapur / S.R.Lomate (I/C) -- Word value '022-27602157/2020 Extn. 2019' applied as-is.",2026-08-31
+employees,19386,office_phone,,022-27601931 Extn. 4002,"batch c office_phone backfill, Kalwa, Thane-Belapur / Sachin Pakhide -- Word value '022-27601931 Extn. 4002' applied as-is.",2026-08-31
+employees,19381,office_phone,,022-27601931 Extn.1006,"batch c office_phone backfill, Kalwa, Thane-Belapur / Santosh Satpute (I/C) -- Word value '022-27601931 Extn.1006' applied as-is.",2026-08-31
+employees,19377,office_phone,,"22-27601765/1766/1931/2937, Fax :91-22-27601769/2936","batch c office_phone backfill, Kalwa, Thane-Belapur / Shashank Jewalikar -- Word value '22-27601765/1766/1931/2937, Fax :91-22-27601769/2936' applied as-is.",2026-08-31
+employees,19388,office_phone,,022-27601765/66 Extn. 2003,"batch c office_phone backfill, Kalwa, Thane-Belapur / Shri. Bobade -- Word value '022-27601765/66 Extn. 2003' applied as-is.",2026-08-31
+employees,19348,office_phone,,022-67175371,"batch c office_phone backfill, Khopoli & Bhivpuri / Pallikuth Devanand -- Word value '022-67175371' applied as-is.",2026-08-31
+employees,19354,office_phone,,02355-235014 extn. 8115,"batch c office_phone backfill, Koyna, Pophali / N.S.Mule -- Word value '02355-235014 extn. 8115' applied as-is.",2026-08-31
+employees,19355,office_phone,,02355-235014 extn. 8105,"batch c office_phone backfill, Koyna, Pophali / R. K. Kumbhar -- Word value '02355-235014 extn. 8105' applied as-is.",2026-08-31
+employees,19353,office_phone,,02355-235013/14,"batch c office_phone backfill, Koyna, Pophali / S. G. Chopade -- Word value '02355-235013/14' applied as-is.",2026-08-31
+employees,19420,office_phone,,0761-2702488,"batch c office_phone backfill, MP Power Management CO. LTD. / Firoj Kumar Meshram -- Word value '0761-2702488' applied as-is.",2026-08-31
+employees,19422,office_phone,,0761-2702967,"batch c office_phone backfill, MP Power Management CO. LTD. / Jaswant Singh Pasricha -- Word value '0761-2702967' applied as-is.",2026-08-31
+employees,19421,office_phone,,0761-2702972,"batch c office_phone backfill, MP Power Management CO. LTD. / Praveen Kumar Jain -- Word value '0761-2702972' applied as-is.",2026-08-31
+employees,19426,office_phone,,0761-2702670,"batch c office_phone backfill, Madhya Pradesh Power Generation Company Limited / Brijesh Maravi -- Word value '0761-2702670' applied as-is.",2026-08-31
+employees,19425,office_phone,,0761-2702605,"batch c office_phone backfill, Madhya Pradesh Power Generation Company Limited / Girish Kumar Dixit -- Word value '0761-2702605' applied as-is.",2026-08-31
+employees,19423,office_phone,,"2666150,2702500 Fax 0761-2665661","batch c office_phone backfill, Madhya Pradesh Power Generation Company Limited / Manjeet Singh -- Word value '2666150,2702500 Fax 0761-2665661' applied as-is.",2026-08-31
+employees,19424,office_phone,,"0761-2702600, 0761-2661589","batch c office_phone backfill, Madhya Pradesh Power Generation Company Limited / Rajeev Shrivastava -- Word value '0761-2702600, 0761-2661589' applied as-is.",2026-08-31
+employees,19416,office_phone,,0761-2702750,"batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / P Sachan -- Word value '0761-2702750' applied as-is.",2026-08-31
+employees,19417,office_phone,,0761-2702744,"batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / Rajesh Gupta -- Word value '0761-2702744' applied as-is.",2026-08-31
+employees,19415,office_phone,,0761-2702740,"batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / S.S.Patel -- Word value '0761-2702740' applied as-is.",2026-08-31
+employees,19413,office_phone,,"0755- 2708030, 2708031","batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / Shri Neeraj Mandloi (IAS) -- Word value '0755- 2708030, 2708031' applied as-is.",2026-08-31
+employees,19414,office_phone,,"0761-2661234, 2664141","batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / Shri Sunil Tiwari -- Word value '0761-2661234, 2664141' applied as-is.",2026-08-31
+employees,19418,office_phone,,0761-2702733,"batch c office_phone backfill, Madhya Pradesh State Load Despatch Centre / V.K.Agrawal -- Word value '0761-2702733' applied as-is.",2026-08-31
+employees,19924,office_phone,,7880093250,"batch c office_phone backfill, Mahan Energen Limited (Formally Essar Power (MP) Limited / Shri Lalan Kishore Singh -- Word value '7880093250' applied as-is.",2026-08-31
+employees,19922,office_phone,,7899766603,"batch c office_phone backfill, Mahan Energen Limited (Formally Essar Power (MP) Limited / Shri Pravat Sundaray -- Word value '7899766603' applied as-is.",2026-08-31
+employees,19925,office_phone,,9926905357,"batch c office_phone backfill, Mahan Energen Limited (Formally Essar Power (MP) Limited / Shri Sukanta Sanyal -- Word value '9926905357' applied as-is.",2026-08-31
+employees,19923,office_phone,,8696931903,"batch c office_phone backfill, Mahan Energen Limited (Formally Essar Power (MP) Limited / Shri Udayamohanan Nair -- Word value '8696931903' applied as-is.",2026-08-31
+employees,19394,office_phone,,022- 26474211 / 26472131,"batch c office_phone backfill, Maharashtra State Load Despatch Centre / Dinesh Agrawal -- Word value '022- 26474211 / 26472131' applied as-is.",2026-08-31
+employees,19395,office_phone,,022- 26474211 / 26472131,"batch c office_phone backfill, Maharashtra State Load Despatch Centre / Mangesh Kohat -- Word value '022- 26474211 / 26472131' applied as-is.",2026-08-31
+employees,19392,office_phone,,07104-224496,"batch c office_phone backfill, Maharashtra State Load Despatch Centre / Mrs Vaishali Pazare -- Word value '07104-224496' applied as-is.",2026-08-31
+employees,19393,office_phone,,022-22026767/ 26476743,"batch c office_phone backfill, Maharashtra State Load Despatch Centre / Vijay Singhal (IAS) -- Word value '022-22026767/ 26476743' applied as-is.",2026-08-31
+employees,19538,office_phone,,7790220010,"batch c office_phone backfill, NTPC Gadarwara / Kamlesh Soni -- Word value '7790220010' applied as-is.",2026-08-31
+employees,19522,office_phone,,02642- 2876104,"batch c office_phone backfill, NTPC Gandhar / D.K.S Rautela -- Word value '02642- 2876104' applied as-is.",2026-08-31
+employees,19523,office_phone,,02642-2876105,"batch c office_phone backfill, NTPC Gandhar / Rochak Saxena -- Word value '02642-2876105' applied as-is.",2026-08-31
+employees,19367,office_phone,,0261-2860290,"batch c office_phone backfill, NTPC Kawas / P Ram Prasad -- Word value '0261-2860290' applied as-is.",2026-08-31
+employees,19525,office_phone,,02612861434,"batch c office_phone backfill, NTPC Kawas / Sanjay Kumar Mittal -- Word value '02612861434' applied as-is.",2026-08-31
+employees,19368,office_phone,,02612861434,"batch c office_phone backfill, NTPC Kawas / Sanjay Mittal -- Word value '02612861434' applied as-is.",2026-08-31
+employees,19524,office_phone,,0261-2860290,"batch c office_phone backfill, NTPC Kawas / Shrikant Kerhalkar -- Word value '0261-2860290' applied as-is.",2026-08-31
+employees,19369,office_phone,,0261-2877054,"batch c office_phone backfill, NTPC Kawas / Vibhor Mangal -- Word value '0261-2877054' applied as-is.",2026-08-31
+employees,19668,office_phone,,0261-2877058,"batch c office_phone backfill, NTPC Kawas Solar PV Project / Paresh H Shah -- Word value '0261-2877058' applied as-is.",2026-08-31
+employees,19667,office_phone,,0261-2877023,"batch c office_phone backfill, NTPC Kawas Solar PV Project / Raksha Singh -- Word value '0261-2877023' applied as-is.",2026-08-31
+employees,19669,office_phone,,0261-2877245,"batch c office_phone backfill, NTPC Kawas Solar PV Project / S N V Kiran Sana -- Word value '0261-2877245' applied as-is.",2026-08-31
+employees,19545,office_phone,,6266511470,"batch c office_phone backfill, NTPC Khargone / Vijay Tanwani -- Word value '6266511470' applied as-is.",2026-08-31
+employees,19547,office_phone,,07759-237234,"batch c office_phone backfill, NTPC Korba / B Ramachandra Rao -- Word value '07759-237234' applied as-is.",2026-08-31
+employees,19550,office_phone,,07759-237001,"batch c office_phone backfill, NTPC Korba / Tikeshwar Prasad Sahu -- Word value '07759-237001' applied as-is.",2026-08-31
+employees,19518,office_phone,,(022) 28227762,"batch c office_phone backfill, NTPC Mumbai Head Quarter (WR-1) / E Satya Phani Kumar -- Word value '(022) 28227762' applied as-is.",2026-08-31
+employees,19534,office_phone,,0771-2515200,"batch c office_phone backfill, NTPC Raipur Head Quarter (WR-2) / Ashwini Kumar Tripathy -- Word value '0771-2515200' applied as-is.",2026-08-31
+employees,19555,office_phone,,06265449659,"batch c office_phone backfill, NTPC Sipat / N Srinivasa Rao -- Word value '06265449659' applied as-is.",2026-08-31
+employees,20024,office_phone,,0120-2410605,"batch c office_phone backfill, NTPC Vidyut Vyapar Nigam Limited / Arvind Patle -- Word value '0120-2410605' applied as-is.",2026-08-31
+employees,20027,office_phone,,0120-4948584,"batch c office_phone backfill, NTPC Vidyut Vyapar Nigam Limited / Arvind Sharma -- Word value '0120-4948584' applied as-is.",2026-08-31
+employees,20025,office_phone,,0120-4948576,"batch c office_phone backfill, NTPC Vidyut Vyapar Nigam Limited / E. Srinivas Rao -- Word value '0120-4948576' applied as-is.",2026-08-31
+employees,20026,office_phone,,0120-4948503,"batch c office_phone backfill, NTPC Vidyut Vyapar Nigam Limited / Lekraj Singh -- Word value '0120-4948503' applied as-is.",2026-08-31
+employees,20028,office_phone,,0120-4948584,"batch c office_phone backfill, NTPC Vidyut Vyapar Nigam Limited / Vimal Chauhan -- Word value '0120-4948584' applied as-is.",2026-08-31
+employees,19467,office_phone,,0771-2574412,"batch c office_phone backfill, Office: Executive Director (Transmission) / ER. M.K BANCHHOR -- Word value '0771-2574412' applied as-is.",2026-08-31
+employees,19466,office_phone,,0771-2574410,"batch c office_phone backfill, Office: Executive Director (Transmission) / ER. VIRENDRA KUMAR DIXIT -- Word value '0771-2574410' applied as-is.",2026-08-31
+employees,19468,office_phone,,0771-2574256,"batch c office_phone backfill, Office: The Chief Engineer (Sub-Station) CSPTCL, Raipur / ER. ABRAHAM VARGHESE -- Word value '0771-2574256' applied as-is.",2026-08-31
+employees,19674,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Ostro Energy Private Limited / Abhinav Saraswat -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19673,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Ostro Energy Private Limited / Narendra Somoshi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19676,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Ostro Energy Private Limited / Nikita Surbhi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19629,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Ostro Kutch Wind Private Limited / Narendra Somoshi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19633,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Ostro Kutch Wind Private Limited / Nikita Surbhi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,20040,office_phone,,0712-2641476,"batch c office_phone backfill, POWERGRID WRTS-I, Nagpur / Arun Kumar -- Word value '0712-2641476' applied as-is.",2026-08-31
+employees,20037,office_phone,,0712- 2641470,"batch c office_phone backfill, POWERGRID WRTS-I, Nagpur / Ashok Behera -- Word value '0712- 2641470' applied as-is.",2026-08-31
+employees,20038,office_phone,,0712-2641493,"batch c office_phone backfill, POWERGRID WRTS-I, Nagpur / Balanarayan K P -- Word value '0712-2641493' applied as-is.",2026-08-31
+employees,20039,office_phone,,0712-2641493,"batch c office_phone backfill, POWERGRID WRTS-I, Nagpur / Rajneesh Tiwari -- Word value '0712-2641493' applied as-is.",2026-08-31
+employees,20041,office_phone,,0265-2712631,"batch c office_phone backfill, POWERGRID WRTS-II, Vadodara / Arindham Chakraborty -- Word value '0265-2712631' applied as-is.",2026-08-31
+employees,20042,office_phone,,0265-2480953,"batch c office_phone backfill, POWERGRID WRTS-II, Vadodara / Jiten Das -- Word value '0265-2480953' applied as-is.",2026-08-31
+employees,20043,office_phone,,0265-2577517,"batch c office_phone backfill, POWERGRID WRTS-II, Vadodara / S Majumdar -- Word value '0265-2577517' applied as-is.",2026-08-31
+employees,19361,office_phone,,02431 -224699,"batch c office_phone backfill, Paithan / Umesh Sone -- Word value '02431 -224699' applied as-is.",2026-08-31
+employees,20036,office_phone,,0124- 2571962,"batch c office_phone backfill, Power Grid Corporation Of India Limited / Naveen Srivastava -- Word value '0124- 2571962' applied as-is.",2026-08-31
+employees,20035,office_phone,,0124- 2571890,"batch c office_phone backfill, Power Grid Corporation Of India Limited / Vamsi Rama Mohan Burra -- Word value '0124- 2571890' applied as-is.",2026-08-31
+employees,19858,office_phone,,1140408030,"batch c office_phone backfill, Qualified Coordinating Agency / Bibhu Sahoo -- Word value '1140408030' applied as-is.",2026-08-31
+employees,19360,office_phone,,02359-241073,"batch c office_phone backfill, RGPPL / Asim Kumar Samanta -- Word value '02359-241073' applied as-is.",2026-08-31
+employees,19634,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Renew Power Limited / Narendra Somoshi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19638,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Renew Power Limited / Nikita Surbhi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19644,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Renew Wind Energy (AP2) Private Limited / Narendra Somoshi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19648,office_phone,,0124 – 4896670/80,"batch c office_phone backfill, Renew Wind Energy (AP2) Private Limited / Nikita Surbhi -- Word value '0124 – 4896670/80' applied as-is.",2026-08-31
+employees,19969,office_phone,,"02640 – 233024, Ext 123, 136","batch c office_phone backfill, SSP / B. J. Rathwa -- Word value '02640 – 233024, Ext 123, 136' applied as-is.",2026-08-31
+employees,19966,office_phone,,0731-2552703,"batch c office_phone backfill, SSP / Hemant Pandey -- Word value '0731-2552703' applied as-is.",2026-08-31
+employees,19965,office_phone,,0731-2551144,"batch c office_phone backfill, SSP / Ms. Devjani Patra -- Word value '0731-2551144' applied as-is.",2026-08-31
+employees,19970,office_phone,,02640 -233024,"batch c office_phone backfill, SSP / R.C. Patel -- Word value '02640 -233024' applied as-is.",2026-08-31
+employees,19967,office_phone,,0731-2552703,"batch c office_phone backfill, SSP / Rajesh Sharma -- Word value '0731-2552703' applied as-is.",2026-08-31
+employees,19968,office_phone,,"02640 -233022, Ext 24/25/28/29","batch c office_phone backfill, SSP / Shri A.N.Patel -- Word value '02640 -233022, Ext 24/25/28/29' applied as-is.",2026-08-31
+employees,19709,office_phone,,0217- 2461224,"batch c office_phone backfill, Solapur Solar PV Project / Sh Dinesh Gupta -- Word value '0217- 2461224' applied as-is.",2026-08-31
+employees,19710,office_phone,,0217- 2461382,"batch c office_phone backfill, Solapur Solar PV Project / Sh Harish Bhat -- Word value '0217- 2461382' applied as-is.",2026-08-31
+employees,19708,office_phone,,0217-2461272,"batch c office_phone backfill, Solapur Solar PV Project / Sh UVVS Srinivas Rao -- Word value '0217-2461272' applied as-is.",2026-08-31
+employees,19345,office_phone,,02621 - 661138,"batch c office_phone backfill, Sugen / Ronak Naik -- Word value '02621 - 661138' applied as-is.",2026-08-31
+employees,19346,office_phone,,02621-661663/Fax No. 02621 - 661654,"batch c office_phone backfill, Sugen / Shift Manager Office -- Word value '02621-661663/Fax No. 02621 - 661654' applied as-is.",2026-08-31
+employees,19565,office_phone,,02525-244104,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri A. Sarmasarkar -- Word value '02525-244104' applied as-is.",2026-08-31
+employees,19566,office_phone,,02525-244106,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri C.K. Gupta -- Word value '02525-244106' applied as-is.",2026-08-31
+employees,19568,office_phone,,02525-244105,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri D.P. Mahajan -- Word value '02525-244105' applied as-is.",2026-08-31
+employees,19567,office_phone,,02525-244103,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri KVSN Murthy -- Word value '02525-244103' applied as-is.",2026-08-31
+employees,19563,office_phone,,02525-244101,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri R. Murali -- Word value '02525-244101' applied as-is.",2026-08-31
+employees,19570,office_phone,,02525-244116,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri S. S. Deshmukh -- Word value '02525-244116' applied as-is.",2026-08-31
+employees,19569,office_phone,,02525-244109,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri S.K. Chaurasia -- Word value '02525-244109' applied as-is.",2026-08-31
+employees,19564,office_phone,,02525-244102,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-1 & 2 / Shri V. Thattey -- Word value '02525-244102' applied as-is.",2026-08-31
+employees,19575,office_phone,,02525-244001,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Chiranjib Saha -- Word value '02525-244001' applied as-is.",2026-08-31
+employees,19571,office_phone,,02525-244028,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / M. Suryaprasad -- Word value '02525-244028' applied as-is.",2026-08-31
+employees,19573,office_phone,,02525-244169,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Nilendu Datta -- Word value '02525-244169' applied as-is.",2026-08-31
+employees,19578,office_phone,,02525-283693,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Nishant Dhimole -- Word value '02525-283693' applied as-is.",2026-08-31
+employees,19574,office_phone,,02525-244201,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Rajeev Dhami -- Word value '02525-244201' applied as-is.",2026-08-31
+employees,19572,office_phone,,02525-244902,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Randhir Kumar -- Word value '02525-244902' applied as-is.",2026-08-31
+employees,19576,office_phone,,02525-244605,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / Sachin Shinde -- Word value '02525-244605' applied as-is.",2026-08-31
+employees,19577,office_phone,,02525-244051,"batch c office_phone backfill, Tarapur Atomic Power Station Stg-3 & 4 / U. Biswas -- Word value '02525-244051' applied as-is.",2026-08-31
+employees,20020,office_phone,,022-67175380,"batch c office_phone backfill, Tata Power Mumbai / Milind Gole -- Word value '022-67175380' applied as-is.",2026-08-31
+employees,20018,office_phone,,022-67175371,"batch c office_phone backfill, Tata Power Mumbai / Pallikuth Devanand -- Word value '022-67175371' applied as-is.",2026-08-31
+employees,20019,office_phone,,8956578259,"batch c office_phone backfill, Tata Power Mumbai / Prabhakar Kale -- Word value '8956578259' applied as-is.",2026-08-31
+employees,19665,office_phone,,(022)67171175,"batch c office_phone backfill, Tata Power Renewable Energy Ltd. / Shri S V Gavadhakatla -- Word value '(022)67171175' applied as-is.",2026-08-31
+employees,19358,office_phone,,022-67175371,"batch c office_phone backfill, Trombay / Pallikuth Devanand -- Word value '022-67175371' applied as-is.",2026-08-31
+employees,19359,office_phone,,022-67175105,"batch c office_phone backfill, Trombay / Shirish Kamat -- Word value '022-67175105' applied as-is.",2026-08-31
+employees,19333,office_phone,,02624-233292,"batch c office_phone backfill, UKAI / Shri S D Patel -- Word value '02624-233292' applied as-is.",2026-08-31
+employees,19362,office_phone,,022-27222251 (P) 022- 27222285 (O) Extn: 500 / 501,"batch c office_phone backfill, Uran / S. G. Ingle -- Word value '022-27222251 (P) 022- 27222285 (O) Extn: 500 / 501' applied as-is.",2026-08-31
+employees,19473,office_phone,,0832-2419405,"batch c office_phone backfill, Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001 / Shri Ajit Roy IAS -- Word value '0832-2419405' applied as-is.",2026-08-31
+employees,19476,office_phone,,0832-2312194,"batch c office_phone backfill, Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001 / Shri. Deepak Gawas -- Word value '0832-2312194' applied as-is.",2026-08-31
+employees,19484,office_phone,,0832-2255595,"batch c office_phone backfill, Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001 / Suhas Dessai -- Word value '0832-2255595' applied as-is.",2026-08-31
+employees,19477,office_phone,,0832-2316004,"batch c office_phone backfill, Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001 / Suresh Naik -- Word value '0832-2316004' applied as-is.",2026-08-31
+employees,19309,office_phone,,022-28250004,"batch c office_phone backfill, Western Regional Power Committee / Deepak N. Gawali -- Word value '022-28250004' applied as-is.",2026-08-31
+employees,19311,office_phone,,022-28200194 - 96,"batch c office_phone backfill, Western Regional Power Committee / Deepak Sharma -- Word value '022-28200194 - 96' applied as-is.",2026-08-31
+employees,19307,office_phone,,0260- 2406556 / +91 260-2231800,"batch c office_phone backfill, Western Regional Power Committee / Dr. Rohit Yadav -- Word value '0260- 2406556 / +91 260-2231800' applied as-is.",2026-08-31
+employees,19310,office_phone,,022-28250004,"batch c office_phone backfill, Western Regional Power Committee / P.D. Lone -- Word value '022-28250004' applied as-is.",2026-08-31
+employees,19312,office_phone,,022-28200194 - 96,"batch c office_phone backfill, Western Regional Power Committee / Vidya Sagar P -- Word value '022-28200194 - 96' applied as-is.",2026-08-31
