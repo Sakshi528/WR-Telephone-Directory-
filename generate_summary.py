@@ -122,7 +122,7 @@ def build():
 
     stack = [
         ("Web Framework",        "Flask 3.1.1 (Python)"),
-        ("Database",             "PostgreSQL (via psycopg2-binary 2.9.10)"),
+        ("Database",             "PostgreSQL (via psycopg[binary] v3)"),
         ("ORM",                  "Flask-SQLAlchemy 3.1.1"),
         ("Authentication",       "Flask-Login 0.6.3"),
         ("Excel Export",         "openpyxl 3.1.5"),

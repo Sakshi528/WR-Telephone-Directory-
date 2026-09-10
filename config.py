@@ -10,7 +10,7 @@ class Config:
 
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         "DATABASE_URL",
-        "postgresql+psycopg2://postgres:Wrldc%40123@localhost:5432/telephone_directory"
+        "postgresql+psycopg://postgres:Wrldc%40123@localhost:5432/telephone_directory"
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -47,6 +47,8 @@
                     <th style="width:180px">Phone Number</th>
                     <th>Organisation</th>
                     <th style="width:120px">Category</th>
+                    <th style="width:110px">IP Address</th>
+                    <th class="text-center" style="width:90px">Flags</th>
                     <th class="text-center" style="width:100px">Actions</th>
                 </tr>
             </thead>
@@ -61,6 +63,12 @@
                         {% if item.category %}
                             <span class="badge bg-secondary">{{ item.category }}</span>
                         {% else %}–{% endif %}
+                    </td>
+                    <td class="small">{{ item.ip_address or '–' }}</td>
+                    <td class="text-center">
+                        {% if item.control_room %}<span class="badge bg-warning text-dark">CR</span>{% endif %}
+                        {% if item.switch_yard %}<span class="badge bg-info text-dark">SY</span>{% endif %}
+                        {% if not item.control_room and not item.switch_yard %}–{% endif %}
                     </td>
                     <td class="text-center text-nowrap">
                         <a href="{{ url_for('admin.edit_directory_number', id=item.id) }}"
@@ -79,7 +87,7 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="6" class="text-center text-muted py-4">No entries found</td>
+                    <td colspan="8" class="text-center text-muted py-4">No entries found</td>
                 </tr>
                 {% endfor %}
             </tbody>

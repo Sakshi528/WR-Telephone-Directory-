@@ -42,6 +42,15 @@ class Organization(db.Model):
         nullable=True
     )
 
+    # When True, this organization is explicitly marked as having no Utility
+    # Head -- overrides utils.designation_rank.resolve_utility_head, which
+    # would otherwise always auto-resolve someone from the employee list.
+    utility_head_excluded = db.Column(
+        db.Boolean,
+        nullable=False,
+        server_default=db.text("false")
+    )
+
     children = db.relationship(
         "Organization",
         backref=db.backref("parent", remote_side="Organization.id"),

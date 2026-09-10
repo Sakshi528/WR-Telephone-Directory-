@@ -3,7 +3,7 @@
 
 **Prepared for:** UAT / LAN Deployment readiness review and senior management presentation
 **System:** Western Region (WRLDC) Telephone Directory Management System
-**Stack:** Python 3 / Flask 3.1.1 / Flask-SQLAlchemy 3.1.1 / Flask-Login 0.6.3 / PostgreSQL / psycopg2-binary 2.9.10 / python-docx 1.1.2 / openpyxl 3.1.5 / reportlab 5.0.0 / Bootstrap / vanilla JavaScript
+**Stack:** Python 3 / Flask 3.1.1 / Flask-SQLAlchemy 3.1.1 / Flask-Login 0.6.3 / PostgreSQL / psycopg[binary] (v3) / python-docx 1.1.2 / openpyxl 3.1.5 / reportlab 5.0.0 / Bootstrap / vanilla JavaScript
 
 > **Note on accuracy:** Every claim in this document was verified directly against the current source code (`models/`, `routes/`, `services/`, `utils/`, `templates/`, `static/js/`, `migrations/`, and the import/reconciliation scripts) rather than written from generic Flask knowledge. Where a feature does **not** exist in the codebase (e.g. CSRF protection, an audit-log viewing screen, rate limiting), this document says so explicitly instead of assuming it. Exact file names, route paths, column names, and function names are quoted so you can pull up the source during Q&A if needed.
 
@@ -117,7 +117,7 @@ To replace the document-based process with a **database-backed, role-aware, audi
 | Web framework | Flask 3.1.1 |
 | ORM | Flask-SQLAlchemy 3.1.1 |
 | Authentication/session | Flask-Login 0.6.3 |
-| Database | PostgreSQL, via psycopg2-binary 2.9.10 |
+| Database | PostgreSQL, via psycopg[binary] (v3) |
 | Word document parsing/export | python-docx 1.1.2 |
 | Excel parsing/export | openpyxl 3.1.5 |
 | PDF generation | reportlab 5.0.0 |
@@ -409,7 +409,7 @@ Single `Config` class (no separate Dev/Prod subclasses):
 | Setting | Source | Hardcoded fallback |
 |---|---|---|
 | `SECRET_KEY` | `os.environ.get("SECRET_KEY", ...)` | `"telephone_directory_secret_key"` |
-| `SQLALCHEMY_DATABASE_URI` | `os.environ.get("DATABASE_URL", ...)` | `postgresql+psycopg2://postgres:Wrldc%40123@localhost:5432/telephone_directory` |
+| `SQLALCHEMY_DATABASE_URI` | `os.environ.get("DATABASE_URL", ...)` | `postgresql+psycopg://postgres:Wrldc%40123@localhost:5432/telephone_directory` |
 | `SQLALCHEMY_TRACK_MODIFICATIONS` | hardcoded | `False` |
 | `UPLOAD_FOLDER` | computed | `<cwd>/uploads` |
 | `DIRECTORY_VERSIONS_STORAGE` | computed | `<cwd>/storage/directory_versions` |
@@ -1246,7 +1246,7 @@ They are deleted along with the head row (a `CASCADE` foreign key), and are deli
 ## 21.3 Database Questions
 
 **Q28. What database engine is used, and why?**
-PostgreSQL, accessed via `psycopg2-binary` and Flask-SQLAlchemy. (Note: the project's own `README.md` is stale and still describes a MySQL setup — the actual, current configuration in `config.py` is PostgreSQL; this should be corrected in the README as a housekeeping item.)
+PostgreSQL, accessed via `psycopg[binary]` (v3) and Flask-SQLAlchemy. (Note: the project's own `README.md` is stale and still describes a MySQL setup — the actual, current configuration in `config.py` is PostgreSQL; this should be corrected in the README as a housekeeping item.)
 
 **Q29. How many tables are in the schema, and what are the core ones?**
 18 tables. The core operational ones are `employees`, `organizations`, `directory_numbers`, `administrative_heads`, and `update_requests`; the rest are lookups (`departments`, `organization_categories`, `service_types`), audit/history (`audit_logs`, `employee_status_history`, `administrative_head_history`, `import_batches`), and feature-specific (`emergency_contacts`, `administrative_head_assistants`, `directory_versions`, `email_groups`/`group_members`/`email_group_filters`).

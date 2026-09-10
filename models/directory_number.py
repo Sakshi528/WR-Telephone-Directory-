@@ -30,6 +30,22 @@ class DirectoryNumber(db.Model):
         db.String(100)
     )
 
+    switch_yard = db.Column(
+        db.Boolean,
+        nullable=False,
+        server_default=db.text("false")
+    )
+
+    control_room = db.Column(
+        db.Boolean,
+        nullable=False,
+        server_default=db.text("false")
+    )
+
+    ip_address = db.Column(
+        db.String(45)
+    )
+
     organization_id = db.Column(
         db.Integer,
         db.ForeignKey("organizations.id", ondelete="SET NULL"),

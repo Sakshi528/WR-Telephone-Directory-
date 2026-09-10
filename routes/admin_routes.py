@@ -25,6 +25,7 @@ from models.administrative_head_assistant import AdministrativeHeadAssistant
 from models.service_type import ServiceType
 from models.directory_version import DirectoryVersion
 from models.import_batch import ImportBatch
+from utils.designation_rank import resolve_utility_head
 from services.audit_service import log_audit_event
 from services.email_distribution_service import resolve_dynamic_group, dedupe_and_sort
 from services import head_service
@@ -745,6 +746,36 @@ def toggle_utility_head(id):
     emp = db.session.get(Employee, id)
     if emp:
         emp.is_utility_head = not emp.is_utility_head
+        org = db.session.get(Organization, emp.organization_id) if emp.organization_id else None
+
+        if emp.is_utility_head:
+            if org is not None:
+                # Only one manually-designated head per organization -- clear
+                # any other employee's flag in the same org so resolution
+                # (utils.designation_rank.resolve_utility_head) stays
+                # unambiguous, and un-exclude the org since this is an
+                # explicit choice of head.
+                Employee.query.filter(
+                    Employee.organization_id == emp.organization_id,
+                    Employee.id != emp.id,
+                ).update({"is_utility_head": False})
+                org.utility_head_excluded = False
+        elif org is not None:
+            # "Remove as Utility Head" was clicked. If nobody else in the
+            # organization would take over -- e.g. a single-employee org, or
+            # this employee was also the most senior by designation -- auto-
+            # resolution would just re-pick this same person, making the
+            # removal a no-op. In that case, explicitly mark the
+            # organization as having no Utility Head at all.
+            siblings = (
+                Employee.query
+                .filter_by(organization_id=emp.organization_id, status="ACTIVE")
+                .order_by(Employee.id)
+                .all()
+            )
+            new_head = resolve_utility_head(siblings)
+            org.utility_head_excluded = new_head is None or new_head.id == emp.id
+
         db.session.commit()
         state = "marked as" if emp.is_utility_head else "removed from"
         flash(f"{emp.employee_name} {state} Utility Head.", "success")
@@ -989,18 +1020,34 @@ def directory_numbers():
 @admin_required
 def add_directory_number():
     if request.method == "POST":
+        org_id = request.form.get("organization_id", type=int)
+        org = db.session.get(Organization, org_id) if org_id else None
         number = DirectoryNumber(
-            name         = request.form["name"],
-            phone_number = request.form.get("phone_number"),
-            email        = request.form.get("email"),
-            organization = request.form.get("organization"),
-            category     = request.form.get("category"),
+            name            = request.form["name"],
+            phone_number    = request.form.get("phone_number"),
+            email           = request.form.get("email"),
+            organization    = org.organization_name if org else None,
+            organization_id = org.id if org else None,
+            category        = request.form.get("category"),
+            switch_yard     = "switch_yard" in request.form,
+            control_room    = "control_room" in request.form,
+            ip_address      = request.form.get("ip_address") or None,
         )
         db.session.add(number)
         db.session.commit()
         flash("Directory number added", "success")
         return redirect(url_for("admin.directory_numbers"))
-    return render_template("add_directory_number.html")
+
+    # Dashboard "Add Control Room" / "Add Switch Yard" shortcuts land here
+    # with ?type=control_room|switch_yard to pre-fill the Category field.
+    prefill_type = request.args.get("type")
+    prefill = {
+        "category": "Control Room" if prefill_type == "control_room"
+                    else "Switchyard" if prefill_type == "switch_yard"
+                    else "",
+    }
+    organizations = Organization.query.order_by(Organization.organization_name).all()
+    return render_template("add_directory_number.html", prefill=prefill, organizations=organizations)
 
 
 @admin_bp.route("/admin/directory-numbers/edit/<int:id>", methods=["GET", "POST"])
@@ -1012,16 +1059,28 @@ def edit_directory_number(id):
         return redirect(url_for("admin.directory_numbers"))
 
     if request.method == "POST":
-        number.name         = request.form["name"]
-        number.phone_number = request.form.get("phone_number")
-        number.email        = request.form.get("email")
-        number.organization = request.form.get("organization")
-        number.category     = request.form.get("category")
+        org_id = request.form.get("organization_id", type=int)
+        org = db.session.get(Organization, org_id) if org_id else None
+        number.name            = request.form["name"]
+        number.phone_number    = request.form.get("phone_number")
+        number.email           = request.form.get("email")
+        number.organization    = org.organization_name if org else None
+        number.organization_id = org.id if org else None
+        number.category        = request.form.get("category")
+        # ip_address/switch_yard/control_room have no inputs on this form
+        # today -- only touch them if a future form actually submits
+        # "ip_address", so this route can't silently wipe values some
+        # other form (or a direct DB edit) set.
+        if "ip_address" in request.form:
+            number.ip_address   = request.form.get("ip_address") or None
+            number.switch_yard  = "switch_yard" in request.form
+            number.control_room = "control_room" in request.form
         db.session.commit()
         flash("Directory number updated", "success")
         return redirect(url_for("admin.directory_numbers"))
 
-    return render_template("edit_directory_number.html", number=number)
+    organizations = Organization.query.order_by(Organization.organization_name).all()
+    return render_template("edit_directory_number.html", number=number, organizations=organizations)
 
 
 @admin_bp.route("/admin/directory-numbers/delete/<int:id>", methods=["POST"])

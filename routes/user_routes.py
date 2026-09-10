@@ -685,8 +685,9 @@ def api_organizations():
 
 
 # ─── UTILITY HEADS ────────────────────────────────────────────────────────────
-# Auto-resolved from employee designations (utils.designation_rank) rather
-# than the manually-set Employee.is_utility_head flag -- see that module for
+# Resolved per organization via utils.designation_rank.resolve_utility_head:
+# a manually-flagged employee (Employee.is_utility_head) wins if one exists,
+# otherwise falls back to the most senior designation -- see that module for
 # the ranking rules.
 
 def _compute_utility_heads(keyword=None, category_id=None, state=None, organization_id=None, designation=None):
@@ -702,6 +703,8 @@ def _compute_utility_heads(keyword=None, category_id=None, state=None, organizat
 
     heads = []
     for org in organizations:
+        if org.utility_head_excluded:
+            continue
         employees = (
             Employee.query
             .filter_by(organization_id=org.id)

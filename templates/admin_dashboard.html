@@ -63,6 +63,16 @@
                 <i class="bi bi-journal-text d-block fs-3 mb-1"></i>Directory Numbers
             </a>
         </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.add_directory_number', type='control_room') }}" class="btn btn-danger w-100 py-3">
+                <i class="bi bi-telephone-fill d-block fs-3 mb-1"></i>Add Control Room
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a href="{{ url_for('admin.add_directory_number', type='switch_yard') }}" class="btn btn-primary w-100 py-3">
+                <i class="bi bi-lightning-fill d-block fs-3 mb-1"></i>Add Switch Yard
+            </a>
+        </div>
         <!-- <div class="col-sm-6 col-md-4">
             <a href="{{ url_for('admin.manage_emergency_contacts') }}" class="btn btn-danger w-100 py-3">
                 <i class="bi bi-heart-pulse d-block fs-3 mb-1"></i>Emergency Contacts

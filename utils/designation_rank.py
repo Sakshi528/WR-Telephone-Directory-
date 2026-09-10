@@ -74,9 +74,17 @@ def rank_designation(designation):
 
 
 def resolve_utility_head(employees):
-    """Returns the employee with the most senior designation (per
-    rank_designation) from the given list -- ties, including all-unranked,
-    keep the first employee in the list. Returns None for an empty list."""
+    """Returns the organization's Utility Head from the given list of its
+    employees -- a manually-flagged employee (Employee.is_utility_head)
+    always wins over the designation-based auto-resolution below, so an
+    admin's explicit choice sticks regardless of designation text. Falls
+    back to the most senior designation (per rank_designation) when no one
+    is manually flagged -- ties, including all-unranked, keep the first
+    employee in the list. Returns None for an empty list."""
+    manual = next((e for e in employees if getattr(e, "is_utility_head", False)), None)
+    if manual is not None:
+        return manual
+
     best, best_rank = None, None
     for emp in employees:
         rank, _phrase = rank_designation(getattr(emp, "designation", None))
@@ -87,17 +95,25 @@ def resolve_utility_head(employees):
 
 def compute_utility_head_ids():
     """Returns the set of Employee ids that are each organization's
-    auto-resolved Utility Head -- computed fresh from current employee data
-    on every call, never from the stored is_utility_head flag. Used
-    everywhere the app needs to know "is this employee the head" without
-    recomputing per row (e.g. a template's star icon)."""
+    resolved Utility Head -- a manually-flagged employee (Employee.
+    is_utility_head) if one exists for that organization, otherwise the
+    designation-based auto-resolution. An organization with
+    Organization.utility_head_excluded set is skipped entirely -- it has no
+    Utility Head at all, regardless of employees. Computed fresh on every
+    call. Used everywhere the app needs to know "is this employee the head"
+    without recomputing per row (e.g. a template's star icon)."""
     from collections import defaultdict
     from models.employee import Employee
+    from models.organization import Organization
+
+    excluded_org_ids = {
+        o.id for o in Organization.query.filter_by(utility_head_excluded=True).all()
+    }
 
     by_org = defaultdict(list)
     # Non-ACTIVE employees are never eligible to resolve as a Utility Head.
     for e in Employee.query.filter(Employee.status == "ACTIVE").order_by(Employee.id).all():
-        if e.organization_id is not None:
+        if e.organization_id is not None and e.organization_id not in excluded_org_ids:
             by_org[e.organization_id].append(e)
 
     ids = set()

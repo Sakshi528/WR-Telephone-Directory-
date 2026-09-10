@@ -62,6 +62,9 @@
     <!-- Actions -->
     <div class="d-flex flex-wrap gap-2 mb-3">
         <button type="submit" form="ahFilterForm" class="btn btn-primary btn-sm">Apply Filters</button>
+        <button type="button" class="btn btn-outline-primary btn-sm" id="ahCopySelectedBtn">
+            <i class="bi bi-clipboard-check me-1"></i>Copy Selected Emails
+        </button>
         <button type="button" class="btn btn-outline-primary btn-sm" id="ahCopyBtn">
             <i class="bi bi-clipboard me-1"></i>Copy Emails
         </button>
@@ -90,6 +93,9 @@
         <table class="table table-bordered table-hover align-middle">
             <thead class="table-dark">
                 <tr>
+                    <th class="text-center" style="width:36px">
+                        <input type="checkbox" id="ahSelectAll" title="Select all">
+                    </th>
                     <th class="text-center" style="width:55px">Sr No.</th>
                     <th>Organization</th>
                     <th>Name</th>
@@ -103,6 +109,9 @@
             <tbody>
                 {% for head in heads %}
                 <tr>
+                    <td class="text-center">
+                        <input type="checkbox" class="ah-row-check" data-email="{{ head.resolved_email or '' }}">
+                    </td>
                     <td class="text-muted text-center">{{ loop.index }}</td>
                     <td>{{ head.organization.organization_name if head.organization else '–' }}</td>
                     <td class="fw-semibold">
@@ -138,10 +147,27 @@
 
 </div>
 
+<div id="ahToast" class="position-fixed bottom-0 end-0 p-3" style="z-index:1080; display:none;">
+    <div class="toast align-items-center text-bg-success border-0 show" role="alert">
+        <div class="d-flex">
+            <div class="toast-body" id="ahToastBody"></div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                    onclick="document.getElementById('ahToast').style.display='none'"></button>
+        </div>
+    </div>
+</div>
+
 <script type="application/json" id="ahEmailsData">{{ emails | tojson }}</script>
 <script>
 (function () {
     var emails = JSON.parse(document.getElementById("ahEmailsData").textContent);
+
+    function showToast(message) {
+        var toast = document.getElementById("ahToast");
+        document.getElementById("ahToastBody").textContent = message;
+        toast.style.display = "block";
+        setTimeout(function () { toast.style.display = "none"; }, 2500);
+    }
 
     document.getElementById("ahCopyBtn").addEventListener("click", function (e) {
         navigator.clipboard.writeText(emails.join(";\n")).then(function () {
@@ -158,6 +184,30 @@
         } else {
             alert("Too many recipients (" + emails.length + ") for a mail link — use Copy Emails or Export instead.");
         }
+    });
+
+    var selectAll = document.getElementById("ahSelectAll");
+    var rowChecks = Array.prototype.slice.call(document.querySelectorAll(".ah-row-check"));
+
+    if (selectAll) {
+        selectAll.addEventListener("change", function () {
+            rowChecks.forEach(function (cb) { cb.checked = selectAll.checked; });
+        });
+    }
+
+    document.getElementById("ahCopySelectedBtn").addEventListener("click", function () {
+        var selected = rowChecks
+            .filter(function (cb) { return cb.checked && cb.dataset.email; })
+            .map(function (cb) { return cb.dataset.email; });
+
+        if (!selected.length) {
+            showToast("No rows selected");
+            return;
+        }
+
+        navigator.clipboard.writeText(selected.join(", ")).then(function () {
+            showToast(selected.length + " email" + (selected.length === 1 ? "" : "s") + " copied to clipboard");
+        });
     });
 }());
 </script>

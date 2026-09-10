@@ -33,6 +33,17 @@
         </div>
 
         <div class="mb-3">
+            <label>Organisation</label>
+
+            <select name="organization_id" class="form-control">
+                <option value="">-- Select Organisation --</option>
+                {% for org in organizations %}
+                <option value="{{ org.id }}" {{ 'selected' if number.organization_id == org.id }}>{{ org.organization_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label>Category</label>
 
             <input

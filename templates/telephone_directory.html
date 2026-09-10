@@ -213,7 +213,10 @@
                                     <i class="bi bi-telephone-fill text-danger me-1"></i>
                                     {{ cr.name }}
                                 </td>
-                                <td><span class="badge bg-danger">Control Room</span></td>
+                                <td>
+                                    <span class="badge bg-danger">Control Room</span>
+                                    {% if cr.switch_yard %}<span class="badge bg-info text-dark ms-1">Switch Yard</span>{% endif %}
+                                </td>
                                 <td colspan="2">{{ cr.phone_number or '–' }}</td>
                                 <td>{{ cr.email or '–' }}</td>
                                 <td></td>
@@ -247,7 +250,10 @@
                                     <i class="bi bi-lightning-fill text-primary me-1"></i>
                                     {{ sw.name }}
                                 </td>
-                                <td><span class="badge bg-primary">Switchyard</span></td>
+                                <td>
+                                    <span class="badge bg-primary">Switchyard</span>
+                                    {% if sw.control_room %}<span class="badge bg-warning text-dark ms-1">Control Room</span>{% endif %}
+                                </td>
                                 <td colspan="2">{{ sw.phone_number or '–' }}</td>
                                 <td>{{ sw.email or '–' }}</td>
                                 <td></td>

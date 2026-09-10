@@ -39,6 +39,12 @@
                             <dd class="col-sm-8">{{ number.organization or '–' }}</dd>
                             <dt class="col-sm-4">Category</dt>
                             <dd class="col-sm-8">{{ number.category or '–' }}</dd>
+                            <dt class="col-sm-4">Flags</dt>
+                            <dd class="col-sm-8">
+                                {% if number.control_room %}<span class="badge bg-warning text-dark me-1">Control Room</span>{% endif %}
+                                {% if number.switch_yard %}<span class="badge bg-info text-dark">Switch Yard</span>{% endif %}
+                                {% if not number.control_room and not number.switch_yard %}–{% endif %}
+                            </dd>
                         </dl>
                     </div>
                 </div>
@@ -57,6 +63,8 @@
                                     <a href="mailto:{{ number.email }}">{{ number.email }}</a>
                                 {% else %}–{% endif %}
                             </dd>
+                            <dt class="col-sm-4">IP Address</dt>
+                            <dd class="col-sm-8">{{ number.ip_address or '–' }}</dd>
                         </dl>
                     </div>
                 </div>

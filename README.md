@@ -1,16 +1,27 @@
 # Telephone Directory Management System
 
-A Flask and MySQL web app for managing employee contact details, common directory numbers, user registrations, and employee update requests.
+A Flask + PostgreSQL web app for managing the WRLDC employee telephone directory,
+common directory numbers (hospitals, emergency, control rooms), administrative
+heads, user registrations, and employee update requests.
 
 ## Features
 
 - User registration and login
 - Admin login and dashboard
 - Employee directory with keyword, organization, and department filters
-- Employee detail pages and user update requests
-- Admin approval/rejection of update requests
-- Admin CRUD for employees and directory numbers
-- Import helper for employee data from a Word document
+- Employee detail pages and user-submitted update requests
+- Admin approval/rejection of update requests, with audit logging
+- Admin CRUD for employees, directory numbers, and administrative heads
+- Email distribution group management
+- Directory versioning/archival and PDF export (reportlab)
+- Import/reconciliation tooling for employee data from Word/Excel sources
+
+## Tech Stack
+
+- Flask 3, Flask-Login, Flask-SQLAlchemy
+- PostgreSQL (via `psycopg`)
+- python-docx / openpyxl for Word and Excel import
+- reportlab for PDF generation
 
 ## Setup
 
@@ -27,20 +38,28 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-3. Create the MySQL database and tables.
+3. Create the PostgreSQL database and base schema.
 
 ```powershell
-mysql -u root -p < database/schema.sql
+psql -U postgres -d telephone_directory -f database/postgres_schema.sql
 ```
 
-4. Configure the database connection if your MySQL password or host differs.
+Then apply the incremental migrations in order:
 
 ```powershell
-$env:DATABASE_URL = "mysql+pymysql://root:your_password@localhost/telephone_directory"
+Get-ChildItem migrations\*.sql | Sort-Object Name | ForEach-Object {
+    psql -U postgres -d telephone_directory -f $_.FullName
+}
+```
+
+4. Configure the database connection if it differs from the local default.
+
+```powershell
+$env:DATABASE_URL = "postgresql+psycopg://postgres:your_password@localhost:5432/telephone_directory"
 $env:SECRET_KEY = "change-this-secret"
 ```
 
-If `DATABASE_URL` is not set, the app uses the local default from `config.py`.
+If `DATABASE_URL` is not set, the app uses the default connection string in `config.py`.
 
 5. Create the default admin account.
 
@@ -48,35 +67,54 @@ If `DATABASE_URL` is not set, the app uses the local default from `config.py`.
 python create_admin.py
 ```
 
-Default admin credentials:
-
-- Email: `admin@gmail.com`
-- Password: `admin123`
-
 6. Run the app.
 
 ```powershell
 python app.py
 ```
 
-Open `http://127.0.0.1:5000/login`.
+The server listens on `http://127.0.0.1:8000`. Open `http://127.0.0.1:8000/admin-login`
+for the admin dashboard. `FLASK_DEBUG=1` enables the Werkzeug debugger for local
+development only — leave it unset (default) on any machine reachable by others.
 
-## Optional Import
+## Project Layout
 
-To import employees from the Word document in `uploads/`, run:
+- `app.py` — application factory/entry point, blueprint registration
+- `config.py` — configuration (database URL, upload/storage paths, session lifetime)
+- `models/` — SQLAlchemy models (employees, directory numbers, admin heads, audit log, etc.)
+- `routes/` — Flask blueprints (`auth_routes`, `user_routes`, `admin_routes`)
+- `database/` — base schema SQL
+- `migrations/` — incremental, numbered SQL migrations applied after the base schema
+- `templates/`, `static/` — Jinja templates and static assets
+- `services/`, `utils/` — shared business logic and helpers
+- `scripts/` — one-off data import, reconciliation, and data-quality audit scripts
+- `reports/` — generated CSV/Excel audit and reconciliation reports
+- `docs/PROJECT_DOCUMENTATION.md` — extended project documentation
+
+## Data Import & Reconciliation
+
+Import employees from the Word document in `uploads/`:
 
 ```powershell
 python import_employee.py
+python import_employee.py --replace   # rebuild with corrected column mapping
 ```
 
-To rebuild employee data with corrected column mapping:
-
-```powershell
-python import_employee.py --replace
-```
-
-To import hospitals, emergency numbers, and control-room numbers:
+Import hospitals, emergency numbers, and control-room numbers:
 
 ```powershell
 python import_directory_numbers.py --replace
+```
+
+Other import/reconciliation entry points (`import_employees_excel.py`,
+`import_from_excel_db.py`, `import_organizations.py`, `reconcile_word_database.py`,
+and the rest of `scripts/`) support one-off data-quality audits and backfills against
+the Word and Excel source documents; see each script's `--help` and
+`docs/PROJECT_DOCUMENTATION.md` for details.
+
+## Tests
+
+```powershell
+python test_import.py
+python test_import_employee.py
 ```
