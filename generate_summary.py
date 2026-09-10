@@ -127,8 +127,9 @@ def build():
         ("Authentication",       "Flask-Login 0.6.3"),
         ("Excel Export",         "openpyxl 3.1.5"),
         ("Word Export",          "python-docx 1.1.2"),
-        ("Frontend Framework",   "Bootstrap 5.3 (CDN)"),
-        ("Icons",                "Bootstrap Icons (CDN)"),
+        ("Frontend Framework",   "Bootstrap 5.3 (vendored locally under static/ -- no CDN dependency, "
+                                  "so the app works on LAN machines without internet access)"),
+        ("Icons",                "Bootstrap Icons 1.11 (vendored locally under static/)"),
         ("Colour Scheme",        "Navy Blue (#1A3A6B) on white / Bootstrap neutrals"),
         ("Session Management",   "Flask server-side sessions with 20-minute idle timeout"),
     ]
@@ -151,8 +152,10 @@ def build():
 
     tables_info = [
         ("organizations",
-         "id, organization_name, region, address",
-         "Stores every power utility, load despatch centre, and government body."),
+         "id, organization_name, region, address, category_id (FK), utility_head_excluded",
+         "Stores every power utility, load despatch centre, and government body. "
+         "utility_head_excluded lets an admin mark an organisation as having no Utility "
+         "Head at all, overriding the automatic designation-based resolution."),
         ("departments",
          "id, department_name",
          "Lookup table for internal departments (e.g. Operations, IT, HR)."),
@@ -162,8 +165,12 @@ def build():
          "Main table of all personnel imported from the Word directory document. "
          "is_utility_head flag marks the head/senior officer of each organisation."),
         ("directory_numbers",
-         "id, name, phone_number, email, organization, category",
-         "Control room numbers, ALDC lines, and other important numbers not tied to a person."),
+         "id, name, phone_number, email, organization, organization_id (FK), category, "
+         "switch_yard, control_room, ip_address",
+         "Control room numbers, switchyard numbers, ALDC lines, and other important "
+         "numbers not tied to a person. Linked to organizations via organization_id so "
+         "each number groups under the correct organisation card on the Telephone "
+         "Directory page."),
         ("emergency_contacts",
          "id, employee_id (FK), contact_name, relation, phone",
          "Personal/family emergency contacts of Grid India employees."),
@@ -250,7 +257,12 @@ def build():
     doc.add_paragraph(
         "A consolidated single-page view of the head or most senior officer of every "
         "organisation in the directory. Automatically determined by designation-priority "
-        "scoring (Chairman/CMD = highest, Manager = lowest) and confirmed by admin."
+        "scoring (Chairman/CMD = highest, Manager = lowest) via "
+        "utils/designation_rank.py, with two admin overrides on top: an admin can "
+        "manually pin a specific employee as an organisation's head regardless of "
+        "designation, or explicitly mark an organisation as having no Utility Head at "
+        "all (instead of always falling back to the same employee when there is no "
+        "other candidate)."
     )
     items = [
         ("Columns",           "Sr No., Name, Designation, Organisation, Office Phone, "
@@ -260,7 +272,10 @@ def build():
         ("Export – Excel",    "Download the complete utility heads list as .xlsx."),
         ("Export – Word",     "Download the complete utility heads list as .docx."),
         ("Admin controls",    "Edit, Remove from Utility Heads, and Delete buttons appear "
-                              "for admin users."),
+                              "for admin users. Removing the head of a single-employee (or "
+                              "otherwise uncontested) organisation excludes that "
+                              "organisation from having a Utility Head, rather than "
+                              "silently re-selecting the same employee."),
     ]
     for bold, desc in items:
         add_bullet(doc, desc, bold)
@@ -375,7 +390,10 @@ def build():
     add_heading(doc, "5.4  Directory Numbers  (/admin/directory-numbers)", level=2)
     items = [
         ("Search",        "Search by name, phone, organisation, or category."),
-        ("Add / Edit",    "Name, phone number, email, organisation, category (e.g. Control Room)."),
+        ("Add / Edit",    "Name, phone number, email, Organisation (dropdown of actual "
+                          "organisations -- links via organization_id so it groups "
+                          "correctly on the Telephone Directory page), category "
+                          "(e.g. Control Room, Switchyard)."),
         ("Delete",        "Remove a directory number entry."),
         ("Dashboard link","Back to dashboard button in the page header."),
     ]
