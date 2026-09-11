@@ -358,7 +358,7 @@ One row per generated/regenerated official snapshot. `version_number` (unique, e
 `EmailGroup`: `name` (unique), `description`, `list_type` (`STATIC`\|`DYNAMIC`, CHECK-enforced), `created_by`. STATIC groups hold an explicit membership list via `GroupMember` (`group_id`+`employee_id`, both `ON DELETE CASCADE`, unique together). DYNAMIC groups instead hold `EmailGroupFilter` rows and are resolved live — their membership is never a snapshot.
 
 ### `email_group_filters` (`EmailGroupFilter`)
-One filter rule for a DYNAMIC group. `filter_type` (`ORGANIZATION`\|`ORGANIZATION_CATEGORY`\|`ROLE`\|`STATUS`, CHECK-enforced), plus exactly one of `organization_id`, `category_id`, `role_value` (`UTILITY_HEAD`\|`ADMINISTRATIVE_HEAD`\|`KMP`), `status_value` (6 of the 8 employee statuses only) populated, matching `filter_type`. Docstring: *"Rows sharing the same filter_type are ORed together; different filter_types are ANDed — e.g. (category=Transmission Utility OR category=SLDC) AND status=ACTIVE."*
+One filter rule for a DYNAMIC group. `filter_type` (`ORGANIZATION`\|`ORGANIZATION_CATEGORY`\|`ROLE`\|`STATUS`\|`INCLUDE_EMPLOYEE`\|`EXCLUDE_EMPLOYEE`, CHECK-enforced — the last two added by migration 017), plus exactly one of `organization_id`, `category_id`, `role_value` (`UTILITY_HEAD`\|`ADMINISTRATIVE_HEAD`\|`KMP`), `status_value` (6 of the 8 employee statuses only), `employee_id` (FK → employees.id, `ON DELETE CASCADE`, migration 017) populated, matching `filter_type`. Docstring: *"Rows sharing the same filter_type are ORed together; different filter_types are ANDed — e.g. (category=Transmission Utility OR category=SLDC) AND status=ACTIVE."* `INCLUDE_EMPLOYEE`/`EXCLUDE_EMPLOYEE` rows are the exception to the AND/OR combination rule — `resolve_dynamic_group()` applies them last, as a manual override on top of the combined result, not ANDed/ORed into the filter logic (see Section 11.8).
 
 ## 3.3 Migration History (chronological)
 
@@ -377,6 +377,10 @@ One filter rule for a DYNAMIC group. `filter_type` (`ORGANIZATION`\|`ORGANIZATIO
 | 011 | `011_generation_company_type.sql` | +1 seed row ("Generation Company"). |
 | 012 | `012_transmission_and_re_generators.sql` | +seed rows preparing a CTU/STU merge and RE Generators split (actual reclassification handled by `scripts/reclassify_organization_types.py`, not SQL). |
 | 013 | `013_update_request_administrative_head.sql` | `update_requests.administrative_head_id` — lets the public Request Update flow target Administrative Heads. |
+| 014 | `014_directory_number_contact_fields.sql` | `directory_numbers.switch_yard`/`control_room` (explicit boolean flags, additive alongside the existing free-text `category`) + `ip_address`. |
+| 015 | `015_remove_ipp_category.sql` | Removed the unused `IPP` organization category (0 organizations ever assigned it — see `reclassify_organization_types.py`). |
+| 016 | `016_utility_head_no_head_flag.sql` | `organizations.utility_head_excluded` — lets an admin explicitly mark an organization as having no Utility Head, overriding the always-auto-resolve default. |
+| 017 | `017_email_group_member_overrides.sql` | `email_group_filters.employee_id` (FK → employees.id, `ON DELETE CASCADE`); widened `filter_type` CHECK to add `INCLUDE_EMPLOYEE`/`EXCLUDE_EMPLOYEE` — manual per-employee add/remove overrides for DYNAMIC email groups (see Section 11.8). |
 
 ## 3.4 Notable FK `ON DELETE` Behavior
 
@@ -421,7 +425,7 @@ Both `SECRET_KEY` and the database URI (including a **plaintext DB password**) f
 ## 4.3 `routes/` — Responsibility of Each File
 
 - **`auth_routes.py`**: `/admin-login` (GET/POST, public) and `/logout` (GET, `@login_required`). Password check via Werkzeug's `check_password_hash`. Blocks login for inactive admin accounts (`admin.status != "active"`).
-- **`admin_routes.py`** (1,427 lines): every admin-only page and action — Dashboard, Employee/Organization/Emergency Contact/Directory Number CRUD, Update Request review, Administrative Head lifecycle + PA/PS assistants, custom Email Group CRUD, Directory Version generate/regenerate/delete, Import History, Export Verification Workbook. Every route decorated with a locally defined `admin_required` (wraps `@login_required` + `current_user.role == "admin"` check).
+- **`admin_routes.py`** (1,568 lines): every admin-only page and action — Dashboard, Employee/Organization/Emergency Contact/Directory Number CRUD, Update Request review, Administrative Head lifecycle + PA/PS assistants, custom Email Group CRUD (including the members view and manual add/remove overrides, Section 11.8), Directory Version generate/regenerate/delete, Import History, Export Verification Workbook. Every route decorated with a locally defined `admin_required` (wraps `@login_required` + `current_user.role == "admin"` check).
 - **`user_routes.py`** (1,616 lines): every public page — Home, Employee Directory, Telephone Directory, Utility Heads, Administrative Heads (read side), Email Distribution/Address Book, Directory Numbers (read side), Directory Versions (read side), Universal Search + autocomplete, all Exports, the three public "Request Update" submission forms, and the two cascading-dropdown JSON APIs. **No route in this file has any authentication decorator.**
 
 ## 4.4 `services/` — Responsibility of Each File
@@ -497,10 +501,11 @@ All 40 templates live flat in `templates/`, no per-blueprint subfolders, all ext
 | Add/Edit Organization | `add_organization.html` / `edit_organization.html` | Admin | Name/region/category/address form. |
 | Add/Edit Administrative Head | `add_administrative_head.html` / `edit_administrative_head.html` | Admin | Dual-mode: link an existing Employee (autocomplete) **or** fill standalone name/contact fields; Edit form adds a read-only "Currently shown across the app" summary box and a warning when an Employee link overrides standalone fields. |
 | Add/Edit Assistant | `administrative_head_assistant_form.html` | Admin | Same dual-mode pattern for PA/PS; "Set as Primary" checkbox only shown when adding. |
-| Add/Edit Directory Number | `add_directory_number.html` / `edit_directory_number.html` | Admin | Minimal 3-field form (name, phone, category). |
+| Add/Edit Directory Number | `add_directory_number.html` / `edit_directory_number.html` | Admin | Minimal 3-field form (name, phone, category); both now carry a Back button to the Directory Numbers list. |
 | Add/Edit Emergency Contact | `add_emergency_contact.html` / `edit_emergency_contact.html` | Admin | Employee dropdown + contact fields. |
-| Manage Email Groups | `manage_email_groups.html` | Admin | List of custom DYNAMIC groups with filter-summary text and member/email-count badges. |
+| Manage Email Groups | `manage_email_groups.html` | Admin | List of custom DYNAMIC groups with filter-summary text and member/email-count badges (clickable through to the members view). |
 | Add/Edit Email Group | `email_group_form.html` | Admin | Multi-select Organization Categories/Organizations + checkbox groups for Roles and Statuses. |
+| Email Group Members | `email_group_members.html` | Admin | Live-resolved member table (Organization/Name/Designation/Email) for one custom group, with client-side search; the place to manually add/remove a specific employee via `INCLUDE_EMPLOYEE`/`EXCLUDE_EMPLOYEE` overrides (Section 11.8). |
 | Request Update (Employee) | `update_request.html` | Public | See Section 6.7 — the most feature-rich of the three request forms (dynamic Current Information field + status-dropdown swap). |
 | Request Update (Directory Number) | `directory_update_request.html` | Public | Same "Current Information" pattern, no dynamic field-type swap (no enum fields). |
 | Request Update (Administrative Head) | `administrative_head_update_request.html` | Public | Same pattern as the Directory Number form. |
@@ -831,6 +836,14 @@ Both surfaces offer `.xlsx` and `.csv` exports (`/email-lists/<slug>/export.xlsx
 ## 11.7 Backend Queries
 
 `services/email_distribution_service.py` is the shared resolution layer: `to_contact_row()` builds a uniform contact dict (including `record_id`/`record_type` — `employee`/`directory_number`/`administrative_head` — which is what lets the Address Book's client-side JS build correct per-row Edit/Delete URLs regardless of the underlying record type), DYNAMIC `EmailGroup`s are resolved **live** every time (never cached/snapshotted — their membership always reflects the current database), and a `dedupe_and_sort()` step removes duplicate contacts (e.g. someone who is both a Utility Head and an Administrative Head of the same org) before counting/rendering.
+
+## 11.8 Custom (Saved Dynamic) Groups — Membership View & Manual Overrides
+
+Admin-only, at `/admin/email-groups`. A custom group (`EmailGroup.list_type == "DYNAMIC"`) is built from `EmailGroupFilter` rows (Organization Categories/Organizations, Roles, Status — OR within a type, AND across types) and always resolves **live** from `resolve_dynamic_group()`, never as a stored snapshot.
+
+- **Viewing members**: the Members column on `manage_email_groups.html` shows two badges — total matched count and unique-email count — both linking to `/admin/email-groups/<id>/members` (`email_group_members.html`), a server-rendered table (Organization, Name, Designation, Email) with a client-side search box, resolved fresh on every visit so it can never go stale relative to the underlying Employee/Administrative Head data.
+- **Manual add/remove**: since membership is filter-computed, there's no membership list to directly edit. `EmailGroupFilter.filter_type` has two override values added for this — `INCLUDE_EMPLOYEE` and `EXCLUDE_EMPLOYEE` (each pairs with the row's `employee_id` FK, migration 017) — which `resolve_dynamic_group()` applies **last**, after the category/role/status filters, so a manual override always wins regardless of whether the person matches the group's filters. `POST /admin/email-groups/<id>/members/add` (with an `employee_id`) adds an `INCLUDE_EMPLOYEE` override (first clearing any prior override for that same employee, so re-adding someone who was excluded cancels the exclusion); `POST /admin/email-groups/<id>/members/remove` adds an `EXCLUDE_EMPLOYEE` override the same way. `_build_filter_summary()` appends a `+N manually added` / `−N manually removed` suffix to the group's filter-summary text whenever overrides exist, so the list page always shows that a group's membership isn't purely filter-derived.
+- **Changing who's in a group otherwise**: the two non-override ways are (a) editing the group's filters themselves (`email_group_form.html`, Category/Organization/Role/Status), or (b) editing the underlying Employee's own status/role/organization, since those drive filter matching directly.
 
 ---
 

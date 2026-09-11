@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ group.name }} – Members{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-people me-2"></i>{{ group.name }} – Members</h2>
+        <a href="{{ url_for('admin.manage_email_groups') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>Back
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="alert alert-secondary mt-3 small">
+        <strong>Filters:</strong> {{ filter_summary }}
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <div class="text-muted small">{{ contacts|length }} member(s)</div>
+        <input type="text" id="memberSearch" class="form-control form-control-sm" style="max-width:300px"
+               placeholder="Search name, org, email…">
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle" id="membersTable">
+            <thead class="table-dark">
+                <tr>
+                    <th style="width:25%">Organization</th>
+                    <th style="width:20%">Name</th>
+                    <th style="width:20%">Designation</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in contacts %}
+                <tr>
+                    <td>{{ c.organization }}</td>
+                    <td>{{ c.name }}</td>
+                    <td>{{ c.designation }}</td>
+                    <td>
+                        {% if c.email %}
+                        <a href="mailto:{{ c.email }}">{{ c.email }}</a>
+                        {% else %}
+                        <span class="text-muted">—</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" class="text-center text-muted py-4">No members match this group's filters</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+document.getElementById('memberSearch').addEventListener('input', function () {
+    const q = this.value.trim().toLowerCase();
+    document.querySelectorAll('#membersTable tbody tr').forEach(function (row) {
+        row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+</script>
+{% endblock %}

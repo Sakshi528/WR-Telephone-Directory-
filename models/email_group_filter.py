@@ -18,7 +18,7 @@ class EmailGroupFilter(db.Model):
         nullable=False
     )
 
-    filter_type = db.Column(db.String(30), nullable=False)  # ORGANIZATION | ORGANIZATION_CATEGORY | ROLE | STATUS
+    filter_type = db.Column(db.String(30), nullable=False)  # ORGANIZATION | ORGANIZATION_CATEGORY | ROLE | STATUS | INCLUDE_EMPLOYEE | EXCLUDE_EMPLOYEE
 
     organization_id = db.Column(
         db.Integer,
@@ -36,6 +36,14 @@ class EmailGroupFilter(db.Model):
 
     status_value = db.Column(db.String(20))  # ACTIVE | INACTIVE | TRANSFERRED | RETIRED | DEPUTATION | RESIGNED
 
+    employee_id = db.Column(
+        db.Integer,
+        db.ForeignKey("employees.id", ondelete="CASCADE"),
+        nullable=True
+    )
+
     organization = db.relationship("Organization", lazy=True)
 
     category = db.relationship("OrganizationCategory", lazy=True)
+
+    employee = db.relationship("Employee", lazy=True)

@@ -43,8 +43,10 @@
                     </td>
                     <td class="small">{{ s.filter_summary }}</td>
                     <td class="text-center">
-                        <span class="badge bg-light text-dark border" title="Members">{{ s.member_count }}</span>
-                        <span class="badge bg-success" title="Unique emails">{{ s.email_count }}</span>
+                        <a href="{{ url_for('admin.email_group_members', id=s.group.id) }}"
+                           class="badge bg-light text-dark border text-decoration-none" title="View members">{{ s.member_count }}</a>
+                        <a href="{{ url_for('admin.email_group_members', id=s.group.id) }}"
+                           class="badge bg-success text-decoration-none" title="View members (unique emails)">{{ s.email_count }}</a>
                     </td>
                     <td class="text-center text-nowrap">
                         <a href="{{ url_for('admin.edit_email_group', id=s.group.id) }}"

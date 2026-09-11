@@ -27,7 +27,7 @@ from models.directory_version import DirectoryVersion
 from models.import_batch import ImportBatch
 from utils.designation_rank import resolve_utility_head
 from services.audit_service import log_audit_event
-from services.email_distribution_service import resolve_dynamic_group, dedupe_and_sort
+from services.email_distribution_service import resolve_dynamic_group, dedupe_and_sort, to_contact_row
 from services import head_service
 from services import directory_version_service
 from services.verification_workbook_service import (
@@ -1339,7 +1339,15 @@ def _build_filter_summary(group):
     status_names = [f.status_value for f in group.filters if f.filter_type == "STATUS"]
     if status_names:
         parts.append("Status: " + " OR ".join(status_names))
-    return " AND ".join(parts) if parts else "(no filters)"
+    summary = " AND ".join(parts) if parts else "(no filters)"
+
+    include_count = sum(1 for f in group.filters if f.filter_type == "INCLUDE_EMPLOYEE")
+    exclude_count = sum(1 for f in group.filters if f.filter_type == "EXCLUDE_EMPLOYEE")
+    if include_count:
+        summary += f" + {include_count} manually added"
+    if exclude_count:
+        summary += f" − {exclude_count} manually removed"
+    return summary
 
 
 def _apply_filters_from_form(group):
@@ -1373,6 +1381,79 @@ def manage_email_groups():
             "email_count": len(emails),
         })
     return render_template("manage_email_groups.html", summaries=summaries)
+
+
+@admin_bp.route("/admin/email-groups/<int:id>/members")
+@admin_required
+def email_group_members(id):
+    group = db.session.get(EmailGroup, id)
+    if not group:
+        flash("Email group not found", "danger")
+        return redirect(url_for("admin.manage_email_groups"))
+
+    rows = resolve_dynamic_group(group)
+    contacts = [to_contact_row(r) for r in rows]
+    contacts.sort(key=lambda c: (c["organization"], c["name"]))
+
+    include_ids = {f.employee_id for f in group.filters if f.filter_type == "INCLUDE_EMPLOYEE"}
+    for c in contacts:
+        c["manually_added"] = c["record_type"] == "employee" and c["record_id"] in include_ids
+
+    return render_template(
+        "email_group_members.html", group=group, contacts=contacts,
+        filter_summary=_build_filter_summary(group),
+    )
+
+
+@admin_bp.route("/admin/email-groups/<int:id>/members/add", methods=["POST"])
+@admin_required
+def add_email_group_member(id):
+    group = db.session.get(EmailGroup, id)
+    if not group:
+        flash("Email group not found", "danger")
+        return redirect(url_for("admin.manage_email_groups"))
+
+    employee_id = optional_int(request.form.get("employee_id"))
+    employee = db.session.get(Employee, employee_id) if employee_id else None
+    if not employee:
+        flash("Select a valid employee to add.", "danger")
+        return redirect(url_for("admin.email_group_members", id=id))
+
+    # Adding someone back cancels a prior manual exclusion of them.
+    group.filters = [
+        f for f in group.filters
+        if not (f.filter_type in ("INCLUDE_EMPLOYEE", "EXCLUDE_EMPLOYEE") and f.employee_id == employee_id)
+    ]
+    group.filters.append(EmailGroupFilter(filter_type="INCLUDE_EMPLOYEE", employee_id=employee_id))
+    db.session.commit()
+    flash(f"{employee.employee_name} added to {group.name}.", "success")
+    return redirect(url_for("admin.email_group_members", id=id))
+
+
+@admin_bp.route("/admin/email-groups/<int:id>/members/remove", methods=["POST"])
+@admin_required
+def remove_email_group_member(id):
+    group = db.session.get(EmailGroup, id)
+    if not group:
+        flash("Email group not found", "danger")
+        return redirect(url_for("admin.manage_email_groups"))
+
+    employee_id = optional_int(request.form.get("employee_id"))
+    if not employee_id:
+        flash("Invalid member.", "danger")
+        return redirect(url_for("admin.email_group_members", id=id))
+
+    # Removing someone cancels a prior manual inclusion, then (if they'd
+    # still match the group's filters) explicitly excludes them so removal
+    # sticks regardless of how they got in.
+    group.filters = [
+        f for f in group.filters
+        if not (f.filter_type in ("INCLUDE_EMPLOYEE", "EXCLUDE_EMPLOYEE") and f.employee_id == employee_id)
+    ]
+    group.filters.append(EmailGroupFilter(filter_type="EXCLUDE_EMPLOYEE", employee_id=employee_id))
+    db.session.commit()
+    flash("Member removed.", "danger")
+    return redirect(url_for("admin.email_group_members", id=id))
 
 
 @admin_bp.route("/admin/email-groups/add", methods=["GET", "POST"])

@@ -393,9 +393,41 @@ def build():
         ("Add / Edit",    "Name, phone number, email, Organisation (dropdown of actual "
                           "organisations -- links via organization_id so it groups "
                           "correctly on the Telephone Directory page), category "
-                          "(e.g. Control Room, Switchyard)."),
+                          "(e.g. Control Room, Switchyard). Both the Add and Edit forms "
+                          "now carry a Back button that returns to this list."),
         ("Delete",        "Remove a directory number entry."),
         ("Dashboard link","Back to dashboard button in the page header."),
+    ]
+    for bold, desc in items:
+        add_bullet(doc, desc, bold)
+
+    # 5.7 Custom Email Groups
+    add_heading(doc, "5.7  Custom Email Groups  (/admin/email-groups)", level=2)
+    doc.add_paragraph(
+        "Saved, filter-based distribution lists. A group is defined by Organisation "
+        "Category / Organisation, Role (Utility Head / Administrative Head / KMP), and "
+        "Status filters -- membership is never a stored list, it is resolved live from "
+        "the current employee data every time the group is viewed or emailed."
+    )
+    items = [
+        ("Add / Edit group",   "Choose Organisation Categories or specific Organisations, "
+                               "Roles, and Statuses. Rows within one filter type are OR'd "
+                               "together; different filter types are AND'd."),
+        ("Members column",     "Two badges on the group list show the total matched "
+                               "member count and the unique-email count; both are "
+                               "clickable and open the group's Members page."),
+        ("View members",       "The Members page lists every currently matched contact "
+                               "(Organisation, Name, Designation, Email) with a live "
+                               "search box, resolved fresh on every visit."),
+        ("Manually add a member",    "From the Members page, an admin can add a specific "
+                                     "employee to a group even if they don't match its "
+                                     "filters -- this creates an explicit override that "
+                                     "always applies, regardless of the filter criteria."),
+        ("Manually remove a member", "Likewise, an admin can remove a specific employee "
+                                     "from a group even if they DO match its filters -- "
+                                     "the removal sticks until reversed, independent of "
+                                     "future filter or data changes."),
+        ("Delete group",       "Remove a saved custom group entirely."),
     ]
     for bold, desc in items:
         add_bullet(doc, desc, bold)
@@ -520,6 +552,13 @@ def build():
         ("/admin/requests",                    "Admin",  "View update requests"),
         ("/admin/requests/approve/<id>",       "Admin",  "Approve correction request"),
         ("/admin/requests/reject/<id>",        "Admin",  "Reject correction request"),
+        ("/admin/email-groups",                "Admin",  "Manage custom email groups"),
+        ("/admin/email-groups/add",            "Admin",  "Add custom email group"),
+        ("/admin/email-groups/edit/<id>",      "Admin",  "Edit custom email group"),
+        ("/admin/email-groups/delete/<id>",    "Admin",  "Delete custom email group"),
+        ("/admin/email-groups/<id>/members",   "Admin",  "View a group's resolved members"),
+        ("/admin/email-groups/<id>/members/add",    "Admin", "Manually add an employee to a group"),
+        ("/admin/email-groups/<id>/members/remove", "Admin", "Manually remove an employee from a group"),
     ]
     for row in urls:
         add_table_row(tbl4, list(row))
@@ -561,6 +600,14 @@ def build():
         ("templates/directory_numbers.html",   "Admin – directory numbers list."),
         ("templates/manage_emergency_contacts.html", "Admin – emergency contacts list."),
         ("templates/manage_requests.html",     "Admin – update requests inbox."),
+        ("templates/manage_email_groups.html", "Admin – custom email group list, with clickable member/email-count badges."),
+        ("templates/email_group_form.html",    "Admin – add/edit a custom email group's filters."),
+        ("templates/email_group_members.html", "Admin – a group's live-resolved member list, with manual add/remove."),
+        ("models/email_group.py",              "EmailGroup model (static or dynamic/filter-based distribution list)."),
+        ("models/email_group_filter.py",       "EmailGroupFilter model -- one filter criterion per group, plus the "
+                                                "INCLUDE_EMPLOYEE/EXCLUDE_EMPLOYEE manual-override rows."),
+        ("services/email_distribution_service.py", "Resolves a group's live membership from its filters and "
+                                                    "manual overrides."),
         ("static/css/style.css",      "Custom styles: navy colour scheme, org card, badges."),
         ("create_admin.py",           "One-time script to create the admin user in the DB."),
         ("import_employee.py",        "Script to import employees from the Word document."),

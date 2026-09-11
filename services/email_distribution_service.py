@@ -301,6 +301,18 @@ def resolve_dynamic_group(email_group):
                 ).filter(Organization.category_id.in_(category_ids))
             rows = rows + standalone_query.all()
 
+    # Manual overrides -- an admin's explicit include/exclude of a specific
+    # employee always wins over the filter-computed result, applied last so
+    # neither ordering nor filter combination can undo it.
+    exclude_ids = {f.employee_id for f in filters_by_type.get("EXCLUDE_EMPLOYEE", [])}
+    if exclude_ids:
+        rows = [r for r in rows if getattr(r, "id", None) not in exclude_ids or not isinstance(r, Employee)]
+
+    include_ids = {f.employee_id for f in filters_by_type.get("INCLUDE_EMPLOYEE", [])} - exclude_ids
+    include_ids -= {r.id for r in rows if isinstance(r, Employee)}
+    if include_ids:
+        rows = rows + Employee.query.filter(Employee.id.in_(include_ids)).all()
+
     return rows
 
 
