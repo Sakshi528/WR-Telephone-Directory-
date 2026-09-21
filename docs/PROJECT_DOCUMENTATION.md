@@ -216,7 +216,7 @@ This is a classic **server-rendered monolith**: Flask renders Jinja2 HTML templa
 
 The schema is PostgreSQL, defined through SQLAlchemy models (`models/*.py`) plus a series of hand-written, numbered SQL migration files (`migrations/002_*.sql` through `migrations/013_*.sql`, applied via `psql`, **not** an ORM migration tool like Alembic). The base schema (`users`, `employees`, `organizations`, `departments`, `directory_numbers`, `update_requests`, `emergency_contacts`) predates the numbered migration system entirely — there is no committed `001` migration or schema.sql capturing it.
 
-18 tables in total:
+19 tables in total:
 
 | # | Table | Model class | Purpose (one line) |
 |---|---|---|---|
@@ -238,6 +238,7 @@ The schema is PostgreSQL, defined through SQLAlchemy models (`models/*.py`) plus
 | 16 | `directory_versions` | `DirectoryVersion` | One row per generated/regenerated official PDF+Excel snapshot. |
 | 17 | `email_groups` / `group_members` | `EmailGroup` / `GroupMember` | Saved distribution groups — static membership or dynamic filter-based. |
 | 18 | `email_group_filters` | `EmailGroupFilter` | One filter criterion (OR within type, AND across types) for a DYNAMIC email group. |
+| 19 | `organization_subcategories` | `OrganizationSubcategory` | Reusable Subcategory suggestion list per Organization Category (autocomplete only). |
 
 ## 3.2 Table-by-Table Detail
 
@@ -290,6 +291,9 @@ Relationship: `children` (`lazy="dynamic"`, self-referential, `backref="parent"`
 
 ### `organization_categories` (`OrganizationCategory`)
 `id`, `category_name` (unique, not null), `description`, `is_state_based` (Boolean, default False — flags types like State SLDC/STU/DISCOM that need a State selector step in the cascading dropdown).
+
+### `organization_subcategories` (`OrganizationSubcategory`)
+`id`, `category_id` (FK → organization_categories.id, `ON DELETE CASCADE`), `subcategory_name`. A pure suggestion list feeding the Subcategory autocomplete on the Add/Edit Organization form; organizations may carry any subcategory value whether or not it is listed here, so nothing references this table. Organizations store their chosen subcategory in `organizations.region`. Created by migration 018.
 
 ### `service_types` (`ServiceType`)
 `id`, `service_type_name` (unique, not null — seeded: IAS, IPS, IFS, State Civil Service, Other), `description`.
@@ -381,6 +385,8 @@ One filter rule for a DYNAMIC group. `filter_type` (`ORGANIZATION`\|`ORGANIZATIO
 | 015 | `015_remove_ipp_category.sql` | Removed the unused `IPP` organization category (0 organizations ever assigned it — see `reclassify_organization_types.py`). |
 | 016 | `016_utility_head_no_head_flag.sql` | `organizations.utility_head_excluded` — lets an admin explicitly mark an organization as having no Utility Head, overriding the always-auto-resolve default. |
 | 017 | `017_email_group_member_overrides.sql` | `email_group_filters.employee_id` (FK → employees.id, `ON DELETE CASCADE`); widened `filter_type` CHECK to add `INCLUDE_EMPLOYEE`/`EXCLUDE_EMPLOYEE` — manual per-employee add/remove overrides for DYNAMIC email groups (see Section 11.8). |
+| 018 | `018_organization_subcategories.sql` | Creates `organization_subcategories` (per-category subcategory suggestion list, cascade-delete with its category). |
+| 019 | `019_remove_re_generators_category.sql` | Removes the empty `RE Generators` category (all 74 of its organizations were merged into Generation Company on 2026-08-27); its one subcategory row cascade-deletes. |
 
 ## 3.4 Notable FK `ON DELETE` Behavior
 
@@ -425,8 +431,8 @@ Both `SECRET_KEY` and the database URI (including a **plaintext DB password**) f
 ## 4.3 `routes/` — Responsibility of Each File
 
 - **`auth_routes.py`**: `/admin-login` (GET/POST, public) and `/logout` (GET, `@login_required`). Password check via Werkzeug's `check_password_hash`. Blocks login for inactive admin accounts (`admin.status != "active"`).
-- **`admin_routes.py`** (1,568 lines): every admin-only page and action — Dashboard, Employee/Organization/Emergency Contact/Directory Number CRUD, Update Request review, Administrative Head lifecycle + PA/PS assistants, custom Email Group CRUD (including the members view and manual add/remove overrides, Section 11.8), Directory Version generate/regenerate/delete, Import History, Export Verification Workbook. Every route decorated with a locally defined `admin_required` (wraps `@login_required` + `current_user.role == "admin"` check).
-- **`user_routes.py`** (1,616 lines): every public page — Home, Employee Directory, Telephone Directory, Utility Heads, Administrative Heads (read side), Email Distribution/Address Book, Directory Numbers (read side), Directory Versions (read side), Universal Search + autocomplete, all Exports, the three public "Request Update" submission forms, and the two cascading-dropdown JSON APIs. **No route in this file has any authentication decorator.**
+- **`admin_routes.py`** (1,787 lines): every admin-only page and action — Dashboard, Employee/Organization/Emergency Contact/Directory Number CRUD, Update Request review, Administrative Head lifecycle + PA/PS assistants, custom Email Group CRUD (including the members view and manual add/remove overrides, Section 11.8), Directory Version generate/regenerate/delete, Import History, Export Verification Workbook. Every route decorated with a locally defined `admin_required` (wraps `@login_required` + `current_user.role == "admin"` check).
+- **`user_routes.py`** (1,704 lines): every public page — Home, Employee Directory, Telephone Directory, Utility Heads, Administrative Heads (read side), Email Distribution/Address Book, Directory Numbers (read side), Directory Versions (read side), Universal Search + autocomplete, all Exports, the three public "Request Update" submission forms, and the two cascading-dropdown JSON APIs. **No route in this file has any authentication decorator.**
 
 ## 4.4 `services/` — Responsibility of Each File
 
@@ -467,7 +473,7 @@ Export logic for Employees/Telephone Directory/Utility Heads/Administrative Head
 
 ## 5.1 Template Organization
 
-All 40 templates live flat in `templates/`, no per-blueprint subfolders, all extending `base.html`. There is no frontend build step — Jinja2 renders server-side, Bootstrap is loaded for layout/components, and four small vanilla-JS files provide interactivity. `base.html` also injects a hidden `#app-meta` element carrying server flags (like `data-is-admin`) that JS reads, and implements a 20-minute idle-session timer (mousemove/keydown/click/scroll/touchstart resets a `setTimeout`; on fire, redirects to logout or a "session expired" page depending on whether the viewer is an admin).
+All 43 templates live flat in `templates/`, no per-blueprint subfolders, all extending `base.html`. There is no frontend build step — Jinja2 renders server-side, Bootstrap is loaded for layout/components, and four small vanilla-JS files provide interactivity. `base.html` also injects a hidden `#app-meta` element carrying server flags (like `data-is-admin`) that JS reads, and implements a 20-minute idle-session timer (mousemove/keydown/click/scroll/touchstart resets a `setTimeout`; on fire, redirects to logout or a "session expired" page depending on whether the viewer is an admin).
 
 ## 5.2 Every Page, In Detail
 
@@ -554,7 +560,7 @@ See Section 9 for the full walk-through of the category-card → organization-ac
 
 ## 6.6 Email Lists / Address Book
 
-`/email-lists`, `/email-lists/<slug>`, `/email-lists/browse` (+ their JSON/export siblings) — see Section 11.
+`/email-lists`, `/email-lists/<slug>`, `/email-lists/browse` (+ their JSON/export siblings) — see Section 11. Admin-created custom (DYNAMIC) groups also appear on `/email-lists` as a "Custom Groups" section of cards, each linking to `/email-lists/custom/<id>` (a public members-and-emails view, `email_distribution_custom_group.html`; 404s for non-DYNAMIC groups).
 
 ## 6.7 Request Information Update
 
@@ -593,7 +599,10 @@ Search/list (`/admin/employees`, keyword search across name/designation/email/mo
 
 ## 7.4 Organization Management
 
-Search/list (with a per-organization employee status breakdown computed via a single grouped query), Add/Edit (uniqueness check, falls back to the seeded "Others" category if none chosen, audit-logs category changes), Delete — **guarded**: blocks deletion if the organization still has any dependent Employees, Directory Numbers, child Organizations, or Administrative Heads, specifically because the database's own `ON DELETE` rules would otherwise silently orphan or cascade-delete related data (Section 3.4).
+Search/list (with a per-organization employee status breakdown computed via a single grouped query), Add/Edit (optional Subcategory field with autocomplete from the category's suggestion list; uniqueness check, falls back to the seeded "Others" category if none chosen, audit-logs category changes), Delete — **guarded**: blocks deletion if the organization still has any dependent Employees, Directory Numbers, child Organizations, or Administrative Heads, specifically because the database's own `ON DELETE` rules would otherwise silently orphan or cascade-delete related data (Section 3.4).
+
+### Organization Categories (`/admin/categories`)
+Reached from the Admin Dashboard's "Add Category" card. Admins can add/edit/delete Organization Categories (name, description, state-based flag) and add/remove Subcategory suggestions per category, with no code change or migration. A category cannot be deleted while any organization uses it; a suggestion can always be removed. "Sync from live data" (`POST /admin/categories/sync`) adds suggestions for combinations in live use and removes ones nothing matches. Routes: `/admin/categories/add`, `/edit/<id>`, `/delete/<id>`, `/<category_id>/subcategories/add`, `/subcategories/delete/<id>`; suggestions JSON at `GET /api/organization-categories/<id>/subcategories`.
 
 ## 7.5 User Management
 
@@ -687,6 +696,7 @@ No AJAX library — every dynamic call uses the browser's native `fetch()`. Full
 | `GET /api/organizations` | Public | Cascading dropdown organizations |
 | `GET /utility-heads/suggest` | Public | Plain list of organization names |
 | `GET /suggestions` | Public | Universal search-box suggestions |
+| `GET /api/organization-categories/<id>/subcategories` | Admin | Subcategory suggestions for a category |
 | `GET /email-lists/<slug>/emails.json` | Public | Group email list + precomputed mailto string |
 | `GET /email-lists/browse/data.json` | Public | Address Book grid rows + summary |
 
