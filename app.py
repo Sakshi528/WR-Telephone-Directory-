@@ -16,6 +16,7 @@ from models.service_type import ServiceType  # noqa: F401 — registers model
 from models.email_group import EmailGroup, GroupMember  # noqa: F401 — registers model
 from models.email_group_filter import EmailGroupFilter  # noqa: F401 — registers model
 from models.organization_category import OrganizationCategory  # noqa: F401 — registers model
+from models.organization_subcategory import OrganizationSubcategory  # noqa: F401 — registers model
 from models.audit_log import AuditLog  # noqa: F401 — registers model
 from models.import_batch import ImportBatch  # noqa: F401 — registers model
 from models.directory_version import DirectoryVersion  # noqa: F401 — registers model

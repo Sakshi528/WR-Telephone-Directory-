@@ -20,6 +20,7 @@ from models.administrative_head import AdministrativeHead
 from models.organization_category import OrganizationCategory
 from models.service_type import ServiceType
 from models.directory_version import DirectoryVersion
+from models.email_group import EmailGroup
 from utils.designation_rank import resolve_utility_head, compute_utility_head_ids
 from utils.section_order import section_sort_key
 from utils.user_agent import parse_user_agent
@@ -29,6 +30,7 @@ from services.email_distribution_service import (
     STANDARD_GROUPS, STANDARD_GROUPS_BY_SLUG, CONTACT_TYPE_CHOICES, CATEGORY_SLUGS,
     dedupe_and_sort, build_mailto, MAILTO_SAFE_LIMIT,
     resolve_category_contacts, to_contact_row, summarize_contacts, filter_contact_rows,
+    resolve_dynamic_group,
 )
 
 
@@ -1387,7 +1389,40 @@ def email_distribution_home():
             "category_name": category_name_by_slug.get(group["slug"]),
         }
         sections.setdefault(group["section"], []).append(card)
+
+    # Admin-created custom (DYNAMIC) groups -- e.g. "ADANI" -- previously
+    # only reachable from the admin panel; surfaced here too since they
+    # resolve from the same public Employee/Organization data every other
+    # card on this page already exposes.
+    custom_groups = EmailGroup.query.filter_by(list_type="DYNAMIC").order_by(EmailGroup.name).all()
+    custom_cards = []
+    for group in custom_groups:
+        rows = resolve_dynamic_group(group)
+        emails = dedupe_and_sort(rows)
+        custom_cards.append({
+            "id": group.id, "name": group.name,
+            "member_count": len(rows), "email_count": len(emails),
+        })
+    if custom_cards:
+        sections["Custom Groups"] = custom_cards
+
     return render_template("email_distribution_home.html", sections=sections)
+
+
+@user_bp.route("/email-lists/custom/<int:id>")
+def email_distribution_custom_group(id):
+    group = db.session.get(EmailGroup, id)
+    if not group or group.list_type != "DYNAMIC":
+        _abort404()
+    rows = resolve_dynamic_group(group)
+    contact_rows = [to_contact_row(r) for r in rows]
+    contact_rows.sort(key=lambda r: (r["organization"].lower(), r["name"].lower()))
+    emails = dedupe_and_sort(rows)
+    return render_template(
+        "email_distribution_custom_group.html",
+        group=group, contact_rows=contact_rows, emails=emails,
+        mailto_limit=MAILTO_SAFE_LIMIT,
+    )
 
 
 @user_bp.route("/email-lists/<slug>")

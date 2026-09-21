@@ -13,6 +13,7 @@ from models import db
 from models.employee import Employee, EMPLOYEE_STATUSES
 from models.organization import Organization
 from models.organization_category import OrganizationCategory
+from models.organization_subcategory import OrganizationSubcategory
 from models.department import Department
 from models.update_request import UpdateRequest
 from models.directory_number import DirectoryNumber
@@ -518,6 +519,224 @@ def delete_organization(id):
         db.session.commit()
         flash("Organization deleted", "danger")
     return redirect(url_for("admin.manage_organizations"))
+
+
+# ─── ORGANIZATION CATEGORIES & SUBCATEGORIES ─────────────────────────────────
+# Lets an admin register a new Category or Subcategory through the UI (e.g.
+# ahead of adding a new station/organization type) instead of needing a code
+# change/migration. Subcategory here is a *suggestion list* only --
+# Organization.region stays free text, so removing/renaming a subcategory
+# here never touches existing organizations.
+
+@admin_bp.route("/admin/categories")
+@admin_required
+def manage_categories():
+    categories = (
+        OrganizationCategory.query
+        .order_by(OrganizationCategory.category_name)
+        .all()
+    )
+
+    # Tree data: for each category, how many organizations sit directly
+    # under it (no subcategory) + per-subcategory organization counts --
+    # lets the page show the full Category -> Subcategory -> Organizations
+    # hierarchy, not just the suggestion-list badges.
+    orgs = (
+        db.session.query(Organization.id, Organization.category_id, Organization.region, Organization.organization_name)
+        .order_by(Organization.organization_name)
+        .all()
+    )
+    orgs_by_category = {}
+    for org_id, category_id, region, name in orgs:
+        orgs_by_category.setdefault(category_id, {}).setdefault(region or "", []).append({"id": org_id, "name": name})
+
+    def _bucket(category_id, sub_name):
+        entries = orgs_by_category.get(category_id, {}).get(sub_name, [])
+        return {"orgs": entries, "org_count": len(entries)}
+
+    tree = []
+    for category in categories:
+        buckets = orgs_by_category.get(category.id, {})
+        subcategories = []
+        seen_names = set()
+        for sub in sorted(category.subcategories, key=lambda s: s.subcategory_name):
+            subcategories.append({"obj": sub, **_bucket(category.id, sub.subcategory_name)})
+            seen_names.add(sub.subcategory_name)
+        # A (category, region) pair with live organizations but no matching
+        # suggestion-list row yet (shouldn't normally happen after a Sync,
+        # but shown so the tree is always a true live picture).
+        extra = [
+            {"name": name, **_bucket(category.id, name)}
+            for name in sorted(buckets)
+            if name and name not in seen_names
+        ]
+        no_subcategory = _bucket(category.id, "")
+        total = sum(len(v) for v in buckets.values())
+        tree.append({
+            "category": category,
+            "subcategories": subcategories,
+            "extra_subcategories": extra,
+            "no_subcategory": no_subcategory,
+            "total_orgs": total,
+        })
+
+    return render_template("manage_categories.html", categories=categories, tree=tree)
+
+
+@admin_bp.route("/admin/categories/sync", methods=["POST"])
+@admin_required
+def sync_subcategories():
+    """Reconciles the Subcategory suggestion list with what organizations
+    actually carry right now: adds any (category, region) pair in live use
+    that isn't suggested yet, and removes suggestions no organization
+    currently matches (stale leftovers from a category/subcategory change
+    made elsewhere, e.g. a bulk recategorization) -- since this list only
+    ever holds auto-derived + manually-added suggestions, never a required
+    reference an organization is validated against, dropping an unused one
+    is always safe."""
+    added = (
+        db.session.query(Organization.category_id, Organization.region)
+        .filter(Organization.category_id.isnot(None), Organization.region.isnot(None))
+        .filter(func.btrim(Organization.region) != "")
+        .distinct()
+        .all()
+    )
+    added_count = 0
+    for category_id, region in added:
+        exists = OrganizationSubcategory.query.filter_by(
+            category_id=category_id, subcategory_name=region
+        ).first()
+        if not exists:
+            db.session.add(OrganizationSubcategory(category_id=category_id, subcategory_name=region))
+            added_count += 1
+
+    removed_count = 0
+    for sub in OrganizationSubcategory.query.all():
+        still_used = Organization.query.filter_by(
+            category_id=sub.category_id, region=sub.subcategory_name
+        ).first()
+        if not still_used:
+            db.session.delete(sub)
+            removed_count += 1
+
+    db.session.commit()
+    flash(f"Synced: added {added_count}, removed {removed_count} stale suggestion(s).", "success")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/admin/categories/add", methods=["POST"])
+@admin_required
+def add_category():
+    name = request.form.get("category_name", "").strip()
+    if not name:
+        flash("Category name is required.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+    if OrganizationCategory.query.filter_by(category_name=name).first():
+        flash("A category with this name already exists.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    category = OrganizationCategory(
+        category_name=name,
+        description=request.form.get("description", "").strip() or None,
+        is_state_based="is_state_based" in request.form,
+    )
+    db.session.add(category)
+    db.session.commit()
+    flash(f"Category '{name}' added.", "success")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/admin/categories/edit/<int:id>", methods=["POST"])
+@admin_required
+def edit_category(id):
+    category = db.session.get(OrganizationCategory, id)
+    if not category:
+        flash("Category not found", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    name = request.form.get("category_name", "").strip()
+    if not name:
+        flash("Category name is required.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    duplicate = OrganizationCategory.query.filter(
+        OrganizationCategory.category_name == name,
+        OrganizationCategory.id != id,
+    ).first()
+    if duplicate:
+        flash("A category with this name already exists.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    category.category_name = name
+    category.description = request.form.get("description", "").strip() or None
+    category.is_state_based = "is_state_based" in request.form
+    db.session.commit()
+    flash(f"Category '{name}' updated.", "success")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/admin/categories/delete/<int:id>", methods=["POST"])
+@admin_required
+def delete_category(id):
+    category = db.session.get(OrganizationCategory, id)
+    if category:
+        org_count = Organization.query.filter_by(category_id=category.id).count()
+        if org_count:
+            flash(
+                f"Cannot delete '{category.category_name}' -- {org_count} organization(s) "
+                "still use it. Reassign them first.",
+                "danger",
+            )
+            return redirect(url_for("admin.manage_categories"))
+        db.session.delete(category)
+        db.session.commit()
+        flash("Category deleted", "danger")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/admin/categories/<int:category_id>/subcategories/add", methods=["POST"])
+@admin_required
+def add_subcategory(category_id):
+    category = db.session.get(OrganizationCategory, category_id)
+    if not category:
+        flash("Category not found", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    name = request.form.get("subcategory_name", "").strip()
+    if not name:
+        flash("Subcategory name is required.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+    if OrganizationSubcategory.query.filter_by(category_id=category_id, subcategory_name=name).first():
+        flash("This subcategory already exists under that category.", "danger")
+        return redirect(url_for("admin.manage_categories"))
+
+    db.session.add(OrganizationSubcategory(category_id=category_id, subcategory_name=name))
+    db.session.commit()
+    flash(f"Subcategory '{name}' added under {category.category_name}.", "success")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/admin/categories/subcategories/delete/<int:id>", methods=["POST"])
+@admin_required
+def delete_subcategory(id):
+    subcategory = db.session.get(OrganizationSubcategory, id)
+    if subcategory:
+        db.session.delete(subcategory)
+        db.session.commit()
+        flash("Subcategory removed", "danger")
+    return redirect(url_for("admin.manage_categories"))
+
+
+@admin_bp.route("/api/organization-categories/<int:category_id>/subcategories")
+@admin_required
+def api_category_subcategories(category_id):
+    subcategories = (
+        OrganizationSubcategory.query
+        .filter_by(category_id=category_id)
+        .order_by(OrganizationSubcategory.subcategory_name)
+        .all()
+    )
+    return jsonify([s.subcategory_name for s in subcategories])
 
 
 # ─── EMERGENCY CONTACTS ───────────────────────────────────────────────────────

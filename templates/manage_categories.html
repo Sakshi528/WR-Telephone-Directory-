@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% block title %}Categories – Admin{% endblock %}
+
+{% macro org_list(orgs) %}
+<ul class="list-unstyled small mt-1 mb-0">
+    {% for org in orgs %}
+    <li class="d-flex align-items-center justify-content-between gap-2 py-1">
+        <span>{{ org.name }}</span>
+        <span class="d-flex gap-1">
+            <a href="{{ url_for('admin.edit_organization', id=org.id) }}" class="btn btn-outline-secondary btn-sm py-0 px-1" title="Edit organization">
+                <i class="bi bi-pencil"></i>
+            </a>
+            <form method="POST" action="{{ url_for('admin.delete_organization', id=org.id) }}" class="d-inline"
+                  onsubmit="return confirm('Delete organization {{ org.name }}? This cannot be undone.')">
+                <button type="submit" class="btn btn-outline-danger btn-sm py-0 px-1" title="Delete organization">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </form>
+        </span>
+    </li>
+    {% else %}
+    <li class="text-muted fst-italic">No organizations use this subcategory yet.</li>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="bi bi-tags me-2"></i>Organization Categories</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="container mb-5">
+
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mt-3">
+        <p class="text-muted small mb-0">
+            Add a new Category here before adding an organization that needs it (e.g. for a new
+            type of station). Subcategories are just a suggestion list for the "Subcategory" field
+            on the Add/Edit Organization form -- they don't need to exist for an organization to
+            use a subcategory value. This list can drift out of date whenever an organization's
+            Category or Subcategory changes elsewhere (e.g. a bulk recategorization) -- use Sync
+            below to bring it back in line with what organizations actually carry right now.
+        </p>
+        <form method="POST" action="{{ url_for('admin.sync_subcategories') }}">
+            <button class="btn btn-outline-primary btn-sm text-nowrap">
+                <i class="bi bi-arrow-repeat me-1"></i>Sync from live data
+            </button>
+        </form>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-primary text-white">
+            <i class="bi bi-plus-lg me-1"></i>Add Category
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('admin.add_category') }}" class="row g-2 align-items-end">
+                <div class="col-md-4">
+                    <label class="form-label small mb-0">Category Name <span class="text-danger">*</span></label>
+                    <input type="text" name="category_name" class="form-control" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label small mb-0">Description</label>
+                    <input type="text" name="description" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check mt-2">
+                        <input type="checkbox" name="is_state_based" class="form-check-input" id="isStateBased">
+                        <label class="form-check-label small" for="isStateBased">
+                            State-based (shows a State step in cascading filters)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-success w-100">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="text-muted mb-0">Category → Subcategory → Organizations</h6>
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-outline-secondary" id="treeExpandAll">Expand all</button>
+            <button type="button" class="btn btn-outline-secondary" id="treeCollapseAll">Collapse all</button>
+        </div>
+    </div>
+
+    {% for node in tree %}
+    {% set cat = node.category %}
+    <div class="card shadow-sm border-0 mb-3 cat-tree-node">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2 tree-toggle" role="button" data-bs-toggle="collapse"
+                 data-bs-target="#cat-{{ cat.id }}" style="cursor:pointer;">
+                <i class="bi bi-chevron-right tree-caret"></i>
+                <i class="bi bi-folder2-open"></i>
+                <strong>{{ cat.category_name }}</strong>
+                <span class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle">{{ node.total_orgs }} org(s)</span>
+                {% if cat.is_state_based %}
+                <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">State-based</span>
+                {% endif %}
+            </div>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="collapse"
+                        data-bs-target="#editCat-{{ cat.id }}" title="Edit">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <form method="POST" action="{{ url_for('admin.delete_category', id=cat.id) }}"
+                      onsubmit="return confirm('Delete category {{ cat.category_name }}?')">
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% if cat.description %}
+        <div class="px-3 pt-2 small text-muted">{{ cat.description }}</div>
+        {% endif %}
+
+        <div class="collapse" id="editCat-{{ cat.id }}">
+            <div class="card-body border-bottom bg-light">
+                <form method="POST" action="{{ url_for('admin.edit_category', id=cat.id) }}" class="row g-2 align-items-end">
+                    <div class="col-md-4">
+                        <label class="form-label small mb-0">Category Name <span class="text-danger">*</span></label>
+                        <input type="text" name="category_name" class="form-control form-control-sm"
+                               value="{{ cat.category_name }}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small mb-0">Description</label>
+                        <input type="text" name="description" class="form-control form-control-sm"
+                               value="{{ cat.description or '' }}">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check mt-2">
+                            <input type="checkbox" name="is_state_based" class="form-check-input"
+                                   id="editStateBased-{{ cat.id }}" {% if cat.is_state_based %}checked{% endif %}>
+                            <label class="form-check-label small" for="editStateBased-{{ cat.id }}">
+                                State-based (shows a State step in cascading filters)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-primary btn-sm w-100">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="collapse" id="cat-{{ cat.id }}">
+            <div class="card-body">
+
+                {% for sub in node.subcategories %}
+                <div class="ms-3 mb-2 border-start ps-3 sub-tree-node">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <div class="d-flex align-items-center gap-2 tree-toggle" role="button" data-bs-toggle="collapse"
+                             data-bs-target="#sub-{{ sub.obj.id }}" style="cursor:pointer;">
+                            <i class="bi bi-chevron-right tree-caret"></i>
+                            <i class="bi bi-tag"></i>
+                            <span class="fw-semibold">{{ sub.obj.subcategory_name }}</span>
+                            <span class="badge bg-light text-dark border">{{ sub.org_count }} org(s)</span>
+                        </div>
+                        <form method="POST" action="{{ url_for('admin.delete_subcategory', id=sub.obj.id) }}" class="d-inline"
+                              onsubmit="return confirm('Remove subcategory {{ sub.obj.subcategory_name }}?')">
+                            <button type="submit" class="btn-close" style="font-size:0.6rem" title="Remove suggestion"></button>
+                        </form>
+                    </div>
+                    <div class="collapse" id="sub-{{ sub.obj.id }}">
+                        {{ org_list(sub.orgs) }}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for extra in node.extra_subcategories %}
+                <div class="ms-3 mb-2 border-start ps-3 sub-tree-node">
+                    <div class="d-flex align-items-center gap-2 tree-toggle" role="button" data-bs-toggle="collapse"
+                         data-bs-target="#extra-{{ cat.id }}-{{ loop.index }}" style="cursor:pointer;">
+                        <i class="bi bi-chevron-right tree-caret"></i>
+                        <i class="bi bi-tag-fill text-warning"></i>
+                        <span class="fw-semibold">{{ extra.name }}</span>
+                        <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">{{ extra.org_count }} org(s)</span>
+                        <span class="small text-muted">(not yet in suggestion list)</span>
+                    </div>
+                    <div class="collapse" id="extra-{{ cat.id }}-{{ loop.index }}">
+                        {{ org_list(extra.orgs) }}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% if not node.subcategories and not node.extra_subcategories %}
+                <p class="text-muted small mb-2">No subcategories yet.</p>
+                {% endif %}
+
+                <form method="POST" action="{{ url_for('admin.add_subcategory', category_id=cat.id) }}"
+                      class="d-flex gap-2 mt-2">
+                    <input type="text" name="subcategory_name" class="form-control form-control-sm"
+                           placeholder="Add a subcategory under {{ cat.category_name }}…" required>
+                    <button class="btn btn-outline-primary btn-sm text-nowrap">
+                        <i class="bi bi-plus-lg me-1"></i>Add
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-muted text-center py-4">No categories yet.</p>
+    {% endfor %}
+
+</div>
+
+<style>
+    .tree-toggle[aria-expanded="true"] .tree-caret { transform: rotate(90deg); }
+    .tree-caret { transition: transform 0.15s ease; display: inline-block; }
+</style>
+<script>
+    document.querySelectorAll('.tree-toggle').forEach(function (el) {
+        var targetSel = el.getAttribute('data-bs-target');
+        var target = document.querySelector(targetSel);
+        if (!target) return;
+        target.addEventListener('show.bs.collapse', function () { el.setAttribute('aria-expanded', 'true'); });
+        target.addEventListener('hide.bs.collapse', function () { el.setAttribute('aria-expanded', 'false'); });
+    });
+    document.getElementById('treeExpandAll').addEventListener('click', function () {
+        document.querySelectorAll('.cat-tree-node .collapse').forEach(function (el) {
+            bootstrap.Collapse.getOrCreateInstance(el).show();
+        });
+    });
+    document.getElementById('treeCollapseAll').addEventListener('click', function () {
+        document.querySelectorAll('.cat-tree-node .collapse').forEach(function (el) {
+            bootstrap.Collapse.getOrCreateInstance(el).hide();
+        });
+    });
+</script>
+{% endblock %}

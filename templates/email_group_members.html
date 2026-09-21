@@ -28,15 +28,17 @@
         <table class="table table-bordered table-hover align-middle" id="membersTable">
             <thead class="table-dark">
                 <tr>
-                    <th style="width:25%">Organization</th>
-                    <th style="width:20%">Name</th>
-                    <th style="width:20%">Designation</th>
+                    <th class="text-center" style="width:55px">Sr No.</th>
+                    <th style="width:23%">Organization</th>
+                    <th style="width:19%">Name</th>
+                    <th style="width:19%">Designation</th>
                     <th>Email</th>
                 </tr>
             </thead>
             <tbody>
                 {% for c in contacts %}
                 <tr>
+                    <td class="text-muted text-center">{{ loop.index }}</td>
                     <td>{{ c.organization }}</td>
                     <td>{{ c.name }}</td>
                     <td>{{ c.designation }}</td>
@@ -50,7 +52,7 @@
                 </tr>
                 {% else %}
                 <tr>
-                    <td colspan="4" class="text-center text-muted py-4">No members match this group's filters</td>
+                    <td colspan="5" class="text-center text-muted py-4">No members match this group's filters</td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,0 +1,216 @@
+org_id,organization_name,current_category,current_subcategory_region,word_h1_section,implied_category,note
+6438,ACB (India) Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6414,Adani Green Energy Twenty Five A Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6415,Adani Green Energy Twenty Five B Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6416,Adani Green Energy Twenty Four A Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6431,Adani Green Energy Twenty Four Limited – PSS-4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6412,Adani Green Energy Twenty Six A Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6413,Adani Green Energy Twenty Six B Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6422,Adani Hazira Port Limited-PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6430,Adani Hybrid Energy Jaisalmer Five Limited -PSS4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6433,Adani Ports And Special Economic Zone Limited -PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6432,Adani Ports And Special Economic Zone Limited -PSS4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6442,Adani Power (Mundra) Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6466,Adani Power Limited,Transmission Utility,Other Transmission Licensees In Western Region,Other Transmission Licensees in Western Region,Transmission Utility,match
+6460,Adani Power Limited - Raipur,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6443,"Adani Power Limited, Tiroda",Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6417,Adani Renewable Energy Fifty Five Limited - PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6419,Adani Renewable Energy Fifty Seven Limited PSS-13,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6424,Adani Renewable Energy Fifty Six Limited – PSS4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6428,Adani Renewable Energy Fifty Six Limited – PSS9,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6423,Adani Renewable Energy Forty Eight Limited-PSS9,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6426,Adani Renewable Energy Forty One Limited - PSS3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6427,Adani Renewable Energy Forty One Limited – PSS4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6418,Adani Renewable Energy Forty One Limited PSS-13,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6425,Adani Renewable Energy Holding Four Limited-PSS1,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6429,Adani Solar Energy Jodhpur Six Private Limited- PSS9,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6381,Adani Wind Energy Kutch Five Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6389,Adani Wind Energy Kutch Four Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6364,Adani Wind Energy Kutch One Limited/ AWEKTL/ AWEKFL,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6380,Adani Wind Energy Kutch Three Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6388,Adani Wind Energy MP One Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6371,Alfanar Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6391,Alfanar Netra Wind Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6421,Ambuja Cements Limited-PSS-3,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6420,Ambuja Cements Limited -PSS-4,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6467,AMNS (Essar) Power Transmission Company Limited,Transmission Utility,Other Transmission Licensees In Western Region,Other Transmission Licensees in Western Region,Transmission Utility,match
+6390,Apraava Energy Private Limited (AEPL),Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6494,Arcelormittal Nippon Steel India Limited,Others,Other Buyers In Western Region,Other Buyers in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6345,"Area Load Despatch Centre, MSETCL,",Others,Maharashtra State Load Despatch Centre,(not found in Word body tables),,no Word section match
+6365,Arinsun Clean Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6363,Athena Jaipur Solar Power Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6507,Avaada Gjlakadiya Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6411,AVAADA Sunshine Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6383,Avikaran Solar India Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6495,BARC Facility,Others,Other Buyers In Western Region,Other Buyers in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6322,Bargi,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6410,Beempow Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6444,Bharat Aluminum Company Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6335,Bhira,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6469,"Bhopal - Dhule Transmission Co. Ltd (BDTCL), 765/400 kV Bhopal Sub Station",Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6323,Birshingpur,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6292,Black Start Facilitated Stations,Others,,(not found in Word body tables),,no Word section match
+6475,Central Operations Control Room ENOC (Energy Network Operations Centre),Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6439,Chakabura 2X30 MW Thermal Power Plant,Thermal,Other Generating Stations In Western Region,(not found in Word body tables),,no Word section match
+6488,Chhattisgarh-WR Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6296,Chhattisgarh State Load Despatch Centre,SLDC,Chhattisgarh,Chhattisgarh State Load Despatch Centre,SLDC,match
+6373,Continuum Power Trading Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6299,Dadra And Nagar Haveli,SLDC,Dadra and Nagar Haveli,Dadra and Nagar Haveli,SLDC,match
+6298,Daman And Diu,SLDC,Daman and Diu,Daman and Diu,SLDC,match
+6446,DB Power Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6447,DGEN Mega Power Project,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6448,Dhariwal Infrastructure Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6331,Dhuvaran,Thermal,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6449,Dongamouha Captive Power Plant (DCPP),Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6316,"Eastern Regional Load Despatch Centre , Kolkata",RLDC,NLDC And RLDCs,NLDC and RLDCs,RLDC,match
+6375,Electro Solaire Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6501,Gandhar,Generation Company,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6320,Gandhi Sagar,Generation Company,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6337,Ghatghar,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6330,GIPCL 1 & 2,Generation Company,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6451,GMR Warora Energy Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6297,Goa Electricity Department,SLDC,Goa,Goa Electricity Department,SLDC,match
+6479,Goa Tamnar Transmission Project Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6366,Green Infra Wind Energy Limited SECI –II & SECI -II,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6310,Grid Controller Of India Limited,RLDC,,(not found in Word body tables),,no Word section match
+6374,Gujarat Industries Power Company Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6382,Gujarat State Electricity Corporation Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6397,Gujarat State Electricity Corporation Limited- Phase II,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6294,Gujarat State Load Despatch Centre,SLDC,Gujarat,Gujarat State Load Despatch Centre,SLDC,match
+6342,Hasdeo Bango,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6496,Heavy Water Board,Others,Other Buyers In Western Region,Other Buyers in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6468,India Grid Trust (Indigrid),Transmission Utility,Other Transmission Licensees In Western Region,Other Transmission Licensees in Western Region,Transmission Utility,match
+6319,Indira Sagar,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6367,INOX Green Energy Services Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6303,ISTS Connected RE Generators In Western Region,Generation Company,,(not found in Word body tables),,no Word section match
+6470,Jabalpur Transmission Co. Ltd (JTCL),Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6493,Jam Khambaliya Transco Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6452,Jaypee Nigrie STPP,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6453,Jhabua Power Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6454,Jindal Power Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6329,Kadana,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6361,Kakrapar Atomic Power Station Stg-1 & 2,Nuclear,Nuclear Power Stations In Western Region,Nuclear Power Stations in Western Region,Nuclear,match
+6362,Kakrapar Atomic Power Station Stg-3 & 4,Nuclear,Nuclear Power Stations In Western Region,Nuclear Power Stations in Western Region,Nuclear,match
+6482,Kallam Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6474,Khargone Transmission Limited (Khtl),Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6489,Khavda-Bhuj Transmission Ltd,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6483,KHAVDA II-A Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6334,Khopoli & Bhivpuri,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6336,"Koyna, Pophali",Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6487,KPS1 Transmission Ltd,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6455,KSK Mahanadi Power Company Limited (JSW Energy),Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6490,Lakadia Banaskantha Transco Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6477,Lakadia Vadodara Transmission Project Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6456,LANCO Amarkantak Power Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6437,M/S Adani Renewable Energy Holding Five Limited,Generation Company,Qualified Coordinating Agency,(not found in Word body tables),,no Word section match
+6435,M/S Manikaran Analytics Limited,Others,Qualified Coordinating Agency,(not found in Word body tables),,no Word section match
+6348,Madhya Pradesh Power Generation Company Limited,Generation Company,Madhya Pradesh State Load Despatch Centre,Madhya Pradesh State Load Despatch Centre,SLDC,MISMATCH
+6295,Madhya Pradesh State Load Despatch Centre,SLDC,Madhya Pradesh,Madhya Pradesh State Load Despatch Centre,SLDC,match
+6450,Mahan Energen Limited (Formally Essar Power (MP) Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6346,Maharashtra State Electricity Distribution Co. Ltd.,DISCOM,Maharashtra State Load Despatch Centre,(not found in Word body tables),,no Word section match
+6343,Maharashtra State Electricity Transmission Co. Ltd.,Transmission Utility,Maharashtra State Load Despatch Centre,(not found in Word body tables),,no Word section match
+6293,Maharashtra State Load Despatch Centre,SLDC,Maharashtra,Maharashtra State Load Despatch Centre,SLDC,match
+6368,Mahindra Renewables Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6326,Manikheda,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6404,MASAYA Solar Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6457,MB Power (MP) Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6441,MCCPL 1X300 MW Thermal Power Plant,Thermal,Other Generating Stations In Western Region,(not found in Word body tables),,no Word section match
+6333,Mini Hydro,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6347,MP Power Management CO. LTD.,Others,Madhya Pradesh State Load Despatch Centre,Madhya Pradesh State Load Despatch Centre,SLDC,MISMATCH
+6478,Mumbai Urja Marg Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6498,National High Power Test Laboratory,Others,Other Users In Western Region,Other Users in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6290,NLDC And RLDCs,RLDC,,(not found in Word body tables),,no Word section match
+6318,"North Eastern Regional Load Despatch Centre, Shillong",RLDC,NLDC And RLDCs,NLDC and RLDCs,RLDC,match
+6315,Northern Regional Load Despatch Centre New Delhi,RLDC,NLDC And RLDCs,NLDC and RLDCs,RLDC,match
+6311,NTPC,Thermal,,(not found in Word body tables),,no Word section match
+6458,NTPC-SAIL Power Company Private Limited (NSPCL),Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6353,NTPC Gadarwara,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6349,NTPC Gandhar,Thermal,NTPC Mumbai Head Quarter (WR-1),NTPC Mumbai Head Quarter (WR-1),Thermal,match
+6378,NTPC Jhanor - Gandhar Solar PV Project,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6350,NTPC Kawas,Thermal,NTPC Mumbai Head Quarter (WR-1),Black Start Facilitated Stations | NTPC Mumbai Head Quarter (WR-1),,spans multiple Word sections
+6377,NTPC Kawas Solar PV Project,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6354,NTPC Khargone,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6355,NTPC Korba,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6356,NTPC Lara,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6351,NTPC Mauda,Thermal,NTPC Mumbai Head Quarter (WR-1),NTPC Mumbai Head Quarter (WR-1),Thermal,match
+6300,NTPC Mumbai Head Quarter (WR-1),Thermal,Maharashtra,NTPC Mumbai Head Quarter (WR-1),Thermal,match
+6301,NTPC Raipur Head Quarter (WR-2),Thermal,Chhattisgarh,NTPC Raipur Head Quarter (WR-2),Thermal,match
+6399,NTPC Renewable Energy Limited Shajapur Unit-1,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6400,NTPC Renewable Energy Limited Shajapur Unit-2,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6401,NTPC Renewable Energy Ltd (Dayapar WEP-Ph-1),Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6357,NTPC Sipat,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6352,NTPC Solapur,Thermal,NTPC Mumbai Head Quarter (WR-1),NTPC Mumbai Head Quarter (WR-1),Thermal,match
+6499,NTPC Vidyut Vyapar Nigam Limited,Others,Other Users In Western Region,Other Users in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6358,NTPC Vindhyachal,Thermal,NTPC Raipur Head Quarter (WR-2),NTPC Raipur Head Quarter (WR-2),Thermal,match
+6302,Nuclear Power Stations In Western Region,Nuclear,,(not found in Word body tables),,no Word section match
+6473,Odisha Generation Phase-II Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6324,Omkareshwar,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6379,Ostro Energy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6369,Ostro Kutch Wind Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6307,Other Buyers In Western Region,Others,,(not found in Word body tables),,no Word section match
+6305,Other Generating Stations In Western Region,Others,,(not found in Word body tables),,no Word section match
+6306,Other Transmission Licensees In Western Region,Transmission Utility,,(not found in Word body tables),,no Word section match
+6308,Other Users In Western Region,Others,,(not found in Word body tables),,no Word section match
+6340,Paithan,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6321,Pench,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6309,Power Grid Corporation Of India Limited,CPSU,,(not found in Word body tables),,no Word section match
+6314,"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",RLDC,NLDC And RLDCs,NLDC and RLDCs,RLDC,match
+6312,"POWERGRID WRTS-I, Nagpur",CPSU,,(not found in Word body tables),,no Word section match
+6313,"POWERGRID WRTS-II, Vadodara",CPSU,,(not found in Word body tables),,no Word section match
+6384,Powerica Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6434,QCA For Bhuj-I ISTS Pooling Station,Others,Qualified Coordinating Agency,(not found in Word body tables),,no Word section match
+6436,QCA For Regss Of PSS1 & PSS2 At 765/400 kV KPS-1 ISTS Pooling Station,Others,Qualified Coordinating Agency,(not found in Word body tables),,no Word section match
+6304,Qualified Coordinating Agency,Others,,Qualified Coordinating Agency,,"ambiguous section: a functional role (QCA), not one of the existing app categories"
+6472,Raichur Sholapur Transmission Company Private Limited (RSTCPL),Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6459,Raigarh Energy Generation Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6492,Raipur-Rajnandgaon-Warora Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6486,Rajgarh Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,Other Transmission Licensees in Western Region,Transmission Utility,match
+6327,Rajghat,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6471,RAPP Transmission Co. Ltd (RTCL),Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6461,Ratnagiri Gas & Power Private Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6409,Renew Green (MHP One) Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6408,Renew Green (MHS One) Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6370,Renew Power Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6372,Renew Wind Energy (AP2) Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6339,RGPPL,Thermal,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6462,RKM Powergen Private Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6463,SASAN Power Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6440,SCPL (Ratija) 1X50 MW Thermal Power Plant,Thermal,Other Generating Stations In Western Region,(not found in Word body tables),,no Word section match
+6392,Sherisha Raipur,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6484,Sipat Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6385,Sitac Kabini Renewables Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6407,SJVN Green Energy Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6464,SKS Power Generation (C.G) Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6387,Solapur Solar PV Project,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6317,"Southern Regional Load Despatch Centre, Bengaluru",RLDC,NLDC And RLDCs,NLDC and RLDCs,RLDC,match
+6386,Srijan Energy Systems Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6500,SSNL,Generation Company,Black Start Facilitated Stations,(not found in Word body tables),,no Word section match
+6508,SSP,Hydel,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6344,"State Load Despatch Centre, MSETCL",SLDC,Maharashtra State Load Despatch Centre,Maharashtra State Load Despatch Centre,SLDC,match
+6476,Sterlite Power Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,Other Transmission Licensees in Western Region,Transmission Utility,match
+6332,Sugen,Thermal,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6406,Talettutayi Solar Projects Nine Pvt Ltd,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6359,Tarapur Atomic Power Station Stg-1 & 2,Nuclear,Nuclear Power Stations In Western Region,Nuclear Power Stations in Western Region,Nuclear,match
+6360,Tarapur Atomic Power Station Stg-3 & 4,Nuclear,Nuclear Power Stations In Western Region,Nuclear Power Stations in Western Region,Nuclear,match
+6497,Tata Power Mumbai,Others,Other Users In Western Region,Other Users in Western Region,,"ambiguous section: catch-all 'Other' bucket, no clear single-category match"
+6376,Tata Power Renewable Energy Ltd.,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6398,TEQ Green Power XI Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6445,The Tata Power Co Limited Mundra (MTPS),Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6325,Tons,Hydel,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6405,Torrent Power Limited,Generation Company,ISTS Connected RE Generators In Western Region,(not found in Word body tables),,no Word section match
+6402,TP Saurya Limited Unit-1,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6403,TP Saurya Limited Unit-2,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6465,TRN Energy Private Limited,Thermal,Other Generating Stations In Western Region,Other Generating Stations in Western Region,,"ambiguous section: catch-all 'Other' bucket -- likely a mix of Thermal/Hydel/Generation Company, can't assign a single category without inspecting each org"
+6338,Trombay,Thermal,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6328,UKAI,Generation Company,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6341,Uran,Thermal,Black Start Facilitated Stations,Black Start Facilitated Stations,,"ambiguous section: cross-cutting flag, not a category -- these are Thermal/Hydel/Nuclear stations already listed under their real section elsewhere in the document"
+6481,Warora Kurnool Transmission Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+619,Western Region Load Despatch Centre,RLDC,,Western Region Load Despatch Centre,RLDC,match
+6291,Western Regional Power Committee,Regional Power Committee,,Western Regional Power Committee,Regional Power Committee,match
+6480,Western Transco Power Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6491,Western Transmission Gujarat Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match
+6396,Wind Five Renergy Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6393,Wind One Renergy Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6395,Wind Three Renergy Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6394,Wind Two Renergy Private Limited,Generation Company,ISTS Connected RE Generators In Western Region,ISTS Connected RE Generators in Western Region,Generation Company,match
+6485,WRSS XXI(A) Transco Limited,Transmission Utility,Other Transmission Licensees In Western Region,(not found in Word body tables),,no Word section match

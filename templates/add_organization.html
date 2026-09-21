@@ -21,17 +21,23 @@
                         <input type="text" name="organization_name" class="form-control" required>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">Region <span class="text-danger">*</span></label>
-                        <input type="text" name="region" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
                         <label class="form-label">Category</label>
-                        <select name="category_id" class="form-select">
+                        <select name="category_id" id="categorySelect" class="form-select">
                             <option value="">— Uncategorized —</option>
                             {% for cat in categories %}
                             <option value="{{ cat.id }}">{{ cat.category_name }}</option>
                             {% endfor %}
                         </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Subcategory <span class="text-danger">*</span></label>
+                        <input type="text" name="region" class="form-control" required list="subcategoryOptions"
+                               placeholder="e.g. ISTS Connected RE Generators In Western Region">
+                        <datalist id="subcategoryOptions"></datalist>
+                        <div class="form-text">
+                            Pick Category first for suggestions, or manage the list under
+                            <a href="{{ url_for('admin.manage_categories') }}" target="_blank">Categories</a>.
+                        </div>
                     </div>
                     <div class="col-12">
                         <label class="form-label">Address <span class="text-danger">*</span></label>
@@ -48,4 +54,25 @@
     </div>
 
 </div>
+
+<script>
+    (function () {
+        const categorySelect = document.getElementById('categorySelect');
+        const datalist = document.getElementById('subcategoryOptions');
+        function loadSubcategories() {
+            datalist.innerHTML = '';
+            if (!categorySelect.value) return;
+            fetch('/api/organization-categories/' + categorySelect.value + '/subcategories')
+                .then(r => r.json())
+                .then(names => {
+                    names.forEach(name => {
+                        const opt = document.createElement('option');
+                        opt.value = name;
+                        datalist.appendChild(opt);
+                    });
+                });
+        }
+        categorySelect.addEventListener('change', loadSubcategories);
+    })();
+</script>
 {% endblock %}

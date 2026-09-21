@@ -20,6 +20,10 @@
             {# Organization Based card: goes straight to that category's Address Book #}
             <a href="{{ url_for('user.email_distribution_browse') }}?category={{ g.category_name|urlencode }}"
                class="text-decoration-none">
+            {% elif section == 'Custom Groups' %}
+            {# Admin-created custom (DYNAMIC) group #}
+            <a href="{{ url_for('user.email_distribution_custom_group', id=g.id) }}"
+               class="text-decoration-none">
             {% else %}
             {# Role Based card: unchanged, goes to its Distribution List #}
             <a href="{{ url_for('user.email_distribution_group', slug=g.slug) }}"
