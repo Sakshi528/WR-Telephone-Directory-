@@ -184,7 +184,7 @@ def home():
     if request.args.get("expired"):
         flash("Your session expired due to inactivity.", "warning")
 
-    total_employees = Employee.query.count()
+    total_employees = Employee.query.filter_by(is_kmp=False).count()
     total_organizations = Organization.query.count()
 
     # Last updated = most recently created employee record (proxy for data freshness)
