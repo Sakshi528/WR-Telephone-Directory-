@@ -5,6 +5,7 @@
 
 {% set selected_org_ids = group.filters | selectattr('filter_type', 'equalto', 'ORGANIZATION') | map(attribute='organization_id') | list if group else [] %}
 {% set selected_category_ids = group.filters | selectattr('filter_type', 'equalto', 'ORGANIZATION_CATEGORY') | map(attribute='category_id') | list if group else [] %}
+{% set selected_subcategory_values = group.filters | selectattr('filter_type', 'equalto', 'ORGANIZATION_SUBCATEGORY') | map(attribute='subcategory_value') | list if group else [] %}
 {% set selected_roles = group.filters | selectattr('filter_type', 'equalto', 'ROLE') | map(attribute='role_value') | list if group else [] %}
 {% set selected_statuses = group.filters | selectattr('filter_type', 'equalto', 'STATUS') | map(attribute='status_value') | list if group else [] %}
 
@@ -45,6 +46,18 @@
                             {% endfor %}
                         </select>
                         <div class="form-text">Ctrl/Cmd+click to select multiple.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Organization Subcategories</label>
+                        <select name="subcategory_values" class="form-select" multiple size="6">
+                            {% for sc in subcategories %}
+                            <option value="{{ sc.value }}" {% if sc.value in selected_subcategory_values %}selected{% endif %}>
+                                {{ sc.label }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Ctrl/Cmd+click to select multiple. E.g. "Generation Company / Thermal".</div>
                     </div>
 
                     <div class="col-md-6">

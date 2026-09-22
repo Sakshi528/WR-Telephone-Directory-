@@ -18,7 +18,7 @@ class EmailGroupFilter(db.Model):
         nullable=False
     )
 
-    filter_type = db.Column(db.String(30), nullable=False)  # ORGANIZATION | ORGANIZATION_CATEGORY | ROLE | STATUS | INCLUDE_EMPLOYEE | EXCLUDE_EMPLOYEE
+    filter_type = db.Column(db.String(30), nullable=False)  # ORGANIZATION | ORGANIZATION_CATEGORY | ORGANIZATION_SUBCATEGORY | ROLE | STATUS | INCLUDE_EMPLOYEE | EXCLUDE_EMPLOYEE
 
     organization_id = db.Column(
         db.Integer,
@@ -31,6 +31,11 @@ class EmailGroupFilter(db.Model):
         db.ForeignKey("organization_categories.id", ondelete="CASCADE"),
         nullable=True
     )
+
+    # Free text, not an FK -- matches Organization.region (subcategory is a
+    # free-text tag, not a normalized table). Used when filter_type ==
+    # ORGANIZATION_SUBCATEGORY, e.g. "Thermal" under Generation Company.
+    subcategory_value = db.Column(db.String(255))
 
     role_value = db.Column(db.String(30))  # UTILITY_HEAD | ADMINISTRATIVE_HEAD | KMP
 

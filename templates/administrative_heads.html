@@ -20,6 +20,7 @@
     <form method="GET" id="ahFilterForm" class="row g-2 align-items-end mt-3 mb-3"
           data-org-cascade
           data-states-url-template="{{ url_for('user.api_organization_type_states', type_id=0) }}"
+          data-subcategories-url-template="{{ url_for('user.api_organization_type_subcategories', type_id=0) }}"
           data-organizations-url="{{ url_for('user.api_organizations') }}">
         <div class="col-md-2">
             <label class="form-label small text-muted mb-0">Organization Type</label>
@@ -38,6 +39,13 @@
             <select name="state" class="form-select form-select-sm" data-org-state-select
                     data-selected-state="{{ filters.state }}">
                 <option value="">All States</option>
+            </select>
+        </div>
+        <div class="col-md-2" style="display:none">
+            <label class="form-label small text-muted mb-0">Subcategory</label>
+            <select name="subcategory" class="form-select form-select-sm" data-org-subcategory-select
+                    data-selected-subcategory="{{ filters.subcategory }}">
+                <option value="">All Subcategories</option>
             </select>
         </div>
         <div class="col-md-2">
@@ -98,6 +106,8 @@
                     </th>
                     <th class="text-center" style="width:55px">Sr No.</th>
                     <th>Organization</th>
+                    <th>Category</th>
+                    <th>Subcategory</th>
                     <th>Name</th>
                     <th>Designation</th>
                     <th>Email</th>
@@ -114,6 +124,8 @@
                     </td>
                     <td class="text-muted text-center">{{ loop.index }}</td>
                     <td>{{ head.organization.organization_name if head.organization else '–' }}</td>
+                    <td>{{ head.organization.category.category_name if head.organization and head.organization.category else '–' }}</td>
+                    <td>{{ head.organization.region if head.organization and head.organization.region else '–' }}</td>
                     <td class="fw-semibold">
                         {{ head.resolved_name or '–' }}{% if head.service_type %} ({{ head.service_type.service_type_name }}){% endif %}
                         {% if not head.employee_id %}

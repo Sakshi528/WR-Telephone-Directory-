@@ -31,6 +31,7 @@
 
     var stateWrapEl = document.getElementById("edbStateWrap");
     var stateSelect = document.getElementById("edbState");
+    var subcategorySelect = document.getElementById("edbSubcategory");
     var contactTypeSelect = document.getElementById("edbContactType");
     var searchInput = document.getElementById("edbSearch");
 
@@ -59,6 +60,7 @@
         return {
             category: category,
             state: stateWrapEl.style.display !== "none" ? stateSelect.value : "",
+            subcategory: subcategorySelect ? subcategorySelect.value : "",
             contact_type: contactTypeSelect.value,
             q: searchInput.value.trim(),
         };
@@ -97,6 +99,7 @@
         var url = buildUrl(dataUrl, {
             category: category, contact_type: contactTypeSelect.value,
             state: categoryIsStateBased ? stateSelect.value : "",
+            subcategory: subcategorySelect ? subcategorySelect.value : "",
         });
         fetch(url)
             .then(function (r) { return r.json(); })
@@ -261,6 +264,9 @@
     }
 
     stateSelect.addEventListener("change", function () { fetchAndRender(); updateExportLinks(); });
+    if (subcategorySelect) {
+        subcategorySelect.addEventListener("change", function () { fetchAndRender(); updateExportLinks(); });
+    }
     contactTypeSelect.addEventListener("change", function () { fetchAndRender(); updateExportLinks(); });
     showAllBtn.addEventListener("click", function () {
         contactTypeSelect.value = "all";

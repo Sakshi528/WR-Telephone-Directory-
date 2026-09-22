@@ -18,6 +18,7 @@ from models.emergency_contact import EmergencyContact
 from models.update_request import UpdateRequest
 from models.administrative_head import AdministrativeHead
 from models.organization_category import OrganizationCategory
+from models.organization_subcategory import OrganizationSubcategory
 from models.service_type import ServiceType
 from models.directory_version import DirectoryVersion
 from models.email_group import EmailGroup
@@ -396,13 +397,45 @@ def telephone_directory():
         # A category card was clicked -- same grouping logic as the old
         # "no keyword" branch, just scoped to that category's organizations.
         current_category = db.session.get(OrganizationCategory, category_id)
+
+        # Whether this category has subcategory values in use at all (e.g.
+        # Generation Company -> Thermal/Hydel/Nuclear/RE Generators). When it
+        # does, organizations below are grouped under inline subcategory
+        # headers on this same page -- no extra click/navigation needed to
+        # get from "pick a category" to "see a phone number".
+        available_subcategories = sorted({
+            s for s in db.session.query(Organization.region)
+            .filter(Organization.category_id == category_id)
+            .filter(Organization.region.isnot(None))
+            .filter(Organization.region != "")
+            .distinct()
+            .all()
+            for s in s  # unpack the 1-tuple rows
+        })
+
+        # WRLDC itself is excluded from every Telephone Directory category
+        # view: its ~98 staff are all non-KMP, so the Telephone Directory's
+        # (KMP-only) contact query always renders an empty card for it here --
+        # its real contacts are the dedicated Employee Directory (/directory).
+        wrldc_org_ids = {
+            o.id for o in Organization.query.filter(
+                or_(
+                    Organization.organization_name.ilike("%WRLDC%"),
+                    Organization.organization_name.ilike("%Western Region Load Despatch%"),
+                    Organization.organization_name.ilike("%Western Region Load Dispatch%"),
+                )
+            ).all()
+        }
+
         category_org_ids = [
             o.id for o in Organization.query.filter_by(category_id=category_id).all()
+            if o.id not in wrldc_org_ids
         ]
 
-        # Build org address lookup
+        # Build org address + subcategory lookup
         all_orgs = Organization.query.all()
         org_address = {o.organization_name: (o.address or "") for o in all_orgs}
+        org_subcategory = {o.organization_name: (o.region or "") for o in all_orgs}
 
         # Seed a card for every organization in this category up front --
         # previously an org only got a card once an employee/directory-number
@@ -415,7 +448,7 @@ def telephone_directory():
         grouped = {
             o.organization_name: {
                 "employees": [], "control_rooms": [], "switchyards": [],
-                "address": o.address or "",
+                "address": o.address or "", "subcategory": o.region or "",
             }
             for o in category_orgs
         }
@@ -454,6 +487,7 @@ def telephone_directory():
                     "control_rooms": [],
                     "switchyards": [],
                     "address": emp.organization.address if emp.organization else "",
+                    "subcategory": org_subcategory.get(org_name, ""),
                 }
             grouped[org_name]["employees"].append(emp)
 
@@ -466,6 +500,7 @@ def telephone_directory():
                     "control_rooms": [],
                     "switchyards": [],
                     "address": org_address.get(org_name, ""),
+                    "subcategory": org_subcategory.get(org_name, ""),
                 }
             if dn.category and "switchyard" in dn.category.lower():
                 grouped[org_name]["switchyards"].append(dn)
@@ -474,10 +509,23 @@ def telephone_directory():
             else:
                 default_other.append(dn)
 
+        # When this category has subcategories in use, sort organizations by
+        # subcategory first (then the usual name order within each) so they
+        # land in contiguous blocks the template can head with an inline
+        # label -- one page, no extra clicks between "pick a category" and
+        # "open an organization's card to see its numbers".
+        if available_subcategories:
+            grouped = dict(sorted(
+                grouped.items(),
+                key=lambda kv: (org_subcategory.get(kv[0]) or "￿", section_sort_key(kv[0])),
+            ))
+        else:
+            grouped = dict(sorted(grouped.items(), key=lambda kv: section_sort_key(kv[0])))
+
         return render_template(
             "telephone_directory.html",
             landing=False,
-            grouped=dict(sorted(grouped.items(), key=lambda kv: section_sort_key(kv[0]))),
+            grouped=grouped,
             other_numbers=default_other,
             matched_organizations=[],
             keyword="",
@@ -486,6 +534,7 @@ def telephone_directory():
             numbers=default_other,
             category_id=category_id,
             current_category=current_category,
+            available_subcategories=available_subcategories,
         )
 
     matched_organizations = get_matched_organizations(keyword)
@@ -673,15 +722,29 @@ def api_organization_type_states(type_id):
     return jsonify([{"id": s[0], "name": s[0]} for s in states])
 
 
+@user_bp.route("/api/organization-types/<int:type_id>/subcategories")
+def api_organization_type_subcategories(type_id):
+    subcats = (
+        db.session.query(Organization.region)
+        .filter(Organization.category_id == type_id, Organization.region.isnot(None))
+        .filter(Organization.region != "")
+        .distinct().order_by(Organization.region).all()
+    )
+    return jsonify([{"id": s[0], "name": s[0]} for s in subcats])
+
+
 @user_bp.route("/api/organizations")
 def api_organizations():
     type_id = request.args.get("type_id", type=int)
     state = request.args.get("state", "").strip()
+    subcategory = request.args.get("subcategory", "").strip()
     query = Organization.query
     if type_id:
         query = query.filter(Organization.category_id == type_id)
     if state:
         query = query.filter(Organization.state == state)
+    if subcategory:
+        query = query.filter(Organization.region == subcategory)
     orgs = query.order_by(Organization.organization_name).all()
     return jsonify([{"id": o.id, "name": o.organization_name} for o in orgs])
 
@@ -692,7 +755,8 @@ def api_organizations():
 # otherwise falls back to the most senior designation -- see that module for
 # the ranking rules.
 
-def _compute_utility_heads(keyword=None, category_id=None, state=None, organization_id=None, designation=None):
+def _compute_utility_heads(keyword=None, category_id=None, state=None, organization_id=None,
+                            designation=None, subcategory=None):
     org_query = Organization.query
     if organization_id:
         org_query = org_query.filter(Organization.id == organization_id)
@@ -701,6 +765,8 @@ def _compute_utility_heads(keyword=None, category_id=None, state=None, organizat
             org_query = org_query.filter(Organization.category_id == category_id)
         if state:
             org_query = org_query.filter(Organization.state == state)
+        if subcategory:
+            org_query = org_query.filter(Organization.region == subcategory)
     organizations = org_query.order_by(Organization.organization_name).all()
 
     heads = []
@@ -742,11 +808,24 @@ def utility_heads():
     state = request.args.get("state", "").strip()
     organization_id = request.args.get("organization_id", type=int)
     designation = request.args.get("designation", "").strip()
-    heads = _compute_utility_heads(keyword or None, category_id, state or None, organization_id, designation or None)
+    subcategory = request.args.get("subcategory", "").strip()
+    available_subcategories = []
+    if category_id:
+        available_subcategories = sorted({
+            s for s in db.session.query(Organization.region)
+            .filter(Organization.category_id == category_id)
+            .filter(Organization.region.isnot(None))
+            .filter(Organization.region != "")
+            .distinct().all()
+            for s in s
+        })
+    heads = _compute_utility_heads(keyword or None, category_id, state or None, organization_id,
+                                    designation or None, subcategory or None)
     return render_template(
         "utility_heads.html", heads=heads, keyword=keyword,
         category_id=category_id, state=state, organization_id=organization_id,
-        designation=designation,
+        designation=designation, subcategory=subcategory,
+        available_subcategories=available_subcategories,
         categories=OrganizationCategory.query.order_by(OrganizationCategory.category_name).all(),
         emails=dedupe_and_sort(heads), mailto_limit=MAILTO_SAFE_LIMIT,
     )
@@ -1150,7 +1229,7 @@ def _export_utility_heads_xlsx(heads):
     ws = wb.active
     ws.title = "Utility Heads"
 
-    headers = ["#", "Name", "Designation", "Organization", "Address",
+    headers = ["#", "Name", "Designation", "Organization", "Category", "Subcategory", "Address",
                "Office Phone", "Mobile", "Email"]
     header_font = Font(bold=True, color="FFFFFF")
     header_fill = PatternFill("solid", fgColor="1a3a6b")
@@ -1168,12 +1247,16 @@ def _export_utility_heads_xlsx(heads):
         ws.cell(row=row, column=4,
                 value=emp.organization.organization_name if emp.organization else "")
         ws.cell(row=row, column=5,
+                value=(emp.organization.category.category_name if emp.organization and emp.organization.category else ""))
+        ws.cell(row=row, column=6,
+                value=(emp.organization.region or "") if emp.organization else "")
+        ws.cell(row=row, column=7,
                 value=(emp.organization.address or "") if emp.organization else "")
-        ws.cell(row=row, column=6, value=emp.office_phone or "")
-        ws.cell(row=row, column=7, value=emp.mobile_phone or "")
-        ws.cell(row=row, column=8, value=emp.email or "")
+        ws.cell(row=row, column=8, value=emp.office_phone or "")
+        ws.cell(row=row, column=9, value=emp.mobile_phone or "")
+        ws.cell(row=row, column=10, value=emp.email or "")
 
-    col_widths = [5, 28, 30, 45, 55, 22, 18, 30]
+    col_widths = [5, 28, 30, 45, 22, 22, 55, 22, 18, 30]
     for i, w in enumerate(col_widths, 1):
         ws.column_dimensions[
             openpyxl.utils.get_column_letter(i)
@@ -1245,15 +1328,27 @@ def _get_administrative_heads_filters():
         "service_type_id": request.args.get("service_type_id", type=int),
         "designation": request.args.get("designation", "").strip(),
         "status": request.args.get("status", "").strip(),
+        "subcategory": request.args.get("subcategory", "").strip(),
     }
 
 
-def _administrative_heads_filter_options():
+def _administrative_heads_filter_options(category_id=None):
+    available_subcategories = []
+    if category_id:
+        available_subcategories = sorted({
+            s for s in db.session.query(Organization.region)
+            .filter(Organization.category_id == category_id)
+            .filter(Organization.region.isnot(None))
+            .filter(Organization.region != "")
+            .distinct().all()
+            for s in s
+        })
     return {
         "categories": OrganizationCategory.query.order_by(OrganizationCategory.category_name).all(),
         "organizations": Organization.query.order_by(Organization.organization_name).all(),
         "service_types": ServiceType.query.order_by(ServiceType.service_type_name).all(),
         "statuses": ADMINISTRATIVE_HEAD_STATUSES,
+        "available_subcategories": available_subcategories,
     }
 
 
@@ -1268,12 +1363,13 @@ def administrative_heads():
         organization_id=filters["organization_id"],
         service_type_id=filters["service_type_id"],
         status=filters["status"] or None,
+        subcategory=filters["subcategory"] or None,
     )
     emails = dedupe_and_sort(heads)
     return render_template(
         "administrative_heads.html", heads=heads, filters=filters,
         emails=emails, mailto_limit=MAILTO_SAFE_LIMIT,
-        **_administrative_heads_filter_options(),
+        **_administrative_heads_filter_options(filters["category_id"]),
     )
 
 
@@ -1295,10 +1391,12 @@ def export_administrative_heads():
     heads = head_service.search_administrative_heads(
         keyword=filters["keyword"] or None,
         designation=filters["designation"] or None,
+        category_id=filters["category_id"],
         state=filters["state"] or None,
         organization_id=filters["organization_id"],
         service_type_id=filters["service_type_id"],
         status=filters["status"] or None,
+        subcategory=filters["subcategory"] or None,
     )
 
     headers = ["Organization", "Name", "Designation", "Service Type", "Status", "Email", "Mobile", "Office Phone"]
@@ -1535,7 +1633,24 @@ def _get_browse_rows():
     if not category:
         return None, []
     state = request.args.get("state", "").strip()
-    return category, resolve_category_contacts(category, _get_contact_type(), state=state or None)
+    subcategory = request.args.get("subcategory", "").strip()
+    return category, resolve_category_contacts(
+        category, _get_contact_type(), state=state or None, subcategory=subcategory or None
+    )
+
+
+def _browse_available_subcategories(category_name):
+    if not category_name:
+        return []
+    return sorted({
+        s for s in db.session.query(Organization.region)
+        .join(OrganizationCategory, Organization.category_id == OrganizationCategory.id)
+        .filter(OrganizationCategory.category_name == category_name)
+        .filter(Organization.region.isnot(None))
+        .filter(Organization.region != "")
+        .distinct().all()
+        for s in s
+    })
 
 
 def _browse_contact_rows(q=""):
@@ -1570,6 +1685,7 @@ def email_distribution_browse():
         category=category,
         contact_type_choices=CONTACT_TYPE_CHOICES,
         mailto_limit=MAILTO_SAFE_LIMIT,
+        available_subcategories=_browse_available_subcategories(category_arg),
     )
 
 

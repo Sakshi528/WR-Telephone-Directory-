@@ -99,16 +99,41 @@
     </div>
     {% endif %}
 
+    {# ── SUBCATEGORY QUICK-JUMP ──
+         Only shown when this category actually has subcategory values in use
+         (e.g. Generation Company -> Thermal/Hydel/Nuclear/RE Generators).
+         Plain in-page anchor links to the section headers below -- no extra
+         navigation, no extra click needed before an organization's own card
+         (which still needs one click to expand, same as any category). #}
+    {% if available_subcategories|default([]) %}
+    <div class="mb-3">
+        {% for sc in available_subcategories %}
+        <a href="#subcat-{{ loop.index }}" class="btn btn-outline-secondary btn-sm me-1 mb-1">{{ sc }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     {# ── GROUPED ORG CARDS ──
          Organization headers are click-to-expand, one at a time (Bootstrap
          accordion via data-bs-parent), so a category with many organizations
          (e.g. RE Generators) doesn't dump every table onto the page at once.
-         The single result of a narrow search/category expands automatically. #}
+         The single result of a narrow search/category expands automatically.
+         When the category has subcategories, organizations are pre-sorted by
+         subcategory (see the route) so a plain heading can be dropped in the
+         moment the subcategory changes -- everything on one page, one click
+         (expand the org card) away from a phone number. #}
     {% if grouped %}
     <div class="mt-2" id="groupedOrgAccordion">
+        {% set ns = namespace(current_subcat=none) %}
         {% for org_name, data in grouped.items() %}
         {% set org_collapse_id = "orgCollapse" ~ loop.index %}
         {% set auto_expand = grouped|length == 1 %}
+        {% if available_subcategories|default([]) and data.subcategory|default('') != ns.current_subcat %}
+        {% set ns.current_subcat = data.subcategory|default('') %}
+        <h6 class="text-muted mt-4 mb-2" id="subcat-{{ available_subcategories.index(ns.current_subcat) + 1 if ns.current_subcat in available_subcategories else 'other' }}">
+            <i class="bi bi-tag me-1"></i>{{ ns.current_subcat if ns.current_subcat else 'No Subcategory' }}
+        </h6>
+        {% endif %}
         <div class="card mb-3 shadow-sm border-0">
 
             <div class="card-header org-card-header text-white d-flex justify-content-between align-items-start flex-wrap gap-2"

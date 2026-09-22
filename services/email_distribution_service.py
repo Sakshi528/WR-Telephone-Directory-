@@ -48,7 +48,7 @@ CONTACT_TYPE_CHOICES = [
 _EMPLOYEE_CONTACT_TYPES = ("all", "employees", "utility_head", "administrative_head", "kmp")
 
 
-def resolve_category_contacts(category_name, contact_type="all", active_only=True, state=None):
+def resolve_category_contacts(category_name, contact_type="all", active_only=True, state=None, subcategory=None):
     """Organization-based group, with an optional sub-filter narrowing it to
     just one contact type -- e.g. "only Control Room emails in Transmission
     Utilities", or "only Utility Heads in RE Generators". "all" (the default,
@@ -69,6 +69,8 @@ def resolve_category_contacts(category_name, contact_type="all", active_only=Tru
     )
     if state:
         org_query = org_query.filter(Organization.state == state)
+    if subcategory:
+        org_query = org_query.filter(Organization.region == subcategory)
     org_ids = [org.id for org in org_query.all()]
 
     rows = []
@@ -242,12 +244,18 @@ def resolve_dynamic_group(email_group):
 
     org_ids = [f.organization_id for f in filters_by_type.get("ORGANIZATION", [])] or None
     category_ids = [f.category_id for f in filters_by_type.get("ORGANIZATION_CATEGORY", [])] or None
+    subcategory_values = [
+        f.subcategory_value for f in filters_by_type.get("ORGANIZATION_SUBCATEGORY", [])
+    ] or None
 
     if org_ids:
         query = query.filter(Employee.organization_id.in_(org_ids))
 
     if category_ids:
         query = query.filter(Organization.category_id.in_(category_ids))
+
+    if subcategory_values:
+        query = query.filter(Organization.region.in_(subcategory_values))
 
     if "STATUS" in filters_by_type:
         # An admin who explicitly configured a STATUS filter (even a

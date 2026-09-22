@@ -347,7 +347,10 @@ def delete_employee(id):
         db.session.delete(employee)
         db.session.commit()
         flash("Employee deleted", "danger")
-    return redirect(url_for("admin.manage_employees"))
+    # Preserve whatever search the admin was on -- otherwise deleting from a
+    # filtered/searched list always bounced back to the full unfiltered one.
+    keyword = request.args.get("keyword", "") or request.form.get("keyword", "")
+    return redirect(url_for("admin.manage_employees", keyword=keyword or None))
 
 
 # ─── ORGANIZATIONS ────────────────────────────────────────────────────────────
@@ -356,16 +359,23 @@ def delete_employee(id):
 @admin_required
 def manage_organizations():
     keyword = request.args.get("keyword", "")
+    category_id = request.args.get("category_id", type=int)
+    subcategory = request.args.get("subcategory", "").strip()
+
+    query = Organization.query
     if keyword:
-        orgs = Organization.query.filter(
+        query = query.filter(
             or_(
                 Organization.organization_name.ilike(f"%{keyword}%"),
                 Organization.region.ilike(f"%{keyword}%"),
                 Organization.address.ilike(f"%{keyword}%"),
             )
-        ).order_by(Organization.organization_name).all()
-    else:
-        orgs = Organization.query.order_by(Organization.organization_name).all()
+        )
+    if category_id:
+        query = query.filter(Organization.category_id == category_id)
+    if subcategory:
+        query = query.filter(Organization.region == subcategory)
+    orgs = query.order_by(Organization.organization_name).all()
 
     status_rows = (
         db.session.query(Employee.organization_id, Employee.status, func.count(Employee.id))
@@ -378,7 +388,8 @@ def manage_organizations():
 
     return render_template(
         "manage_organizations.html", organizations=orgs, keyword=keyword,
-        status_by_org=status_by_org,
+        status_by_org=status_by_org, category_id=category_id, subcategory=subcategory,
+        categories=OrganizationCategory.query.order_by(OrganizationCategory.category_name).all(),
     )
 
 
@@ -1552,6 +1563,9 @@ def _build_filter_summary(group):
     cat_names = [f.category.category_name for f in group.filters if f.filter_type == "ORGANIZATION_CATEGORY"]
     if cat_names:
         parts.append("Category: " + " OR ".join(cat_names))
+    subcat_names = [f.subcategory_value for f in group.filters if f.filter_type == "ORGANIZATION_SUBCATEGORY"]
+    if subcat_names:
+        parts.append("Subcategory: " + " OR ".join(subcat_names))
     role_names = [f.role_value for f in group.filters if f.filter_type == "ROLE"]
     if role_names:
         parts.append("Role: " + " OR ".join(role_names))
@@ -1569,6 +1583,22 @@ def _build_filter_summary(group):
     return summary
 
 
+def _email_group_subcategory_options():
+    """Every distinct (Category, Subcategory) pair in live use, e.g.
+    "Generation Company / Thermal" -- feeds the Subcategory multi-select on
+    the custom email group form, labeled with its parent category since the
+    same subcategory text can exist under more than one category."""
+    rows = (
+        db.session.query(OrganizationCategory.category_name, Organization.region)
+        .join(Organization, Organization.category_id == OrganizationCategory.id)
+        .filter(Organization.region.isnot(None), Organization.region != "")
+        .distinct()
+        .order_by(OrganizationCategory.category_name, Organization.region)
+        .all()
+    )
+    return [{"label": f"{cat} / {sub}", "value": sub} for cat, sub in rows]
+
+
 def _apply_filters_from_form(group):
     """Replaces group.filters with the criteria submitted by the add/edit
     custom-group form -- simpler and less error-prone than diffing the old
@@ -1579,6 +1609,8 @@ def _apply_filters_from_form(group):
         group.filters.append(EmailGroupFilter(filter_type="ORGANIZATION", organization_id=int(oid)))
     for cid in request.form.getlist("category_ids"):
         group.filters.append(EmailGroupFilter(filter_type="ORGANIZATION_CATEGORY", category_id=int(cid)))
+    for sc in request.form.getlist("subcategory_values"):
+        group.filters.append(EmailGroupFilter(filter_type="ORGANIZATION_SUBCATEGORY", subcategory_value=sc))
     for role in request.form.getlist("roles"):
         group.filters.append(EmailGroupFilter(filter_type="ROLE", role_value=role))
     for status in request.form.getlist("statuses"):
@@ -1691,7 +1723,7 @@ def add_email_group():
 
         has_any_filter = any(
             request.form.getlist(key)
-            for key in ("organization_ids", "category_ids", "roles", "statuses")
+            for key in ("organization_ids", "category_ids", "subcategory_values", "roles", "statuses")
         )
         if not has_any_filter:
             flash("Select at least one filter for the group.", "danger")
@@ -1717,6 +1749,7 @@ def add_email_group():
     return render_template(
         "email_group_form.html", group=None,
         categories=categories, organizations=organizations,
+        subcategories=_email_group_subcategory_options(),
         roles=ROLE_CHOICES, statuses=STATUS_CHOICES,
     )
 
@@ -1746,7 +1779,7 @@ def edit_email_group(id):
 
         has_any_filter = any(
             request.form.getlist(key)
-            for key in ("organization_ids", "category_ids", "roles", "statuses")
+            for key in ("organization_ids", "category_ids", "subcategory_values", "roles", "statuses")
         )
         if not has_any_filter:
             flash("Select at least one filter for the group.", "danger")
@@ -1768,6 +1801,7 @@ def edit_email_group(id):
     return render_template(
         "email_group_form.html", group=group,
         categories=categories, organizations=organizations,
+        subcategories=_email_group_subcategory_options(),
         roles=ROLE_CHOICES, statuses=STATUS_CHOICES,
     )
 

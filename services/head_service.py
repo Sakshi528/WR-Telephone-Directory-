@@ -194,6 +194,7 @@ def set_primary_assistant(administrative_head_id, assistant_id):
 def search_administrative_heads(
     keyword=None, designation=None, category_id=None,
     state=None, organization_id=None, service_type_id=None, status=None,
+    subcategory=None,
 ):
     """Query builder behind both the list view and its search box.
     Organization Type/State/Organization/Service Type/Designation/Status
@@ -228,6 +229,8 @@ def search_administrative_heads(
         query = query.filter(Organization.category_id == category_id)
     if state:
         query = query.filter(Organization.state == state)
+    if subcategory:
+        query = query.filter(Organization.region == subcategory)
     if designation:
         query = query.filter(AdministrativeHead.role_title.ilike(f"%{designation}%"))
 

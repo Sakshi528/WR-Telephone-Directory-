@@ -4,12 +4,6 @@ ACB (India) Limited,Control Room,Missing,Control Room,Word lists a control room 
 ACB (India) Limited,Employee,Extra,Pranab Sharma,In database but not found in Word directory
 Adani Power (Mundra) Limited,Switchyard,Extra,"Switch Yard APL PH-3, 4",Database has a switchyard here; none found in Word directory
 Adani Power (Mundra) Limited,Switchyard,Missing,"SWITCH YARD APL PH-3 , 4",Word lists a switchyard here; none found in database
-Adani Power Limited - Raipur,Employee,Missing,Avinash Appalwar,In Word directory but not found in database
-Adani Power Limited - Raipur,Employee,Missing,Bhaskar Prasad,In Word directory but not found in database
-Adani Power Limited - Raipur,Employee,Missing,Manoj Taunk,In Word directory but not found in database
-Adani Power Limited - Raipur,Employee,Missing,Pradip Mohapatra,In Word directory but not found in database
-Adani Power Limited - Raipur,Employee,Missing,Rambhav Gattu,In Word directory but not found in database
-Adani Power Limited - Raipur,Employee,Missing,Shrikant Vaidya,In Word directory but not found in database
 Adani Wind Energy Kutch Five Limited,Control Room,Extra,Adani Wind Energy Kutch Five Limited,Database has a control room here; none found in Word directory
 Adani Wind Energy Kutch Five Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Adani Wind Energy Kutch Four Limited,Control Room,Extra,Adani Wind Energy Kutch Four Limited,Database has a control room here; none found in Word directory
@@ -48,6 +42,7 @@ Avikaran Solar India Private Limited,Employee,Extra,Himanshu Khatri,In database 
 Avikaran Solar India Private Limited,Employee,Extra,Kiran Tidke,In database but not found in Word directory
 Avikaran Solar India Private Limited,Employee,Extra,Manikanta Padigala,In database but not found in Word directory
 Avikaran Solar India Private Limited,Employee,Extra,Swathy Govindasamy,In database but not found in Word directory
+Avikiran Solar India Private Limited,Control Room,Email Mismatch,Control Room,"Word email(s) ['avikiranbaranda.pss@enel.com', 'baranda.substation@suzlon.com'] do not match database email(s) ['avikiranbaranda.pss@enel.com']"
 Bhira,Control Room,Extra,Bhira,Database has a control room here; none found in Word directory
 Bhira,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Birshingpur,Control Room,Extra,Birshingpur,Database has a control room here; none found in Word directory
@@ -57,19 +52,14 @@ Chhattisgarh State Load Despatch Centre,Control Room,Extra,"Control Room 2 : Bac
 Chhattisgarh State Load Despatch Centre,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Chhattisgarh State Load Despatch Centre,Control Room,Missing,"Control Room 1 : State Load Despatch Centre Chhattisgarh Address: Chhattisgarh State Power Transmission Co. Ltd. (A Successor Company Of CSEB), Danganiya, Raipur, C.G. - 492013, Chhattisgarh.",Word lists a control room here; none found in database
 Chhattisgarh State Load Despatch Centre,Control Room,Missing,"Control Room 2 : Backup State Load Despatch Centre, Chhattisgarh Address: Chhattisgarh State Power Transmission Co. Ltd. (A Successor Company Of CSEB), Khedamara, Bhilai, C.G. - 490024,Chhattisgarh.",Word lists a control room here; none found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. G.R. NAVRANG,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. KALPANA GHATE,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. NAMITA VIBHA LAKRA,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. RANJIT KUJUR,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. SADENDRA LONHARE,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. SATISH KUMAR DUBEY,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,Shri Girish Gupta,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,Shri. Abhishek Jain,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,Shri. K.S. Manothiya,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,Shri. Sanjay Chowdhary,In Word directory but not found in database
-Chhattisgarh State Load Despatch Centre,Employee,Missing,Smt. Sharda Sonwani,In Word directory but not found in database
+Chhattisgarh State Load Despatch Centre,Employee,Extra,Shri Subodh Kumar Singh,In database but not found in Word directory
+Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. M.K BANCHHOR,In Word directory but not found in database
+Chhattisgarh State Load Despatch Centre,Employee,Missing,ER. VIRENDRA KUMAR DIXIT,In Word directory but not found in database
+Chhattisgarh State Load Despatch Centre,Employee,Missing,"Shri Subodh Kumar Singh, [IAS]",In Word directory but not found in database
 Continuum Power Trading Private Limited,Control Room,Extra,Continuum Power Trading Private Limited,Database has a control room here; none found in Word directory
 Continuum Power Trading Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+CSPTCL,Employee,Extra,ER. M.K BANCHHOR,In database but not found in Word directory
+CSPTCL,Employee,Extra,ER. VIRENDRA KUMAR DIXIT,In database but not found in Word directory
 DGEN Mega Power Project,Control Room,Extra,Control Room,Database has a control room here; none found in Word directory
 DGEN Mega Power Project,Control Room,Missing,Shift-In-charge,Word lists a control room here; none found in database
 Dhuvaran,Control Room,Extra,Control Room CCPP 1,Database has a control room here; none found in Word directory
@@ -80,8 +70,8 @@ Dhuvaran,Control Room,Missing,Control room CCPP-2,Word lists a control room here
 Dhuvaran,Control Room,Missing,Control room CCPP-3,Word lists a control room here; none found in database
 Dongamouha Captive Power Plant (DCPP),Control Room,Extra,Dongamouha Captive Power Plant (DCPP),Database has a control room here; none found in Word directory
 Dongamouha Captive Power Plant (DCPP),Control Room,Missing,Control Room,Word lists a control room here; none found in database
+"Eastern Regional Load Despatch Centre , Kolkata",Control Room,Extra,ERLDC (Eastern Regional Load Despatch Centre),Database has a control room here; none found in Word directory
 "Eastern Regional Load Despatch Centre , Kolkata",Control Room,Missing,Control Room,Word lists a control room here; none found in database
-"Eastern Regional Load Despatch Centre , Kolkata",Employee,Missing,S Banerjee,In Word directory but not found in database
 Electro Solaire Private Limited,Control Room,Extra,Electro Solaire Private Limited,Database has a control room here; none found in Word directory
 Electro Solaire Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Gandhar,Control Room,Missing,Control Room,Word lists a control room here; none found in database
@@ -93,10 +83,11 @@ GIPCL 1 & 2,Control Room,Extra,GIPCL 1 & 2,Database has a control room here; non
 GIPCL 1 & 2,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 GMR Warora Energy Limited,Control Room,Extra,GMR Warora Energy Limited,Database has a control room here; none found in Word directory
 GMR Warora Energy Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+Goa Electricity Department,Employee,Extra,Prasanjit Naik,In database but not found in Word directory
+Goa Electricity Department,Employee,Extra,Shri Ajit Roy,In database but not found in Word directory
+Goa Electricity Department,Employee,Missing,Shri Ajit Roy IAS,In Word directory but not found in database
 Green Infra Wind Energy Limited SECI –II & SECI -II,Control Room,Extra,Green Infra Wind Energy Limited SECI –II & SECI -II,Database has a control room here; none found in Word directory
 Green Infra Wind Energy Limited SECI –II & SECI -II,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-Grid Controller Of India Limited,Employee,Missing,Paresh Ranpara,In Word directory but not found in database
-Grid Controller Of India Limited,Employee,Missing,S C Saxena,In Word directory but not found in database
 Gujarat Industries Power Company Limited,Control Room,Extra,Gujarat Industries Power Company Limited,Database has a control room here; none found in Word directory
 Gujarat Industries Power Company Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Gujarat State Electricity Corporation Limited,Control Room,Extra,Gujarat State Electricity Corporation Limited,Database has a control room here; none found in Word directory
@@ -104,6 +95,10 @@ Gujarat State Electricity Corporation Limited,Control Room,Missing,Control Room,
 Gujarat State Electricity Corporation Limited- Phase II,Control Room,Extra,Gujarat State Electricity Corporation Limited- Phase II,Database has a control room here; none found in Word directory
 Gujarat State Electricity Corporation Limited- Phase II,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Gujarat State Load Despatch Centre,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+Gujarat State Load Despatch Centre,Employee,Extra,Shri Ajay Prakash,In database but not found in Word directory
+Gujarat State Load Despatch Centre,Employee,Extra,Shri. Ashwini Kumar,In database but not found in Word directory
+Gujarat State Load Despatch Centre,Employee,Missing,"Shri Ajay Prakash, IAS",In Word directory but not found in database
+Gujarat State Load Despatch Centre,Employee,Missing,"Shri. Ashwini Kumar ,IAS",In Word directory but not found in database
 India Grid Trust (Indigrid),Control Room,Extra,Akhilesh Jaiswal,Database has a control room here; none found in Word directory
 India Grid Trust (Indigrid),Control Room,Extra,Central Operations Control Room ENOC (Energy Network Operations Centre),Database has a control room here; none found in Word directory
 INOX Green Energy Services Limited,Control Room,Extra,INOX Green Energy Services Limited,Database has a control room here; none found in Word directory
@@ -118,114 +113,71 @@ Kakrapar Atomic Power Station Stg-1 & 2,Control Room,Extra,Kakrapar Atomic Power
 Kakrapar Atomic Power Station Stg-1 & 2,Control Room,Missing,Shift Charge Engineer,Word lists a control room here; none found in database
 Kakrapar Atomic Power Station Stg-3 & 4,Control Room,Extra,Kakrapar Atomic Power Station Stg 3 & 4,Database has a control room here; none found in Word directory
 Kakrapar Atomic Power Station Stg-3 & 4,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-"Kalwa, Thane-Belapur",Control Room,Duplicate,SLDC-Control room,2 control room records share this name in the database
 Khopoli & Bhivpuri,Control Room,Extra,Maharashtra 17. Khopoli & Bhivpuri,Database has a control room here; none found in Word directory
 Khopoli & Bhivpuri,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-Khopoli & Bhivpuri,Employee,Missing,Abhijeet Patil,In Word directory but not found in database
-Khopoli & Bhivpuri,Employee,Missing,Dhurandhar Fulendra,In Word directory but not found in database
 "Koyna, Pophali",Control Room,Extra,"Koyna, Pophali",Database has a control room here; none found in Word directory
 "Koyna, Pophali",Control Room,Missing,Control Room,Word lists a control room here; none found in database
-LANCO Amarkantak Power Limited,Employee,Missing,Binod Kumar Sahoo,In Word directory but not found in database
-LANCO Amarkantak Power Limited,Employee,Missing,Brijesh Dwivedi,In Word directory but not found in database
-LANCO Amarkantak Power Limited,Employee,Missing,Gaurav Prasad,In Word directory but not found in database
-LANCO Amarkantak Power Limited,Employee,Missing,M.S Vishwakarma,In Word directory but not found in database
-LANCO Amarkantak Power Limited,Employee,Missing,T.R.Sastry,In Word directory but not found in database
-LANCO Amarkantak Power Limited,Employee,Missing,Y.Dharaninder,In Word directory but not found in database
 Madhya Pradesh State Load Despatch Centre,Control Room,Missing,Control room,Word lists a control room here; none found in database
+Madhya Pradesh State Load Despatch Centre,Employee,Extra,Shri Neeraj Mandloi,In database but not found in Word directory
+Madhya Pradesh State Load Despatch Centre,Employee,Missing,Shri Neeraj Mandloi (IAS),In Word directory but not found in database
 Mahan Energen Limited (Formally Essar Power (MP) Limited,Employee,Extra,Shri Manoj Taunk,In database but not found in Word directory
+Maharashtra State Load Despatch Centre,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Maharashtra State Load Despatch Centre,Control Room,Missing,SLDC-Control room,Word lists a control room here; none found in database
+Maharashtra State Load Despatch Centre,Employee,Missing,Dinesh Agrawal,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Dinesh Waghmare,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Girish Pantoji,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Mahesh Bhagwat,In Word directory but not found in database
+Maharashtra State Load Despatch Centre,Employee,Missing,Mangesh Kohat,In Word directory but not found in database
+Maharashtra State Load Despatch Centre,Employee,Missing,Mrs Vaishali Pazare,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Sandeep Kalantri,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Sh. Vikram Kumar (IAS),In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Shashank Jewalikar,In Word directory but not found in database
 Maharashtra State Load Despatch Centre,Employee,Missing,Smt. Abha Shukla,In Word directory but not found in database
+Maharashtra State Load Despatch Centre,Employee,Missing,Vijay Singhal (IAS),In Word directory but not found in database
+Maharashtra State Load Despatch Centre,Employee,Missing,Vipul Kamdar,In Word directory but not found in database
 Mahindra Renewables Private Limited,Control Room,Extra,Mahindra Renewables Private Limited,Database has a control room here; none found in Word directory
 Mahindra Renewables Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Manikheda,Control Room,Extra,Manikheda,Database has a control room here; none found in Word directory
 Manikheda,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-MB Power (MP) Limited,Employee,Missing,Ajit Chopde,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,Arun Mall,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,B. K. Mishra,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,Gajanan Jagtap,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,Kuldeep Singh,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,Prateek Dubey,In Word directory but not found in database
-MB Power (MP) Limited,Employee,Missing,Yashovardhanam Mishra,In Word directory but not found in database
-Mini Hydro,Employee,Extra,Abhijeet Patil,In database but not found in Word directory
-Mini Hydro,Employee,Extra,Dhurandhar Fulendra,In database but not found in Word directory
 Mini Hydro,Employee,Extra,Pallikuth Devanand,In database but not found in Word directory
 MP Power Management CO. LTD.,Control Room,Extra,Control Room,Database has a control room here; none found in Word directory
 MP Power Management CO. LTD.,Control Room,Missing,Manager (shift incharge),Word lists a control room here; none found in database
+"North Eastern Regional Load Despatch Centre, Shillong",Control Room,Extra,NERLDC (North Eastern Regional Load Despatch Centre),Database has a control room here; none found in Word directory
 "North Eastern Regional Load Despatch Centre, Shillong",Control Room,Missing,Control Room,Word lists a control room here; none found in database
-"North Eastern Regional Load Despatch Centre, Shillong",Employee,Missing,Amaresh Mallick,In Word directory but not found in database
+Northern Regional Load Despatch Centre New Delhi,Control Room,Extra,NRLDC (Northern Regional Load Despatch Centre),Database has a control room here; none found in Word directory
 Northern Regional Load Despatch Centre New Delhi,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-Northern Regional Load Despatch Centre New Delhi,Employee,Missing,Manoj Kumar Agrawal,In Word directory but not found in database
-NTPC,Employee,Missing,Ashwini Kumar Tripathy,In Word directory but not found in database
-NTPC,Employee,Missing,Subrata Mandal,In Word directory but not found in database
-NTPC Gadarwara,Employee,Extra,Shri Girish Gupta,In database but not found in Word directory
-NTPC Gadarwara,Employee,Extra,Shri. Abhishek Jain,In database but not found in Word directory
-NTPC Gadarwara,Employee,Extra,Shri. K.S. Manothiya,In database but not found in Word directory
-NTPC Gadarwara,Employee,Extra,Shri. Sanjay Chowdhary,In database but not found in Word directory
-NTPC Gadarwara,Employee,Extra,Smt. Sharda Sonwani,In database but not found in Word directory
 NTPC Jhanor - Gandhar Solar PV Project,Control Room,Extra,NTPC Jhanor - Gandhar Solar PV Project,Database has a control room here; none found in Word directory
 NTPC Jhanor - Gandhar Solar PV Project,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 NTPC Kawas Solar PV Project,Control Room,Extra,NTPC Kawas Solar PV Project,Database has a control room here; none found in Word directory
 NTPC Kawas Solar PV Project,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-NTPC Khargone,Employee,Extra,ER. G.R. NAVRANG,In database but not found in Word directory
-NTPC Khargone,Employee,Extra,ER. NAMITA VIBHA LAKRA,In database but not found in Word directory
-NTPC Khargone,Employee,Extra,ER. RANJIT KUJUR,In database but not found in Word directory
-NTPC Khargone,Employee,Extra,ER. SADENDRA LONHARE,In database but not found in Word directory
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Amit Kumar,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Bibhas Ghatak,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Pavan Kumar Nukala,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Prasant Kumar Panigrahi,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Rajaram Maity,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Surjya Kanta Ray,In Word directory but not found in database
-NTPC-SAIL Power Company Private Limited (NSPCL),Employee,Missing,Vemu Jaypaul,In Word directory but not found in database
-"Office: The Chief Engineer (Sub-Station) CSPTCL, Raipur",Employee,Extra,ER. KALPANA GHATE,In database but not found in Word directory
-"Office: The Chief Engineer (Sub-Station) CSPTCL, Raipur",Employee,Extra,ER. SATISH KUMAR DUBEY,In database but not found in Word directory
+NTPC Lara,Employee,Missing,Ashwini Kumar Tripathy,In Word directory but not found in database
+NTPC Lara,Employee,Missing,Subrata Mandal,In Word directory but not found in database
+NTPC Mumbai Head Quarter (WR-1),Employee,Extra,Subrata Mandal,In database but not found in Word directory
 Ostro Energy Private Limited,Control Room,Extra,Ostro Energy Private Limited,Database has a control room here; none found in Word directory
 Ostro Energy Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Ostro Kutch Wind Private Limited,Control Room,Extra,Ostro Kutch Wind Private Limited,Database has a control room here; none found in Word directory
 Ostro Kutch Wind Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Paithan,Control Room,Extra,Paithan,Database has a control room here; none found in Word directory
 Paithan,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Control Room,Extra,NLDC (National Load Despatch Centre),Database has a control room here; none found in Word directory
 "Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Control Room,Missing,CONTROL ROOM,Word lists a control room here; none found in database
-"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Employee,Missing,Aditya Prasad Das,In Word directory but not found in database
-"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Employee,Missing,Manoj Kumar Agrawal,In Word directory but not found in database
-"Power System Operation Corporation Limited National Load Despatch Centre (NLDC), New Delhi",Employee,Missing,Vivek Pandey,In Word directory but not found in database
 "POWERGRID WRTS-I, Nagpur",Control Room,Extra,RTAMC Nagpur,Database has a control room here; none found in Word directory
 "POWERGRID WRTS-II, Vadodara",Control Room,Extra,CPCC/RTAMC WR-II,Database has a control room here; none found in Word directory
 Powerica Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Powerica Limited,Employee,Extra,Mr Kapil Khairnar,In database but not found in Word directory
 Powerica Limited,Employee,Extra,Mr Saravanan S,In database but not found in Word directory
-Raigarh Energy Generation Limited,Employee,Missing,Manoj Taunk,In Word directory but not found in database
+Raigarh Energy Generation Limited,Employee,Extra,Samir Kumar Mitra,In database but not found in Word directory
+Raigarh Energy Generation Limited,Employee,Extra,Smruti Ranjan Nayak,In database but not found in Word directory
+Raigarh Energy Generation Limited,Employee,Extra,Subrata Kumar Aich,In database but not found in Word directory
 Raigarh Energy Generation Limited,Employee,Missing,Mr. Samir Kumar Mitra,In Word directory but not found in database
 Raigarh Energy Generation Limited,Employee,Missing,Mr. Smruti Ranjan Nayak,In Word directory but not found in database
 Raigarh Energy Generation Limited,Employee,Missing,Mr. Subrata Kumar Aich,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Antaryami Dash,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Sabari Girish N,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Sanjay Agarwal,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Shaiju MR,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Suresh D Kurup,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Vikas Singh,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Yedukondalu,In Word directory but not found in database
-Ratnagiri Gas & Power Private Limited,Employee,Missing,Ziaul Haque,In Word directory but not found in database
 Renew Power Limited,Control Room,Extra,Renew Power Limited,Database has a control room here; none found in Word directory
 Renew Power Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Renew Wind Energy (AP2) Private Limited,Control Room,Extra,Renew Wind Energy (AP2) Private Limited,Database has a control room here; none found in Word directory
 Renew Wind Energy (AP2) Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 RGPPL,Control Room,Extra,RGPPL,Database has a control room here; none found in Word directory
 RGPPL,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-RKM Powergen Private Limited,Employee,Missing,C.V.K Prasad,In Word directory but not found in database
-RKM Powergen Private Limited,Employee,Missing,R. Saravanan,In Word directory but not found in database
-RKM Powergen Private Limited,Employee,Missing,T. Rajesh Kumar,In Word directory but not found in database
-RKM Powergen Private Limited,Employee,Missing,Vivek Bangde,In Word directory but not found in database
-SASAN Power Limited,Employee,Missing,Anand Deshpande,In Word directory but not found in database
-SASAN Power Limited,Employee,Missing,P.C.Upadhyay,In Word directory but not found in database
-SASAN Power Limited,Employee,Missing,Pranab Kumar Sandha,In Word directory but not found in database
-SASAN Power Limited,Employee,Missing,Sachin Mohapatra,In Word directory but not found in database
 Sherisha Raipur,Control Room,Extra,Sherisha Raipur,Database has a control room here; none found in Word directory
 Sherisha Raipur,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Sitac Kabini Renewables Private Limited,Control Room,Extra,Sitac Kabini Renewables Private Limited,Database has a control room here; none found in Word directory
@@ -233,10 +185,16 @@ Sitac Kabini Renewables Private Limited,Control Room,Missing,Control Room,Word l
 Sitac Kabini Renewables Private Limited,Employee,Extra,Davedarshan Misra,In database but not found in Word directory
 Solapur Solar PV Project,Control Room,Extra,CCR Control Room,Database has a control room here; none found in Word directory
 Solapur Solar PV Project,Control Room,Missing,CCR-Control Room,Word lists a control room here; none found in database
+"Southern Regional Load Despatch Centre, Bengaluru",Control Room,Extra,SRLDC (Southern Regional Load Despatch Centre),Database has a control room here; none found in Word directory
 "Southern Regional Load Despatch Centre, Bengaluru",Control Room,Missing,Control Room,Word lists a control room here; none found in database
-"Southern Regional Load Despatch Centre, Bengaluru",Employee,Missing,T Srinivas,In Word directory but not found in database
 Srijan Energy Systems Private Limited,Control Room,Extra,Srijan Energy Systems Private Limited,Database has a control room here; none found in Word directory
 Srijan Energy Systems Private Limited,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+"State Load Despatch Centre, MSETCL",Control Room,Duplicate,SLDC-Control room,2 control room records share this name in the database
+"State Load Despatch Centre, MSETCL",Employee,Extra,Mahesh Bhagwat,In database but not found in Word directory
+"State Load Despatch Centre, MSETCL",Employee,Extra,Sanjeet Chaudhary,In database but not found in Word directory
+"State Load Despatch Centre, MSETCL",Employee,Extra,Shilpi Kumari,In database but not found in Word directory
+"State Load Despatch Centre, MSETCL",Employee,Extra,Shubham Gupta,In database but not found in Word directory
+"State Load Despatch Centre, MSETCL",Employee,Missing,Mashesh Bhagwat,In Word directory but not found in database
 Tarapur Atomic Power Station Stg-1 & 2,Control Room,Extra,Tarapur Atomic Power Station Stg 1 & 2,Database has a control room here; none found in Word directory
 Tarapur Atomic Power Station Stg-1 & 2,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Tarapur Atomic Power Station Stg-3 & 4,Control Room,Extra,Tarapur Atomic Power Station Stg 3 & 4,Database has a control room here; none found in Word directory
@@ -253,18 +211,13 @@ TP Saurya Limited Unit-2,Control Room,Extra,RUMSL Unit 2 Site Control Room,Datab
 TP Saurya Limited Unit-2,Control Room,Missing,RUMSL Unit-2 Site Control Room,Word lists a control room here; none found in database
 Trombay,Control Room,Extra,Trombay,Database has a control room here; none found in Word directory
 Trombay,Control Room,Missing,Control Room,Word lists a control room here; none found in database
+UKAI (Hydro),Control Room,Missing,Ukai Thermal Control room,Word lists a control room here; none found in database
+UKAI (Hydro),Employee,Missing,Shri S D Patel,In Word directory but not found in database
+UKAI (Hydro),Employee,Missing,Shri. B.R. Patel,In Word directory but not found in database
+UKAI (Hydro),Employee,Missing,Shri. C.B. Patel,In Word directory but not found in database
 Uran,Control Room,Extra,Uran,Database has a control room here; none found in Word directory
 Uran,Control Room,Missing,Control Room,Word lists a control room here; none found in database
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Amona S/S CR,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Mahalakshmi S/S,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,PGCIL Mapusa 400 kV S?S,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Ponda S/S CR,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,"Prasanjit Naik , GE, Alstom, Madgaon",In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,"Saish Naik, GE, Alstom, Madgaon",In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Thivim S/S CR,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Tillari S/S,In database but not found in Word directory
-"Vidyut Bhavan, 3rd Floor, Panaji, Goa-403 001",Employee,Extra,Xeldem S/S CR,In database but not found in Word directory
-Western Region Load Despatch Centre,Employee,Extra,Akib ahemad Anwar Arora,In database but not found in Word directory
+Western Region Load Despatch Centre,Control Room,Missing,Control Room,Word lists a control room here; none found in database
 Western Region Load Despatch Centre,Employee,Extra,Dhruv Pandey,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Ketan Chaudhary,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Kurapati V K Satyanarayan,In database but not found in Word directory
@@ -272,13 +225,19 @@ Western Region Load Despatch Centre,Employee,Extra,Mahesh Madhukar Mehendale,In 
 Western Region Load Despatch Centre,Employee,Extra,Pawan Kumar,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Pranjal Singhaniya,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Ramesh Kumar Bhoi,In database but not found in Word directory
-Western Region Load Despatch Centre,Employee,Extra,S P Barnwal,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Sanjeev Kumar Chandrakar,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Satheesh Kumar. R,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Satyendra Singh Raghuwanshi,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Sayed Abbas Haider Abidi,In database but not found in Word directory
 Western Region Load Despatch Centre,Employee,Extra,Tushar Ranjan Mohapatra,In database but not found in Word directory
+Western Region Load Despatch Centre,Employee,Missing,K V K Satyanarayan Gupta,In Word directory but not found in database
 Western Region Load Despatch Centre,Employee,Missing,M K Ramesh,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,R.K. Bhoi,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,R.Satheesh Kumar,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,S.K. Chandrakar,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,S.S. Raghuwanshi,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,Syed Abbas Haider Abidi,In Word directory but not found in database
+Western Region Load Despatch Centre,Employee,Missing,Tushar Ranjan Mahapatra,In Word directory but not found in database
 Western Regional Power Committee,Employee,Missing,Sh. Stephen Fernandes,In Word directory but not found in database
 Western Regional Power Committee,Employee,Missing,Shri Deepak Kumar,In Word directory but not found in database
 Wind Five Renergy Limited,Control Room,Extra,Wind Five Renergy Limited,Database has a control room here; none found in Word directory
