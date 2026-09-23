@@ -60,16 +60,81 @@
                         <div class="form-text">Ctrl/Cmd+click to select multiple. E.g. "Generation Company / Thermal".</div>
                     </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label">Specific Organizations</label>
-                        <select name="organization_ids" class="form-select" multiple size="6">
-                            {% for org in organizations %}
-                            <option value="{{ org.id }}" {% if org.id in selected_org_ids %}selected{% endif %}>
-                                {{ org.organization_name }}
-                            </option>
-                            {% endfor %}
-                        </select>
-                        <div class="form-text">Ctrl/Cmd+click to select multiple.</div>
+                    <div class="col-12">
+                        <label class="form-label">
+                            Specific Organizations
+                            <span class="badge bg-primary ms-1" id="orgSelectedCount">0 selected</span>
+                        </label>
+
+                        <div class="border rounded p-2">
+                            <div class="row g-2 mb-2">
+                                <div class="col-md-4">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                        <input type="text" id="orgSearch" class="form-control"
+                                               placeholder="Search organizations...">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="orgCategoryFilter" class="form-select form-select-sm">
+                                        <option value="">All categories</option>
+                                        {% for cat in categories %}
+                                        <option value="{{ cat.id }}">{{ cat.category_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="orgSubcategoryFilter" class="form-select form-select-sm">
+                                        <option value="">All subcategories</option>
+                                        {% for cat in categories %}
+                                        {% set subs = organizations | selectattr('category_id', 'equalto', cat.id) | map(attribute='region') | select | unique | sort | list %}
+                                        {% for sub in subs %}
+                                        <option value="{{ cat.id }}|{{ sub }}" data-category="{{ cat.id }}">{{ cat.category_name }} / {{ sub }}</option>
+                                        {% endfor %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check form-switch mt-1">
+                                        <input class="form-check-input" type="checkbox" id="orgSelectedOnly">
+                                        <label class="form-check-label small" for="orgSelectedOnly">Selected only</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="orgSelectVisible">
+                                    <i class="bi bi-check2-all me-1"></i>Select all shown
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm" id="orgClearVisible">
+                                    <i class="bi bi-x-lg me-1"></i>Unselect all shown
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm" id="orgClearAll">
+                                    Clear all
+                                </button>
+                                <span class="small text-muted ms-auto" id="orgShownCount"></span>
+                            </div>
+
+                            <div id="orgChips" class="d-flex flex-wrap gap-1 mb-2"></div>
+
+                            <div id="orgList" class="border rounded" style="max-height: 280px; overflow-y: auto;">
+                                {% for org in organizations %}
+                                <label class="org-item d-flex align-items-center gap-2 px-2 py-1 border-bottom mb-0"
+                                       data-name="{{ org.organization_name | lower }}"
+                                       data-category="{{ org.category_id or '' }}"
+                                       data-subcategory="{{ org.category_id or '' }}|{{ org.region or '' }}">
+                                    <input class="form-check-input mt-0 org-check" type="checkbox"
+                                           name="organization_ids" value="{{ org.id }}"
+                                           data-label="{{ org.organization_name }}"
+                                           {% if org.id in selected_org_ids %}checked{% endif %}>
+                                    <span class="flex-grow-1">{{ org.organization_name }}</span>
+                                    {% if org.region %}<span class="badge bg-light text-secondary border">{{ org.region }}</span>{% endif %}
+                                </label>
+                                {% endfor %}
+                                <div id="orgNoMatch" class="text-muted small p-2 d-none">No organizations match.</div>
+                            </div>
+                        </div>
+                        <div class="form-text">Use the search and filters to narrow the list, then tick organizations. Selections are kept while filtering.</div>
                     </div>
 
                     <div class="col-md-6">
@@ -117,4 +182,94 @@
     </div>
 
 </div>
+
+<script>
+(function () {
+    const search = document.getElementById('orgSearch');
+    const catFilter = document.getElementById('orgCategoryFilter');
+    const subFilter = document.getElementById('orgSubcategoryFilter');
+    const selectedOnly = document.getElementById('orgSelectedOnly');
+    const items = Array.from(document.querySelectorAll('#orgList .org-item'));
+    const chips = document.getElementById('orgChips');
+    const selectedCount = document.getElementById('orgSelectedCount');
+    const shownCount = document.getElementById('orgShownCount');
+    const noMatch = document.getElementById('orgNoMatch');
+    const subOptions = Array.from(subFilter.options).slice(1);
+
+    function visibleItems() {
+        return items.filter(it => !it.classList.contains('d-none'));
+    }
+
+    function applyFilter() {
+        const q = search.value.trim().toLowerCase();
+        const cat = catFilter.value;
+        const sub = subFilter.value;
+        items.forEach(it => {
+            const cb = it.querySelector('.org-check');
+            const show = (!q || it.dataset.name.includes(q))
+                && (!cat || it.dataset.category === cat)
+                && (!sub || it.dataset.subcategory === sub)
+                && (!selectedOnly.checked || cb.checked);
+            it.classList.toggle('d-none', !show);
+            it.classList.toggle('d-flex', show);
+        });
+        const n = visibleItems().length;
+        shownCount.textContent = `Showing ${n} of ${items.length}`;
+        noMatch.classList.toggle('d-none', n > 0);
+    }
+
+    function renderChips() {
+        chips.innerHTML = '';
+        const checked = items.map(it => it.querySelector('.org-check')).filter(cb => cb.checked);
+        selectedCount.textContent = `${checked.length} selected`;
+        checked.forEach(cb => {
+            const chip = document.createElement('span');
+            chip.className = 'badge rounded-pill bg-primary-subtle text-primary-emphasis border d-inline-flex align-items-center gap-1';
+            chip.textContent = cb.dataset.label;
+            const x = document.createElement('button');
+            x.type = 'button';
+            x.className = 'btn-close';
+            x.style.fontSize = '0.55rem';
+            x.setAttribute('aria-label', 'Remove');
+            x.addEventListener('click', () => { cb.checked = false; refresh(); });
+            chip.appendChild(x);
+            chips.appendChild(chip);
+        });
+    }
+
+    function refresh() {
+        renderChips();
+        if (selectedOnly.checked) applyFilter();
+    }
+
+    // Narrow the subcategory dropdown to the chosen category.
+    catFilter.addEventListener('change', () => {
+        subOptions.forEach(o => {
+            o.hidden = !!catFilter.value && o.dataset.category !== catFilter.value;
+        });
+        if (subFilter.selectedOptions[0] && subFilter.selectedOptions[0].hidden) subFilter.value = '';
+        applyFilter();
+    });
+    search.addEventListener('input', applyFilter);
+    subFilter.addEventListener('change', applyFilter);
+    selectedOnly.addEventListener('change', applyFilter);
+    items.forEach(it => it.querySelector('.org-check').addEventListener('change', refresh));
+
+    document.getElementById('orgSelectVisible').addEventListener('click', () => {
+        visibleItems().forEach(it => { it.querySelector('.org-check').checked = true; });
+        refresh();
+    });
+    document.getElementById('orgClearVisible').addEventListener('click', () => {
+        visibleItems().forEach(it => { it.querySelector('.org-check').checked = false; });
+        refresh();
+    });
+    document.getElementById('orgClearAll').addEventListener('click', () => {
+        items.forEach(it => { it.querySelector('.org-check').checked = false; });
+        refresh();
+    });
+
+    renderChips();
+    applyFilter();
+})();
+</script>
 {% endblock %}
